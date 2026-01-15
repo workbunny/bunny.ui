@@ -3,8 +3,18 @@ let num = 0;
 htmx.defineExtension('bny-menu', {
     // 事件
     onEvent: function (name, evt) {
-        
 
+        // 在htmx初始化节点后触发
+        if (name === "htmx:afterProcessNode") {
+            if (bny.hasExtName(evt.target, 'bny-menu')) {
+                evt.target.addEventListener('click', function (e) {
+                    const item = e.target.closest('.item')
+                    if (item) {
+                        item.classList.toggle('show')
+                    }
+                })
+            }
+        }
         return true;
     },
     // 响应转换
@@ -48,9 +58,6 @@ htmx.defineExtension('bny-menu', {
             return getMenu(obj.data)
         }
 
-        console.log(num)
-        num++
-        console.log(text, xhr, elt)
         if (xhr.getResponseHeader('Content-Type')
             .includes('application/json')) {
             const body = getHtml(xhr.responseText)

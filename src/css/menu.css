@@ -1,3 +1,4 @@
+/* 水平/默认菜单 */
 [hx-ext~="bny-menu"] {
     display: flex;
     flex-direction: row;
@@ -11,33 +12,108 @@
     & .item {
         display: flex;
         align-items: center;
-        padding: 8px 16px;
         cursor: pointer;
         transition: var(--transition);
         white-space: nowrap;
         position: relative;
         box-sizing: border-box;
-        border-radius: 4px;
-
-        &:hover {
-            background-color: var(--default-shallow);
-            transition: var(--transition);
-        }
 
         & .trigger {
             display: flex;
             justify-content: space-between;
             flex-direction: row;
             width: 100%;
+            padding: 8px 16px;
             align-items: center;
+            border-radius: 4px;
+
+            & i {
+                transition: var(--transition);
+            }
+
+            &:hover {
+                background-color: var(--default-shallow);
+                transition: var(--transition);
+            }
         }
 
         & .sub-menu {
-            display: none;
+            opacity: 0;
+            visibility: hidden;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            z-index: 100;
+            transform: translateY(15px);
+            background-color: var(--white);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow-005);
+            transition: var(--transition);
+            padding: 4px;
+
+            & .sub-menu {
+                top: 0;
+                left: calc(100% + 5px);
+            }
+        }
+    }
+
+    & .item.show {
+
+        &>.trigger {
+
+            & i {
+                transform: rotate(90deg);
+            }
         }
 
-        & .sub-menu.show {
-            display: flex;
+        &>.sub-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(10px);
+        }
+    }
+}
+
+/* 垂直菜单 */
+[hx-ext~="bny-menu"][mode="vertical"] {
+    flex-direction: column;
+    width: 220px;
+    padding: 4px 0;
+
+    & .item {
+        width: 100%;
+        flex-direction: column;
+        padding: 0 4px;
+
+        & .sub-menu {
+            position: relative;
+            transform: none;
+            width: 100%;
+            padding: 0;
+            box-shadow: none;
+            opacity: 1;
+            visibility: visible;
+            max-height: 0;
+            overflow: hidden;
+
+            & .item {
+                padding: 0;
+            }
+
+            & .sub-menu {
+                left: 0;
+            }
+        }
+    }
+
+    & .item.show {
+
+        &>.sub-menu {
+            height: auto;
+            max-height: 1000px;
+            opacity: 1;
+            visibility: visible;
         }
     }
 }

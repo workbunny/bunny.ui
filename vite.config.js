@@ -10,6 +10,7 @@ const isDebug = process.argv.some(arg => arg.includes('debug'));
 // 手动定义src/js下需要打包的所有JS文件路径（新增/删除文件，直接修改这个数组即可）
 const jsFiles = [
   path.resolve(__dirname, 'src/js/htmx.js'),
+  path.resolve(__dirname, 'src/js/bunny.js'),
   path.resolve(__dirname, 'src/js/menu.js'),
   // 如需新增JS文件，直接追加即可：
   // path.resolve(__dirname, 'src/js/entry3.js'),
