@@ -1,0 +1,43 @@
+[hx-ext~="bny-menu"] {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 4px;
+    background-color: var(--white);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow-005);
+    width: min-content;
+
+    & .item {
+        display: flex;
+        align-items: center;
+        padding: 8px 16px;
+        cursor: pointer;
+        transition: var(--transition);
+        white-space: nowrap;
+        position: relative;
+        box-sizing: border-box;
+        border-radius: 4px;
+
+        &:hover {
+            background-color: var(--default-shallow);
+            transition: var(--transition);
+        }
+
+        & .trigger {
+            display: flex;
+            justify-content: space-between;
+            flex-direction: row;
+            width: 100%;
+            align-items: center;
+        }
+
+        & .sub-menu {
+            display: none;
+        }
+
+        & .sub-menu.show {
+            display: flex;
+        }
+    }
+}

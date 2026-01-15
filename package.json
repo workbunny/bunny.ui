@@ -1,0 +1,9 @@
+{
+    "scripts": {
+        "debug": "vite build --debug",
+        "build": "vite build"
+    },
+    "dependencies": {
+        "terser": "^5.44.1"
+    }
+}
