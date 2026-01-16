@@ -12,62 +12,35 @@
 <style>
     body {
         padding: 10px;
+        width: 100%;
+        margin: 0 auto;
+        max-width: 1024px;
+    }
+
+    #menu-content {
+        padding: 10px 0;
     }
 </style>
 
 <body>
-    <div hx-ext="bny-menu" hx-get="/test/menu.json" hx-trigger="load" hx-headers='{"Accept": "application/json"}'></div>
-    <br>
-    <div hx-ext="bny-menu" mode="vertical">
+    <div hx-ext="bny-menu">
         <div class="item">
-            <div class="trigger">
-                <span>菜单1</span>
+            <div class="trigger" hx-get="/test/button.html" hx-trigger="click" hx-target="#menu-content">
+                <span>按钮</span>
             </div>
         </div>
         <div class="item">
-            <div class="trigger">
-                <span>菜单2</span>
+            <div class="trigger" hx-get="/test/tag.html" hx-trigger="click" hx-target="#menu-content">
+                <span>标签</span>
             </div>
         </div>
         <div class="item">
-            <div class="trigger">
-                <span>菜单3</span>
-                <i class="bny-icon">&#xe76e;</i>
-            </div>
-            <div class="sub-menu">
-                <div class="item">
-                    <div class="trigger">
-                        <span>子菜单1</span>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="trigger">
-                        <span>子菜单2</span>
-                        <i class="bny-icon">&#xe76e;</i>
-                    </div>
-                    <div class="sub-menu">
-                        <div class="item">
-                            <div class="trigger">
-                                <span>子子菜单1</span>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="trigger">
-                                <span>子子菜单2</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="trigger">
-                        <span>子菜单3</span>
-                    </div>
-                </div>
+            <div class="trigger" hx-get="/test/menu.html" hx-trigger="click" hx-target="#menu-content">
+                <span>组件-菜单</span>
             </div>
         </div>
     </div>
-    <br>
-
+    <div id="menu-content" hx-get="/test/tag.html" hx-trigger="load"></div>
 </body>
 
 </html>

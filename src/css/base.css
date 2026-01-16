@@ -1,47 +1,47 @@
 html {
     /* 颜色 */
 
-    /* 默认 主色调 */
-    --default: #5a5757;
-    --default-middle: #6e6b6b;
-    --default-shallow: #9a9797;
+    /* 默认 黑色 主色调 */
+    --default: #3d3d3d;
+    --default-middle: #5a5a5a;
+    --default-shallow: #868686;
 
     /* 绿色 */
-    --green: #4a9c7a;
-    --green-middle: #7dbfa0;
-    --green-shallow: #d0e8dc;
+    --green: #2d8a5f;
+    --green-middle: #5cb082;
+    --green-shallow: #7bcfa5;
 
     /* 蓝色 */
-    --blue: #5a7bc9;
-    --blue-middle: #7a9cd9;
-    --blue-shallow: #c5d5f0;
+    --blue: #3d6bb8;
+    --blue-middle: #5d8bc8;
+    --blue-shallow: #7daad8;
 
     /* 黄色 */
-    --yellow: #e8b54a;
-    --yellow-middle: #f0c56e;
-    --yellow-shallow: #f7e8c9;
+    --yellow: #e8a425;
+    --yellow-middle: #f0b94a;
+    --yellow-shallow: #f2cf6f;
 
     /* 红色 */
-    --red: #e57373;
-    --red-middle: #ef8f8f;
-    --red-shallow: #f5d1d1;
+    --red: #d64545;
+    --red-middle: #e06060;
+    --red-shallow: #e87878;
 
     /* 灰色 */
-    --gray: #9da1a8;
-    --gray-middle: #b8bcc2;
-    --gray-shallow: #eceef1;
+    --gray: #8a8e94;
+    --gray-middle: #a5a9af;
+    --gray-shallow: #bdc1c7;
 
     /* 白色 */
-    --white: #f5f5f5;
+    --white: #f0f0f0;
 
     /* 黑色 */
-    --black: #2b2f2b;
+    --black: #1a1e1a;
 
     /* 常白色 */
-    --white-common: #f5f5f5;
+    --white-common: #f0f0f0;
 
     /* 常黑色 */
-    --black-common: #2b2f2b;
+    --black-common: #1a1e1a;
 
     /* 字体大小 */
     --font-size: 14px;
@@ -93,8 +93,8 @@ html {
 }
 
 html.dark {
-    --white: #2b2f2b;
-    --black: #f5f5f5;
+    --white: #1a1e1a;
+    --black: #f0f0f0;
 }
 
 html.dark::view-transition-old(*) {

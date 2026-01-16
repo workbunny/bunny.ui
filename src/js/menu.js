@@ -1,5 +1,3 @@
-let num = 0;
-
 htmx.defineExtension('bny-menu', {
     // 事件
     onEvent: function (name, evt) {
@@ -9,7 +7,8 @@ htmx.defineExtension('bny-menu', {
             if (bny.hasExtName(evt.target, 'bny-menu')) {
                 evt.target.addEventListener('click', function (e) {
                     const item = e.target.closest('.item')
-                    if (item) {
+                    const subMenu = item.querySelector('.sub-menu')
+                    if (item && subMenu) {
                         item.classList.toggle('show')
                     }
                 })
@@ -28,15 +27,14 @@ htmx.defineExtension('bny-menu', {
         function getMenu(arr) {
             let html = ""
             arr.forEach(v => {
-                html += `<div class="item">`
-
-                html += `<div class="trigger">`
+                const attrStr = bny.parAttrStr(v.attr)
+                html += `<div class="item" ${attrStr}>`
+                html += `<div class="trigger" bny-id="${v.id}">`
                 html += `<span>${v.name}</span>`
                 if (v.child) {
                     html += `<i class="bny-icon">&#xe76e;</i>`
                 }
                 html += `</div>`
-
                 if (v.child) {
                     html += `<div class="sub-menu">`
                     html += getMenu(v.child)

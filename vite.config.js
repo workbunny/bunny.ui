@@ -22,6 +22,8 @@ const cssFiles = [
   path.resolve(__dirname, 'src/css/color.css'),
   path.resolve(__dirname, 'src/font/iconfont.css'),
   path.resolve(__dirname, 'src/css/menu.css'),
+  path.resolve(__dirname, 'src/css/button.css'),
+  path.resolve(__dirname, 'src/css/tag.css'),
   // 如需新增CSS文件，直接追加即可：
   // path.resolve(__dirname, 'src/css/style3.css'),
 ];

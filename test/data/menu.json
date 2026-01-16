@@ -2,7 +2,11 @@
     "data": [
         {
             "id": 1,
-            "name": "菜单1"
+            "name": "菜单1",
+            "attr": {
+                "other": "other",
+                "data-name": "菜单1-1"
+            }
         },
         {
             "id": 2,

@@ -96,6 +96,7 @@
             visibility: visible;
             max-height: 0;
             overflow: hidden;
+            background-color: #7a7a7aab;
 
             & .item {
                 padding: 0;

@@ -1,0 +1,98 @@
+.bny-btn {
+    padding: 4px 11px;
+    border-radius: var(--border-radius);
+    text-align: center;
+    text-decoration: none;
+    transition: var(--transition);
+    color: var(--white-common);
+    background-color: var(--default);
+    border: 2px solid var(--default);
+    box-shadow: var(--box-shadow-005);
+
+    &:hover {
+        cursor: pointer;
+        background-color: var(--default-middle);
+        border-color: var(--default-middle);
+    }
+
+    &:active {
+        transform: var(--transform3d-020);
+        background-color: var(--default-shallow);
+        border-color: var(--default-shallow);
+    }
+
+    /* 绿色 */
+    &[color="green"] {
+        color: var(--white-common);
+        background-color: var(--green);
+        border-color: var(--green);
+    }
+
+    &[color="green"]:hover {
+        background-color: var(--green-middle);
+        border-color: var(--green-middle);
+    }
+
+    &[color="green"]:active {
+        background-color: var(--green-shallow);
+        border-color: var(--green-shallow);
+    }
+
+    /* 蓝色 */
+    &[color="blue"] {
+        color: var(--white-common);
+        background-color: var(--blue);
+        border-color: var(--blue);
+    }
+
+    &[color="blue"]:hover {
+        background-color: var(--blue-middle);
+        border-color: var(--blue-middle);
+    }
+
+    &[color="blue"]:active {
+        background-color: var(--blue-shallow);
+        border-color: var(--blue-shallow);
+    }
+
+    /* 黄色 */
+    &[color="yellow"] {
+        color: var(--white-common);
+        background-color: var(--yellow);
+        border-color: var(--yellow);
+    }
+
+    &[color="yellow"]:hover {
+        background-color: var(--yellow-middle);
+        border-color: var(--yellow-middle);
+    }
+
+    &[color="yellow"]:active {
+        background-color: var(--yellow-shallow);
+        border-color: var(--yellow-shallow);
+    }
+
+    /* 红色 */
+    &[color="red"] {
+        color: var(--white-common);
+        background-color: var(--red);
+        border-color: var(--red);
+    }
+
+    &[color="red"]:hover {
+        background-color: var(--red-middle);
+        border-color: var(--red-middle);
+    }
+
+    &[color="red"]:active {
+        background-color: var(--red-shallow);
+        border-color: var(--red-shallow);
+    }
+
+    /* 禁用 */
+
+    &[disabled] {
+        cursor: not-allowed;
+        opacity: 0.5;
+    }
+}

@@ -1,5 +1,4 @@
 window.bny = {
-
     /**
      * 检查元素是否有指定的扩展名
      * 
@@ -12,5 +11,18 @@ window.bny = {
         if (!attrs) return false
         const exts = attrs.trim().split(/\s+/)
         return exts.includes(ext)
+    },
+    /**
+     * 解析属性字符串
+     * 
+     * @param {object} obj 属性对象
+     * @returns {String} 属性字符串
+     */
+    parAttrStr: function (obj) {
+        let str = ""
+        for (const key in obj) {
+            str += ` ${key}="${obj[key]}" `
+        }
+        return str
     }
 }

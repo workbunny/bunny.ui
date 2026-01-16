@@ -1,0 +1,52 @@
+menu.html
+<div hx-ext="bny-menu" hx-get="/test/data/menu.json" hx-trigger="load" hx-headers='{"Accept": "application/json"}'>
+</div>
+
+<div hx-ext="bny-menu" mode="vertical">
+    <div class="item">
+        <div class="trigger">
+            <span>菜单1</span>
+        </div>
+    </div>
+    <div class="item">
+        <div class="trigger">
+            <span>菜单2</span>
+        </div>
+    </div>
+    <div class="item">
+        <div class="trigger">
+            <span>菜单3</span>
+            <i class="bny-icon">&#xe76e;</i>
+        </div>
+        <div class="sub-menu">
+            <div class="item">
+                <div class="trigger">
+                    <span>子菜单1</span>
+                </div>
+            </div>
+            <div class="item">
+                <div class="trigger">
+                    <span>子菜单2</span>
+                    <i class="bny-icon">&#xe76e;</i>
+                </div>
+                <div class="sub-menu">
+                    <div class="item">
+                        <div class="trigger">
+                            <span>子子菜单1</span>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="trigger">
+                            <span>子子菜单2</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="trigger">
+                    <span>子菜单3</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
