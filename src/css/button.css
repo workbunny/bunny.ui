@@ -23,7 +23,6 @@
 
     /* 绿色 */
     &[color="green"] {
-        color: var(--white-common);
         background-color: var(--green);
         border-color: var(--green);
     }
@@ -40,7 +39,6 @@
 
     /* 蓝色 */
     &[color="blue"] {
-        color: var(--white-common);
         background-color: var(--blue);
         border-color: var(--blue);
     }
@@ -57,7 +55,6 @@
 
     /* 黄色 */
     &[color="yellow"] {
-        color: var(--white-common);
         background-color: var(--yellow);
         border-color: var(--yellow);
     }
@@ -74,7 +71,6 @@
 
     /* 红色 */
     &[color="red"] {
-        color: var(--white-common);
         background-color: var(--red);
         border-color: var(--red);
     }

@@ -13,6 +13,7 @@ const jsFiles = [
   path.resolve(__dirname, 'src/js/bunny.js'),
   path.resolve(__dirname, 'src/js/menu.js'),
   path.resolve(__dirname, 'src/js/collapse.js'),
+  path.resolve(__dirname, 'src/js/alert.js'),
   // 如需新增JS文件，直接追加即可：
   // path.resolve(__dirname, 'src/js/entry3.js'),
 ];
@@ -26,6 +27,7 @@ const cssFiles = [
   path.resolve(__dirname, 'src/css/button.css'),
   path.resolve(__dirname, 'src/css/tag.css'),
   path.resolve(__dirname, 'src/css/collapse.css'),
+  path.resolve(__dirname, 'src/css/alert.css'),
   // 如需新增CSS文件，直接追加即可：
   // path.resolve(__dirname, 'src/css/style3.css'),
 ];

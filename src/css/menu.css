@@ -113,7 +113,6 @@
         &>.sub-menu {
             height: auto;
             max-height: 1000px;
-            opacity: 1;
             visibility: visible;
         }
     }

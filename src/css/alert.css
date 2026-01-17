@@ -1,0 +1,35 @@
+.bny-alert {
+    margin-bottom: 12px;
+    padding: 8px;
+    width: 100%;
+    border-style: solid;
+    border-width: 2px;
+    border-color: var(--default);
+    background-color: var(--default-shallow);
+    color: var(--default);
+    border-radius: var(--border-radius);
+
+    &[color="green"] {
+        border-color: var(--green);
+        background-color: var(--green-shallow);
+        color: var(--green);
+    }
+
+    &[color="yellow"] {
+        border-color: var(--yellow);
+        background-color: var(--yellow-shallow);
+        color: var(--yellow);
+    }
+
+    &[color="red"] {
+        border-color: var(--red);
+        background-color: var(--red-shallow);
+        color: var(--red);
+    }
+
+    &[color="blue"] {
+        border-color: var(--blue);
+        background-color: var(--blue-shallow);
+        color: var(--blue);
+    }
+}

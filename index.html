@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 
 <head>
     <meta charset="UTF-8">
@@ -44,8 +44,13 @@
                 <span>组件-折叠面板</span>
             </div>
         </div>
+        <div class="item">
+            <div class="trigger" hx-get="/test/alert.html" hx-trigger="click" hx-target="#menu-content">
+                <span>组件-警示信息</span>
+            </div>
+        </div>
     </div>
-    <div id="menu-content" hx-get="/test/collapse.html" hx-trigger="load"></div>
+    <div id="menu-content" hx-get="/test/alert.html" hx-trigger="load"></div>
 </body>
 
 </html>
