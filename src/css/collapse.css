@@ -1,0 +1,53 @@
+[hx-ext~="bny-collapse"] {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    & .item {
+        margin-top: 12px;
+        padding-top: 12px;
+        border-top: 1px solid var(--gray-shallow);
+
+        &:first-child {
+            padding-top: 0;
+            margin-top: 0;
+            border-top: none;
+        }
+
+        & .title {
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            font-weight: 400;
+
+            &::before {
+                content: '\e76e';
+                font-family: 'bny-icon';
+                margin-right: 4px;
+                transition: var(--transition);
+            }
+        }
+
+        & .content {
+            opacity: 0;
+            visibility: visible;
+            max-height: 0;
+            transition: var(--transition);
+        }
+
+        &.show {
+            & .title {
+                &::before {
+                    transform: rotate(90deg);
+                }
+            }
+
+            & .content {
+                padding-top: 12px;
+                opacity: 1;
+                height: auto;
+                max-height: 1000px;
+            }
+        }
+    }
+}

@@ -24,5 +24,20 @@ window.bny = {
             str += ` ${key}="${obj[key]}" `
         }
         return str
+    },
+    /**
+     * 移除元素的类名
+     * 
+     * @param {Object|HTMLElement} elt 元素或元素数组
+     * @param {String} cls 类名
+     */
+    removeClass: function (elt, cls) {
+        if (Array.isArray(elt) || elt instanceof NodeList) {
+            Array.from(elt).forEach(e => this.removeClass(e, cls))
+            return
+        }
+        if (elt.classList) {
+            elt.classList.remove(cls)
+        }
     }
 }

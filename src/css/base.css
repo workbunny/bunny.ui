@@ -35,13 +35,13 @@ html {
     --white: #f0f0f0;
 
     /* 黑色 */
-    --black: #1a1e1a;
+    --black: #535455;
 
     /* 常白色 */
     --white-common: #f0f0f0;
 
     /* 常黑色 */
-    --black-common: #1a1e1a;
+    --black-common: #535455;
 
     /* 字体大小 */
     --font-size: 14px;
@@ -93,7 +93,7 @@ html {
 }
 
 html.dark {
-    --white: #1a1e1a;
+    --white: #535455;
     --black: #f0f0f0;
 }
 
@@ -118,6 +118,7 @@ body {
     background-color: var(--white);
     color: var(--black);
     font-size: var(--font-size);
+    font-family: "Microsoft YaHei", -apple-system, Roboto, "PingFang SC", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
 /* 消除默认样式 */
