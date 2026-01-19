@@ -22,6 +22,7 @@ const jsFiles = [
 const cssFiles = [
   path.resolve(__dirname, 'src/css/base.css'),
   path.resolve(__dirname, 'src/css/color.css'),
+  path.resolve(__dirname, 'src/css/anim.css'),
   path.resolve(__dirname, 'src/font/iconfont.css'),
   path.resolve(__dirname, 'src/css/menu.css'),
   path.resolve(__dirname, 'src/css/button.css'),

@@ -1,3 +1,20 @@
+.bny-alert-open {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    z-index: 1000;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    justify-content: center;
+    align-items: center;
+
+    &>.bny-alert {
+        width: auto;
+    }
+}
+
 .bny-alert {
     margin-bottom: 12px;
     padding: 8px;
