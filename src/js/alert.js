@@ -6,7 +6,7 @@ htmx.defineExtension('bny-alert', {
             .includes('application/json')) {
             // 解析JSON响应
             const data = JSON.parse(xhr.responseText)
-            bny.alert(data.msg, data.color, data.anim, data.time)
+            bny.alert(data.msg, data.code || 0, data.anim || 'scale', data.time || 3)
             return elt.innerHTML
         }
     }
