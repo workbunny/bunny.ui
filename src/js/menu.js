@@ -12,6 +12,7 @@ htmx.defineExtension('bny-menu', {
                         item.classList.toggle('show')
                     }
                 })
+                return false
             }
         }
         return true;

@@ -39,5 +39,15 @@ window.bny = {
         if (elt.classList) {
             elt.classList.remove(cls)
         }
+    },
+    /**
+     * 检查元素是否有指定的类名
+     * 
+     * @param {HTMLElement} elt 元素
+     * @param {String} cls 类名
+     * @returns {Boolean} 是否有类名
+     */
+    hasClass: function (elt, cls) {
+        return elt.classList?.contains(cls) || false
     }
 }

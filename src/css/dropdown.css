@@ -1,0 +1,28 @@
+.bny-dropdown {
+    position: relative;
+    width: 100%;
+
+    &>.content {
+        position: absolute;
+        left: 0;
+        min-width: max-content;
+        background: var(--white);
+        color: var(--black);
+        box-shadow: var(--box-shadow-005);
+        transition: var(--transition);
+        z-index: 1000;
+        border-radius: var(--border-radius);
+        transform: translateY(0px);
+        opacity: 1;
+        visibility: visible;
+        max-height: 0;
+        overflow: hidden;
+    }
+
+    &.show>.content {
+        transform: translateY(10px);
+        height: auto;
+        max-height: 1000px;
+        overflow: unset;
+    }
+}

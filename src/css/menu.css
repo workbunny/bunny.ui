@@ -68,9 +68,9 @@
         }
 
         &>.sub-menu {
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(10px);
+            opacity: 1!important;
+            visibility: visible!important;
+            transform: translateY(10px)!important;
         }
     }
 }
@@ -111,9 +111,9 @@
     & .item.show {
 
         &>.sub-menu {
-            height: auto;
-            max-height: 1000px;
-            visibility: visible;
+            height: auto!important;
+            max-height: 1000px!important;
+            visibility: visible!important;
         }
     }
 }

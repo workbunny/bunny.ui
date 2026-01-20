@@ -49,8 +49,13 @@
                 <span>组件-警示信息</span>
             </div>
         </div>
+        <div class="item">
+            <div class="trigger" hx-get="/test/dropdown.html" hx-trigger="click" hx-target="#menu-content">
+                <span>组件-下拉菜单</span>
+            </div>
+        </div>
     </div>
-    <div id="menu-content" hx-get="/test/alert.html" hx-trigger="load"></div>
+    <div id="menu-content" hx-get="/test/dropdown.html" hx-trigger="load"></div>
 </body>
 
 </html>
