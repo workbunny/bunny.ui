@@ -8,7 +8,7 @@
     border-radius: var(--border-radius);
     box-shadow: var(--box-shadow-005);
     width: min-content;
-    
+
     & .item {
         display: flex;
         align-items: center;
@@ -68,9 +68,9 @@
         }
 
         &>.sub-menu {
-            opacity: 1!important;
-            visibility: visible!important;
-            transform: translateY(10px)!important;
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(10px);
         }
     }
 }
@@ -96,10 +96,9 @@
             visibility: visible;
             max-height: 0;
             overflow: hidden;
-            background-color: #7a7a7aab;
 
             & .item {
-                padding: 0;
+                padding: 0 0 0 12px;
             }
 
             & .sub-menu {
@@ -111,9 +110,9 @@
     & .item.show {
 
         &>.sub-menu {
-            height: auto!important;
-            max-height: 1000px!important;
-            visibility: visible!important;
+            height: auto;
+            max-height: 1000px;
+            visibility: visible;
         }
     }
 }

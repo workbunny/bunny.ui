@@ -124,8 +124,11 @@ window.bny = {
         // 创建confirm_shield元素
         const confirm_shield = document.createElement('div')
         confirm_shield.classList.add('bny-confirm-shield')
-        confirm_shield.addEventListener('click', () => {
-            confirm_shield.remove()
+        confirm_shield.addEventListener('click', (e) => {
+            // 只有点击confirm_shield本身时才关闭弹窗
+            if (e.target === confirm_shield) {
+                confirm_shield.remove()
+            }
         })
         // 创建confirm元素
         const confirm = document.createElement('div')
@@ -148,7 +151,6 @@ window.bny = {
         confirm_yes.innerHTML = '确认'
         confirm_yes.addEventListener('click', (e) => {
             yes_cb()
-            e.stopPropagation()
             confirm_shield.remove()
         })
         // 创建取消按钮
@@ -157,7 +159,6 @@ window.bny = {
         confirm_no.innerHTML = '取消'
         confirm_no.addEventListener('click', (e) => {
             no_cb()
-            e.stopPropagation()
             confirm_shield.remove()
         })
         // 将确认按钮添加到btn
