@@ -23,6 +23,7 @@
 </style>
 
 <body>
+    <button class="bny-btn" id="mode-btn">模式</button>
     <div hx-ext="bny-menu">
         <div class="item">
             <div class="trigger" hx-get="/test/button.html" hx-trigger="click" hx-target="#menu-content">
@@ -54,8 +55,18 @@
                 <span>组件-下拉菜单</span>
             </div>
         </div>
+        <div class="item">
+            <div class="trigger" hx-get="/test/confirm.html" hx-trigger="click" hx-target="#menu-content">
+                <span>组件-确认信息</span>
+            </div>
+        </div>
     </div>
-    <div id="menu-content" hx-get="/test/dropdown.html" hx-trigger="load"></div>
+    <div id="menu-content" hx-get="/test/confirm.html" hx-trigger="load"></div>
+    <script>
+        document.getElementById('mode-btn').addEventListener('click', function () {
+            document.documentElement.classList.toggle('dark');
+        });
+    </script>
 </body>
 
 </html>

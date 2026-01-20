@@ -1,0 +1,15 @@
+<h2>确认信息</h2>
+
+<div class="bny-confirm">
+    <h3 class="title">提示</h3>
+    <p class="content">确认删除吗？</p>
+    <div class="btn">
+        <button class="bny-btn" color="blue">确认</button><button class="bny-btn">取消</button>
+    </div>
+</div>
+
+<h2>组件-确认信息</h2>
+
+<button hx-ext="bny-confirm" class="bny-btn" hx-get="/test/data/confirm.json" hx-confirm="你确定要点击这个组件吗？">确认</button>
+
+<button hx-ext="bny-confirm" class="bny-btn" hx-get="/test/data/confirm.html" hx-confirm="你确定要点击吗？">确认-html</button>
