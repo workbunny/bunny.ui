@@ -1,5 +1,31 @@
 window.bny = {
     /**
+     * 转义HTML特殊字符
+     * 
+     * @param {String} str 输入字符串
+     * @returns {String} 转义后的字符串
+     */
+    escapeChars: function (str) {
+        if (typeof str !== 'string') {
+            str = String(str);
+        }
+        // 定义需要转义的特殊字符映射表
+        const escapeMap = {
+            '&': '&amp;',    // 和号
+            '<': '&lt;',     // 小于号
+            '>': '&gt;',     // 大于号
+            '"': '&quot;',   // 双引号
+            "'": '&#39;',    // 单引号
+            '/': '&#x2F;',   // 斜杠
+            '`': '&#x60;',   // 反引号
+            '=': '&#x3D;'    // 等号（预防XSS常用）
+        };
+        // 生成匹配所有需要转义字符的正则表达式
+        const escapeRegex = new RegExp(Object.keys(escapeMap).join('|'), 'g');
+        // 替换字符串中的特殊字符
+        return str.replace(escapeRegex, match => escapeMap[match]);
+    },
+    /**
      * 检查元素是否有指定的扩展名
      * 
      * @param {HTMLElement} elt 元素
@@ -117,10 +143,10 @@ window.bny = {
             yes_cb: () => { },
             no_cb: () => { },
         }) {
-        const title = options.title || '提示'
-        const anim = options.anim || 'scale'
-        const yes_cb = options.yes_cb || (() => { })
-        const no_cb = options.no_cb || (() => { })
+        const title = options.title ?? '提示'
+        const anim = options.anim ?? 'scale'
+        const yes_cb = options.yes_cb ?? (() => { })
+        const no_cb = options.no_cb ?? (() => { })
         // 创建confirm_shield元素
         const confirm_shield = document.createElement('div')
         confirm_shield.classList.add('bny-confirm-shield')
@@ -175,5 +201,263 @@ window.bny = {
         confirm_shield.appendChild(confirm)
         // 将confirm_shield添加到body
         document.body.appendChild(confirm_shield)
+    },
+    /**
+     * 显示页面弹窗
+     * 
+     * @param {String} content 页面内容
+     * @param {Object} options 选项
+     * @param {String} options.title 标题 默认 页面
+     * @param {String} options.anim 动画 默认 scale
+     * @param {String} options.width 宽度 默认 680px
+     * @param {String} options.height 高度 默认 520px
+     * @param {String|Array} options.offset 偏移量 默认 auto , 格式为 ['auto', 'auto'] 或 ['100px', '100px'] 或者 'top' 、'bottom' 、'left' 、'right'
+     * @param {Boolean} options.shade 是否显示遮罩层 默认 false
+     * @returns {HTMLElement} 页面元素
+     */
+    page: function (content, options = {}) {
+
+        /**
+         * 页面拖动
+         * @param {HTMLElement} page 页面元素
+         */
+        function drag(page) {
+            const header = page.querySelector('.header')
+            let startX, startY, newX, newY;
+            header.addEventListener('mousedown', e => {
+                [startX, startY] = [e.clientX, e.clientY];
+                [newX, newY] = [parseInt(page.style.left), parseInt(page.style.top)];
+                page.classList.add('dragging');
+            });
+            document.addEventListener('mousemove', e => {
+                if (!page.classList.contains('dragging')) return;
+                Object.assign(page.style, {
+                    left: `${newX + e.clientX - startX}px`,
+                    top: `${newY + e.clientY - startY}px`
+                });
+            });
+            document.addEventListener('mouseup', () => page.classList.remove('dragging'));
+        }
+
+        /**
+         * 页面缩放
+         * @param {HTMLElement} page 页面元素
+         * @param {String} width 宽度
+         * @param {String} height 高度
+         * @param {Number} currentX 当前X轴偏移量
+         * @param {Number} currentY 当前Y轴偏移量
+         */
+        function resize(page, width, height, currentX, currentY) {
+            const zoomBtn = page.querySelector('.zoom')
+            zoomBtn.addEventListener('click', (e) => {
+                if (zoomBtn.classList.contains('icon-quanping')) {
+                    Object.assign(page.style, { width: '100%', height: '100%', top: '0', left: '0' });
+                    zoomBtn.classList.remove('icon-quanping');
+                    zoomBtn.classList.add('icon-suoxiao');
+                } else {
+                    Object.assign(page.style, { width, height, top: `${currentY}px`, left: `${currentX}px` });
+                    zoomBtn.classList.remove('icon-suoxiao');
+                    zoomBtn.classList.add('icon-quanping');
+                }
+                e.stopPropagation();
+            });
+        }
+
+        /**
+         * 页面最小化
+         * @param {HTMLElement} page 页面元素
+         * @param {Number} num 页面编号
+         * @param {String} width 宽度
+         * @param {String} height 高度
+         * @param {Number} currentX 当前X轴偏移量
+         * @param {Number} currentY 当前Y轴偏移量
+         */
+        function minimize(page, num, width, height, currentX, currentY) {
+            const minBtn = page.querySelector('.min-auto')
+            const pageShade = page.parentElement
+            minBtn.addEventListener('click', e => {
+                if (minBtn.classList.contains('icon-jian')) {
+                    Object.assign(page.style, { width: '125px', height: 'min-content', bottom: '0', left: `${num * 125}px`, top: 'unset' });
+                    page.querySelector('.content').style.display = 'none';
+                    page.querySelector('.zoom').style.display = 'none';
+                    minBtn.classList.remove('icon-jian');
+                    minBtn.classList.add('icon-fuzhi');
+                    // 判断page父级元素的class 是否是bny-page-shade
+                    if (pageShade.classList.contains('bny-page-shade')) {
+                        pageShade.style.width = 0
+                        pageShade.style.height = 0
+                    }
+                } else {
+                    Object.assign(page.style, { width, height, top: `${currentY}px`, left: `${currentX}px`, bottom: 'unset' });
+                    page.querySelector('.content').style.display = 'block';
+                    page.querySelector('.zoom').style.display = 'inline-block';
+                    page.querySelector('.zoom').classList.replace('icon-suoxiao', 'icon-quanping');
+                    minBtn.classList.remove('icon-fuzhi');
+                    minBtn.classList.add('icon-jian');
+                    if (pageShade.classList.contains('bny-page-shade')) {
+                        pageShade.style.width = "100%"
+                        pageShade.style.height = "100%"
+                    }
+                }
+                e.stopPropagation();
+            });
+        }
+
+        /**
+         * 页面z-index
+         * @param {HTMLElement} page 页面元素
+         */
+        function zIndex(page) {
+            page.addEventListener('click', () => {
+                // 获取所有的 div 元素
+                let pageZindex = document.querySelectorAll('.bny-page');
+                let maxZIndex = 0;
+                // 遍历所有的 div 元素
+                for (let i = 0; i < pageZindex.length; i++) {
+                    let div = pageZindex[i];
+                    // 获取当前 div 的 z-index 值
+                    const zIndex = parseInt(window.getComputedStyle(div).zIndex);
+                    if (zIndex > maxZIndex) {
+                        maxZIndex = zIndex;
+                    }
+                }
+                page.style.zIndex = maxZIndex + 1;
+            });
+        }
+
+        /**
+         * 页面关闭
+         * @param {HTMLElement} page 页面元素
+         * @param {bool} shade 是否关闭遮罩层
+         */
+        function close(page, shade) {
+            let closeBtn = page.querySelector('.close-btn')
+            if (shade) {
+                const shade = document.createElement("div")
+                shade.className = "bny-page-shade"
+                shade.appendChild(page)
+                shade.addEventListener('click', (e) => {
+                    if (e.target === shade) {
+                        shade.remove()
+                    }
+                })
+                document.body.appendChild(shade)
+            } else {
+                document.body.appendChild(page)
+            }
+            closeBtn.addEventListener('click', (e) => {
+                if (shade) {
+                    page.parentNode.remove()
+                } else {
+                    page.remove()
+                }
+                e.stopPropagation()
+            })
+        }
+
+        // 标题
+        const title = options.title ?? '页面'
+        // 动画
+        const anim = options.anim ?? 'scale'
+        // 宽度
+        let width = options.width ?? '680px'
+        // 高度
+        let height = options.height ?? '520px'
+        // 偏移量
+        const offset = options.offset ?? 'auto'
+        // 遮罩层
+        const shade = options.shade ?? false
+        // 判断内容是否石链接
+        if (content.startsWith("http://") || content.startsWith("https://")) {
+            content = `<iframe src="${content}"></iframe>`;
+        }
+        const windowWidth = window.innerWidth
+        const windowHeight = window.innerHeight
+        if (width === "100%") width = windowWidth + "px"
+        if (height === "100%") height = windowHeight + "px"
+        // 当前页面数量
+        const num = document.querySelectorAll(".bny-page").length
+        // 计算当前页面的偏移量
+        const currentX = parseInt(width) >= windowWidth ? 0 : ((windowWidth - parseInt(width)) / 2) + (num * 10)
+        const currentY = parseInt(height) >= windowHeight ? 0 : ((windowHeight - parseInt(height)) / 2) + (num * 10)
+        // 创建page元素
+        const page = document.createElement("div")
+        page.className = `bny-page bny-anim-${anim}`;
+        // 设置位置
+        switch (offset) {
+            case "auto":
+                Object.assign(page.style, {
+                    width,
+                    height,
+                    left: `${currentX}px`,
+                    top: `${currentY}px`
+                });
+                break;
+            case "top":
+                Object.assign(page.style, {
+                    width,
+                    height,
+                    // 窗口的水平中间位置
+                    left: `${currentX}px`,
+                    top: '0'
+                })
+                break;
+            case "bottom":
+                Object.assign(page.style, {
+                    width,
+                    height,
+                    // 窗口的水平中间位置
+                    left: `${currentX}px`,
+                    top: `${windowHeight - parseInt(height)}px`
+                })
+                break;
+            case "left":
+                Object.assign(page.style, {
+                    width,
+                    height,
+                    left: '0',
+                    top: `${currentY}px`
+                })
+                break;
+            case "right":
+                Object.assign(page.style, {
+                    width,
+                    height,
+                    left: `${windowWidth - parseInt(width)}px`,
+                    top: `${currentY}px`
+                })
+                break;
+            default:
+                Object.assign(page.style, {
+                    width,
+                    height,
+                    left: `${offset[0]}`,
+                    top: `${offset[1]}`
+                })
+        }
+        page.innerHTML = `
+        <div class="header">
+            <div class="title">${title}</div>
+                <div class="setwin">
+                    <span class="bny-icon icon-jian min-auto"></span>
+                    <span class="bny-icon icon-quanping zoom"></span>
+                    <span class="bny-icon icon-cuo close-btn"></span>
+                </div>
+            </div>
+        </div>
+        <div class="content">${content}</div>`
+        const header = page.querySelector('.header')
+        if (title === false) header.style.display = 'none'
+        // 关闭页面
+        close(page, shade)
+        // 页面拖动
+        drag(page)
+        // 页面缩放
+        resize(page, width, height, currentX, currentY)
+        // 页面最小化
+        minimize(page, num, width, height, currentX, currentY)
+        // 页面z-index
+        zIndex(page)
+        return page
     }
 }

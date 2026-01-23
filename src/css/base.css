@@ -186,9 +186,8 @@ img {
 }
 
 a {
-    text-decoration-color: var(--default);
+    text-decoration: none;
     color: var(--primary);
-    text-decoration-style: wavy;
 }
 
 a:hover {

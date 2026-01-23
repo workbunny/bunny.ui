@@ -1,0 +1,11 @@
+{
+    "data": {
+        "content": "这是页面信息",
+        "title": "标题",
+        "anim": "fade",
+        "width": "500px",
+        "height": "300px",
+        "offset": "auto",
+        "shade": false
+    }
+}

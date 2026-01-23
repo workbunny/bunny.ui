@@ -1,0 +1,38 @@
+[hx-ext~="bny-code"] {
+    border: 1px solid var(--default);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    padding: var(--font-size);
+    position: relative;
+    white-space: unset;
+    box-shadow: var(--box-shadow-005);
+
+    &>code {
+        line-height: 1.5;
+        white-space: pre;
+        overflow: auto;
+    }
+
+    &>.copy-btn {
+        position: absolute;
+        right: 4px;
+        top: 4px;
+        line-height: normal;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--gray-shallow);
+
+        &:hover {
+            cursor: pointer;
+        }
+
+        &>i {
+            font-size: var(--font-size-20);
+        }
+    }
+
+    &:hover>.copy-btn {
+        display: flex;
+    }
+}
