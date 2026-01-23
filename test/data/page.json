@@ -2,7 +2,7 @@
     "data": {
         "content": "这是页面信息",
         "title": "标题",
-        "anim": "fade",
+        "anim": "up",
         "width": "500px",
         "height": "300px",
         "offset": "auto",

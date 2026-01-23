@@ -28,7 +28,8 @@ window.bny = {
      * @returns {String} 转义后的字符串
      */
     escapeChars: function (str) {
-        if (typeof str !== 'string') {q
+        if (typeof str !== 'string') {
+            q
             str = String(str);
         }
         // 定义需要转义的特殊字符映射表
@@ -144,7 +145,9 @@ window.bny = {
         document.body.appendChild(alert_open)
         // 设置定时器，移除alert
         setTimeout(() => {
-            alert_open.remove()
+            this.animPlayer(alert, anim, false, () => {
+                alert_open.remove()
+            })
         }, time * 1000)
     },
     /**
@@ -360,16 +363,20 @@ window.bny = {
          * 页面关闭
          * @param {HTMLElement} page 页面元素
          * @param {bool} shade 是否关闭遮罩层
+         * @param {String} anim 动画类型
+         * @param {cb} animPlayer 动画播放器
          */
-        function close(page, shade) {
-            let closeBtn = page.querySelector('.close-btn')
+        function close(page, shade, anim, animPlayer) {
+            const closeBtn = page.querySelector('.close-btn')
             if (shade) {
                 const shade = document.createElement("div")
                 shade.className = "bny-page-shade"
                 shade.appendChild(page)
                 shade.addEventListener('click', (e) => {
                     if (e.target === shade) {
-                        shade.remove()
+                        animPlayer(page, anim, false, () => {
+                            shade.remove()
+                        })
                     }
                 })
                 document.body.appendChild(shade)
@@ -378,11 +385,14 @@ window.bny = {
             }
             closeBtn.addEventListener('click', (e) => {
                 if (shade) {
-                    page.parentNode.remove()
+                    animPlayer(page, anim, false, () => {
+                        page.parentNode.remove()
+                    })
                 } else {
-                    page.remove()
+                    animPlayer(page, anim, false, () => {
+                        page.remove()
+                    })
                 }
-                e.stopPropagation()
             })
         }
 
@@ -411,6 +421,7 @@ window.bny = {
         // 计算当前页面的偏移量
         const currentX = parseInt(width) >= windowWidth ? 0 : ((windowWidth - parseInt(width)) / 2) + (num * 10)
         const currentY = parseInt(height) >= windowHeight ? 0 : ((windowHeight - parseInt(height)) / 2) + (num * 10)
+
         // 创建page元素
         const page = document.createElement("div")
         page.className = `bny-page bny-anim-${anim}`;
@@ -480,7 +491,7 @@ window.bny = {
         const header = page.querySelector('.header')
         if (title === false) header.style.display = 'none'
         // 关闭页面
-        close(page, shade)
+        close(page, shade, anim, this.animPlayer)
         // 页面拖动
         drag(page)
         // 页面缩放

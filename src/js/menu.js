@@ -7,7 +7,7 @@ htmx.defineExtension('bny-menu', {
             if (bny.hasExtName(evt.target, 'bny-menu')) {
                 evt.target.addEventListener('click', function (e) {
                     const item = e.target.closest('.item')
-                    const subMenu = item.querySelector('.sub-menu')
+                    let subMenu = item.querySelector('.sub-menu')
                     if (item && subMenu) {
                         item.classList.toggle('show')
                     }

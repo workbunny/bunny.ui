@@ -78,7 +78,7 @@
 /* 垂直菜单 */
 [hx-ext~="bny-menu"][mode="vertical"] {
     flex-direction: column;
-    width: 220px;
+    width: 100%;
     padding: 4px 0;
 
     & .item {

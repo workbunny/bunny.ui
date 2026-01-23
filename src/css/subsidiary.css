@@ -1,0 +1,92 @@
+/* 引用 */
+.bny-blockquote {
+    margin-bottom: 10px;
+    padding: 15px;
+    line-height: 1.8;
+    border: 1px solid var(--default);
+    border-radius: 0 2px 2px 0;
+    border-left-width: 5px;
+    box-shadow: var(--box-shadow-005);
+
+    &[color="green"] {
+        border-color: var(--green);
+    }
+
+    &[color="yellow"] {
+        border-color: var(--yellow);
+    }
+
+    &[color="red"] {
+        border-color: var(--red);
+    }
+
+    &[color="blue"] {
+        border-color: var(--blue);
+    }
+}
+
+/* 字段集 */
+
+.bny-fieldset {
+    border-color: var(--default-shallow);
+    margin-bottom: 10px;
+    padding: 0;
+    border-width: 1px;
+    border-style: solid;
+
+    &>legend {
+        margin-left: 20px;
+        padding: 0 10px;
+        font-size: var(--font-size-16);
+        color: var(--default);
+        line-height: 1.8;
+    }
+
+    &>.box {
+        padding: 12px;
+    }
+}
+
+.bny-fieldset-title {
+    margin: 12px 0;
+    border-width: 0;
+    border-top-width: 1px;
+    border-color: var(--default-shallow);
+
+    &>legend {
+        margin-left: 20px;
+        padding: 0 10px;
+        font-size: var(--font-size-16);
+        color: var(--default);
+        line-height: 1.8;
+    }
+}
+
+/* 分割线 */
+hr {
+    height: 0;
+    line-height: 0;
+    margin: 8px 0;
+    padding: 0;
+    border: none;
+    border-bottom: 1px solid var(--default-shallow);
+    clear: both;
+    overflow: hidden;
+    background: 0 0;
+
+    &[color="green"] {
+        border-color: var(--green-middle);
+    }
+
+    &[color="yellow"] {
+        border-color: var(--yellow-middle);
+    }
+
+    &[color="red"] {
+        border-color: var(--red-middle);
+    }
+
+    &[color="blue"] {
+        border-color: var(--blue-middle);
+    }
+}

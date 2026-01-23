@@ -144,7 +144,8 @@ input,
 textarea,
 th,
 td,
-select {
+select,
+blockquote {
     margin: 0;
     padding: 0;
 }
