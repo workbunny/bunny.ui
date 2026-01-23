@@ -2,6 +2,7 @@
 .bny-anim-scale {
     /* 放大 */
     animation: anim-scale 235ms ease-in-out;
+    animation-fill-mode: forwards;
 }
 
 @keyframes anim-scale {
@@ -17,6 +18,7 @@
 .bny-anim-scalesmall {
     /* 缩小 */
     animation: anim-scalesmall 235ms ease-in-out;
+    animation-fill-mode: forwards;
 }
 
 @keyframes anim-scalesmall {
@@ -34,9 +36,20 @@
     animation: anim-spin .8s linear infinite;
 }
 
+@keyframes anim-spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
 .bny-anim-left {
     /* 左侧滑出 */
     animation: anim-left 235ms ease-in-out;
+    animation-fill-mode: forwards;
 }
 
 @keyframes anim-left {
@@ -52,6 +65,7 @@
 .bny-anim-leftOut {
     /* 退出到左侧 */
     animation: anim-leftOut 235ms ease-in-out;
+    animation-fill-mode: forwards;
 }
 
 @keyframes anim-leftOut {
@@ -67,6 +81,7 @@
 .bny-anim-right {
     /* 右侧滑出 */
     animation: anim-right 235ms ease-in-out;
+    animation-fill-mode: forwards;
 }
 
 @keyframes anim-right {
@@ -82,6 +97,7 @@
 .bny-anim-rightOut {
     /* 退出到右侧 */
     animation: anim-rightOut 235ms ease-in-out;
+    animation-fill-mode: forwards;
 }
 
 @keyframes anim-rightOut {
@@ -97,6 +113,7 @@
 .bny-anim-up {
     /* 顶部滑出 */
     animation: anim-up 235ms ease-in-out;
+    animation-fill-mode: forwards;
 }
 
 @keyframes anim-up {
@@ -112,6 +129,7 @@
 .bny-anim-upOut {
     /* 退出到顶部 */
     animation: anim-upOut 235ms ease-in-out;
+    animation-fill-mode: forwards;
 }
 
 @keyframes anim-upOut {
@@ -127,6 +145,7 @@
 .bny-anim-down {
     /* 底部滑出 */
     animation: anim-down 235ms ease-in-out;
+    animation-fill-mode: forwards;
 }
 
 @keyframes anim-down {
@@ -142,6 +161,7 @@
 .bny-anim-downOut {
     /* 退出到底部 */
     animation: anim-downOut 235ms ease-in-out;
+    animation-fill-mode: forwards;
 }
 
 @keyframes anim-downOut {
