@@ -7,7 +7,7 @@
 
 @keyframes anim-scale {
     from {
-        transform: scale(0.1);
+        transform: scale(0);
     }
 
     to {
@@ -15,13 +15,13 @@
     }
 }
 
-.bny-anim-scalesmall {
+.bny-anim-scaleOut {
     /* 缩小 */
-    animation: anim-scalesmall 235ms ease-in-out;
+    animation: anim-scaleOut 235ms ease-in-out;
     animation-fill-mode: forwards;
 }
 
-@keyframes anim-scalesmall {
+@keyframes anim-scaleOut {
     from {
         transform: scale(1);
     }

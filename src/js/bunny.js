@@ -1,12 +1,34 @@
 window.bny = {
     /**
+     * 动画播放器
+     * 
+     * @param {HTMLElement} elt 元素 
+     * @param {String} anim 动画名称 
+     * @param {Boolean} status 状态 默认 true, true 开始 false 结束
+     * @param {Function} fn 动画结束回调函数 默认空函数
+     */
+    animPlayer: function (elt, anim, status = true, fn = () => { }) {
+        if (status) {
+            elt.classList.add(`bny-anim-${anim}`)
+            elt.classList.remove(`bny-anim-${anim}Out`)
+        } else {
+            elt.classList.remove(`bny-anim-${anim}`)
+            elt.classList.add(`bny-anim-${anim}Out`)
+        }
+        const handleAnimationEnd = () => {
+            fn()
+            elt.removeEventListener('animationend', handleAnimationEnd)
+        }
+        elt.addEventListener('animationend', handleAnimationEnd)
+    },
+    /**
      * 转义HTML特殊字符
      * 
      * @param {String} str 输入字符串
      * @returns {String} 转义后的字符串
      */
     escapeChars: function (str) {
-        if (typeof str !== 'string') {
+        if (typeof str !== 'string') {q
             str = String(str);
         }
         // 定义需要转义的特殊字符映射表
@@ -150,12 +172,6 @@ window.bny = {
         // 创建confirm_shield元素
         const confirm_shield = document.createElement('div')
         confirm_shield.classList.add('bny-confirm-shield')
-        confirm_shield.addEventListener('click', (e) => {
-            // 只有点击confirm_shield本身时才关闭弹窗
-            if (e.target === confirm_shield) {
-                confirm_shield.remove()
-            }
-        })
         // 创建confirm元素
         const confirm = document.createElement('div')
         confirm.classList.add('bny-confirm', `bny-anim-${anim}`)
@@ -175,17 +191,32 @@ window.bny = {
         confirm_yes.classList.add('bny-btn')
         confirm_yes.setAttribute('color', 'blue')
         confirm_yes.innerHTML = '确认'
-        confirm_yes.addEventListener('click', (e) => {
-            yes_cb()
-            confirm_shield.remove()
-        })
         // 创建取消按钮
         const confirm_no = document.createElement('button')
         confirm_no.classList.add('bny-btn')
         confirm_no.innerHTML = '取消'
+        // 点击遮罩层时关闭弹窗
+        confirm_shield.addEventListener('click', (e) => {
+            // 只有点击confirm_shield本身时才关闭弹窗
+            if (e.target === confirm_shield) {
+                this.animPlayer(confirm, anim, false, () => {
+                    confirm_shield.remove()
+                })
+            }
+        })
+        // 点击确认按钮时调用确认回调
+        confirm_yes.addEventListener('click', (e) => {
+            yes_cb()
+            this.animPlayer(confirm, anim, false, () => {
+                confirm_shield.remove()
+            })
+        })
+        // 点击取消按钮时调用取消回调
         confirm_no.addEventListener('click', (e) => {
             no_cb()
-            confirm_shield.remove()
+            this.animPlayer(confirm, anim, false, () => {
+                confirm_shield.remove()
+            })
         })
         // 将确认按钮添加到btn
         confirm_btn.appendChild(confirm_yes)
