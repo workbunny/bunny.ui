@@ -38,6 +38,7 @@ const cssFiles = [
   path.resolve(__dirname, 'src/css/page.css'),
   path.resolve(__dirname, 'src/css/code.css'),
   path.resolve(__dirname, 'src/css/subsidiary.css'),
+  path.resolve(__dirname, 'src/css/card.css'),
   // 如需新增CSS文件，直接追加即可：
   // path.resolve(__dirname, 'src/css/style3.css'),
 ];
