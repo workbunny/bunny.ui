@@ -38,7 +38,7 @@ html {
 
     /* 黑色 */
     --black: #676767;
-    --black-middle: #808080;
+    --black-middle: #555555;
     --black-shallow: #a9a9a9;
 
     /* 常白色 */
@@ -48,7 +48,7 @@ html {
 
     /* 常黑色 */
     --black-common: #676767;
-    --black-common-middle: #808080;
+    --black-common-middle: #555555;
     --black-common-shallow: #a9a9a9;
 
     /* 字体大小 */
@@ -103,10 +103,10 @@ html {
 /* 暗黑模式 */
 html.dark {
     --white: #676767;
-    --white-middle: #808080;
+    --white-middle: #555555;
     --white-shallow: #454545;
     --black: #f5f5f5;
-    --black-middle: #808080;
+    --black-middle: #dcdcdc;
     --black-shallow: #efefef;
 }
 

@@ -163,13 +163,3 @@
     animation: anim-downOut 235ms ease-in-out;
     animation-fill-mode: forwards;
 }
-
-@keyframes anim-downOut {
-    from {
-        transform: translateY(0);
-    }
-
-    to {
-        transform: translateY(100%);
-    }
-}

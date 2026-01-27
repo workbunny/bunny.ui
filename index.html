@@ -80,12 +80,19 @@
             </div>
         </div>
         <div class="item">
+            <div class="trigger" hx-get="/test/load.html" hx-trigger="click" hx-target="#menu-content">
+                <span>组件-加载</span>
+            </div>
+        </div>
+        <div class="item">
             <div class="trigger" hx-get="/test/code.html" hx-trigger="click" hx-target="#menu-content">
                 <span>组件-代码</span>
             </div>
         </div>
     </div>
-    <div id="menu-content" hx-get="/test/card.html" hx-trigger="load"></div>
+    <div id="menu-content" hx-get="/test/load.html" hx-trigger="load">
+        <div class="bny-load"></div>
+    </div>
     <script>
         document.getElementById('mode-btn').addEventListener('click', function () {
             document.documentElement.classList.toggle('dark');
