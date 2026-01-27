@@ -6,6 +6,17 @@
     overflow: hidden;
     border-radius: var(--border-radius);
     margin: 8px;
+    background-color: var(--white-shallow);
+
+    &[model="transition"] {
+        transition: var(--transition);
+        box-shadow: var(--box-shadow-005);
+    }
+
+    &[model="transition"]:hover {
+        box-shadow: var(--box-shadow-hover-005);
+        transform: var(--transform3d-020);
+    }
 
     &>img {
         width: 100%;
@@ -14,12 +25,12 @@
 
     &>.head {
         padding: 8px 14px;
-        border-bottom: 1px solid var(--gray-shallow);
+        border-bottom: 1px solid var(--white-middle);
     }
 
     &>.foot {
         padding: 8px 14px;
-        border-top: 1px solid var(--gray-shallow);
+        border-top: 1px solid var(--white-middle);
     }
 
     &>.body {

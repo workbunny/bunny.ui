@@ -16,7 +16,7 @@
     border: 2px solid var(--default);
     padding: 8px 16px;
     border-radius: var(--border-radius);
-    background-color: var(--white);
+    background-color: var(--white-shallow);
     box-shadow: var(--box-shadow-005);
 
     &>.title {

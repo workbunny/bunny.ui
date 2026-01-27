@@ -6,6 +6,7 @@
     position: relative;
     white-space: unset;
     box-shadow: var(--box-shadow-005);
+    background-color: var(--white-shallow);
 
     &>code {
         line-height: 1.5;
