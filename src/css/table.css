@@ -1,0 +1,112 @@
+table[hx-ext~="bny-table"] {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+    box-shadow: var(--box-shadow-005);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+
+    & th {
+        background-color: var(--default);
+        color: var(--white-common);
+        padding: 16px 12px;
+        font-weight: 500;
+        font-size: 14px;
+        white-space: nowrap;
+    }
+
+    &[color="green"] th {
+        background-color: var(--green);
+    }
+
+    &[color="yellow"] th {
+        background-color: var(--yellow);
+    }
+
+    &[color="red"] th {
+        background-color: var(--red);
+    }
+
+    &[color="blue"] th {
+        background-color: var(--blue);
+    }
+
+    & td {
+        padding: 14px 12px;
+        border-bottom: 1px solid var(--gray-shallow);
+        font-size: 13px;
+    }
+
+    & tr:last-child td {
+        border-bottom: none;
+    }
+
+    & tbody tr:hover {
+        background-color: var(--white-middle);
+        cursor: default;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    table[hx-ext~="bny-table"] {
+
+        box-shadow: none;
+        border-radius: 0;
+
+        & thead,
+        & colgroup {
+            display: none;
+        }
+
+        & tr {
+            display: block;
+            margin: 14px;
+            border: none;
+            background-color: var(--white-common);
+            box-shadow: var(--box-shadow-005);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+        }
+
+        & td {
+            width: 100%;
+            display: flex;
+            border-bottom: none;
+            position: relative;
+            gap: 12px;
+            align-items: center;
+            padding: 0;
+            padding-right: 15px;
+
+            &::before {
+                padding: 12px 15px;
+                content: attr(label);
+                font-weight: bold;
+                color: var(--white-common);
+                display: block;
+                flex: 0 0 90px;
+                text-align: left;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                background-color: var(--default);
+            }
+        }
+
+        &[color="green"] td::before {
+            background-color: var(--green);
+        }
+
+        &[color="yellow"] td::before {
+            background-color: var(--yellow);
+        }
+
+        &[color="red"] td::before {
+            background-color: var(--red);
+        }
+
+        &[color="blue"] td::before {
+            background-color: var(--blue);
+        }
+    }
+}

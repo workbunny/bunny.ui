@@ -508,7 +508,7 @@ window.bny = {
      * @param {object} options 加载选项
      * @param {string} options.color 加载颜色
      * @param {string} options.size 加载大小
-     * @returns {object} load 加载元素
+     * @returns {HTMLElement} load 加载元素
      */
     load: function (style = 0, options = {}) {
         const color = options.color ?? ''
