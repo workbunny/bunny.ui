@@ -71,11 +71,11 @@
 <div class="bny-load-rot"></div>
 
 <h2>组件</h2>
-<div hx-get="/test/data/load.php" hx-trigger="load">
+<div class="bny-card" style="width: 150px; height: 50px;" hx-get="/test/data/load.php" hx-trigger="load">
     <div class="bny-load"></div>
 </div>
 <br>
-<div hx-get="/test/data/load.php" hx-trigger="load">
+<div class="bny-card" style="width: 150px; height: 50px;" hx-get="/test/data/load.php" hx-trigger="load">
     <div class="bny-load-ball" color="red">
         <div></div>
         <div></div>
@@ -84,6 +84,17 @@
     </div>
 </div>
 <br>
-<div hx-get="/test/data/load.php" hx-trigger="load">
+<div class="bny-card" style="width: 150px; height: 50px;" hx-get="/test/data/load.php" hx-trigger="load">
     <div class="bny-load-rot"></div>
 </div>
+
+<button class="bny-btn" onclick="load()">弹出加载</button>
+
+<script>
+    function load() {
+        const load = bny.load()
+        setTimeout(() => {
+            load.remove()
+        }, 3000)
+    }
+</script>

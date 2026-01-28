@@ -18,7 +18,6 @@ const jsFiles = [
   path.resolve(__dirname, 'src/js/confirm.js'),
   path.resolve(__dirname, 'src/js/page.js'),
   path.resolve(__dirname, 'src/js/code.js'),
-  path.resolve(__dirname, 'src/js/load.js'),
   // 如需新增JS文件，直接追加即可：
   // path.resolve(__dirname, 'src/js/entry3.js'),
 ];

@@ -501,5 +501,39 @@ window.bny = {
         // 页面z-index
         zIndex(page)
         return page
+    },
+    /**
+     * 加载页面
+     * @param {number} style 加载样式 0:旋转 1:线性 2:球型
+     * @param {object} options 加载选项
+     * @param {string} options.color 加载颜色
+     * @param {string} options.size 加载大小
+     * @returns {object} load 加载元素
+     */
+    load: function (style = 0, options = {}) {
+        const color = options.color ?? ''
+        const size = options.size ?? ''
+        // 创建load元素
+        const load = document.createElement("div")
+        load.className = `bny-load-shade`
+        switch (style) {
+            case 1:
+                load.innerHTML = `<div class="bny-load" color="${color}" size="${size}"></div>`
+                break;
+            case 2:
+                load.innerHTML = `
+                <div class="bny-load-ball" color="${color}" size="${size}">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>`
+                break;
+            default:
+                load.innerHTML = `<div class="bny-load-rot"></div>`
+        }
+        // 加载页面
+        document.body.appendChild(load)
+        return load
     }
 }
