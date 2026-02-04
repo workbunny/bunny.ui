@@ -8,6 +8,7 @@
     background-color: var(--default);
     border: 2px solid var(--default);
     box-shadow: var(--box-shadow-005);
+    transition: var(--transition);
 
     &:hover {
         cursor: pointer;

@@ -1,4 +1,93 @@
 [hx-ext~="bny-tab"] {
-    background-color: var(--white-shallow);
     width: 100%;
+    position: relative;
+
+    &>.btn-left,
+    &>.btn-right {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        z-index: 1;
+        background-color: var(--white-shallow);
+        border: 1px solid var(--default-shallow);
+
+        & i {
+            font-size: var(--font-size-24);
+        }
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    &>.btn-left {
+        left: 0;
+        box-shadow: rgba(0, 0, 0, 0.06) 2px 0px 5px 0px;
+    }
+
+    &>.btn-right {
+        right: 0;
+        box-shadow: rgba(0, 0, 0, 0.06) -2px 0px 5px 0px;
+    }
+
+    &>.head {
+        overflow: auto hidden;
+        display: flex;
+        white-space: nowrap;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 0px 40px;
+        height: 40px;
+        position: relative;
+
+        &::-webkit-scrollbar {
+            height: 0;
+        }
+
+        & li {
+            display: flex;
+            padding: 0px 12px;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            transition: var(--transition);
+
+            &.this {
+                position: relative;
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
+                    height: 3px;
+                    width: 100%;
+                    background-color: var(--default);
+                }
+            }
+
+            & i {
+                margin-left: 8px;
+                padding: 1px;
+                transition: var(--transition);
+                border-radius: 50%;
+
+                &:hover {
+                    cursor: pointer;
+                    background-color: var(--red);
+                    color: var(--white-common);
+                }
+            }
+        }
+
+        & li:hover {
+            cursor: pointer;
+            color: var(--default);
+        }
+    }
 }

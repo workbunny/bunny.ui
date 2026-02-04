@@ -19,6 +19,7 @@ const jsFiles = [
   path.resolve(__dirname, 'src/js/page.js'),
   path.resolve(__dirname, 'src/js/code.js'),
   path.resolve(__dirname, 'src/js/table.js'),
+  path.resolve(__dirname, 'src/js/tab.js'),
   // 如需新增JS文件，直接追加即可：
   // path.resolve(__dirname, 'src/js/entry3.js'),
 ];
@@ -42,6 +43,7 @@ const cssFiles = [
   path.resolve(__dirname, 'src/css/card.css'),
   path.resolve(__dirname, 'src/css/load.css'),
   path.resolve(__dirname, 'src/css/table.css'),
+  path.resolve(__dirname, 'src/css/tab.css'),
   // 如需新增CSS文件，直接追加即可：
   // path.resolve(__dirname, 'src/css/style3.css'),
 ];
