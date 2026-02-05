@@ -41,11 +41,11 @@
         white-space: nowrap;
         align-items: center;
         justify-content: flex-start;
-        padding: 0px 40px;
+        /* padding: 0px 40px; */
         height: 40px;
         position: relative;
 
-        &::-webkit-scrollbar {
+        &.scrollbar::-webkit-scrollbar {
             height: 0;
         }
 
@@ -88,6 +88,18 @@
         & li:hover {
             cursor: pointer;
             color: var(--default);
+        }
+    }
+
+    &>.body {
+        position: relative;
+
+        &>div {
+            display: none;
+        }
+
+        &>div.show {
+            display: block;
         }
     }
 }

@@ -1,5 +1,15 @@
 window.bny = {
     /**
+     * 获取元素在数组中的索引
+     * 
+     * @param {HTMLElement} elt 元素
+     * @returns {Number} 索引
+     */
+    indexOf: function (elt) {
+        return Array.from(elt.parentElement.children)
+            .indexOf(elt);
+    },
+    /**
      * 动画播放器
      * 
      * @param {HTMLElement} elt 元素 
