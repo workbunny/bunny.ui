@@ -157,6 +157,7 @@ textarea,
 th,
 td,
 select,
+pre,
 blockquote {
     margin: 0;
     padding: 0;
