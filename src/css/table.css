@@ -35,6 +35,7 @@ table[hx-ext~="bny-table"] {
         padding: 14px 12px;
         border-bottom: 1px solid var(--gray-shallow);
         font-size: 13px;
+        color: var(--black);
     }
 
     & tr:last-child td {
@@ -42,7 +43,8 @@ table[hx-ext~="bny-table"] {
     }
 
     & tbody tr:hover {
-        background-color: var(--white-middle);
+        background-color: var(--white-middle) !important;
+        color: var(--black-middle) !important;
         cursor: default;
     }
 }
@@ -62,7 +64,7 @@ table[hx-ext~="bny-table"] {
             display: block;
             margin: 14px;
             border: none;
-            background-color: var(--white-common);
+            background-color: var(--white-shallow);
             box-shadow: var(--box-shadow-005);
             border-radius: var(--border-radius);
             overflow: hidden;
@@ -77,6 +79,7 @@ table[hx-ext~="bny-table"] {
             align-items: center;
             padding: 0;
             padding-right: 15px;
+            color: var(--white-common);
 
             &::before {
                 padding: 12px 15px;
@@ -107,6 +110,10 @@ table[hx-ext~="bny-table"] {
 
         &[color="blue"] td::before {
             background-color: var(--blue);
+        }
+
+        & tbody tr:hover td{
+            color: var(--black);
         }
     }
 }
