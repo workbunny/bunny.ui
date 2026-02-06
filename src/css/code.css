@@ -1,11 +1,9 @@
 [hx-ext~="bny-code"] {
-    border: 1px solid var(--default);
     border-radius: var(--border-radius);
     overflow: hidden;
     padding: var(--font-size);
     position: relative;
     white-space: unset;
-    box-shadow: var(--box-shadow-005);
     background-color: var(--white-shallow);
 
     &>code {
