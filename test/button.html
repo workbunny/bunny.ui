@@ -1,7 +1,96 @@
-<button class="bny-btn">按钮</button>
-<button class="bny-btn" color="green">按钮</button>
-<button class="bny-btn" color="blue">按钮</button>
-<button class="bny-btn" color="yellow">按钮</button>
-<button class="bny-btn" color="red">按钮</button>
-<button class="bny-btn" disabled>按钮</button>
-<button class="bny-btn" color="blue" disabled>按钮</button>
+<h1>按钮</h1>
+<hr>
+<blockquote class="bny-blockquote">
+    像任意标签设定 <code>class="bny-btn"</code> 即可渲染为按钮; 此外, 还可以通过 color 属性指定按钮颜色;
+    同时, 还可以通过 disabled 属性禁用按钮;
+</blockquote>
+<h2>按钮主题</h2>
+<div class="bny-card">
+    <div hx-ext="bny-tab">
+        <ul class="head">
+            <li>Preview</li>
+            <li>Code</li>
+        </ul>
+        <div class="body">
+            <div class="p-12">
+                <button class="bny-btn">按钮</button>
+                <button class="bny-btn" color="green">按钮</button>
+                <button class="bny-btn" color="blue">按钮</button>
+                <button class="bny-btn" color="yellow">按钮</button>
+                <button class="bny-btn" color="red">按钮</button>
+            </div>
+            <div>
+                <pre hx-ext="bny-code">
+&lt;button class="bny-btn"&gt;按钮&lt;/button&gt;
+&lt;button class="bny-btn" color="green"&gt;按钮&lt;/button&gt;
+&lt;button class="bny-btn" color="blue"&gt;按钮&lt;/button&gt;
+&lt;button class="bny-btn" color="yellow"&gt;按钮&lt;/button&gt;
+&lt;button class="bny-btn" color="red"&gt;按钮&lt;/button&gt;
+                </pre>
+            </div>
+        </div>
+    </div>
+</div>
+<h2>警用按钮</h2>
+<div class="bny-card">
+    <div hx-ext="bny-tab">
+        <ul class="head">
+            <li>Preview</li>
+            <li>Code</li>
+        </ul>
+        <div class="body">
+            <div class="p-12">
+                <button class="bny-btn" disabled>按钮</button>
+                <button class="bny-btn" disabled color="green">按钮</button>
+                <button class="bny-btn" disabled color="blue">按钮</button>
+                <button class="bny-btn" disabled color="yellow">按钮</button>
+                <button class="bny-btn" disabled color="red">按钮</button>
+            </div>
+            <div>
+                <pre hx-ext="bny-code">
+&lt;button class="bny-btn" disabled&gt;按钮&lt;/button&gt;
+&lt;button class="bny-btn" disabled color="green"&gt;按钮&lt;/button&gt;
+&lt;button class="bny-btn" disabled color="blue"&gt;按钮&lt;/button&gt;
+&lt;button class="bny-btn" disabled color="yellow"&gt;按钮&lt;/button&gt;
+&lt;button class="bny-btn" disabled color="red"&gt;按钮&lt;/button&gt;
+                </pre>
+            </div>
+        </div>
+    </div>
+</div>
+<h2>API</h2>
+<h3>标签属性</h3>
+<table hx-ext="bny-table">
+    <thead>
+        <tr>
+            <th>属性</th>
+            <th>默认值</th>
+            <th>必须</th>
+            <th>描述</th>
+            <th>版本</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>class</td>
+            <td>bny-btn</td>
+            <td>是</td>
+            <td>按钮类名</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>color</td>
+            <td>''</td>
+            <td>否</td>
+            <td>标签颜色:'green','blue','yellow','red'</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>disabled</td>
+            <td>false</td>
+            <td>否</td>
+            <td>是否禁用按钮</td>
+            <td></td>
+        </tr>
+    </tbody>
+</table>
