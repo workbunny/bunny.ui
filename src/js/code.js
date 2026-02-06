@@ -9,7 +9,7 @@ htmx.defineExtension('bny-code', {
                 evt.target.innerHTML = ""
                 // 创建code元素
                 const code = document.createElement('code')
-                code.innerHTML = content
+                code.innerHTML = content.trim()
                 evt.target.appendChild(code)
                 // 创建复制按钮
                 const copyBtn = document.createElement('a')
