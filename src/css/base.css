@@ -264,3 +264,32 @@ h6 {
     background: var(--gray);
     border-radius: 3px;
 }
+
+/* 公共样式 */
+
+/* 间隔 */
+/* padding */
+.p-12 {
+    padding: 12px;
+}
+
+.p-24 {
+    padding: 24px;
+}
+
+.p-36 {
+    padding: 36px;
+}
+
+/* margin */
+.m-12 {
+    margin: 12px;
+}
+
+.m-24 {
+    margin: 24px;
+}
+
+.m-36 {
+    margin: 36px;
+}
