@@ -16,92 +16,39 @@
         margin: 0 auto;
         max-width: 1024px;
     }
-
-    #menu-content {
-        padding: 10px;
-    }
 </style>
 
 <body>
-    <button class="bny-btn" id="mode-btn">模式</button>
-    <hr>
-    <div hx-ext="bny-menu">
-        <div class="item">
-            <div class="trigger" hx-get="/test/button.html" hx-trigger="click" hx-target="#menu-content">
-                <span>样式-按钮</span>
-            </div>
+
+    <center>
+        <img src="bunny.png" alt="BunnyUI" width="128" height="128">
+        <h1>BunnyUI 2.x</h1>
+        <p>
+            <button class="bny-btn" id="mode-btn">模式</button>
+            <a href="https://github.com/workbunny/bunny.ui" target="_blank" color="blue" class="bny-btn">项目地址</a>
+        </p>
+        <span>🐇 HTMX 拓展 Web UI 组件库. 🐇</span>
+    </center>
+
+    <div hx-ext="bny-tab" mode="scroll">
+        <ul class="head">
+            <li hx-get="/test/button.html">样式-按钮</li>
+            <li hx-get="/test/tag.html">样式-标签</li>
+            <li hx-get="/test/subsidiary.html">样式-辅助</li>
+            <li hx-get="/test/card.html">样式-卡片</li>
+            <li hx-get="/test/menu.html">组件-菜单</li>
+            <li hx-get="/test/collapse.html">组件-折叠面板</li>
+            <li hx-get="/test/dropdown.html">组件-下拉菜单</li>
+            <li hx-get="/test/alert.html">组件-警示信息</li>
+            <li hx-get="/test/confirm.html">组件-确认信息</li>
+            <li hx-get="/test/page.html">组件-页面信息</li>
+            <li hx-get="/test/load.html">组件-加载</li>
+            <li hx-get="/test/code.html">组件-代码</li>
+            <li hx-get="/test/table.html">组件-表格</li>
+            <li hx-get="/test/tab.html">组件-选项卡</li>
+        </ul>
+        <div class="body">
         </div>
-        <div class="item">
-            <div class="trigger" hx-get="/test/tag.html" hx-trigger="click" hx-target="#menu-content">
-                <span>样式-标签</span>
-            </div>
-        </div>
-        <div class="item">
-            <div class="trigger" hx-get="/test/subsidiary.html" hx-trigger="click" hx-target="#menu-content">
-                <span>样式-辅助</span>
-            </div>
-        </div>
-        <div class="item">
-            <div class="trigger" hx-get="/test/card.html" hx-trigger="click" hx-target="#menu-content">
-                <span>样式-卡片</span>
-            </div>
-        </div>
-    </div>
-    <br>
-    <div hx-ext="bny-menu">
-        <div class="item">
-            <div class="trigger" hx-get="/test/menu.html" hx-trigger="click" hx-target="#menu-content">
-                <span>组件-菜单</span>
-            </div>
-        </div>
-        <div class="item">
-            <div class="trigger" hx-get="/test/collapse.html" hx-trigger="click" hx-target="#menu-content">
-                <span>组件-折叠面板</span>
-            </div>
-        </div>
-        <div class="item">
-            <div class="trigger" hx-get="/test/dropdown.html" hx-trigger="click" hx-target="#menu-content">
-                <span>组件-下拉菜单</span>
-            </div>
-        </div>
-        <div class="item">
-            <div class="trigger" hx-get="/test/alert.html" hx-trigger="click" hx-target="#menu-content">
-                <span>组件-警示信息</span>
-            </div>
-        </div>
-        <div class="item">
-            <div class="trigger" hx-get="/test/confirm.html" hx-trigger="click" hx-target="#menu-content">
-                <span>组件-确认信息</span>
-            </div>
-        </div>
-        <div class="item">
-            <div class="trigger" hx-get="/test/page.html" hx-trigger="click" hx-target="#menu-content">
-                <span>组件-页面信息</span>
-            </div>
-        </div>
-        <div class="item">
-            <div class="trigger" hx-get="/test/load.html" hx-trigger="click" hx-target="#menu-content">
-                <span>组件-加载</span>
-            </div>
-        </div>
-        <div class="item">
-            <div class="trigger" hx-get="/test/code.html" hx-trigger="click" hx-target="#menu-content">
-                <span>组件-代码</span>
-            </div>
-        </div>
-        <div class="item">
-            <div class="trigger" hx-get="/test/table.html" hx-trigger="click" hx-target="#menu-content">
-                <span>组件-表格</span>
-            </div>
-        </div>
-        <div class="item">
-            <div class="trigger" hx-get="/test/tab.html" hx-trigger="click" hx-target="#menu-content">
-                <span>组件-选项卡</span>
-            </div>
-        </div>
-    </div>
-    <div id="menu-content" hx-get="/test/tab.html" hx-trigger="load">
-        <div class="bny-load"></div>
     </div>
     <script>
         document.getElementById('mode-btn').addEventListener('click', function () {

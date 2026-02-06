@@ -3,9 +3,10 @@ window.bny = {
      * 获取元素在数组中的索引
      * 
      * @param {HTMLElement} elt 元素
-     * @returns {Number} 索引
+     * @returns {Number|null} 索引
      */
     indexOf: function (elt) {
+        if (!elt.parentElement) return null
         return Array.from(elt.parentElement.children)
             .indexOf(elt);
     },
@@ -87,12 +88,18 @@ window.bny = {
     /**
      * 移除元素的类名
      * 
-     * @param {Object|HTMLElement} elt 元素或元素数组
+     * @param {Object|Array|HTMLElement} elt 元素或元素数组或者元素对象
      * @param {String} cls 类名
      */
     removeClass: function (elt, cls) {
+        if (!elt) console.error('removeClass: 元素不存在')
+        if (typeof elt === 'object') {
+            Object.keys(elt).forEach((key) => {
+                elt[key].classList.remove(cls)
+            })
+        }
         if (Array.isArray(elt) || elt instanceof NodeList) {
-            Array.from(elt).forEach(e => this.removeClass(e, cls))
+            Array.from(elt).forEach(e => e.classList.remove(cls))
             return
         }
         if (elt.classList) {

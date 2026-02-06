@@ -93,6 +93,7 @@
 
     &>.body {
         position: relative;
+        padding-top: 8px;
 
         &>div {
             display: none;
