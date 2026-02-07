@@ -6,6 +6,6 @@
         "width": "500px",
         "height": "300px",
         "offset": "auto",
-        "shade": false
+        "shade": true
     }
 }

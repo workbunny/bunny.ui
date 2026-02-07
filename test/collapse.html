@@ -1,64 +1,219 @@
-<div class="bny-card" style="padding: 12px;">
-    <div hx-ext="bny-collapse">
-        <div class="item">
-            <div class="title">折叠面板1</div>
-            <div class="content">
-                折叠面板内容1
+<h1>折叠面板</h1>
+<hr>
+<blockquote class="bny-blockquote">
+    折叠面板是一种常用的交互组件，用于在页面上展示和隐藏内容。它通常由一个标题和一个内容区域组成。用户点击标题时，内容区域会展开或折叠，展示或隐藏其中的内容。
+</blockquote>
+<h2>基本用法</h2>
+<div class="bny-card">
+    <div hx-ext="bny-tab">
+        <ul class="head">
+            <li>Preview</li>
+            <li>Code</li>
+        </ul>
+        <div class="body">
+            <div class="p-12">
+                <div hx-ext="bny-collapse">
+                    <div class="item">
+                        <div class="title">折叠面板1</div>
+                        <div class="content">
+                            折叠面板内容1
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="title">折叠面板2</div>
+                        <div class="content">
+                            折叠面板内容2
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="title">折叠面板3</div>
+                        <div class="content">
+                            折叠面板内容3
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="title">折叠面板4</div>
+                        <div class="content">
+                            折叠面板内容4
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <pre hx-ext="bny-code">
+&lt;div hx-ext=&quot;bny-collapse&quot;&gt;
+    &lt;div class=&quot;item&quot;&gt;
+        &lt;div class=&quot;title&quot;&gt;折叠面板1&lt;/div&gt;
+        &lt;div class=&quot;content&quot;&gt;
+            折叠面板内容1
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;item&quot;&gt;
+        &lt;div class=&quot;title&quot;&gt;折叠面板2&lt;/div&gt;
+        &lt;div class=&quot;content&quot;&gt;
+            折叠面板内容2
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;item&quot;&gt;
+        &lt;div class=&quot;title&quot;&gt;折叠面板3&lt;/div&gt;
+        &lt;div class=&quot;content&quot;&gt;
+            折叠面板内容3
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;item&quot;&gt;
+        &lt;div class=&quot;title&quot;&gt;折叠面板4&lt;/div&gt;
+        &lt;div class=&quot;content&quot;&gt;
+            折叠面板内容4
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+                </pre>
             </div>
         </div>
-        <div class="item">
-            <div class="title">折叠面板2</div>
-            <div class="content">
-                折叠面板内容2
+    </div>
+</div>
+<h2>手风琴</h2>
+<div class="bny-card">
+    <div hx-ext="bny-tab">
+        <ul class="head">
+            <li>Preview</li>
+            <li>Code</li>
+        </ul>
+        <div class="body">
+            <div class="p-12">
+                <div hx-ext="bny-collapse" mode="accordion">
+                    <div class="item">
+                        <div class="title">折叠面板1</div>
+                        <div class="content">
+                            折叠面板内容1
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="title">折叠面板2</div>
+                        <div class="content">
+                            折叠面板内容2
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="title">折叠面板3</div>
+                        <div class="content">
+                            折叠面板内容3
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="title">折叠面板4</div>
+                        <div class="content">
+                            折叠面板内容4
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="item">
-            <div class="title">折叠面板3</div>
-            <div class="content">
-                折叠面板内容3
-            </div>
-        </div>
-        <div class="item">
-            <div class="title">折叠面板4</div>
-            <div class="content">
-                折叠面板内容4
+            <div>
+                <pre hx-ext="bny-code">
+&lt;div hx-ext=&quot;bny-collapse&quot; mode=&quot;accordion&quot;&gt;
+    &lt;div class=&quot;item&quot;&gt;
+        &lt;div class=&quot;title&quot;&gt;折叠面板1&lt;/div&gt;
+        &lt;div class=&quot;content&quot;&gt;
+            折叠面板内容1
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;item&quot;&gt;
+        &lt;div class=&quot;title&quot;&gt;折叠面板2&lt;/div&gt;
+        &lt;div class=&quot;content&quot;&gt;
+            折叠面板内容2
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;item&quot;&gt;
+        &lt;div class=&quot;title&quot;&gt;折叠面板3&lt;/div&gt;
+        &lt;div class=&quot;content&quot;&gt;
+            折叠面板内容3
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;item&quot;&gt;
+        &lt;div class=&quot;title&quot;&gt;折叠面板4&lt;/div&gt;
+        &lt;div class=&quot;content&quot;&gt;
+            折叠面板内容4
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+                </pre>
             </div>
         </div>
     </div>
 </div>
 
-
-<h1>手风琴</h1>
-<div class="bny-card" style="padding: 12px;">
-    <div hx-ext="bny-collapse" mode="accordion">
-        <div class="item">
-            <div class="title">折叠面板1</div>
-            <div class="content">
-                折叠面板内容1
+<h2>json</h2>
+<div class="bny-card">
+    <div hx-ext="bny-tab">
+        <ul class="head">
+            <li>Preview</li>
+            <li>Code</li>
+            <li>Json</li>
+        </ul>
+        <div class="body">
+            <div class="p-12">
+                <div hx-ext="bny-collapse" hx-get="/test/data/collapse.json" hx-trigger="load"></div>
             </div>
-        </div>
-        <div class="item">
-            <div class="title">折叠面板2</div>
-            <div class="content">
-                折叠面板内容2
+            <div>
+                <pre hx-ext="bny-code">
+&lt;div hx-ext=&quot;bny-collapse&quot; hx-get=&quot;/test/data/collapse.json&quot; hx-trigger=&quot;load&quot;&gt;&lt;/div&gt;
+                </pre>
             </div>
-        </div>
-        <div class="item">
-            <div class="title">折叠面板3</div>
-            <div class="content">
-                折叠面板内容3
-            </div>
-        </div>
-        <div class="item">
-            <div class="title">折叠面板4</div>
-            <div class="content">
-                折叠面板内容4
+            <div>
+                <pre hx-ext="bny-code">
+{
+    "data": [
+        {
+            "id": 1,
+            "title": "标题1",
+            "content": "内容1"
+        },
+        {
+            "id": 2,
+            "title": "标题2",
+            "content": "内容2",
+            "attr": {
+                "asd": "titzxcle"
+            }
+        },
+        {
+            "id": 3,
+            "title": "标题3",
+            "content": "内容3"
+        }
+    ]
+}
+                </pre>
             </div>
         </div>
     </div>
 </div>
-
-<h1>json</h1>
-<div class="bny-card" style="padding: 12px;">
-    <div hx-ext="bny-collapse" hx-get="/test/data/collapse.json" hx-trigger="load"></div>
-</div>
+<h2>API</h2>
+<h3>标签属性</h3>
+<table hx-ext="bny-table">
+    <thead>
+        <tr>
+            <th>属性</th>
+            <th>默认值</th>
+            <th>必须</th>
+            <th>描述</th>
+            <th>版本</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>hx-ext</td>
+            <td>bny-collapse</td>
+            <td>是</td>
+            <td>标签扩展名</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>model</td>
+            <td></td>
+            <td>否</td>
+            <td>折叠面板模型:'accordion'</td>
+            <td></td>
+        </tr>
+    </tbody>
+</table>

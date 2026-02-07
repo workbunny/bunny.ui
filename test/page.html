@@ -1,35 +1,276 @@
-<h2>页面信息</h2>
-
-<div class="bny-page" style="position: unset;width: 350px; height: 300px;">
-    <div class="header">
-        <div class="title">标题</div>
-        <div class="setwin">
-            <span class="bny-icon icon-jian min-auto"></span>
-            <span class="bny-icon icon-quanping zoom"></span>
-            <span class="bny-icon icon-cuo close-btn"></span>
-        </div>
-    </div>
-    <div class="content">这个是内容</div>
-</div>
-
-<!-- <div class="bny-page-shade">
-    <div class="bny-page">
-        <div class="header">
-            <div class="title">标题</div>
-            <div class="setwin">
-                <span class="bny-icon icon-jian min-auto"></span>
-                <span class="bny-icon icon-quanping zoom"></span>
-                <span class="bny-icon icon-cuo close-btn"></span>
+<h1>页面信息</h1>
+<hr>
+<blockquote class="bny-blockquote">
+    页面是一种弹出页，用于展示相关内容。
+</blockquote>
+<h2>样式</h2>
+<div class="bny-card">
+    <div hx-ext="bny-tab">
+        <ul class="head">
+            <li>Preview</li>
+            <li>Code</li>
+        </ul>
+        <div class="body">
+            <div class="p-12">
+                <div class="bny-page" style="position: unset;width: 350px; height: 300px;">
+                    <div class="header">
+                        <div class="title">标题</div>
+                        <div class="setwin">
+                            <span class="bny-icon icon-jian min-auto"></span>
+                            <span class="bny-icon icon-quanping zoom"></span>
+                            <span class="bny-icon icon-cuo close-btn"></span>
+                        </div>
+                    </div>
+                    <div class="content">这个是内容</div>
+                </div>
+            </div>
+            <div>
+                <pre hx-ext="bny-code">
+&lt;div class="bny-page" style="position: unset;width: 350px; height: 300px;"&gt;
+    &lt;div class="header"&gt;
+        &lt;div class="title"&gt;标题&lt;/div&gt;
+        &lt;div class="setwin"&gt;
+            &lt;span class="bny-icon icon-jian min-auto"&gt;&lt;/span&gt;
+            &lt;span class="bny-icon icon-quanping zoom"&gt;&lt;/span&gt;
+            &lt;span class="bny-icon icon-cuo close-btn"&gt;&lt;/span&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="content"&gt;这个是内容&lt;/div&gt;
+&lt;/div&gt;
+                </pre>
             </div>
         </div>
-        <div class="content">这个是内容</div>
     </div>
-</div> -->
-
-<h2>组件-页面信息</h2>
-<button hx-ext="bny-page" hx-get="/test/data/page.html" hx-trigger="click" class="bny-btn">页面信息</button>
-
-<button hx-ext="bny-page" hx-get="/test/data/page.html" hx-trigger="click" class="bny-btn" title="false" anim="right"
-    width="600px" height="600px" offset="right" shade>页面信息</button>
-
-<button hx-ext="bny-page" hx-get="/test/data/page.json" hx-trigger="click" class="bny-btn">页面信息</button>
+</div>
+<h2>htmx-组件</h2>
+<div class="bny-card">
+    <div hx-ext="bny-tab">
+        <ul class="head">
+            <li>Preview</li>
+            <li>Code</li>
+        </ul>
+        <div class="body">
+            <div class="p-12">
+                <button hx-ext="bny-page" hx-get="/test/data/page.html" hx-trigger="click"
+                    class="bny-btn">窗体页面信息</button>
+                <button hx-ext="bny-page" hx-get="/test/data/page.html" hx-trigger="click" class="bny-btn" title="false"
+                    anim="right" width="600px" height="600px" offset="right" shade>弹窗页面信息</button>
+                <button hx-ext="bny-page" hx-get="/test/data/page.json" hx-trigger="click"
+                    class="bny-btn">自定义页面信息</button>
+            </div>
+            <div>
+                <pre hx-ext="bny-code">
+    &lt;button hx-ext=&quot;bny-page&quot; hx-get=&quot;/test/data/page.html&quot; hx-trigger=&quot;click&quot; class=&quot;bny-btn&quot;&gt;窗体页面信息&lt;/button&gt;
+&lt;button hx-ext=&quot;bny-page&quot; hx-get=&quot;/test/data/page.html&quot; hx-trigger=&quot;click&quot; class=&quot;bny-btn&quot; title=&quot;false&quot;
+    anim=&quot;right&quot; width=&quot;600px&quot; height=&quot;600px&quot; offset=&quot;right&quot; shade&gt;弹窗页面信息&lt;/button&gt;
+&lt;button hx-ext=&quot;bny-page&quot; hx-get=&quot;/test/data/page.json&quot; hx-trigger=&quot;click&quot; class=&quot;bny-btn&quot;&gt;自定义页面信息&lt;/button&gt;
+                </pre>
+            </div>
+        </div>
+    </div>
+</div>
+<h2>API</h2>
+<h3>标签属性</h3>
+<table hx-ext="bny-table">
+    <thead>
+        <tr>
+            <th>属性</th>
+            <th>默认值</th>
+            <th>必须</th>
+            <th>描述</th>
+            <th>版本</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>hx-ext</td>
+            <td>bny-page</td>
+            <td>是</td>
+            <td>拓展属性名</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>title</td>
+            <td>'页面'</td>
+            <td>否</td>
+            <td>标题，默认值为'页面'，当为'false'时表示不显示标题栏</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>shade</td>
+            <td></td>
+            <td>否</td>
+            <td>是否显示遮罩层，默认值为不显示。点击遮罩层会关闭弹窗</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>anim</td>
+            <td>'scale'</td>
+            <td>否</td>
+            <td>提示动画:scale-缩放,left-左移,right-右移,up-上移,down-下移</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>width</td>
+            <td>'680px'</td>
+            <td>否</td>
+            <td>宽度，默认值为'680px'</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>height</td>
+            <td>'520px'</td>
+            <td>否</td>
+            <td>高度，默认值为'520px'</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>offset</td>
+            <td>'auto'</td>
+            <td>否</td>
+            <td>偏移量，默认值为'auto',top/left/right/bottom</td>
+            <td></td>
+        </tr>
+    </tbody>
+</table>
+<h3>Json属性</h3>
+<table hx-ext="bny-table">
+    <thead>
+        <tr>
+            <th>属性</th>
+            <th>默认值</th>
+            <th>必须</th>
+            <th>描述</th>
+            <th>版本</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>data</td>
+            <td>{}</td>
+            <td>是</td>
+            <td>自定义属性，用于在弹窗中显示</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>data.title</td>
+            <td>'页面'</td>
+            <td>否</td>
+            <td>标题，默认值为'页面',当为false时表示不显示标题栏</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>data.anim</td>
+            <td>'scale'</td>
+            <td>否</td>
+            <td>提示动画:scale-缩放,left-左移,right-右移,up-上移,down-下移</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>data.shade</td>
+            <td>false</td>
+            <td>否</td>
+            <td>是否显示遮罩层，默认值为不显示。点击遮罩层会关闭弹窗</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>data.width</td>
+            <td>'680px'</td>
+            <td>否</td>
+            <td>宽度，默认值为'680px'</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>data.height</td>
+            <td>'520px'</td>
+            <td>否</td>
+            <td>高度，默认值为'520px'</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>data.offset</td>
+            <td>'auto'</td>
+            <td>否</td>
+            <td>偏移量，默认值为'auto',top/left/right/bottom</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>data.content</td>
+            <td>''</td>
+            <td>否</td>
+            <td>内容，默认值为空字符串</td>
+            <td></td>
+        </tr>
+    </tbody>
+</table>
+<h3>Js用法</h3>
+<h4>bny.page(content, options)</h4>
+<table hx-ext="bny-table">
+    <thead>
+        <tr>
+            <th>属性</th>
+            <th>默认值</th>
+            <th>必须</th>
+            <th>描述</th>
+            <th>版本</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>content</td>
+            <td></td>
+            <td>是</td>
+            <td>内容，无默认，必须传入字符串</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>options</td>
+            <td>{}</td>
+            <td>否</td>
+            <td>选项，默认空对象</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>options.title</td>
+            <td>'页面'</td>
+            <td>否</td>
+            <td>标题，默认值为'页面',当为false时表示不显示标题栏</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>options.anim</td>
+            <td>'scale'</td>
+            <td>否</td>
+            <td>提示动画:scale-缩放,left-左移,right-右移,up-上移,down-下移</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>options.width</td>
+            <td>'680px'</td>
+            <td>否</td>
+            <td>宽度，默认值为'680px'</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>options.height</td>
+            <td>'520px'</td>
+            <td>否</td>
+            <td>高度，默认值为'520px'</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>options.offset</td>
+            <td>'auto'</td>
+            <td>否</td>
+            <td>偏移量，默认值为'auto',top/left/right/bottom,或者数组[string x,string y]</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>options.shade</td>
+            <td>false</td>
+            <td>否</td>
+            <td>是否显示遮罩层，默认值为不显示。点击遮罩层会关闭弹窗</td>
+            <td></td>
+        </tr>
+    </tbody>
+</table>
