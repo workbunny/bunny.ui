@@ -24,7 +24,7 @@ htmx.defineExtension('bny-page', {
                         data.title = title
                     }
                 }
-                data.shade = elt.getAttribute('shade') || true
+                data.shade = elt.getAttribute('shade') !== null ? true : false
                 if (elt.hasAttribute('anim')) data.anim = elt.getAttribute('anim')
                 if (elt.hasAttribute('width')) data.width = elt.getAttribute('width')
                 if (elt.hasAttribute('height')) data.height = elt.getAttribute('height')
