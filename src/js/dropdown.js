@@ -1,7 +1,6 @@
 htmx.defineExtension('bny-dropdown', {
     // 事件
     onEvent: function (name, evt) {
-
         // 在htmx初始化节点后触发
         if (name === 'htmx:afterProcessNode') {
             if (bny.hasExtName(evt.target, 'bny-dropdown')) {
@@ -12,10 +11,11 @@ htmx.defineExtension('bny-dropdown', {
                 dropdown.appendChild(content)
                 evt.target.appendChild(dropdown)
                 // 点击事件
-                document.addEventListener("click", (e) => {
-                    const parent = dropdown.parentElement
-                    if (e.target !== parent && !e.target.closest('.bny-dropdown')) {
-                        htmx.removeClass(dropdown, "show")
+                evt.target.addEventListener("click", (e) => {
+                    if (e.target.closest('.bny-dropdown')) {
+                        htmx.addClass(dropdown, 'show')
+                    } else {
+                        htmx.toggleClass(dropdown, "show")
                     }
                 })
             }
@@ -24,15 +24,14 @@ htmx.defineExtension('bny-dropdown', {
         // 在交换前触发，允许你配置交换
         if (name === "htmx:beforeSwap") {
             if (bny.hasExtName(evt.target, 'bny-dropdown')) {
-                const dropdown = evt.target.querySelector('.bny-dropdown')
-                // 判断dropdown是否已经显示
-                if (!bny.hasClass(dropdown, "show")) {
+                const dropdown = evt.target.querySelector(':scope>.bny-dropdown')
+                const content = dropdown.querySelector(':scope>.content')
+                if (!bny.hasClass(dropdown, 'show') || content.innerHTML.trim() === '') {
                     htmx.swap(
-                        dropdown.querySelector('.content'),
+                        content,
                         evt.detail.xhr.responseText,
                         { swapStyle: "innerHTML" }
                     )
-                    htmx.toggleClass(dropdown, "show")
                 }
                 return false
             }
