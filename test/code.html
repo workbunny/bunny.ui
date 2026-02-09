@@ -1,19 +1,73 @@
-<h2>代码</h2>
-
-<pre hx-ext="bny-code">
+<h1>代码</h1>
+<hr>
+<blockquote class="bny-blockquote">
+    代码是一种用于展示计算机程序的文本格式。
+</blockquote>
+<h2>基本代码</h2>
+<div hx-ext="bny-tab">
+    <ul class="head">
+        <li>Preview</li>
+        <li>Code</li>
+    </ul>
+    <div class="body">
+        <div class="p-12">
+            <pre hx-ext="bny-code">
 this code
 this code
 this code
 </pre>
-
-<pre hx-ext="bny-code" hx-get="/test/data/code.json" hx-trigger="load"></pre>
-<pre hx-ext="bny-code" hx-get="/test/data/code.html" hx-trigger="load"></pre>
-
-<!-- <pre hx-ext="bny-code"><code>this code
+        </div>
+        <div>
+            <pre hx-ext="bny-code">
+&lt;pre hx-ext=&quot;bny-code&quot;&gt;
 this code
 this code
-</code>
-<a href="javascript:;" class="copy-btn">
-    <i class="bny-icon icon-fuzhi"></i>
-</a>
-</pre> -->
+this code
+&lt;/pre&gt;
+            </pre>
+        </div>
+    </div>
+</div>
+<h2>htmx-组件</h2>
+<h3>json文件加载</h3>
+<div hx-ext="bny-tab">
+    <ul class="head">
+        <li>Preview</li>
+        <li>Code</li>
+        <li>Json</li>
+    </ul>
+    <div class="body">
+        <div class="p-12">
+            <pre hx-ext="bny-code" hx-get="/test/data/code.json" hx-trigger="load"></pre>
+        </div>
+        <div>
+            <pre hx-ext="bny-code">
+&lt;pre hx-ext=&quot;bny-code&quot; hx-get=&quot;/test/data/code.json&quot; hx-trigger=&quot;load&quot;&gt;&lt;/pre&gt;
+            </pre>
+        </div>
+        <div>
+            <pre hx-ext="bny-code">
+{
+    "data": "hello world"
+}
+            </pre>
+        </div>
+    </div>
+</div>
+<h3>html文件加载</h3>
+<div hx-ext="bny-tab">
+    <ul class="head">
+        <li>Preview</li>
+        <li>Code</li>
+    </ul>
+    <div class="body">
+        <div class="p-12">
+            <pre hx-ext="bny-code" hx-get="/test/data/code.html" hx-trigger="load"></pre>
+        </div>
+        <div>
+            <pre hx-ext="bny-code">
+&lt;pre hx-ext=&quot;bny-code&quot; hx-get=&quot;/test/data/code.html&quot; hx-trigger=&quot;load&quot;&gt;&lt;/pre&gt;
+            </pre>
+        </div>
+    </div>
+</div>

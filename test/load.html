@@ -205,25 +205,69 @@
     </div>
 </div>
 <h2>组件</h2>
-<div class="bny-card" style="width: 150px; height: 50px;" hx-get="/test/data/load.php" hx-trigger="load">
-    <div class="bny-load"></div>
-</div>
-<br>
-<div class="bny-card" style="width: 150px; height: 50px;" hx-get="/test/data/load.php" hx-trigger="load">
-    <div class="bny-load-ball" color="red">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
+<div class="bny-card">
+    <div hx-ext="bny-tab">
+        <ul class="head">
+            <li>Preview</li>
+            <li>Code</li>
+        </ul>
+        <div class="body">
+            <div class="p-12">
+                <div class="bny-card" style="width: 150px; height: 50px;" hx-get="/test/data/load.html"
+                    hx-trigger="load delay:1s">
+                    <div class="bny-load"></div>
+                </div>
+                <br>
+                <div class="bny-card" style="width: 150px; height: 50px;" hx-get="/test/data/load.html"
+                    hx-trigger="load delay:2s">
+                    <div class="bny-load-ball" color="red">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                </div>
+                <br>
+                <div class="bny-card" style="width: 150px; height: 50px;" hx-get="/test/data/load.html"
+                    hx-trigger="load delay:3s">
+                    <div class="bny-load-rot"></div>
+                </div>
+
+                <button class="bny-btn" onclick="load()">弹出加载</button>
+            </div>
+            <div>
+                <pre hx-ext="bny-code">
+&lt;div class="bny-card" style="width: 150px; height: 50px;" hx-get="/test/data/load.html" hx-trigger="load delay:1s"&gt;
+    &lt;div class="bny-load"&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;br&gt;
+&lt;div class="bny-card" style="width: 150px; height: 50px;" hx-get="/test/data/load.html" hx-trigger="load delay:2s"&gt;
+    &lt;div class="bny-load-ball" color="red"&gt;
+        &lt;div&gt;&lt;/div&gt;
+        &lt;div&gt;&lt;/div&gt;
+        &lt;div&gt;&lt;/div&gt;
+        &lt;div&gt;&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;br&gt;
+&lt;div class="bny-card" style="width: 150px; height: 50px;" hx-get="/test/data/load.html" hx-trigger="load delay:3s"&gt;
+    &lt;div class="bny-load-rot"&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;br&gt;
+&lt;button class="bny-btn" onclick="load()"&gt;弹出加载&lt;/button&gt;
+&lt;script&gt;
+    function load() {
+        const load = bny.load() // 弹出加载
+        setTimeout(() =&gt; {
+            load.remove() // 移除加载
+        }, 3000)
+    }
+&lt;/script&gt;
+                </pre>
+            </div>
+        </div>
     </div>
 </div>
-<br>
-<div class="bny-card" style="width: 150px; height: 50px;" hx-get="/test/data/load.php" hx-trigger="load">
-    <div class="bny-load-rot"></div>
-</div>
-
-<button class="bny-btn" onclick="load()">弹出加载</button>
-
 <script>
     function load() {
         const load = bny.load()
