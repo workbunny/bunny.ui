@@ -1813,7 +1813,7 @@ p {
     }
 }[hx-ext~="bny-code"] {
     border-radius: var(--border-radius);
-    overflow: hidden;
+    overflow: auto;
     padding: var(--font-size);
     position: relative;
     white-space: unset;
