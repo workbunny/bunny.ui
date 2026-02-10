@@ -31,12 +31,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quick Start - Bunny-ui</title>
     <!-- bunny-ui 核心文件 -->
-    <link href="./bunny/iconfont/iconfont.css" rel="stylesheet" />
+    <link href="./bunny/bunny.css" rel="stylesheet" />
     <script src="./bunny/bunny.js"></script>
 </head>
 <body>
     <!-- Welcome to Bunny-ui -->
-    <button class="bny-btn" onclick="bunny.msg({text:'Hello World'})">Click me</button>
+    <button class="bny-btn" onclick="bny.alert('Hello World')">Click me</button>
 </body>
 </html>
 ```
