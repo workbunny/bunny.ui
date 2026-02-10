@@ -40,6 +40,7 @@
         &>.title {
             font-size: var(--font-size-18);
             font-weight: 600;
+            margin-top: 0;
             margin-bottom: 8px;
             overflow: hidden;
             white-space: nowrap;

@@ -1,39 +1,109 @@
-<h2>组件-选项卡</h2>
+<h1>组件-选项卡</h1>
+<hr>
+<blockquote class="bny-blockquote">
+    选项卡组件用于在多个内容区域之间进行切换。
+</blockquote>
+<h2>基础用法</h2>
+<div class="bny-card">
+    <div hx-ext="bny-tab">
+        <ul class="head">
+            <li>Preview</li>
+            <li>Code</li>
+        </ul>
+        <div class="body">
+            <div class="p-12">
+                <button class="bny-btn" hx-get="/test/data/tab01.html" hx-target="#tab01>.head"
+                    hx-swap="beforeend">添加选项卡</button>
 
-<button class="bny-btn" hx-get="/test/data/tab01.html" hx-target="#tab01>.head" hx-swap="beforeend">添加选项卡</button>
+                <div hx-ext="bny-tab" hx-trigger="mouseover" id="tab01" index="1">
+                    <ul class="head">
+                        <li closable>选项卡1</li>
+                        <li closable>选项卡2</li>
+                        <li closable>选项卡3</li>
+                    </ul>
+                    <div class="body">
+                        <div> 选项卡1的内容 </div>
+                        <div> 选项卡2的内容 </div>
+                        <div> 选项卡3的内容 </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <pre hx-ext="bny-code">
+&lt;button class=&quot;bny-btn&quot; hx-get=&quot;/test/data/tab01.html&quot; hx-target=&quot;#tab01&gt;.head&quot;
+    hx-swap=&quot;beforeend&quot;&gt;添加选项卡&lt;/button&gt;
 
-<div hx-ext="bny-tab" hx-trigger="mouseover" id="tab01" index="1">
-    <ul class="head">
-        <li closable>选项卡1</li>
-        <li closable>选项卡2</li>
-        <li closable>选项卡3</li>
-    </ul>
-    <div class="body">
-        <div> 选项卡1的内容 </div>
-        <div> 选项卡2的内容 </div>
-        <div> 选项卡3的内容 </div>
+&lt;div hx-ext=&quot;bny-tab&quot; hx-trigger=&quot;mouseover&quot; id=&quot;tab01&quot; index=&quot;1&quot;&gt;
+    &lt;ul class=&quot;head&quot;&gt;
+        &lt;li closable&gt;选项卡1&lt;/li&gt;
+        &lt;li closable&gt;选项卡2&lt;/li&gt;
+        &lt;li closable&gt;选项卡3&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;div class=&quot;body&quot;&gt;
+        &lt;div&gt; 选项卡1的内容 &lt;/div&gt;
+        &lt;div&gt; 选项卡2的内容 &lt;/div&gt;
+        &lt;div&gt; 选项卡3的内容 &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</pre>
+            </div>
+        </div>
     </div>
 </div>
-
-<br>
-
-<div hx-ext="bny-tab" mode="scroll" style="width: 400px;">
-    <ul class="head">
-        <li closable>选项卡11</li>
-        <li>选项卡22</li>
-        <li hx-get="/test/data/tab02body.html">选项卡33</li>
-        <li>选项卡44</li>
-        <li>选项卡55</li>
-        <li>选项卡66</li>
-        <li>选项卡77</li>
-    </ul>
-    <div class="body">
-        <div> 选项卡11的内容 </div>
-        <div> 选项卡22的内容 </div>
-        <div> 选项卡33的内容 </div>
-        <div> 选项卡44的内容 </div>
-        <div> 选项卡55的内容 </div>
-        <div> 选项卡66的内容 </div>
-        <div> 选项卡77的内容 </div>
+<h2>滚动模式</h2>
+<div class="bny-card">
+    <div hx-ext="bny-tab">
+        <ul class="head">
+            <li>Preview</li>
+            <li>Code</li>
+        </ul>
+        <div class="body">
+            <div class="p-12">
+                <div hx-ext="bny-tab" mode="scroll" style="width: 400px;">
+                    <ul class="head">
+                        <li closable>选项卡11</li>
+                        <li>选项卡22</li>
+                        <li hx-get="/test/data/tab02body.html">选项卡33</li>
+                        <li>选项卡44</li>
+                        <li>选项卡55</li>
+                        <li>选项卡66</li>
+                        <li>选项卡77</li>
+                    </ul>
+                    <div class="body">
+                        <div> 选项卡11的内容 </div>
+                        <div> 选项卡22的内容 </div>
+                        <div> 选项卡33的内容 </div>
+                        <div> 选项卡44的内容 </div>
+                        <div> 选项卡55的内容 </div>
+                        <div> 选项卡66的内容 </div>
+                        <div> 选项卡77的内容 </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <pre hx-ext="bny-code">
+&lt;div hx-ext=&quot;bny-tab&quot; mode=&quot;scroll&quot; style=&quot;width: 400px;&quot;&gt;
+    &lt;ul class=&quot;head&quot;&gt;
+        &lt;li closable&gt;选项卡11&lt;/li&gt;
+        &lt;li&gt;选项卡22&lt;/li&gt;
+        &lt;li hx-get=&quot;/test/data/tab02body.html&quot;&gt;选项卡33&lt;/li&gt;
+        &lt;li&gt;选项卡44&lt;/li&gt;
+        &lt;li&gt;选项卡55&lt;/li&gt;
+        &lt;li&gt;选项卡66&lt;/li&gt;
+        &lt;li&gt;选项卡77&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;div class=&quot;body&quot;&gt;
+        &lt;div&gt; 选项卡11的内容 &lt;/div&gt;
+        &lt;div&gt; 选项卡22的内容 &lt;/div&gt;
+        &lt;div&gt; 选项卡33的内容 &lt;/div&gt;
+        &lt;div&gt; 选项卡44的内容 &lt;/div&gt;
+        &lt;div&gt; 选项卡55的内容 &lt;/div&gt;
+        &lt;div&gt; 选项卡66的内容 &lt;/div&gt;
+        &lt;div&gt; 选项卡77的内容 &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+                </pre>
+            </div>
+        </div>
     </div>
 </div>

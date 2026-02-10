@@ -129,7 +129,8 @@ htmx.defineExtension('bny-tab', {
             // 处理头
             for (let i = 0; i < heads.length; i++) {
                 heads[i].setAttribute("hx-trigger", trigger)
-                if (heads[i].getAttribute("closable") !== null) {
+                if (heads[i].getAttribute("closable") !== null &&
+                    !heads[i].querySelector(":scope>i.icon-cuo")) {
                     addCloseBtn(heads[i])
                 }
                 // 处理给定元素及其子元素，连接任何htmx行为
@@ -162,7 +163,7 @@ htmx.defineExtension('bny-tab', {
                     const trigger = tab.getAttribute("hx-trigger") ?? "click";
                     evt.target.setAttribute("hx-trigger", trigger)
                     if (evt.target.getAttribute("closable") !== null &&
-                        !evt.target.querySelector("i.icon-cuo")) {
+                        !evt.target.querySelector(":scope>i.icon-cuo")) {
                         addCloseBtn(evt.target)
                     }
                     const body = document.createElement("div")
