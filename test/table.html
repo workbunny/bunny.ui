@@ -1,166 +1,140 @@
-<h2>样式</h2>
-
-<table hx-ext="bny-table">
-    <colgroup>
-        <col width="150">
-        <col width="150">
-        <col>
-    </colgroup>
-    <thead>
-        <tr>
-            <th>人物</th>
-            <th>民族</th>
-            <th>人生格言</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>孔子</td>
-            <td>华夏</td>
-            <td>有朋自远方来，不亦乐乎</td>
-        </tr>
-        <tr>
-            <td>孟子</td>
-            <td>华夏</td>
-            <td>穷则独善其身，达则兼济天下</td>
-        </tr>
-    </tbody>
-</table>
-<br>
-<table hx-ext="bny-table" color="green">
-    <colgroup>
-        <col width="150">
-        <col width="150">
-        <col>
-    </colgroup>
-    <thead>
-        <tr>
-            <th>人物</th>
-            <th>民族</th>
-            <th>格言</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>孔子</td>
-            <td>华夏</td>
-            <td>有朋自远方来，不亦乐乎</td>
-        </tr>
-        <tr>
-            <td>孟子</td>
-            <td>华夏</td>
-            <td>穷则独善其身，达则兼济天下</td>
-        </tr>
-    </tbody>
-</table>
-<br>
-<table hx-ext="bny-table" color="yellow">
-    <colgroup>
-        <col width="150">
-        <col width="150">
-        <col>
-    </colgroup>
-    <thead>
-        <tr>
-            <th>人物</th>
-            <th>民族</th>
-            <th>格言</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>孔子</td>
-            <td>华夏</td>
-            <td>有朋自远方来，不亦乐乎</td>
-        </tr>
-        <tr>
-            <td>孟子</td>
-            <td>华夏</td>
-            <td>穷则独善其身，达则兼济天下</td>
-        </tr>
-    </tbody>
-</table>
-<br>
-<table hx-ext="bny-table" color="red">
-    <colgroup>
-        <col width="150">
-        <col width="150">
-        <col>
-    </colgroup>
-    <thead>
-        <tr>
-            <th>人物</th>
-            <th>民族</th>
-            <th>格言</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>孔子</td>
-            <td>华夏</td>
-            <td>有朋自远方来，不亦乐乎</td>
-        </tr>
-        <tr>
-            <td>孟子</td>
-            <td>华夏</td>
-            <td>穷则独善其身，达则兼济天下</td>
-        </tr>
-    </tbody>
-</table>
-<br>
-<table hx-ext="bny-table" color="blue">
-    <colgroup>
-        <col width="150">
-        <col width="150">
-        <col>
-    </colgroup>
-    <thead>
-        <tr>
-            <th>人物</th>
-            <th>民族</th>
-            <th>人生格言</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>孔子</td>
-            <td>华夏</td>
-            <td>有朋自远方来，不亦乐乎</td>
-        </tr>
-        <tr>
-            <td>孟子</td>
-            <td>华夏</td>
-            <td>穷则独善其身，达则兼济天下</td>
-        </tr>
-    </tbody>
-</table>
-
-<h2>组件</h2>
-<table hx-ext="bny-table">
-    <colgroup>
-        <col width="150">
-        <col width="150">
-        <col>
-    </colgroup>
-    <thead>
-        <tr>
-            <th>人物</th>
-            <th>民族</th>
-            <th>人生格言</th>
-        </tr>
-    </thead>
-    <tbody id="table-body">
-        <tr>
-            <td>孔子</td>
-            <td>华夏</td>
-            <td>有朋自远方来，不亦乐乎</td>
-        </tr>
-        <tr>
-            <td>孟子</td>
-            <td>华夏</td>
-            <td>穷则独善其身，达则兼济天下</td>
-        </tr>
-    </tbody>
-</table>
-
-<button class="bny-btn" hx-get="/test/data/table.html" hx-target="#table-body" hx-swap="beforeend">加载更多...</button>
+<h1>样式</h1>
+<hr>
+<blockquote class="bny-blockquote">
+    表格是一种用于展示数据的结构化布局。
+</blockquote>
+<h2>基本表格</h2>
+<div hx-ext="bny-tab">
+    <ul class="head">
+        <li>Preview</li>
+        <li>Code</li>
+    </ul>
+    <div class="body">
+        <div class="p-12">
+            <table hx-ext="bny-table">
+                <colgroup>
+                    <col width="150">
+                    <col width="150">
+                    <col>
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>人物</th>
+                        <th>民族</th>
+                        <th>人生格言</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>孔子</td>
+                        <td>华夏</td>
+                        <td>有朋自远方来，不亦乐乎</td>
+                    </tr>
+                    <tr>
+                        <td>孟子</td>
+                        <td>华夏</td>
+                        <td>穷则独善其身，达则兼济天下</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div>
+            <pre hx-ext="bny-code">
+&lt;table hx-ext=&quot;bny-table&quot;&gt;
+    &lt;colgroup&gt;
+        &lt;col width=&quot;150&quot;&gt;
+        &lt;col width=&quot;150&quot;&gt;
+        &lt;col&gt;
+    &lt;/colgroup&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th&gt;人物&lt;/th&gt;
+            &lt;th&gt;民族&lt;/th&gt;
+            &lt;th&gt;人生格言&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;孔子&lt;/td&gt;
+            &lt;td&gt;华夏&lt;/td&gt;
+            &lt;td&gt;有朋自远方来，不亦乐乎&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;孟子&lt;/td&gt;
+            &lt;td&gt;华夏&lt;/td&gt;
+            &lt;td&gt;穷则独善其身，达则兼济天下&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;
+                </pre>
+        </div>
+    </div>
+</div>
+<h2>颜色</h2>
+<h3>绿色（green）-红色（red）-黄色（yellow）-蓝色（blue）</h3>
+<div hx-ext="bny-tab">
+    <ul class="head">
+        <li>Preview</li>
+        <li>Code</li>
+    </ul>
+    <div class="body">
+        <div class="p-12">
+            <table hx-ext="bny-table" color="green">
+                <colgroup>
+                    <col width="150">
+                    <col width="150">
+                    <col>
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>人物</th>
+                        <th>民族</th>
+                        <th>人生格言</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>孔子</td>
+                        <td>华夏</td>
+                        <td>有朋自远方来，不亦乐乎</td>
+                    </tr>
+                    <tr>
+                        <td>孟子</td>
+                        <td>华夏</td>
+                        <td>穷则独善其身，达则兼济天下</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div>
+            <pre hx-ext="bny-code">
+&lt;table hx-ext=&quot;bny-table&quot; color=&quot;green&quot;&gt;
+    &lt;colgroup&gt;
+        &lt;col width=&quot;150&quot;&gt;
+        &lt;col width=&quot;150&quot;&gt;
+        &lt;col&gt;
+    &lt;/colgroup&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th&gt;人物&lt;/th&gt;
+            &lt;th&gt;民族&lt;/th&gt;
+            &lt;th&gt;人生格言&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;孔子&lt;/td&gt;
+            &lt;td&gt;华夏&lt;/td&gt;
+            &lt;td&gt;有朋自远方来，不亦乐乎&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;孟子&lt;/td&gt;
+            &lt;td&gt;华夏&lt;/td&gt;
+            &lt;td&gt;穷则独善其身，达则兼济天下&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;
+                </pre>
+        </div>
+    </div>
+</div>
