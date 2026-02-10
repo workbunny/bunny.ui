@@ -10,6 +10,9 @@
         line-height: 1.5;
         white-space: pre;
         overflow: auto;
+        padding: 0;
+        margin: 0;
+        background: none;
     }
 
     &>.copy-btn {
@@ -35,4 +38,13 @@
     &:hover>.copy-btn {
         display: flex;
     }
+}
+
+code {
+    font-family: "Courier New", Consolas, "Lucida Console";
+    margin: 0px 2px;
+    padding: 2px 4px;
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+    background-color: var(--white-middle);
 }

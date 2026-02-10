@@ -60,7 +60,7 @@ window.bny = {
         return str.replace(escapeRegex, match => escapeMap[match]);
     },
     /**
-     * 检查元素是否有指定的扩展名
+     * 检查元素是否有指定的htmx扩展名
      * 
      * @param {HTMLElement} elt 元素
      * @param {String} ext 扩展名

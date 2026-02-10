@@ -140,12 +140,6 @@ body,
 div,
 ul,
 li,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
 p,
 dl,
 dt,
@@ -176,15 +170,6 @@ html,
 body {
     min-height: 100%;
     margin: 0 auto;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    font-weight: normal;
 }
 
 ul,
@@ -227,26 +212,36 @@ textarea {
 
 h1 {
     font-size: var(--font-size-32);
+    margin: 24px 0 18px 0;
 }
 
 h2 {
     font-size: var(--font-size-24);
+    margin: 20px 0 14px 0;
 }
 
 h3 {
     font-size: var(--font-size-20);
+    margin: 18px 0 12px 0;
 }
 
 h4 {
     font-size: var(--font-size-18);
+    margin: 16px 0 10px 0;
 }
 
 h5 {
     font-size: var(--font-size-16);
+    margin: 14px 0 8px 0;
 }
 
 h6 {
     font-size: var(--font-size);
+    margin: 12px 0 6px 0;
+}
+
+p {
+    margin: 8px 0;
 }
 
 /* 滚动条 */
