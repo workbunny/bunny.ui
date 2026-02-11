@@ -44,6 +44,7 @@ const cssFiles = [
   path.resolve(__dirname, 'src/css/load.css'),
   path.resolve(__dirname, 'src/css/table.css'),
   path.resolve(__dirname, 'src/css/tab.css'),
+  path.resolve(__dirname, 'src/css/form.css'),
   // 如需新增CSS文件，直接追加即可：
   // path.resolve(__dirname, 'src/css/style3.css'),
 ];
