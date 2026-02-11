@@ -8,7 +8,7 @@ htmx.defineExtension('bny-tab', {
          */
         function addMoveBtn(target) {
             // 添加滚动条
-            const head = target.querySelector(":scope>.head")
+            const head = bny.queryChild(target, ".head")
             head.classList.add("scrollbar")
             head.style.cssText = "padding: 0px 40px;"
             // 左移动按钮
@@ -74,17 +74,17 @@ htmx.defineExtension('bny-tab', {
                 if (closeBtn) {
                     const index = bny.indexOf(closeBtn.parentElement)
                     if (index === null) return
-                    const li = target.querySelector(":scope>.head>li:nth-child(" + (index + 1) + ")")
-                    const body = target.querySelector(":scope>.body>div:nth-child(" + (index + 1) + ")")
+                    const li = bny.queryChild(target, ".head>li:nth-child(" + (index + 1) + ")")
+                    const body = bny.queryChild(target, ".body>div:nth-child(" + (index + 1) + ")")
                     // 删除标签
                     li.remove()
                     body.remove()
                     // 切换下一个标签
                     if (li.classList.contains("this")) {
-                        const nextLi = target.querySelector(".head>li")
+                        const nextLi = bny.queryChild(target, ".head>li")
                         if (!nextLi) return
                         const nextIndex = bny.indexOf(nextLi)
-                        const nextBody = target.querySelector(".body>div:nth-child(" + (nextIndex + 1) + ")")
+                        const nextBody = bny.queryChild(target, ".body>div:nth-child(" + (nextIndex + 1) + ")")
                         htmx.addClass(nextLi, "this")
                         htmx.addClass(nextBody, "show")
                     }
@@ -93,13 +93,13 @@ htmx.defineExtension('bny-tab', {
                 // 点击左滑动
                 const leftBtn = e.target.closest("div.btn-left")
                 if (leftBtn) {
-                    const head = target.querySelector(":scope>.head")
+                    const head = bny.queryChild(target, ".head")
                     head.scrollBy({ left: -100, behavior: "smooth" })
                 }
                 // 点击右滑动
                 const rightBtn = e.target.closest("div.btn-right")
                 if (rightBtn) {
-                    const head = target.querySelector(":scope>.head")
+                    const head = bny.queryChild(target, ".head")
                     head.scrollBy({ left: 100, behavior: "smooth" })
                 }
             })
@@ -110,8 +110,8 @@ htmx.defineExtension('bny-tab', {
          * @param {HTMLElement} target 选项卡元素
          */
         function tabInit(target) {
-            const heads = target.querySelectorAll(".head>li");
-            const bodys = target.querySelectorAll(".body>div");
+            const heads = bny.queryChildAll(target, ".head>li");
+            const bodys = bny.queryChildAll(target, ".body>div");
             // 事件
             const trigger = target.getAttribute("hx-trigger") ?? "click";
             // 模式
@@ -122,7 +122,7 @@ htmx.defineExtension('bny-tab', {
             const addBody = heads.length - bodys.length
             for (let i = 0; i < addBody; i++) {
                 const body = document.createElement("div")
-                target.querySelector(":scope>.body").appendChild(body)
+                bny.queryChild(target, ".body").appendChild(body)
                 // 处理给定元素及其子元素，连接任何htmx行为
                 htmx.process(body)
             }
@@ -145,8 +145,8 @@ htmx.defineExtension('bny-tab', {
             // 其他点击事件
             onClicks(target)
             // 默认
-            if (target.querySelector(":scope>.head>li:nth-child(" + (index + 1) + ")")) {
-                htmx.trigger(target.querySelector(":scope>.head>li:nth-child(" + (index + 1) + ")"), trigger)
+            if (bny.queryChild(target, ".head>li:nth-child(" + (index + 1) + ")")) {
+                htmx.trigger(bny.queryChild(target, ".head>li:nth-child(" + (index + 1) + ")"), trigger)
             }
         }
 
@@ -163,13 +163,13 @@ htmx.defineExtension('bny-tab', {
                     const trigger = tab.getAttribute("hx-trigger") ?? "click";
                     evt.target.setAttribute("hx-trigger", trigger)
                     if (evt.target.getAttribute("closable") !== null &&
-                        !evt.target.querySelector(":scope>i.icon-cuo")) {
+                        !bny.queryChild(evt.target, "i.icon-cuo")) {
                         addCloseBtn(evt.target)
                     }
                     const body = document.createElement("div")
                     const index = bny.indexOf(evt.target)
-                    if (!tab.querySelector(":scope>.body>div:nth-child(" + (index + 1) + ")")) {
-                        tab.querySelector(":scope>.body").appendChild(body)
+                    if (!bny.queryChild(tab, ".body>div:nth-child(" + (index + 1) + ")")) {
+                        bny.queryChild(tab, ".body").appendChild(body)
                         // 处理给定元素及其子元素，连接任何htmx行为
                         htmx.process(body)
                     }
@@ -187,9 +187,11 @@ htmx.defineExtension('bny-tab', {
                         const tab = evt.target.parentElement.parentElement
                         const html = evt.detail.xhr.responseText
                         const index = bny.indexOf(evt.target)
-                        htmx.swap(tab.querySelector(":scope>.body>div:nth-child(" + (index + 1) + ")"), html, {
-                            swapStyle: "innerHTML"
-                        })
+                        htmx.swap(bny.queryChild(tab, ".body>div:nth-child(" + (index + 1) + ")"),
+                            html,
+                            {
+                                swapStyle: "innerHTML"
+                            })
                     }
                     liSwap(evt)
                     return false

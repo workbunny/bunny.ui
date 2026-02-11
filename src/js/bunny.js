@@ -1,5 +1,25 @@
 window.bny = {
     /**
+     * 查询子元素
+     * 
+     * @param {HTMLElement} elt 元素
+     * @param {String} cssSelector CSS选择器
+     * @returns {HTMLElement|null} 子元素
+     */
+    queryChild: function (elt, cssSelector) {
+        return elt.querySelector(":scope>" + cssSelector)
+    },
+    /**
+     * 查询所有子元素
+     * 
+     * @param {HTMLElement} elt 元素
+     * @param {String} cssSelector CSS选择器
+     * @returns {NodeList} 子元素数组
+     */
+    queryChildAll: function (elt, cssSelector) {
+        return elt.querySelectorAll(":scope>" + cssSelector)
+    },
+    /**
      * 获取元素在数组中的索引
      * 
      * @param {HTMLElement} elt 元素
