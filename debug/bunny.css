@@ -1423,6 +1423,9 @@ p {
     border: 2px solid var(--default);
     box-shadow: var(--box-shadow-005);
     transition: var(--transition);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 
     &:hover {
         cursor: pointer;
@@ -1500,8 +1503,29 @@ p {
         border-color: var(--red-shallow);
     }
 
-    /* 禁用 */
+    /* 边框 */
+    &[model~="border"] {
+        background-color: transparent;
+        color: var(--black);
+    }
 
+    &[model~="border"]:hover {
+        background-color: transparent;
+        color: var(--black-middle);
+    }
+
+    &[model~="border"]:active {
+        background-color: transparent;
+        color: var(--black-shallow);
+    }
+
+    /* 圆形 */
+    &[model~="circle"] {
+        border-radius: 50%;
+        padding: 4px;
+    }
+
+    /* 禁用 */
     &[disabled] {
         cursor: not-allowed;
         opacity: 0.5;
