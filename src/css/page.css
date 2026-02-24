@@ -12,8 +12,8 @@
 
 .bny-page {
     display: block;
-    border: 2px solid var(--default);
-    background-color: var(--white-shallow);
+    /* border: 2px solid var(--default); */
+    background-color: var(--white);
     max-width: 100%;
     max-height: 100%;
     z-index: 9999;
@@ -30,7 +30,7 @@
         justify-content: space-between;
         height: 50px;
         line-height: 50px;
-        border-bottom: 2px solid var(--default);
+        border-bottom: 1px solid var(--default-shallow);
 
         &:active {
             cursor: move;

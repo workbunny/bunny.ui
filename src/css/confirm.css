@@ -13,10 +13,9 @@
 .bny-confirm {
     width: 240px;
     max-width: calc(100vw - 32px);
-    border: 2px solid var(--default);
     padding: 8px 16px;
     border-radius: var(--border-radius);
-    background-color: var(--white-shallow);
+    background-color: var(--white);
     box-shadow: var(--box-shadow-005);
 
     &>.title {
