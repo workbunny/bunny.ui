@@ -180,3 +180,69 @@
         cursor: not-allowed;
     }
 }
+
+/* 滑块 */
+.bny-slider {
+    -webkit-appearance: none;
+    appearance: none;
+    background: var(--default-shallow);
+    border: none;
+    height: 6px;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+
+    &::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        border: none;
+        background: var(--default);
+        border-radius: 50%;
+        border: none;
+        transition: var(--transition);
+        width: 14px;
+        height: 14px;
+        box-shadow: var(--box-shadow-005);
+    }
+
+    &::-webkit-slider-thumb:hover {
+        transform: scale(1.1);
+    }
+
+    &::-moz-range-track {
+        background: var(--default-shallow);
+        border: none;
+        height: 6px;
+        border-radius: var(--border-radius);
+    }
+
+    &::-moz-range-thumb {
+        border: none;
+        background: var(--default);
+        border-radius: 50%;
+        border: none;
+        transition: var(--transition);
+        width: 14px;
+        height: 14px;
+        box-shadow: var(--box-shadow-005);
+    }
+
+    &::-moz-range-thumb:hover {
+        transform: scale(1.1);
+    }
+
+    &::-moz-range-thumb:active {
+        transform: scale(1.05);
+    }
+
+    &:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+    }
+
+    &:disabled::-moz-range-thumb {
+        background-color: var(--default-shallow);
+        box-shadow: none;
+        transform: none;
+        cursor: not-allowed;
+    }
+}

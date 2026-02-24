@@ -186,12 +186,11 @@ img {
 
 a {
     text-decoration: none;
-    color: var(--primary);
+    color: var(--default);
 }
 
 a:hover {
-    text-decoration-color: var(--success);
-    color: var(--primary-10);
+    text-decoration-color: var(--default-shallow);
 }
 
 table {
