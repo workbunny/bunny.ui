@@ -1,0 +1,562 @@
+<h1>栅格化布局</h1>
+<hr>
+<blockquote class="bny-blockquote">
+    栅格化布局是一种基于网格系统的布局方式，采用 <code>CSS</code> 原生 <code>grid</code> 布局封装，提供了简单易用的栅格系统。适配不同屏幕尺寸，提供了响应式布局。预设了 12
+    列栅格系统，可根据需要自定义列数。
+</blockquote>
+<h2>示例</h2>
+<blockquote class="bny-blockquote">
+    贴士：以下示例中的 <code>背景色</code> 仅仅只是为了让布局效果显得更加直观，实际使用时并不需要背景色。
+</blockquote>
+<style>
+    .demo-box {
+        background-color: var(--gray-middle);
+        width: 100%;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: var(--white);
+    }
+</style>
+<h2>布局容器</h2>
+<p>一个带有 <code>class="bny-container"</code> 的特定容器中，实现响应可控的布局。</p>
+<div class="bny-container">
+    <div class="demo-box">
+        .bny-container
+    </div>
+</div>
+<h3>Code</h3>
+<pre hx-ext="bny-code">
+/* 超小屏幕（768px 以下） */
+@media screen and (max-width: 767.98px){...}
+/* 中等屏幕（768px 及以上） */
+@media screen and (min-width: 768px) {...}
+/* 大屏幕（992px 及以上） */
+@media screen and (min-width: 992px) {...}
+/* 超大屏幕（1200px 及以上） */
+@media screen and (min-width: 1200px) {...}
+/* 超超大屏幕（1400px 及以上） */
+@media screen and (min-width: 1400px) {...}
+</pre>
+<h2>grid布局</h2>
+<p>一个带有 <code>class="bny-grid"</code> 的特定容器中，实现等比例水平排列的布局。</p>
+<h3>基础</h3>
+<p>始终等比例水平排列:</p>
+<div hx-ext="bny-tab">
+    <ul class="head">
+        <li>Preview</li>
+        <li>Code</li>
+    </ul>
+    <div class="body">
+        <div class="p-12">
+            <div class="bny-grid" gap>
+                <div class="col-xs6 demo-box">
+                    6/12
+                </div>
+                <div class="col-xs6 demo-box">
+                    6/12
+                </div>
+                <div class="col-xs3 demo-box">
+                    3/12
+                </div>
+                <div class="col-xs3 demo-box">
+                    3/12
+                </div>
+                <div class="col-xs3 demo-box">
+                    3/12
+                </div>
+                <div class="col-xs3 demo-box">
+                    3/12
+                </div>
+            </div>
+        </div>
+        <div>
+            <pre hx-ext="bny-code">
+&lt;div class=&quot;bny-grid&quot; gap&gt;
+    &lt;div class=&quot;col-xs6&quot;&gt;
+        6/12
+    &lt;/div&gt;
+    &lt;div class=&quot;col-xs6&quot;&gt;
+        6/12
+    &lt;/div&gt;
+    &lt;div class=&quot;col-xs3&quot;&gt;
+        3/12
+    &lt;/div&gt;
+    &lt;div class=&quot;col-xs3&quot;&gt;
+        3/12
+    &lt;/div&gt;
+    &lt;div class=&quot;col-xs3&quot;&gt;
+        3/12
+    &lt;/div&gt;
+    &lt;div class=&quot;col-xs3&quot;&gt;
+        3/12
+    &lt;/div&gt;
+&lt;/div&gt;
+            </pre>
+        </div>
+    </div>
+</div>
+<p>移动设备、桌面端的组合响应式展现：</p>
+<div hx-ext="bny-tab">
+    <ul class="head">
+        <li>Preview</li>
+        <li>Code</li>
+    </ul>
+    <div class="body">
+        <div class="p-12">
+            <div class="bny-grid" gap>
+                <div class="col-xs12 col-md8 demo-box">
+                    xs:12, md: 8/12
+                </div>
+                <div class="col-xs6 col-md4 demo-box">
+                    xs:6/12, md: 4/12
+                </div>
+                <div class="col-xs6 col-md12 demo-box">
+                    xs:6/12, md: 12
+                </div>
+            </div>
+        </div>
+        <div>
+            <pre hx-ext="bny-code">
+&lt;div class=&quot;bny-grid&quot; gap&gt;
+    &lt;div class=&quot;col-xs12 col-md8&quot;&gt;
+        xs:12, md: 8/12
+    &lt;/div&gt;
+    &lt;div class=&quot;col-xs6 col-md4&quot;&gt;
+        xs:6/12, md: 4/12
+    &lt;/div&gt;
+    &lt;div class=&quot;col-xs6 col-md12&quot;&gt;
+        xs:6/12, md: 12
+    &lt;/div&gt;
+&lt;/div&gt;
+            </pre>
+        </div>
+    </div>
+</div>
+<p>移动设备、平板、桌面端的复杂组合响应式展现：</p>
+<div hx-ext="bny-tab">
+    <ul class="head">
+        <li>Preview</li>
+        <li>Code</li>
+    </ul>
+    <div class="body">
+        <div class="p-12">
+            <div class="bny-grid" gap>
+                <div class="col-xs6 col-sm6 col-md4 demo-box">
+                    xs6, sm: 6/12, md: 4/12
+                </div>
+                <div class="col-xs6 col-sm6 col-md4 demo-box">
+                    xs:6/12, sm: 6/12, md: 4/12
+                </div>
+                <div class="col-xs4 col-sm12 col-md4 demo-box">
+                    xs:4/12, sm: 12/12, md: 4/12
+                </div>
+                <div class="col-xs4 col-sm7 col-md8 demo-box">
+                    xs:4/12, sm: 7/12, md: 8/12
+                </div>
+                <div class="col-xs4 col-sm5 col-md4 demo-box">
+                    xs:4/12, sm: 5/12, md: 4/12
+                </div>
+            </div>
+        </div>
+        <div>
+            <pre hx-ext="bny-code">
+&lt;div class=&quot;bny-grid&quot; gap&gt;
+    &lt;div class=&quot;col-xs6 col-sm6 col-md4&quot;&gt;
+        xs6, sm: 6/12, md: 4/12
+    &lt;/div&gt;
+    &lt;div class=&quot;col-xs6 col-sm6 col-md4&quot;&gt;
+        xs:6/12, sm: 6/12, md: 4/12
+    &lt;/div&gt;
+    &lt;div class=&quot;col-xs4 col-sm12 col-md4&quot;&gt;
+        xs:4/12, sm: 12/12, md: 4/12
+    &lt;/div&gt;
+    &lt;div class=&quot;col-xs4 col-sm7 col-md8&quot;&gt;
+        xs:4/12, sm: 7/12, md: 8/12
+    &lt;/div&gt;
+    &lt;div class=&quot;col-xs4 col-sm5 col-md4&quot;&gt;
+        xs:4/12, sm: 5/12, md: 4/12
+    &lt;/div&gt;
+&lt;/div&gt;
+            </pre>
+        </div>
+    </div>
+</div>
+<p>无间隔布局, 不添加 <code>gap</code> 属性 即可:</p>
+<div hx-ext="bny-tab">
+    <ul class="head">
+        <li>Preview</li>
+        <li>Code</li>
+    </ul>
+    <div class="body">
+        <div class="p-12">
+            <div class="bny-grid">
+                <div class="col-xs4 demo-box">
+                    4/12
+                </div>
+                <div class="col-xs4 demo-box">
+                    4/12
+                </div>
+                <div class="col-xs4 demo-box">
+                    4/12
+                </div>
+                <div class="col-xs4 demo-box">
+                    4/12
+                </div>
+            </div>
+        </div>
+        <div>
+            <pre hx-ext="bny-code">
+&lt;div class=&quot;bny-grid&quot;&gt;
+    &lt;div class=&quot;col-xs4&quot;&gt;
+        4/12
+    &lt;/div&gt;
+    &lt;div class=&quot;col-xs4&quot;&gt;
+        4/12
+    &lt;/div&gt;
+    &lt;div class=&quot;col-xs4&quot;&gt;
+        4/12
+    &lt;/div&gt;
+    &lt;div class=&quot;col-xs4&quot;&gt;
+        4/12
+    &lt;/div&gt;
+&lt;/div&gt;
+            </pre>
+        </div>
+    </div>
+</div>
+<p>列偏移(偏移时要注意不要超出网格范围，而且计算自身占用格子数。):</p>
+<div hx-ext="bny-tab">
+    <ul class="head">
+        <li>Preview</li>
+        <li>Code</li>
+    </ul>
+    <div class="body">
+        <div class="p-12">
+            <div class="bny-grid" gap>
+                <div class="col-xs1 demo-box">
+                    1/12
+                </div>
+                <div class="col-xs1 demo-box">
+                    1/12
+                </div>
+                <div class="col-xs1 demo-box">
+                    1/12
+                </div>
+                <div class="col-xs1 demo-box">
+                    1/12
+                </div>
+                <div class="col-xs1 demo-box">
+                    1/12
+                </div>
+                <div class="col-xs1 demo-box">
+                    1/12
+                </div>
+                <div class="col-xs1 demo-box">
+                    1/12
+                </div>
+                <div class="col-xs1 demo-box">
+                    1/12
+                </div>
+                <div class="col-xs1 demo-box">
+                    1/12
+                </div>
+                <div class="col-xs1 demo-box">
+                    1/12
+                </div>
+                <div class="col-xs1 demo-box">
+                    1/12
+                </div>
+                <div class="col-xs1 demo-box">
+                    1/12
+                </div>
+                <!-- 偏移 -->
+                <div class="col-xs4 demo-box">
+                    4/12
+                </div>
+                <div class="col-xs4 col-xs-offset12 demo-box">
+                    4/12 偏移到第12个格子
+                </div>
+                <div class="col-xs3 col-xs-offset6 demo-box">
+                    3/12 偏移到第6个格子
+                </div>
+                <div class="col-xs3 demo-box">
+                    3/12 不偏移
+                </div>
+            </div>
+        </div>
+        <div>
+            <pre hx-ext="bny-code">
+&lt;div class=&quot;bny-grid&quot; gap&gt;
+    &lt;div class=&quot;col-1 demo-box&quot;&gt;
+        1/12
+    &lt;/div&gt;
+    &lt;div class=&quot;col-1 demo-box&quot;&gt;
+        1/12
+    &lt;/div&gt;
+    &lt;div class=&quot;col-1 demo-box&quot;&gt;
+        1/12
+    &lt;/div&gt;
+    &lt;div class=&quot;col-1 demo-box&quot;&gt;
+        1/12
+    &lt;/div&gt;
+    &lt;div class=&quot;col-1 demo-box&quot;&gt;
+        1/12
+    &lt;/div&gt;
+    &lt;div class=&quot;col-1 demo-box&quot;&gt;
+        1/12
+    &lt;/div&gt;
+    &lt;div class=&quot;col-1 demo-box&quot;&gt;
+        1/12
+    &lt;/div&gt;
+    &lt;div class=&quot;col-1 demo-box&quot;&gt;
+        1/12
+    &lt;/div&gt;
+    &lt;div class=&quot;col-1 demo-box&quot;&gt;
+        1/12
+    &lt;/div&gt;
+    &lt;div class=&quot;col-1 demo-box&quot;&gt;
+        1/12
+    &lt;/div&gt;
+    &lt;div class=&quot;col-1 demo-box&quot;&gt;
+        1/12
+    &lt;/div&gt;
+    &lt;div class=&quot;col-1 demo-box&quot;&gt;
+        1/12
+    &lt;/div&gt;
+    &lt;!-- 偏移 --&gt;
+    &lt;div class=&quot;col-4 demo-box&quot;&gt;
+        4/12
+    &lt;/div&gt;
+    &lt;div class=&quot;col-4 col-offset12 demo-box&quot;&gt;
+        4/12 偏移到第12个格子
+    &lt;/div&gt;
+    &lt;div class=&quot;col-3 col-offset6 demo-box&quot;&gt;
+        3/12 偏移到第6个格子
+    &lt;/div&gt;
+    &lt;div class=&quot;col-3 demo-box&quot;&gt;
+        3/12 不偏移
+    &lt;/div&gt;
+&lt;/div&gt;
+            </pre>
+        </div>
+    </div>
+</div>
+<p>栅格嵌套:</p>
+<div hx-ext="bny-tab">
+    <ul class="head">
+        <li>Preview</li>
+        <li>Code</li>
+    </ul>
+    <div class="body">
+        <div class="p-12">
+            <div class="bny-grid" gap>
+                <div class="col-xs6 p-12" style="background: var(--gray-shallow);">
+                    <div class="bny-grid" gap>
+                        <div class="col-xs3 demo-box">
+                            内部列
+                        </div>
+                        <div class="col-xs9 demo-box">
+                            内部列
+                        </div>
+                        <div class="col-xs12 demo-box">
+                            内部列
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs6 p-12" style="background: var(--gray-shallow);">
+                    <div class="bny-grid" gap>
+                        <div class="col-xs12 demo-box">
+                            内部列
+                        </div>
+                        <div class="col-xs3 demo-box">
+                            内部列
+                        </div>
+                        <div class="col-xs9 demo-box">
+                            内部列
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <pre hx-ext="bny-code">
+&lt;div class=&quot;bny-grid&quot; gap&gt;
+    &lt;div class=&quot;col-xs6&quot; &gt;
+        &lt;div class=&quot;bny-grid&quot; gap&gt;
+            &lt;div class=&quot;col-xs3&quot;&gt;
+                内部列
+            &lt;/div&gt;
+            &lt;div class=&quot;col-xs9&quot;&gt;
+                内部列
+            &lt;/div&gt;
+            &lt;div class=&quot;col-xs12&quot;&gt;
+                内部列
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;col-xs6&quot; &gt;
+        &lt;div class=&quot;bny-grid&quot; gap&gt;
+            &lt;div class=&quot;col-xs12&quot;&gt;
+                内部列
+            &lt;/div&gt;
+            &lt;div class=&quot;col-xs3&quot;&gt;
+                内部列
+            &lt;/div&gt;
+            &lt;div class=&quot;col-xs9&quot;&gt;
+                内部列
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+            </pre>
+        </div>
+    </div>
+</div>
+<h3>栅格布局规则</h3>
+<table hx-ext="bny-table">
+    <colgroup>
+        <col width="50">
+        <col align="left">
+    </colgroup>
+    <thead>
+        <tr>
+            <th>规则</th>
+            <th>说明</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>1.</td>
+            <td>采用 <code>bny-grid</code> 来定义网格，如：&lt;div class="bny-grid"&gt;&lt;/div&gt;</td>
+        </tr>
+        <tr>
+            <td>2.</td>
+            <td>采用 <code>col-md*</code> 来定义(column)列，且放在 grid 内。<br>其中 变量<code>md</code>代表不同屏幕的标记；<br> 变量 <code>*</code>
+                代表列的宽度，范围从 1 到 12。</td>
+        </tr>
+        <tr>
+            <td>3.</td>
+            <td>列可以同时出现最多 5 种不同的组合，分别是：xs / sm / md / lg / xl ，以在不同尺寸屏幕下进行自动适配。</td>
+        </tr>
+        <tr>
+            <td>4.</td>
+            <td>可对列追加<code>col-md-offset3</code> 这样的预设类来定义列的间距和偏移。</td>
+        </tr>
+        <tr>
+            <td>5.</td>
+            <td>最后，在列（column）元素中放入你自己的任意元素填充内容，完成布局！</td>
+        </tr>
+    </tbody>
+</table>
+<h3>响应式规则</h3>
+<p>栅格的响应式能力，得益于 <code>CSS3</code> 媒体查询 <code>（Media Queries）</code> ，针对不同尺寸的屏幕进行相应的适配处理。</p>
+<table hx-ext="bny-table">
+    <colgroup>
+        <col width="160">
+    </colgroup>
+    <thead>
+        <tr>
+            <th></th>
+            <th>超小屏幕<br>(手机&lt;768px)</th>
+            <th>小屏幕<br>(平板≥768px)</th>
+            <th>中等屏幕<br>(桌面≥992px)</th>
+            <th>大型屏幕<br>(桌面≥1200px)</th>
+            <th>超大屏幕<br>(桌面≥1400px)</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><em>bny-container</em></td>
+            <td>auto</td>
+            <td>750px</td>
+            <td>970px</td>
+            <td>1170px</td>
+            <td>1330px</td>
+        </tr>
+        <tr>
+            <td>标记</td>
+            <td>xs</td>
+            <td>sm</td>
+            <td>md</td>
+            <td>lg</td>
+            <td>xl</td>
+        </tr>
+        <tr>
+            <td>列对应类</td>
+            <td>col-xs*</td>
+            <td>col-sm*</td>
+            <td>col-md*</td>
+            <td>col-lg*</td>
+            <td>col-xl*</td>
+        </tr>
+        <tr>
+            <td>总列数</td>
+            <td colspan="5">12</td>
+        </tr>
+        <tr>
+            <td>响应行为</td>
+            <td>始终按比例水平排列</td>
+            <td colspan="4">在当前屏幕下水平排列，如果屏幕大小低于临界值则堆叠排列</td>
+        </tr>
+    </tbody>
+</table>
+<h3>响应式公共类</h3>
+<table hx-ext="bny-table">
+    <colgroup>
+        <col width="150">
+        <col>
+    </colgroup>
+    <thead>
+        <tr>
+            <th>类名（class）</th>
+            <th>说明</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>show-*-block</td>
+            <td>定义不同设备下的 display: block; * 可选值有：xs、sm、md、lg、xl</td>
+        </tr>
+        <tr>
+            <td>show-*-inline</td>
+            <td>定义不同设备下的 display: inline; * 可选值同上</td>
+        </tr>
+        <tr>
+            <td>show-*-inline-block</td>
+            <td>定义不同设备下的 display: inline-block; * 可选值同上</td>
+        </tr>
+        <tr>
+            <td>hide-*</td>
+            <td>定义不同设备下的隐藏类，即： display: none; * 可选值同上</td>
+        </tr>
+    </tbody>
+</table>
+<h3>网格<code>class="bny-grid"的属性</code></h3>
+<table hx-ext="bny-table">
+    <colgroup>
+        <col width="150">
+        <col>
+    </colgroup>
+    <thead>
+        <tr>
+            <th>属性名</th>
+            <th>说明</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>gap</td>
+            <td>定义网格之间的间距，默认值为 8px。不填写则不添加间距。 可填写 10、12、14、18、22、26</td>
+        </tr>
+        <tr>
+            <td>column-gap</td>
+            <td>定义网格列之间的间距，默认值为 8px。不填写则不添加间距。 可填写 10、12、14、18、22、26</td>
+        </tr>
+        <tr>
+            <td>row-gap</td>
+            <td>定义网格行之间的间距，默认值为 8px。不填写则不添加间距。 可填写 10、12、14、18、22、26</td>
+        </tr>
+    </tbody>
+</table>
