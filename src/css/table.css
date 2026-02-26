@@ -92,6 +92,7 @@ table[hx-ext~="bny-table"] {
                 overflow: hidden;
                 text-overflow: ellipsis;
                 background-color: var(--default);
+                height: stretch;
             }
         }
 
@@ -111,7 +112,7 @@ table[hx-ext~="bny-table"] {
             background-color: var(--blue);
         }
 
-        & tbody tr:hover td{
+        & tbody tr:hover td {
             color: var(--black);
         }
     }
