@@ -1,7 +1,6 @@
 table[hx-ext~="bny-table"] {
     width: 100%;
     border-collapse: collapse;
-    text-align: center;
     box-shadow: var(--box-shadow-005);
     border-radius: var(--border-radius);
     overflow: hidden;
