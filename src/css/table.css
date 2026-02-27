@@ -74,7 +74,6 @@ table[hx-ext~="bny-table"] {
             display: flex;
             border-bottom: none;
             position: relative;
-            gap: 12px;
             align-items: center;
             padding: 0;
             padding-right: 15px;
@@ -93,6 +92,7 @@ table[hx-ext~="bny-table"] {
                 text-overflow: ellipsis;
                 background-color: var(--default);
                 height: stretch;
+                margin-right: 12px;
             }
         }
 
