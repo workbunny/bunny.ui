@@ -262,7 +262,7 @@ p {
 /* 公共样式 */
 
 /* 间隔 */
-/* padding */
+/* 内边距 */
 .p-12 {
     padding: 12px;
 }
@@ -275,7 +275,7 @@ p {
     padding: 36px;
 }
 
-/* margin */
+/* 外边距 */
 .m-12 {
     margin: 12px;
 }
@@ -286,6 +286,56 @@ p {
 
 .m-36 {
     margin: 36px;
+}
+
+/* 清除浮动 */
+.clearfix {
+    zoom: 1;
+}
+
+/* 清除浮动 */
+.clearfix:after {
+    content: ".";
+    width: 0;
+    height: 0;
+    visibility: hidden;
+    display: block;
+    clear: both;
+    overflow: hidden;
+}
+
+/* 浮动 */
+.fl {
+    float: left
+}
+
+.fr {
+    float: right
+}
+
+/* 文本对齐 */
+.tl {
+    text-align: left;
+}
+
+.tc {
+    text-align: center
+}
+
+.tr {
+    text-align: right;
+}
+
+/* 省略号 */
+.ellipse {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* 行内块 */
+.inline {
+    display: inline-block;
 }/* ------------ 字体颜色 ------------- */
 
 /* 绿色 */
