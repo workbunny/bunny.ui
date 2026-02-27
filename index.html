@@ -18,6 +18,27 @@
         margin: 0 auto;
         max-width: 1024px;
     }
+
+    #tab-load {
+        text-align: center;
+    }
+
+    .htmx-indicator {
+        display: none;
+        transition: all 0.3s ease-in-out;
+        visibility: hidden;
+        opacity: 0;
+    }
+
+    .htmx-request .htmx-indicator {
+        display: inline;
+        visibility: visible;
+    }
+
+    .htmx-request.htmx-indicator {
+        display: inline;
+        visibility: visible;
+    }
 </style>
 
 <body>
@@ -33,8 +54,7 @@
         <p>现代化浏览器，无需额外配置</p>
         <span>🐇 HTMX 拓展 Web UI 组件库. 🐇</span>
     </center>
-
-    <div hx-ext="bny-tab" mode="scroll">
+    <div hx-ext="bny-tab" mode="scroll" hx-indicator="#tab-load">
         <ul class="head">
             <li hx-get="/test/button.html">样式-按钮</li>
             <li hx-get="/test/tag.html">样式-标签</li>
@@ -56,6 +76,11 @@
             <li hx-get="/test/tab.html">组件-选项卡</li>
             <li hx-get="/test/js.html">JS-API</li>
         </ul>
+        <div id="tab-load">
+            <div class="htmx-indicator">
+                <div class="bny-load"></div>
+            </div>
+        </div>
         <div class="body">
         </div>
     </div>
