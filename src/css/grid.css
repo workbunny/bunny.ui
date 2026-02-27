@@ -28,9 +28,9 @@
     }
 }
 
-.bny-grid {
+.bny-row {
     display: grid;
-    grid-template-columns: repeat(12, 1fr);
+    grid-template-columns: repeat(12, minmax(0, 1fr));
     max-width: 100%;
 
     /* 网格间距 */
@@ -217,7 +217,7 @@
 
 /* 超小屏幕（768px 以下） */
 @media screen and (max-width: 767.98px) {
-    .bny-grid {
+    .bny-row {
         & .hidden-xs {
             display: none;
         }
@@ -239,7 +239,7 @@
 
 /* 中等屏幕（768px 及以上） */
 @media screen and (min-width: 768px) {
-    .bny-grid {
+    .bny-row {
 
         & .col-sm1 {
             grid-column: span 1;
@@ -357,7 +357,7 @@
 
 /* 大屏幕（992px 及以上） */
 @media screen and (min-width: 992px) {
-    .bny-grid {
+    .bny-row {
 
         & .col-md1 {
             grid-column: span 1;
@@ -475,7 +475,7 @@
 
 /* 超大屏幕（1200px 及以上） */
 @media screen and (min-width: 1200px) {
-    .bny-grid {
+    .bny-row {
         & .col-lg1 {
             grid-column: span 1;
         }
@@ -592,7 +592,7 @@
 
 /* 超超大屏幕（1400px 及以上） */
 @media screen and (min-width: 1400px) {
-    .bny-grid {
+    .bny-row {
         & .col-xl1 {
             grid-column: span 1;
         }
