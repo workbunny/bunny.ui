@@ -308,9 +308,14 @@ p {
     color: var(--red);
 }
 
-/* 灰色 */
-.text-gray {
-    color: var(--gray);
+/* 黑色 */
+.text-black {
+    color: var(--black-common);
+}
+
+/* 白色 */
+.text-white {
+    color: var(--white-common);
 }
 
 /* ------------ 背景颜色 ------------- */
@@ -335,9 +340,14 @@ p {
     background-color: var(--red);
 }
 
-/* 灰色 */
-.bg-gray {
-    background-color: var(--gray);
+/* 黑色 */
+.bg-black {
+    background-color: var(--black-common);
+}
+
+/* 白色 */
+.bg-white {
+    background-color: var(--white-common);
 }/* 动画 */
 .bny-anim-scale {
     /* 放大 */
