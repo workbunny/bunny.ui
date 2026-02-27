@@ -2,54 +2,54 @@ html {
     /* 颜色 */
 
     /* 默认 黑色 主色调 */
-    --default: #2d2d2d;
-    --default-middle: #5a5a5a;
-    --default-shallow: #8a8a8a;
+    --default: #1a1a1a;
+    --default-middle: #404040;
+    --default-shallow: #707070;
 
     /* 绿色 */
-    --green: #1e8449;
-    --green-middle: #52be80;
-    --green-shallow: #abebc6;
+    --green: #145a32;
+    --green-middle: #27ae60;
+    --green-shallow: #82e0aa;
 
     /* 蓝色 */
-    --blue: #1f618d;
-    --blue-middle: #5499c7;
-    --blue-shallow: #aed6f1;
+    --blue: #154360;
+    --blue-middle: #2980b9;
+    --blue-shallow: #85c1e9;
 
     /* 黄色 */
-    --yellow: #d68910;
-    --yellow-middle: #f5b041;
-    --yellow-shallow: #f9e79f;
+    --yellow: #b7950b;
+    --yellow-middle: #f39c12;
+    --yellow-shallow: #fde3a7;
 
     /* 红色 */
-    --red: #922b21;
-    --red-middle: #e74c3c;
-    --red-shallow: #f5b7b1;
+    --red: #78281f;
+    --red-middle: #c0392b;
+    --red-shallow: #f1948a;
 
     /* 灰色 */
-    --gray: #424949;
-    --gray-middle: #a0aeb0;
-    --gray-shallow: #eaecee;
+    --gray: #34495e;
+    --gray-middle: #7f8c8d;
+    --gray-shallow: #ecf0f1;
 
     /* 白色 */
-    --white: #f5f5f5;
-    --white-middle: #dcdcdc;
-    --white-shallow: #efefef;
+    --white: #ffffff;
+    --white-middle: #e0e0e0;
+    --white-shallow: #f8f8f8;
 
     /* 黑色 */
-    --black: #676767;
-    --black-middle: #555555;
-    --black-shallow: #a9a9a9;
+    --black: #333333;
+    --black-middle: #444444;
+    --black-shallow: #666666;
 
     /* 常白色 */
-    --white-common: #f5f5f5;
-    --white-common-middle: #dcdcdc;
-    --white-common-shallow: #efefef;
+    --white-common: #ffffff;
+    --white-common-middle: #e0e0e0;
+    --white-common-shallow: #f8f8f8;
 
     /* 常黑色 */
-    --black-common: #676767;
-    --black-common-middle: #555555;
-    --black-common-shallow: #a9a9a9;
+    --black-common: #333333;
+    --black-common-middle: #444444;
+    --black-common-shallow: #666666;
 
     /* 字体大小 */
     --font-size: 14px;
@@ -102,12 +102,41 @@ html {
 
 /* 暗黑模式 */
 html.dark {
-    --white: #676767;
-    --white-middle: #555555;
-    --white-shallow: #454545;
-    --black: #f5f5f5;
-    --black-middle: #dcdcdc;
-    --black-shallow: #efefef;
+    --white: #2c2c2c;
+    --white-middle: #3a3a3a;
+    --white-shallow: #4a4a4a;
+    --black: #f8f8f8;
+    --black-middle: #e0e0e0;
+    --black-shallow: #c0c0c0;
+    
+    /* 暗黑模式下的其他颜色调整 */
+    --green: #27ae60;
+    --green-middle: #52be80;
+    --green-shallow: #82e0aa;
+    
+    --blue: #2980b9;
+    --blue-middle: #5499c7;
+    --blue-shallow: #85c1e9;
+    
+    --yellow: #f39c12;
+    --yellow-middle: #f5b041;
+    --yellow-shallow: #fde3a7;
+    
+    --red: #c0392b;
+    --red-middle: #e74c3c;
+    --red-shallow: #f1948a;
+    
+    --gray: #7f8c8d;
+    --gray-middle: #95a5a6;
+    --gray-shallow: #bdc3c7;
+    
+    --white-common: #f8f8f8;
+    --white-common-middle: #e0e0e0;
+    --white-common-shallow: #c0c0c0;
+    
+    --black-common: #2c2c2c;
+    --black-common-middle: #3a3a3a;
+    --black-common-shallow: #4a4a4a;
 }
 
 html.dark::view-transition-old(*) {
