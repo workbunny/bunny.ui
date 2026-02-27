@@ -1,7 +1,7 @@
 html {
     /* 颜色 */
 
-    /* 默认 黑灰色 主色调 */
+    /* 默认 摩卡灰棕色 主色调 */
     --default: #60544f;
     --default-middle: #8d7f71;
     --default-shallow: #9d907f;
@@ -129,14 +129,6 @@ html.dark {
     --gray: #7f8c8d;
     --gray-middle: #95a5a6;
     --gray-shallow: #bdc3c7;
-    
-    --white-common: #f8f8f8;
-    --white-common-middle: #e0e0e0;
-    --white-common-shallow: #c0c0c0;
-    
-    --black-common: #2c2c2c;
-    --black-common-middle: #3a3a3a;
-    --black-common-shallow: #4a4a4a;
 }
 
 html.dark::view-transition-old(*) {
