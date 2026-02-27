@@ -4449,7 +4449,7 @@
         function switchTab(li) {
           if (li) {
             let lis = li.parentElement.children;
-            let bodys = li.parentElement.nextElementSibling.children;
+            let bodys = li.parentElement.parentElement.querySelector(".body").children;
             let index = bny.indexOf(li);
             bny.removeClass(lis, "this");
             bny.removeClass(bodys, "show");

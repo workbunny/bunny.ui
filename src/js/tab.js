@@ -47,7 +47,7 @@ htmx.defineExtension('bny-tab', {
                     // 获取所有的 li 元素
                     let lis = li.parentElement.children
                     // 获取所有的 body 元素
-                    let bodys = li.parentElement.nextElementSibling.children
+                    let bodys = li.parentElement.parentElement.querySelector(".body").children
                     let index = bny.indexOf(li)
                     // 切换标签
                     bny.removeClass(lis, "this")
