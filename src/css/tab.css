@@ -17,10 +17,10 @@
         border: 1px solid var(--default-shallow);
         border-radius: var(--border-radius);
         box-shadow: var(--box-shadow-005);
-        transition: var(--transition);
 
         & i {
             font-size: var(--font-size-24);
+            transition: var(--transition);
         }
 
         &:hover {
@@ -40,7 +40,7 @@
 
     &>.btn-left:active i,
     &>.btn-right:active i {
-        transform: scale(0.9);
+        transform: scale(0.8);
     }
 
     &>.head {
