@@ -13,7 +13,6 @@ htmx.defineExtension('bny-collapse', {
                             .parentElement
                             .parentElement
                             .getAttribute('mode') === 'accordion'
-
                         if (accordion) {
                             const isShow = item.classList.contains('show')
                             bny.removeClass(item
