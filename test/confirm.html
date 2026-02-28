@@ -11,12 +11,14 @@
             <li>Code</li>
         </ul>
         <div class="body">
-            <div class="p-12">
-                <div class="bny-confirm">
-                    <h3 class="title">提示</h3>
-                    <p class="content">确认删除吗？</p>
-                    <div class="btn">
-                        <button class="bny-btn" color="blue">确认</button><button class="bny-btn">取消</button>
+            <div>
+                <div class="p-12">
+                    <div class="bny-confirm">
+                        <h3 class="title">提示</h3>
+                        <p class="content">确认删除吗？</p>
+                        <div class="btn">
+                            <button class="bny-btn" color="blue">确认</button><button class="bny-btn">取消</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -42,13 +44,15 @@
             <li>Code</li>
         </ul>
         <div class="body">
-            <div class="p-12">
-                <button hx-ext="bny-confirm" class="bny-btn" hx-get="/test/data/confirm.json"
-                    hx-confirm="你确定要点击这个组件吗？">确认</button>
-                <button hx-ext="bny-confirm" class="bny-btn" hx-get="/test/data/confirm.json" hx-confirm="你确定要删除这个组件吗？"
-                    title="删除" anim="up">其他</button>
-                <button hx-ext="bny-confirm" class="bny-btn" hx-get="/test/data/confirm.html"
-                    hx-confirm="你确定要点击吗？">确认-html</button>
+            <div>
+                <div class="p-12">
+                    <button hx-ext="bny-confirm" class="bny-btn" hx-get="/test/data/confirm.json"
+                        hx-confirm="你确定要点击这个组件吗？">确认</button>
+                    <button hx-ext="bny-confirm" class="bny-btn" hx-get="/test/data/confirm.json"
+                        hx-confirm="你确定要删除这个组件吗？" title="删除" anim="up">其他</button>
+                    <button hx-ext="bny-confirm" class="bny-btn" hx-get="/test/data/confirm.html"
+                        hx-confirm="你确定要点击吗？">确认-html</button>
+                </div>
             </div>
             <div>
                 <pre hx-ext="bny-code">

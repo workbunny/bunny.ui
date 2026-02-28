@@ -1,8 +1,8 @@
 .bny-tag {
     display: inline-flex;
-    background-color: var(--gray-shallow);
-    color: var(--gray);
-    border: 1px solid var(--gray);
+    background-color: var(--default-shallow);
+    color: var(--default);
+    border: 1px solid var(--default);
     padding: 3px 10px;
     line-height: 1;
     box-sizing: border-box;
@@ -16,7 +16,7 @@
     margin-left: 6px;
 
     &::before {
-        border-right: 6px solid var(--gray);
+        border-right: 6px solid var(--default);
         content: '';
         position: absolute;
         left: -6px;
