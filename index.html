@@ -20,7 +20,11 @@
     }
 
     #tab-load {
-        text-align: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 999;
     }
 
     .htmx-indicator {
@@ -76,12 +80,14 @@
             <li hx-get="/test/tab.html">组件-选项卡</li>
             <li hx-get="/test/js.html">JS-API</li>
         </ul>
-        <div id="tab-load">
-            <div class="htmx-indicator">
-                <div class="bny-load"></div>
-            </div>
-        </div>
         <div class="body">
+        </div>
+    </div>
+    <div id="tab-load">
+        <div class="htmx-indicator">
+            <div class="bny-load-health" color="green">
+                <div></div>
+            </div>
         </div>
     </div>
     <script>
