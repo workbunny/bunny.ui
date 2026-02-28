@@ -2,37 +2,43 @@
     display: flex;
     flex-direction: column;
     width: 100%;
+    border: 1px solid var(--default-middle);
+    border-bottom: none;
 
     & .item {
-        margin-top: 12px;
-        padding-top: 12px;
-        border-top: 1px solid var(--gray-shallow);
-
-        &:first-child {
-            padding-top: 0;
-            margin-top: 0;
-            border-top: none;
-        }
 
         & .title {
+            position: relative;
             cursor: pointer;
             display: flex;
             align-items: center;
             font-weight: 400;
+            height: 42px;
+            line-height: 42px;
+            padding: 0 42px;
+            background: var(--default-shallow);
+            color: var(--default);
 
             &::before {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 42px;
+                height: 42px;
+                line-height: 42px;
+                text-align: center;
                 content: '\e76e';
                 font-family: 'bny-icon';
-                margin-right: 4px;
                 transition: var(--transition);
             }
         }
 
         & .content {
-            opacity: 0;
-            visibility: visible;
-            max-height: 0;
+            line-height: 1.6;
+            max-height: 1px;
+            overflow: hidden;
             transition: var(--transition);
+            border-bottom: 1px solid var(--default-middle);
         }
 
         &.show {
@@ -43,10 +49,10 @@
             }
 
             & .content {
-                padding-top: 12px;
-                opacity: 1;
-                height: auto;
                 max-height: 1000px;
+                padding: 10px 15px;
+                height: auto;
+                border-top: 1px solid var(--default-middle);
             }
         }
     }

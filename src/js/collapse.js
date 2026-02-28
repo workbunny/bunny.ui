@@ -6,21 +6,24 @@ htmx.defineExtension('bny-collapse', {
         if (name === "htmx:afterProcessNode") {
             if (bny.hasExtName(evt.target, 'bny-collapse')) {
                 evt.target.addEventListener('click', function (e) {
-                    const item = e.target.closest('.item .title')
-                    if (item) {
+                    const item = e.target.closest('.item')
+                    const title = bny.queryChild(item, '.title')
+                    if (title) {
                         const accordion = e.target
                             .parentElement
                             .parentElement
                             .getAttribute('mode') === 'accordion'
 
                         if (accordion) {
-                            bny.removeClass(e.target
-                                .parentElement
+                            const isShow = item.classList.contains('show')
+                            bny.removeClass(item
                                 .parentElement
                                 .querySelectorAll('.item'), 'show')
-                            htmx.addClass(item.parentElement, 'show')
+                            if (!isShow) {
+                                item.classList.add('show')
+                            }
                         } else {
-                            item.parentElement.classList.toggle('show')
+                            item.classList.toggle('show')
                         }
                     }
                 })
