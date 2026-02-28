@@ -95,11 +95,18 @@
         position: relative;
 
         &>div {
-            display: none;
+            max-height: 0;
+            opacity: 0;
+            visibility: hidden;
+            overflow: hidden;
+            transition: var(--transition);
         }
 
         &>div.show {
-            display: block;
+            max-height: 99999px;
+            opacity: 1;
+            visibility: visible;
+            overflow: unset;
         }
     }
 }
