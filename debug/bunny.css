@@ -1503,9 +1503,8 @@ p {
     border: 2px solid var(--default);
     box-shadow: var(--box-shadow-005);
     transition: var(--transition);
-    display: inline-flex;
+    display: inline-block;
     align-items: center;
-    justify-content: center;
     white-space: nowrap;
 
     &:hover {
@@ -1604,6 +1603,11 @@ p {
     &[model~="circle"] {
         border-radius: 50%;
         padding: 4px;
+        width: 32px;
+        height: 32px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
     }
 
     /* 禁用 */
@@ -1872,21 +1876,31 @@ p {
         color: var(--blue);
     }
 }.bny-dropdown {
-    position: fixed;
-    box-shadow: var(--box-shadow-005);
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(14px);
-    transition: var(--transition);
-    z-index: 9999;
-    background: var(--white);
-    color: var(--black);
-    border-radius: var(--border-radius);
+    position: relative;
+    width: 100%;
+    top: 0;
+    left: 0;
 
-    &.show {
+    &>.content {
+        position: absolute;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(14px);
+        transition: var(--transition);
+        background: var(--white);
+        color: var(--black);
+        border-radius: var(--border-radius);
+        pointer-events: none;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+    }
+
+    &.show>.content {
         opacity: 1;
         visibility: visible;
         transform: translateY(4px);
+        pointer-events: auto;
     }
 }.bny-confirm-shield {
     position: fixed;
