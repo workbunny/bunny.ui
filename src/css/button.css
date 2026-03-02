@@ -134,21 +134,64 @@
     & .bny-btn {
         box-shadow: none;
         transform: none;
+        position: relative;
     }
 
     & .bny-btn:first-child {
-        border-right-width: 1px;
         border-top-right-radius: 0;
         border-bottom-right-radius: 0;
+        border-right-width: 0;
+
+        &::after {
+            content: "";
+            position: absolute;
+            width: 1px;
+            height: 100%;
+            top: 0;
+            right: 0;
+            background-color: var(--gray-middle);
+        }
     }
 
     & .bny-btn:not(:first-child):not(:last-child) {
         border-radius: 0;
+        border-left-width: 0px;
+        border-right-width: 0px;
+
+        &::before {
+            content: "";
+            position: absolute;
+            width: 1px;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background-color: var(--gray-middle);
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            width: 1px;
+            height: 100%;
+            top: 0;
+            right: 0;
+            background-color: var(--gray-middle);
+        }
     }
 
     & .bny-btn:last-child {
-        border-left-width: 1px;
         border-top-left-radius: 0;
         border-bottom-left-radius: 0;
+        border-left-width: 0px;
+
+        &::before {
+            content: "";
+            position: absolute;
+            width: 1px;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background-color: var(--gray-middle);
+        }
     }
 }
