@@ -118,3 +118,37 @@
         opacity: 0.5;
     }
 }
+
+.bny-btn-group {
+    display: inline-flex;
+    vertical-align: middle;
+    font-size: 0;
+    transition: var(--transition);
+    box-shadow: var(--box-shadow-005);
+    border-radius: var(--border-radius);
+
+    &:active {
+        transform: var(--transform3d-020);
+    }
+
+    & .bny-btn {
+        box-shadow: none;
+        transform: none;
+    }
+
+    & .bny-btn:first-child {
+        border-right-width: 1px;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+
+    & .bny-btn:not(:first-child):not(:last-child) {
+        border-radius: 0;
+    }
+
+    & .bny-btn:last-child {
+        border-left-width: 1px;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+}
