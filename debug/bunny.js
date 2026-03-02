@@ -4260,8 +4260,35 @@
   htmx.defineExtension("bny-dropdown", {
     // 事件
     onEvent: function(name, evt) {
+      function setPosition(trigger, menu) {
+        const triggerRect = trigger.getBoundingClientRect();
+        const windowWidth = window.innerWidth;
+        const windowHeight = window.innerHeight;
+        menu.style.opacity = "0";
+        menu.style.visibility = "hidden";
+        menu.style.display = "block";
+        const menuWidth = menu.offsetWidth;
+        const menuHeight = menu.offsetHeight;
+        menu.style.display = "";
+        let top, left;
+        if (triggerRect.bottom + menuHeight <= windowHeight) {
+          top = triggerRect.bottom + window.scrollY;
+        } else {
+          top = triggerRect.top - menuHeight + window.scrollY;
+        }
+        if (triggerRect.left + menuWidth <= windowWidth) {
+          left = triggerRect.left + window.scrollX;
+        } else {
+          left = triggerRect.right - menuWidth + window.scrollX;
+        }
+        menu.style.top = `${top}px`;
+        menu.style.left = `${left}px`;
+        menu.style.opacity = "";
+        menu.style.visibility = "";
+      }
       if (name === "htmx:afterProcessNode") {
         if (bny.hasExtName(evt.target, "bny-dropdown")) {
+          evt.target.style.transform = "none";
           const dropdown = document.createElement("div");
           dropdown.classList.add("bny-dropdown");
           const content = document.createElement("div");
@@ -4275,19 +4302,21 @@
               htmx.toggleClass(dropdown, "show");
             }
           });
+          return false;
         }
         return true;
       }
       if (name === "htmx:beforeSwap") {
         if (bny.hasExtName(evt.target, "bny-dropdown")) {
-          const dropdown = evt.target.querySelector(":scope>.bny-dropdown");
-          const content = dropdown.querySelector(":scope>.content");
+          const dropdown = bny.queryChild(evt.target, ".bny-dropdown");
+          const content = bny.queryChild(dropdown, ".content");
           if (!bny.hasClass(dropdown, "show") || content.innerHTML.trim() === "") {
             htmx.swap(
               content,
               evt.detail.xhr.responseText,
               { swapStyle: "innerHTML" }
             );
+            setPosition(evt.target, dropdown);
           }
           return false;
         }

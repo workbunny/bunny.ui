@@ -65,7 +65,7 @@ html {
     --border-radius-15: 15px;
 
     /* 动态 */
-    --transition: all 235ms ease 0s;
+    --transition: all 235ms linear;
 
     --transform3d-200: translate3d(2px, 0, 0);
     --transform3d-500: translate3d(5px, 0, 0);
@@ -1727,10 +1727,12 @@ p {
 
         & .content {
             line-height: 1.6;
-            max-height: 1px;
+            max-height: 0px;
             overflow: hidden;
             transition: var(--transition);
             border-bottom: 1px solid var(--default-middle);
+            pointer-events: none;
+            padding: 0 15px;
         }
 
         &.show {
@@ -1745,6 +1747,7 @@ p {
                 padding: 10px 15px;
                 height: auto;
                 border-top: 1px solid var(--default-middle);
+                pointer-events: auto;
             }
         }
     }
@@ -1792,31 +1795,21 @@ p {
         color: var(--blue);
     }
 }.bny-dropdown {
-    position: relative;
-    width: 100%;
+    position: fixed;
+    box-shadow: var(--box-shadow-005);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(14px);
+    transition: var(--transition);
+    z-index: 9999;
+    background: var(--white);
+    color: var(--black);
+    border-radius: var(--border-radius);
 
-    &>.content {
-        position: absolute;
-        left: 0;
-        min-width: max-content;
-        background: var(--white);
-        color: var(--black);
-        box-shadow: var(--box-shadow-005);
-        transition: var(--transition);
-        z-index: 1000;
-        border-radius: var(--border-radius);
-        transform: translateY(0px);
+    &.show {
         opacity: 1;
         visibility: visible;
-        max-height: 0;
-        overflow: hidden;
-    }
-
-    &.show>.content {
-        transform: translateY(10px);
-        height: auto;
-        max-height: 1000px;
-        overflow: unset;
+        transform: translateY(4px);
     }
 }.bny-confirm-shield {
     position: fixed;

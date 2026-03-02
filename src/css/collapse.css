@@ -35,10 +35,12 @@
 
         & .content {
             line-height: 1.6;
-            max-height: 1px;
+            max-height: 0px;
             overflow: hidden;
             transition: var(--transition);
             border-bottom: 1px solid var(--default-middle);
+            pointer-events: none;
+            padding: 0 15px;
         }
 
         &.show {
@@ -53,6 +55,7 @@
                 padding: 10px 15px;
                 height: auto;
                 border-top: 1px solid var(--default-middle);
+                pointer-events: auto;
             }
         }
     }
