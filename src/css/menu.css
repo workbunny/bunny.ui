@@ -54,7 +54,7 @@
 
             & .sub-menu {
                 top: 0;
-                left: calc(100% + 5px);
+                left: calc(100% + 10px);
             }
         }
     }
