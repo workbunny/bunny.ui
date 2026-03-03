@@ -33,7 +33,7 @@ htmx.defineExtension('bny-menu', {
                 html += `<div class="trigger" bny-id="${v.id}">`
                 html += `<span>${v.name}</span>`
                 if (v.child) {
-                    html += `<i class="bny-icon">&#xe76e;</i>`
+                    html += `<i class="bny-icon icon-right"></i>`
                 }
                 html += `</div>`
                 if (v.child) {

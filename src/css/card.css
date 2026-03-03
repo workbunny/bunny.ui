@@ -25,12 +25,12 @@
 
     &>.head {
         padding: 8px 14px;
-        border-bottom: 1px solid var(--white-middle);
+        border-bottom: 1px solid var(--black-middle);
     }
 
     &>.foot {
         padding: 8px 14px;
-        border-top: 1px solid var(--white-middle);
+        border-top: 1px solid var(--black-middle);
     }
 
     &>.body {

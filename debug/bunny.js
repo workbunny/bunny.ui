@@ -3943,14 +3943,14 @@
       function resize(page2, width2, height2, currentX2, currentY2) {
         const zoomBtn = page2.querySelector(".zoom");
         zoomBtn.addEventListener("click", (e) => {
-          if (zoomBtn.classList.contains("icon-quanping")) {
+          if (zoomBtn.classList.contains("icon-fullscreen")) {
             Object.assign(page2.style, { width: "100%", height: "100%", top: "0", left: "0" });
-            zoomBtn.classList.remove("icon-quanping");
-            zoomBtn.classList.add("icon-suoxiao");
+            zoomBtn.classList.remove("icon-fullscreen");
+            zoomBtn.classList.add("icon-fullscreen-exit");
           } else {
             Object.assign(page2.style, { width: width2, height: height2, top: `${currentY2}px`, left: `${currentX2}px` });
-            zoomBtn.classList.remove("icon-suoxiao");
-            zoomBtn.classList.add("icon-quanping");
+            zoomBtn.classList.remove("icon-fullscreen-exit");
+            zoomBtn.classList.add("icon-fullscreen");
           }
           e.stopPropagation();
         });
@@ -3959,12 +3959,12 @@
         const minBtn = page2.querySelector(".min-auto");
         const pageShade = page2.parentElement;
         minBtn.addEventListener("click", (e) => {
-          if (minBtn.classList.contains("icon-jian")) {
+          if (minBtn.classList.contains("icon-minus")) {
             Object.assign(page2.style, { width: "125px", height: "min-content", bottom: "0", left: `${num2 * 125}px`, top: "unset" });
             page2.querySelector(".content").style.display = "none";
             page2.querySelector(".zoom").style.display = "none";
-            minBtn.classList.remove("icon-jian");
-            minBtn.classList.add("icon-fuzhi");
+            minBtn.classList.remove("icon-minus");
+            minBtn.classList.add("icon-file-copy");
             if (pageShade.classList.contains("bny-page-shade")) {
               pageShade.style.width = 0;
               pageShade.style.height = 0;
@@ -3973,9 +3973,9 @@
             Object.assign(page2.style, { width: width2, height: height2, top: `${currentY2}px`, left: `${currentX2}px`, bottom: "unset" });
             page2.querySelector(".content").style.display = "block";
             page2.querySelector(".zoom").style.display = "inline-block";
-            page2.querySelector(".zoom").classList.replace("icon-suoxiao", "icon-quanping");
-            minBtn.classList.remove("icon-fuzhi");
-            minBtn.classList.add("icon-jian");
+            page2.querySelector(".zoom").classList.replace("icon-fullscreen-exit", "icon-fullscreen");
+            minBtn.classList.remove("icon-file-copy");
+            minBtn.classList.add("icon-minus");
             if (pageShade.classList.contains("bny-page-shade")) {
               pageShade.style.width = "100%";
               pageShade.style.height = "100%";
@@ -4100,9 +4100,9 @@
         <div class="header">
             <div class="title">${title}</div>
                 <div class="setwin">
-                    <span class="bny-icon icon-jian min-auto"></span>
-                    <span class="bny-icon icon-quanping zoom"></span>
-                    <span class="bny-icon icon-cuo close-btn"></span>
+                    <span class="bny-icon icon-minus min-auto"></span>
+                    <span class="bny-icon icon-fullscreen zoom"></span>
+                    <span class="bny-icon icon-close close-btn"></span>
                 </div>
             </div>
         </div>
@@ -4176,7 +4176,7 @@
           html += `<div class="trigger" bny-id="${v.id}">`;
           html += `<span>${v.name}</span>`;
           if (v.child) {
-            html += `<i class="bny-icon">&#xe76e;</i>`;
+            html += `<i class="bny-icon icon-right"></i>`;
           }
           html += `</div>`;
           if (v.child) {
@@ -4380,7 +4380,7 @@
           const copyBtn = document.createElement("a");
           copyBtn.setAttribute("title", "复制代码");
           copyBtn.classList.add("copy-btn");
-          copyBtn.innerHTML = '<i class="bny-icon icon-fuzhi"></i>';
+          copyBtn.innerHTML = '<i class="bny-icon icon-file-copy"></i>';
           evt.target.appendChild(copyBtn);
           copyBtn.addEventListener("click", (e) => {
             navigator.clipboard.writeText(code.textContent);
@@ -4438,11 +4438,11 @@
         head.style.cssText = "padding: 0px 40px;";
         const leftBtn = document.createElement("div");
         leftBtn.className = "btn-left";
-        leftBtn.innerHTML = `<i class="bny-icon icon-zuohua"></i>`;
+        leftBtn.innerHTML = `<i class="bny-icon icon-doubleleft"></i>`;
         target.appendChild(leftBtn);
         const rightBtn = document.createElement("div");
         rightBtn.className = "btn-right";
-        rightBtn.innerHTML = `<i class="bny-icon icon-youhua"></i>`;
+        rightBtn.innerHTML = `<i class="bny-icon icon-doubleright"></i>`;
         target.appendChild(rightBtn);
       }
       function addCloseBtn(target) {

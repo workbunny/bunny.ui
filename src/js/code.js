@@ -15,7 +15,7 @@ htmx.defineExtension('bny-code', {
                 const copyBtn = document.createElement('a')
                 copyBtn.setAttribute("title", "复制代码")
                 copyBtn.classList.add('copy-btn')
-                copyBtn.innerHTML = '<i class="bny-icon icon-fuzhi"></i>'
+                copyBtn.innerHTML = '<i class="bny-icon icon-file-copy"></i>'
                 evt.target.appendChild(copyBtn)
                 // 复制按钮点击事件
                 copyBtn.addEventListener("click", (e) => {

@@ -14,12 +14,12 @@ htmx.defineExtension('bny-tab', {
             // 左移动按钮
             const leftBtn = document.createElement("div")
             leftBtn.className = "btn-left"
-            leftBtn.innerHTML = `<i class="bny-icon icon-zuohua"></i>`
+            leftBtn.innerHTML = `<i class="bny-icon icon-doubleleft"></i>`
             target.appendChild(leftBtn)
             // 右移动按钮
             const rightBtn = document.createElement("div")
             rightBtn.className = "btn-right"
-            rightBtn.innerHTML = `<i class="bny-icon icon-youhua"></i>`
+            rightBtn.innerHTML = `<i class="bny-icon icon-doubleright"></i>`
             target.appendChild(rightBtn)
         }
 

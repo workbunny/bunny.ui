@@ -321,14 +321,14 @@ window.bny = {
         function resize(page, width, height, currentX, currentY) {
             const zoomBtn = page.querySelector('.zoom')
             zoomBtn.addEventListener('click', (e) => {
-                if (zoomBtn.classList.contains('icon-quanping')) {
+                if (zoomBtn.classList.contains('icon-fullscreen')) {
                     Object.assign(page.style, { width: '100%', height: '100%', top: '0', left: '0' });
-                    zoomBtn.classList.remove('icon-quanping');
-                    zoomBtn.classList.add('icon-suoxiao');
+                    zoomBtn.classList.remove('icon-fullscreen');
+                    zoomBtn.classList.add('icon-fullscreen-exit');
                 } else {
                     Object.assign(page.style, { width, height, top: `${currentY}px`, left: `${currentX}px` });
-                    zoomBtn.classList.remove('icon-suoxiao');
-                    zoomBtn.classList.add('icon-quanping');
+                    zoomBtn.classList.remove('icon-fullscreen-exit');
+                    zoomBtn.classList.add('icon-fullscreen');
                 }
                 e.stopPropagation();
             });
@@ -347,12 +347,12 @@ window.bny = {
             const minBtn = page.querySelector('.min-auto')
             const pageShade = page.parentElement
             minBtn.addEventListener('click', e => {
-                if (minBtn.classList.contains('icon-jian')) {
+                if (minBtn.classList.contains('icon-minus')) {
                     Object.assign(page.style, { width: '125px', height: 'min-content', bottom: '0', left: `${num * 125}px`, top: 'unset' });
                     page.querySelector('.content').style.display = 'none';
                     page.querySelector('.zoom').style.display = 'none';
-                    minBtn.classList.remove('icon-jian');
-                    minBtn.classList.add('icon-fuzhi');
+                    minBtn.classList.remove('icon-minus');
+                    minBtn.classList.add('icon-file-copy');
                     // 判断page父级元素的class 是否是bny-page-shade
                     if (pageShade.classList.contains('bny-page-shade')) {
                         pageShade.style.width = 0
@@ -362,9 +362,9 @@ window.bny = {
                     Object.assign(page.style, { width, height, top: `${currentY}px`, left: `${currentX}px`, bottom: 'unset' });
                     page.querySelector('.content').style.display = 'block';
                     page.querySelector('.zoom').style.display = 'inline-block';
-                    page.querySelector('.zoom').classList.replace('icon-suoxiao', 'icon-quanping');
-                    minBtn.classList.remove('icon-fuzhi');
-                    minBtn.classList.add('icon-jian');
+                    page.querySelector('.zoom').classList.replace('icon-fullscreen-exit', 'icon-fullscreen');
+                    minBtn.classList.remove('icon-file-copy');
+                    minBtn.classList.add('icon-minus');
                     if (pageShade.classList.contains('bny-page-shade')) {
                         pageShade.style.width = "100%"
                         pageShade.style.height = "100%"
@@ -518,9 +518,9 @@ window.bny = {
         <div class="header">
             <div class="title">${title}</div>
                 <div class="setwin">
-                    <span class="bny-icon icon-jian min-auto"></span>
-                    <span class="bny-icon icon-quanping zoom"></span>
-                    <span class="bny-icon icon-cuo close-btn"></span>
+                    <span class="bny-icon icon-minus min-auto"></span>
+                    <span class="bny-icon icon-fullscreen zoom"></span>
+                    <span class="bny-icon icon-close close-btn"></span>
                 </div>
             </div>
         </div>

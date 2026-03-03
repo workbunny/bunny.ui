@@ -108,24 +108,24 @@ html.dark {
     --black: #f8f8f8;
     --black-middle: #e0e0e0;
     --black-shallow: #c0c0c0;
-    
+
     /* 暗黑模式下的其他颜色调整 */
     --green: #27ae60;
     --green-middle: #52be80;
     --green-shallow: #82e0aa;
-    
+
     --blue: #2980b9;
     --blue-middle: #5499c7;
     --blue-shallow: #85c1e9;
-    
+
     --yellow: #f39c12;
     --yellow-middle: #f5b041;
     --yellow-shallow: #fde3a7;
-    
+
     --red: #c0392b;
     --red-middle: #e74c3c;
     --red-shallow: #f1948a;
-    
+
     --gray: #7f8c8d;
     --gray-middle: #95a5a6;
     --gray-shallow: #bdc3c7;
@@ -278,83 +278,4 @@ p {
 ::-webkit-scrollbar-track {
     background: var(--gray);
     border-radius: 3px;
-}
-
-/* 公共样式 */
-
-/* 间隔 */
-/* 内边距 */
-.p-12 {
-    padding: 12px;
-}
-
-.p-24 {
-    padding: 24px;
-}
-
-.p-36 {
-    padding: 36px;
-}
-
-/* 外边距 */
-.m-12 {
-    margin: 12px;
-}
-
-.m-24 {
-    margin: 24px;
-}
-
-.m-36 {
-    margin: 36px;
-}
-
-/* 清除浮动 */
-.clearfix {
-    zoom: 1;
-}
-
-/* 清除浮动 */
-.clearfix:after {
-    content: ".";
-    width: 0;
-    height: 0;
-    visibility: hidden;
-    display: block;
-    clear: both;
-    overflow: hidden;
-}
-
-/* 浮动 */
-.fl {
-    float: left
-}
-
-.fr {
-    float: right
-}
-
-/* 文本对齐 */
-.tl {
-    text-align: left;
-}
-
-.tc {
-    text-align: center
-}
-
-.tr {
-    text-align: right;
-}
-
-/* 省略号 */
-.ellipse {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-}
-
-/* 行内块 */
-.inline {
-    display: inline-block;
 }
