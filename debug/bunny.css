@@ -504,6 +504,16 @@ p {
     /* 退出到底部 */
     animation: anim-downOut 235ms ease-in-out;
     animation-fill-mode: forwards;
+}
+
+@keyframes anim-downOut {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(100%);
+    }
 }@font-face {
   font-family: "bny-icon"; /* Project id 5131818 */
   src: url('./font/iconfont.BYSj-tSR.woff2?t=1772500413085') format('woff2'),

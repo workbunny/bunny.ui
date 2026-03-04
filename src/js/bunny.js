@@ -39,6 +39,9 @@ window.bny = {
      * @param {Function} fn 动画结束回调函数 默认空函数
      */
     animPlayer: function (elt, anim, status = true, fn = () => { }) {
+        if (!["scale", "left", "right", "down", "up"].includes(anim)) {
+            anim = "scale"
+        }
         if (status) {
             elt.classList.add(`bny-anim-${anim}`)
             elt.classList.remove(`bny-anim-${anim}Out`)
@@ -414,6 +417,7 @@ window.bny = {
                         animPlayer(page, anim, false, () => {
                             shade.remove()
                         })
+                        e.stopPropagation()
                     }
                 })
                 document.body.appendChild(shade)
@@ -502,7 +506,7 @@ window.bny = {
                 Object.assign(page.style, {
                     width,
                     height,
-                    left: `${windowWidth - parseInt(width)}px`,
+                    right: `0px`,
                     top: `${currentY}px`
                 })
                 break;

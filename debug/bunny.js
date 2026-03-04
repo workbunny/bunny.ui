@@ -3698,6 +3698,9 @@
      */
     animPlayer: function(elt, anim, status = true, fn = () => {
     }) {
+      if (!["scale", "left", "right", "down", "up"].includes(anim)) {
+        anim = "scale";
+      }
       if (status) {
         elt.classList.add(`bny-anim-${anim}`);
         elt.classList.remove(`bny-anim-${anim}Out`);
@@ -4009,6 +4012,7 @@
               animPlayer(page2, anim2, false, () => {
                 shade3.remove();
               });
+              e.stopPropagation();
             }
           });
           document.body.appendChild(shade3);
@@ -4084,7 +4088,7 @@
           Object.assign(page.style, {
             width,
             height,
-            left: `${windowWidth - parseInt(width)}px`,
+            right: `0px`,
             top: `${currentY}px`
           });
           break;
