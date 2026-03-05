@@ -16,12 +16,13 @@ htmx.defineExtension('bny-nav', {
             })
         }
 
-
         if (name === 'htmx:afterProcessNode') {
             if (bny.hasExtName(evt.target, 'bny-nav')) {
+                // side 属性 侧边栏模式
+                const side = evt.target.hasAttribute('side') ?? false
 
-                const collapsed = evt.target.hasAttribute('collapsed') ?? false
-                const toggle = evt.target.hasAttribute('toggle')
+                // 处理 toggle 属性 伸缩模式
+                const toggle = evt.target.hasAttribute('toggle') ?? false
                 if (toggle) {
                     const head = bny.queryChild(evt.target, '.head')
                     const toggleBtn = document.createElement('div')
@@ -31,11 +32,37 @@ htmx.defineExtension('bny-nav', {
                     onToggle(toggleBtn, evt.target)
                 }
 
-                evt.target.addEventListener('click', function (e) {
+                // 处理点击事件
+                evt.target.addEventListener('click', (e) => {
                     const item = e.target.closest('li')
-                    let subMenu = item?.querySelector('.sub-menu') ?? false
-                    if (item && subMenu) {
-                        item.classList.toggle('show')
+                    const subMenu = item?.querySelector('.sub-menu') ?? false
+                    const trigger = bny.queryChild(item, '.trigger')
+                    // 点击li
+                    if (item) {
+                        // 有子菜单
+                        if (subMenu) {
+                            const collapsed = evt.target.hasAttribute('collapsed') ?? false
+                            // 父级
+                            if (!side || collapsed) {
+                                const parent = item.parentElement
+                                if (parent.classList.contains('menu')) {
+                                    const arr = evt.target.querySelectorAll(".show")
+                                    for (const i of arr) {
+                                        if (i !== item) {
+                                            i.classList.remove('show')
+                                        }
+                                    }
+                                }
+                            }
+                            item.classList.toggle('show')
+                        } else {
+                            // 无子菜单
+                            bny.removeClass(
+                                evt.target.querySelectorAll(".active"),
+                                'active'
+                            )
+                            trigger.classList.add('active')
+                        }
                     }
                 })
 
