@@ -7,7 +7,7 @@ window.bny = {
      * @returns {HTMLElement|null} 子元素
      */
     queryChild: function (elt, cssSelector) {
-        return elt.querySelector(":scope>" + cssSelector)
+        return elt?.querySelector(":scope>" + cssSelector) ?? null
     },
     /**
      * 查询所有子元素

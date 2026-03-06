@@ -20,10 +20,11 @@ htmx.defineExtension('bny-nav', {
             if (bny.hasExtName(evt.target, 'bny-nav')) {
                 // side 属性 侧边栏模式
                 const side = evt.target.hasAttribute('side') ?? false
-
-                // 处理 toggle 属性 伸缩模式
+                // collapsed 属性 伸缩模式
+                // const collapsed = evt.target.hasAttribute('collapsed') ?? false
+                // 处理 toggle 属性 伸缩按钮模式
                 const toggle = evt.target.hasAttribute('toggle') ?? false
-                if (toggle) {
+                if ((side && toggle) || !side) {
                     const head = bny.queryChild(evt.target, '.head')
                     const toggleBtn = document.createElement('div')
                     toggleBtn.classList.add('toggle-btn')

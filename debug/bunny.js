@@ -3666,7 +3666,7 @@
      * @returns {HTMLElement|null} 子元素
      */
     queryChild: function(elt, cssSelector) {
-      return elt.querySelector(":scope>" + cssSelector);
+      return elt?.querySelector(":scope>" + cssSelector) ?? null;
     },
     /**
      * 查询所有子元素
@@ -4603,7 +4603,7 @@
         if (bny.hasExtName(evt.target, "bny-nav")) {
           const side = evt.target.hasAttribute("side") ?? false;
           const toggle = evt.target.hasAttribute("toggle") ?? false;
-          if (toggle) {
+          if (side && toggle || !side) {
             const head = bny.queryChild(evt.target, ".head");
             const toggleBtn = document.createElement("div");
             toggleBtn.classList.add("toggle-btn");
