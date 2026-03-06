@@ -1,16 +1,20 @@
 @font-face {
   font-family: "bny-icon"; /* Project id 5131818 */
-  src: url('iconfont.woff2?t=1772500413085') format('woff2'),
-       url('iconfont.woff?t=1772500413085') format('woff'),
-       url('iconfont.ttf?t=1772500413085') format('truetype');
+  src: url('iconfont.woff2?t=1772775766443') format('woff2'),
+       url('iconfont.woff?t=1772775766443') format('woff'),
+       url('iconfont.ttf?t=1772775766443') format('truetype');
 }
 
 .bny-icon {
   font-family: "bny-icon" !important;
-  font-size: 14px;
+  font-size: 16px;
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-bunny:before {
+  content: "\e600";
 }
 
 .icon-folder:before {

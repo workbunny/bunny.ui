@@ -43,6 +43,6 @@
 
 ## 文档
 
-[HTMX-DOC](https://htmx.docs-hub.com/)
+[HTMX-DOC](https://htmx.org/)
 
 [BUNNYUI-DOC](http://bnyui.kllxs.top/)

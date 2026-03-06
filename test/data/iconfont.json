@@ -6,6 +6,13 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "47011829",
+      "name": "bunny",
+      "font_class": "bunny",
+      "unicode": "e600",
+      "unicode_decimal": 58880
+    },
+    {
       "icon_id": "4766846",
       "name": "folder",
       "font_class": "folder",
