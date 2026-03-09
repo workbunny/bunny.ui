@@ -5527,7 +5527,7 @@ hr {
         color: var(--black-middle);
 
         & .logo-box {
-            color: var(--black-middle);
+            color: var(--default);
         }
 
         & .toggle-btn {
