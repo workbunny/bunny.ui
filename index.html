@@ -19,7 +19,7 @@
         right: 0;
         z-index: 9999;
         width: 100%;
-        background: var(--default);
+        background: var(--white-middle);
         box-shadow: var(--box-shadow-005);
 
         & [hx-ext~="bny-nav"] {
@@ -33,11 +33,11 @@
     }
 
     footer {
-        background: var(--white);
+        background: var(--white-middle);
         padding: 30px 0;
 
         & * {
-            color: var(--black);
+            color: var(--black-middle);
         }
     }
 
@@ -71,7 +71,7 @@
     <!-- 头部 -->
     <header>
         <div class="bny-container">
-            <div hx-ext="bny-nav" hx-indicator="#tab-load">
+            <div hx-ext="bny-nav" hx-indicator="#tab-load" color="white">
                 <div class="head">
                     <div class="logo-box">
                         <div class="logo">
@@ -98,7 +98,8 @@
                     </li>
                     <li>
                         <a class="trigger" href="https://github.com/workbunny/bunny.ui" target="_blank">
-                            <span><i class="bny-icon icon-github-fill"></i></span>
+                            <i class="bny-icon icon-github-fill"></i>
+                            <span>GitHub</span>
                         </a>
                     </li>
                 </ul>

@@ -6,7 +6,6 @@
     overflow: hidden;
     border-radius: var(--border-radius);
     margin: 8px 0;
-    background-color: var(--white-shallow);
 
     &[model="transition"] {
         transition: var(--transition);

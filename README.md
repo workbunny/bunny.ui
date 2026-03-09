@@ -41,7 +41,7 @@
 **从源码构建**
 ```bash
 # 克隆项目
-git clone https://github.com/workbunny/bunny-ui.git
+git clone https://github.com/workbunny/bunny.ui.git
 
 # 安装依赖
 bun install

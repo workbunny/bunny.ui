@@ -5,7 +5,6 @@
     background: var(--default);
     transition: var(--transition);
     position: relative;
-    transition: var(--transition);
     box-shadow: var(--box-shadow-005);
     justify-content: space-between;
 
@@ -61,6 +60,7 @@
         position: relative;
 
         &>.trigger {
+            position: relative;
             cursor: pointer;
             transition: var(--transition);
             white-space: nowrap;
@@ -68,14 +68,6 @@
             padding: 14px 20px;
             display: flex;
             align-items: center;
-
-            &.active {
-                background: var(--gray);
-            }
-
-            &:hover {
-                background: var(--gray);
-            }
 
             &>i:first-child {
                 margin-right: 0px;
@@ -85,10 +77,31 @@
                 margin-left: auto;
                 transition: var(--transition);
             }
+
+            &::before {
+                content: "";
+                position: absolute;
+                left: 0;
+                top: 50%;
+                width: 2px;
+                height: 0%;
+                background: var(--default-shallow);
+                transition: var(--transition);
+            }
+
+            &:hover::before {
+                top: 0;
+                height: 100%;
+            }
+
+            &.active::before {
+                top: 0;
+                height: 100%;
+                width: 5px;
+            }
         }
 
         &.show {
-
             &>.sub-menu {
                 height: auto;
                 overflow: unset;
@@ -123,12 +136,213 @@
             left: calc(100% + 4px);
         }
     }
+
+    /* 颜色 */
+    /* 白色 */
+    &[color="white"] {
+        background: var(--white-middle);
+        color: var(--black-middle);
+
+        & .logo-box {
+            color: var(--black-middle);
+        }
+
+        & .toggle-btn {
+            background: var(--white-middle) !important;
+
+            & i {
+                color: var(--black-middle) !important;
+            }
+        }
+
+        & li>.trigger {
+            color: var(--black-middle);
+
+            &::before {
+                background: var(--default) !important;
+            }
+        }
+
+        & .sub-menu {
+            background: var(--white-middle) !important;
+        }
+
+        &:not([side]) {
+            & .sub-menu {
+                background: var(--white-middle) !important;
+            }
+
+            &[collapsed] {
+                & .sub-menu {
+                    background: rgba(0, 0, 0, 0.045) !important;
+                }
+            }
+        }
+
+        &[side] {
+
+            & .sub-menu {
+                background: rgba(0, 0, 0, 0.045) !important;
+            }
+        }
+    }
+
+    /* 绿色 */
+    &[color="green"] {
+        background: var(--green);
+
+        & .toggle-btn {
+            background: var(--green) !important;
+        }
+
+        & li>.trigger {
+            &::before {
+                background: var(--green-shallow) !important;
+            }
+        }
+
+        &[collapsed] {
+            & .sub-menu {
+                background: var(--green) !important;
+            }
+        }
+
+        &:not([side]) {
+            & .sub-menu {
+                background: var(--green) !important;
+            }
+
+            &[collapsed] {
+                & .sub-menu {
+                    background: rgba(0, 0, 0, 0.25) !important;
+                }
+            }
+        }
+    }
+
+    /* 黄色 */
+    &[color="yellow"] {
+        background: var(--yellow);
+
+        & .toggle-btn {
+            background: var(--yellow) !important;
+        }
+
+        & li>.trigger {
+            &::before {
+                background: var(--yellow-shallow) !important;
+            }
+        }
+
+        &[collapsed] {
+            & .sub-menu {
+                background: var(--yellow) !important;
+            }
+        }
+
+        &:not([side]) {
+            & .sub-menu {
+                background: var(--yellow) !important;
+            }
+
+            &[collapsed] {
+                & .sub-menu {
+                    background: rgba(0, 0, 0, 0.25) !important;
+                }
+            }
+        }
+    }
+
+    /* 红色 */
+    &[color="red"] {
+        background: var(--red);
+
+        & .toggle-btn {
+            background: var(--red) !important;
+        }
+
+        & li>.trigger {
+            &::before {
+                background: var(--red-shallow) !important;
+            }
+        }
+
+        &[collapsed] {
+            & .sub-menu {
+                background: var(--red) !important;
+            }
+        }
+
+        &:not([side]) {
+            & .sub-menu {
+                background: var(--red) !important;
+            }
+
+            &[collapsed] {
+                & .sub-menu {
+                    background: rgba(0, 0, 0, 0.25) !important;
+                }
+            }
+        }
+    }
+
+    /* 蓝色 */
+    &[color="blue"] {
+        background: var(--blue);
+
+        & .toggle-btn {
+            background: var(--blue) !important;
+        }
+
+        & li>.trigger {
+            &::before {
+                background: var(--blue-shallow) !important;
+            }
+        }
+
+        &[collapsed] {
+            & .sub-menu {
+                background: var(--blue) !important;
+            }
+        }
+
+        &:not([side]) {
+            & .sub-menu {
+                background: var(--blue) !important;
+            }
+
+            &[collapsed] {
+                & .sub-menu {
+                    background: rgba(0, 0, 0, 0.25) !important;
+                }
+            }
+        }
+    }
 }
 
 [hx-ext~="bny-nav"]:not([side]) {
     &>.head {
         &>.toggle-btn {
             display: none;
+        }
+    }
+
+    & li>.trigger {
+        &::before {
+            top: 100%;
+            left: 50%;
+            width: 0%;
+            height: 2px;
+        }
+
+        &:hover::before {
+            left: 0;
+            width: 100%;
+        }
+
+        &.active::before {
+            left: 0;
+            width: 100%;
         }
     }
 }
@@ -171,12 +385,10 @@
         }
 
         &[collapsed] {
-
             &>.head {
                 border-bottom: 1px solid var(--black-shallow);
 
                 &>.toggle-btn {
-
                     & i {
                         transform: rotate(180deg);
                     }
@@ -294,7 +506,6 @@
         }
 
         &>.menu {
-
             &>li {
                 &>.trigger {
                     justify-content: center;
@@ -329,11 +540,9 @@
                 box-shadow: var(--box-shadow-005);
                 transform: translateY(-15px);
 
-
                 & .sub-menu {
                     top: 50%;
                 }
-
             }
 
             & li {
@@ -348,158 +557,6 @@
                         overflow: unset;
                         transform: translateY(0);
                     }
-                }
-            }
-        }
-    }
-}
-
-[hx-ext~="bny-nav"] {
-
-    /* 颜色 */
-    /* 白色 */
-    &[color="white"] {
-        background: var(--white-middle);
-        color: var(--black-middle);
-
-        & .logo-box {
-            color: var(--black-middle);
-        }
-
-        & .toggle-btn {
-            background: var(--white-middle) !important;
-
-            & i {
-                color: var(--black-middle) !important;
-            }
-        }
-
-        & li>.trigger {
-            color: var(--black-middle);
-        }
-
-        &[collapsed] {
-            & .sub-menu {
-                background: var(--white-middle) !important;
-            }
-        }
-
-        &:not([side]) {
-            & .sub-menu {
-                background: var(--white-middle) !important;
-            }
-
-            &[collapsed] {
-                & .sub-menu {
-                    background: rgba(0, 0, 0, 0.25) !important;
-                }
-            }
-        }
-    }
-
-    /* 绿色 */
-    &[color="green"] {
-        background: var(--green);
-
-        & .toggle-btn {
-            background: var(--green) !important;
-        }
-
-        &[collapsed] {
-            & .sub-menu {
-                background: var(--green) !important;
-            }
-        }
-
-        &:not([side]) {
-            & .sub-menu {
-                background: var(--green) !important;
-            }
-
-            &[collapsed] {
-                & .sub-menu {
-                    background: rgba(0, 0, 0, 0.25) !important;
-                }
-            }
-        }
-    }
-
-    /* 黄色 */
-    &[color="yellow"] {
-        background: var(--yellow);
-
-        & .toggle-btn {
-            background: var(--yellow) !important;
-        }
-
-        &[collapsed] {
-            & .sub-menu {
-                background: var(--yellow) !important;
-            }
-        }
-
-        &:not([side]) {
-            & .sub-menu {
-                background: var(--yellow) !important;
-            }
-
-            &[collapsed] {
-                & .sub-menu {
-                    background: rgba(0, 0, 0, 0.25) !important;
-                }
-            }
-        }
-    }
-
-    /* 红色 */
-    &[color="red"] {
-        background: var(--red);
-
-        & .toggle-btn {
-            background: var(--red) !important;
-        }
-
-        &[collapsed] {
-            & .sub-menu {
-                background: var(--red) !important;
-            }
-        }
-
-        &:not([side]) {
-            & .sub-menu {
-                background: var(--red) !important;
-            }
-
-            &[collapsed] {
-                & .sub-menu {
-                    background: rgba(0, 0, 0, 0.25) !important;
-                }
-            }
-        }
-    }
-
-    /* 蓝色 */
-    &[color="blue"] {
-        background: var(--blue);
-
-        & .toggle-btn {
-            background: var(--blue) !important;
-        }
-
-        &[collapsed] {
-            & .sub-menu {
-                background: var(--blue) !important;
-            }
-        }
-
-        &:not([side]) {
-            & .sub-menu {
-                background: var(--blue) !important;
-            }
-
-            &[collapsed] {
-                & .sub-menu {
-                    background: rgba(0, 0, 0, 0.25) !important;
                 }
             }
         }
