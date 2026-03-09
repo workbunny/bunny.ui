@@ -1,6 +1,6 @@
 <p align="center"><img width="260px" src="https://chaz6chez.cn/images/workbunny-logo.png" alt="workbunny"></p>
 
-**<p align="center">workbunny/bunny-ui</p>**
+**<p align="center">workbunny/bunny.ui</p>**
 
 **<p align="center">🐇 HTMX 拓展 Web UI 组件库 🐇</p>**
 
