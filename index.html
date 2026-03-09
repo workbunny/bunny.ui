@@ -4,19 +4,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BunnyUI 2.x</title>
+    <title>BunnyUI</title>
     <link rel="shortcut icon" href="bunny.png" type="image/x-icon">
     <link rel="stylesheet" href="/debug/bunny.css">
     <script src="/debug/bunny.js"></script>
     <meta name="keywords" content="BunnyUI, HTMX, Web UI, javascript,组件库">
-    <meta name="description" content="BunnyUI 2.x 是一个基于 HTMX 拓展的 Web UI 组件库.">
+    <meta name="description" content="BunnyUI 是一个基于 HTMX 拓展的 Web UI 组件库.">
 </head>
 <style>
-    body {
-        padding: 10px;
+    header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 9999;
         width: 100%;
-        margin: 0 auto;
-        max-width: 1024px;
+        background: var(--default);
+        box-shadow: var(--box-shadow-005);
+
+        & [hx-ext~="bny-nav"] {
+            box-shadow: none;
+        }
+    }
+
+    body>#bny-content {
+        margin: 70px 0;
+        overflow: auto;
+    }
+
+    footer {
+        background: var(--white);
+        padding: 30px 0;
+
+        & * {
+            color: var(--black);
+        }
     }
 
     #tab-load {
@@ -24,7 +46,7 @@
         top: 0;
         left: 0;
         width: 100%;
-        z-index: 999;
+        z-index: 99999;
     }
 
     .htmx-indicator {
@@ -46,58 +68,63 @@
 </style>
 
 <body>
-
-    <center>
-        <img src="bunny.png" alt="BunnyUI" width="128" height="128">
-        <h1>BunnyUI 2.x</h1>
-        <p>
-            <button class="bny-btn" id="mode-btn">模式</button>
-            <a href="https://htmx.org/" target="_blank" model="border" class="bny-btn">HTMX</a>
-            <a href="https://github.com/workbunny/bunny.ui" target="_blank" color="blue" class="bny-btn">项目地址</a>
-        </p>
-        <p>现代化浏览器，无需额外配置</p>
-        <span>🐇 HTMX 拓展 Web UI 组件库. 🐇</span>
-    </center>
-    <div hx-ext="bny-tab" mode="scroll">
-        <ul class="head" hx-indicator="#tab-load">
-            <li hx-get="/test/button.html">样式-按钮</li>
-            <li hx-get="/test/tag.html">样式-标签</li>
-            <li hx-get="/test/color.html">样式-颜色</li>
-            <li hx-get="/test/class.html">样式-公共类</li>
-            <li hx-get="/test/icons.html">样式-图标</li>
-            <li hx-get="/test/subsidiary.html">样式-辅助</li>
-            <li hx-get="/test/card.html">样式-卡片</li>
-            <li hx-get="/test/grid.html">样式-网格</li>
-            <li hx-get="/test/form.html">组件-表单</li>
-            <li hx-get="/test/menu.html">组件-菜单</li>
-            <li hx-get="/test/nav.html">组件-导航栏</li>
-            <li hx-get="/test/collapse.html">组件-折叠面板</li>
-            <li hx-get="/test/dropdown.html">组件-下拉菜单</li>
-            <li hx-get="/test/alert.html">组件-警示信息</li>
-            <li hx-get="/test/confirm.html">组件-确认信息</li>
-            <li hx-get="/test/page.html">组件-页面信息</li>
-            <li hx-get="/test/load.html">组件-加载</li>
-            <li hx-get="/test/code.html">组件-代码</li>
-            <li hx-get="/test/table.html">组件-表格</li>
-            <li hx-get="/test/tab.html">组件-选项卡</li>
-            <li hx-get="/test/js.html">JS-API</li>
-        </ul>
-        <div class="body">
-        </div>
-    </div>
-    <!-- 加载指示器 -->
-    <div id="tab-load">
-        <div class="htmx-indicator">
-            <div class="bny-load-health" color="green">
-                <div></div>
+    <!-- 头部 -->
+    <header>
+        <div class="bny-container">
+            <div hx-ext="bny-nav" hx-indicator="#tab-load">
+                <div class="head">
+                    <div class="logo-box">
+                        <div class="logo">
+                            <img src="/bunny.png" alt="logo">
+                        </div>
+                        <span>BunnyUI</span>
+                    </div>
+                </div>
+                <ul class="menu">
+                    <li hx-get="/home.html" hx-target="#bny-content">
+                        <div class="trigger">
+                            <span>首页</span>
+                        </div>
+                    </li>
+                    <li hx-get="/doc.html" hx-target="#bny-content">
+                        <div class="trigger">
+                            <span>组件</span>
+                        </div>
+                    </li>
+                    <li id="mode-btn">
+                        <div class="trigger">
+                            <span>模式</span>
+                        </div>
+                    </li>
+                    <li>
+                        <a class="trigger" href="https://github.com/workbunny/bunny.ui" target="_blank">
+                            <span><i class="bny-icon icon-github-fill"></i></span>
+                        </a>
+                    </li>
+                </ul>
             </div>
         </div>
-    </div>
-    <script>
-        document.getElementById('mode-btn').addEventListener('click', function () {
-            document.documentElement.classList.toggle('dark');
-        });
-    </script>
+    </header>
+    <div id="bny-content" hx-get="/home.html" hx-trigger="load"></div>
+    <footer>
+        <div class="bny-container">
+            <div class="info">
+                <span>Copyright © 2026 <a href="https://github.com/workbunny/bunny.ui" target="_blank"
+                        rel="noopener noreferrer">BunnyUI</a> MIT Licensed</span>
+            </div>
+        </div>
+    </footer>
 </body>
-
-</html>
+<!-- 加载指示器 -->
+<div id="tab-load">
+    <div class="htmx-indicator">
+        <div class="bny-load-health" color="green">
+            <div></div>
+        </div>
+    </div>
+</div>
+<script>
+    document.getElementById('mode-btn').addEventListener('click', function () {
+        document.documentElement.classList.toggle('dark');
+    });
+</script>

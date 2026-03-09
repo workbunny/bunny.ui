@@ -7,6 +7,7 @@
     position: relative;
     transition: var(--transition);
     box-shadow: var(--box-shadow-005);
+    justify-content: space-between;
 
     &>.head {
         padding: 16px 20px;

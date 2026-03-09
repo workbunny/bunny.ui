@@ -1,0 +1,95 @@
+<style>
+    .home-page {
+        & main {
+            &>h1 {
+                padding-top: 58px;
+                font-weight: 500;
+                font-size: 68px;
+            }
+
+            &>h2 {
+                line-height: 52px;
+                font-size: 32px;
+                font-weight: 500;
+                padding: 16px 0px;
+            }
+
+            &>.main-btn {
+                padding: 16px 0;
+            }
+
+            &>.main-info {
+                padding: 16px 0;
+                line-height: 24px;
+
+                &>span {
+                    padding: 0 8px;
+                    color: var(--black);
+
+                    & * {
+                        color: var(--black);
+                    }
+                }
+            }
+        }
+
+        & .home-content {
+            padding-top: 40px;
+
+            & .title {
+                padding-bottom: 24px;
+            }
+
+            & .content {
+                line-height: 24px;
+            }
+        }
+    }
+</style>
+<div class="home-page">
+    <div class="bny-container">
+        <main class="tc">
+            <h1>BunnyUI</h1>
+            <h2>轻量级 HTMX 拓展 Web UI 组件库 <br> 通过属性构建现代用户界面，结合简单性和超文本的强大功能。</h2>
+            <div class="main-btn">
+                <button class="bny-btn" hx-get="/doc.html" hx-target="#bny-content">开始使用</button>
+                <button class="bny-btn" model="border">直接下载</button>
+            </div>
+            <div class="main-info">
+                <span><img src="https://badgen.net/github/release/workbunny/bunny-ui" alt="Version"></span>
+                <span><a href="http://">更新日志</a></span>
+                <span><a href="http://">免责声明</a></span>
+            </div>
+        </main>
+        <div class="home-content bny-row" gap="18">
+            <div class="col-xs12 col-md4 p-24">
+                <div class="bny-card p-12" model="transition">
+                    <div class="body">
+                        <h1 class="title">轻量高效</h1>
+                        <p class="content">Bunny-UI
+                            采用轻量级设计理念，无外部框架依赖，核心文件体积小，加载速度快。这使得它特别适合对性能要求较高的项目，尤其是在移动设备等网络环境较差的场景下。同时，由于不依赖大型框架，项目构建后的打包体积更小，部署更便捷，运行更流畅。
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs12 col-md4 p-24">
+                <div class="bny-card p-12" model="transition">
+                    <div class="body">
+                        <h1 class="title">开发简洁</h1>
+                        <p class="content">基于 HTMX 扩展，充分利用超文本的强大功能，通过简单的属性即可构建复杂的用户界面。这种开发模式减少了大量的 JavaScript
+                            代码编写，让开发者能够更专注于业务逻辑而非界面交互细节。同时，HTMX 的无刷新更新机制也提升了用户体验，使页面交互更加流畅自然。</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs12 col-md4 p-24">
+                <div class="bny-card p-12" model="transition">
+                    <div class="body">
+                        <h1 class="title">丰富组件</h1>
+                        <p class="content">提供了丰富的 UI 组件，包括菜单、表单、布局展示等多种类型，满足各种业务场景的需求。同时，它的 API 设计简洁易用，通过全局 bny
+                            对象即可调用各种组件，配置灵活，支持自定义样式、动画和交互行为。这种模块化的设计使得开发者可以根据需要灵活组合和扩展组件，大大提高了开发效率。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
