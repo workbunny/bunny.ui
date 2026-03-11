@@ -5944,6 +5944,62 @@ hr {
             }
         }
     }
+}[hx-ext~="bny-anchor"] {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding-left: 4px;
+
+    & ul {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        padding-left: 4px;
+    }
+
+    & .link {
+        line-height: 1.5;
+        border-top-right-radius: var(--border-radius);
+        border-bottom-right-radius: var(--border-radius);
+        padding-left: 4px;
+        color: var(--black);
+        transition: var(--transition);
+        cursor: pointer;
+
+        &:hover {
+            color: var(--default);
+        }
+
+        &.active {
+            background: var(--default-shallow);
+            color: var(--white);
+        }
+    }
+
+    &[rail] {
+        &::before {
+            content: "";
+            width: 4px;
+            height: 100%;
+            background: var(--gray-shallow);
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    }
+
+    &>.slider {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 4px;
+        height: 21px;
+        background: var(--default);
+        z-index: 1;
+        transition: var(--transition);
+    }
 }/* 公共样式 */
 
 /* 字体大小 */
