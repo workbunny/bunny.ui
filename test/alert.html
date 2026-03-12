@@ -1,38 +1,41 @@
-<h1>警示信息</h1>
-<hr>
-<blockquote class="bny-blockquote">
-    警示信息是一种用于提醒用户注意事项的组件。
-</blockquote>
+<div class="bny-row">
+    <div class="text-content-box col-xs12 col-sm9">
+        <div class="text-content">
+            <h1>警示信息</h1>
+            <hr>
+            <blockquote class="bny-blockquote">
+                警示信息是一种用于提醒用户注意事项的组件。
+            </blockquote>
 
-<h2>样式使用</h2>
-<div class="bny-card">
-    <div hx-ext="bny-tab">
-        <ul class="head">
-            <li>Preview</li>
-            <li>Code</li>
-        </ul>
-        <div class="body">
-            <div>
-                <div class="p-12">
-                    <div class="bny-alert">
-                        这是一个警示信息
-                    </div>
-                    <div class="bny-alert" color="green">
-                        这是一个警示信息
-                    </div>
-                    <div class="bny-alert" color="yellow">
-                        这是一个警示信息
-                    </div>
-                    <div class="bny-alert" color="red">
-                        这是一个警示信息
-                    </div>
-                    <div class="bny-alert" color="blue">
-                        这是一个警示信息
-                    </div>
-                </div>
-            </div>
-            <div>
-                <pre hx-ext="bny-code">
+            <h2 id="n01">样式使用</h2>
+            <div class="bny-card">
+                <div hx-ext="bny-tab">
+                    <ul class="head">
+                        <li>Preview</li>
+                        <li>Code</li>
+                    </ul>
+                    <div class="body">
+                        <div>
+                            <div class="p-12">
+                                <div class="bny-alert">
+                                    这是一个警示信息
+                                </div>
+                                <div class="bny-alert" color="green">
+                                    这是一个警示信息
+                                </div>
+                                <div class="bny-alert" color="yellow">
+                                    这是一个警示信息
+                                </div>
+                                <div class="bny-alert" color="red">
+                                    这是一个警示信息
+                                </div>
+                                <div class="bny-alert" color="blue">
+                                    这是一个警示信息
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <pre hx-ext="bny-code">
 &lt;div class="bny-alert"&gt;
     这是一个警示信息
 &lt;/div&gt;
@@ -49,36 +52,36 @@
     这是一个警示信息
 &lt;/div&gt;
                 </pre>
-            </div>
-        </div>
-    </div>
-</div>
-
-<h2>Htmx用法</h2>
-<div class="bny-card">
-    <div hx-ext="bny-tab">
-        <ul class="head">
-            <li>Preview</li>
-            <li>Code</li>
-            <li>Json</li>
-        </ul>
-        <div class="body">
-            <div>
-                <div class="p-12">
-                    <button hx-ext="bny-alert" hx-get="/test/data/alert.json" hx-trigger="click"
-                        class="bny-btn">点击我</button>
-                    <button hx-ext="bny-alert" hx-get="/test/data/alert01.json" hx-trigger="click"
-                        class="bny-btn">点击我-绿色</button>
-                    <button hx-ext="bny-alert" hx-get="/test/data/alert02.json" hx-trigger="click"
-                        class="bny-btn">点击我-黄色-左移</button>
-                    <button hx-ext="bny-alert" hx-get="/test/data/alert03.json" hx-trigger="click"
-                        class="bny-btn">点击我-红色-延时10秒</button>
-                    <button hx-ext="bny-alert" hx-get="/test/data/alert04.json" hx-trigger="click"
-                        class="bny-btn">点击我-蓝色</button>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div>
-                <pre hx-ext="bny-code">
+
+            <h2 id="n02">Htmx用法</h2>
+            <div class="bny-card">
+                <div hx-ext="bny-tab">
+                    <ul class="head">
+                        <li>Preview</li>
+                        <li>Code</li>
+                        <li>Json</li>
+                    </ul>
+                    <div class="body">
+                        <div>
+                            <div class="p-12">
+                                <button hx-ext="bny-alert" hx-get="/test/data/alert.json" hx-trigger="click"
+                                    class="bny-btn">点击我</button>
+                                <button hx-ext="bny-alert" hx-get="/test/data/alert01.json" hx-trigger="click"
+                                    class="bny-btn">点击我-绿色</button>
+                                <button hx-ext="bny-alert" hx-get="/test/data/alert02.json" hx-trigger="click"
+                                    class="bny-btn">点击我-黄色-左移</button>
+                                <button hx-ext="bny-alert" hx-get="/test/data/alert03.json" hx-trigger="click"
+                                    class="bny-btn">点击我-红色-延时10秒</button>
+                                <button hx-ext="bny-alert" hx-get="/test/data/alert04.json" hx-trigger="click"
+                                    class="bny-btn">点击我-蓝色</button>
+                            </div>
+                        </div>
+                        <div>
+                            <pre hx-ext="bny-code">
 &lt;button hx-ext=&quot;bny-alert&quot; hx-get=&quot;/test/data/alert.json&quot; hx-trigger=&quot;click&quot;
     class=&quot;bny-btn&quot;&gt;点击我&lt;/button&gt;
 &lt;button hx-ext=&quot;bny-alert&quot; hx-get=&quot;/test/data/alert01.json&quot; hx-trigger=&quot;click&quot;
@@ -90,9 +93,9 @@
 &lt;button hx-ext=&quot;bny-alert&quot; hx-get=&quot;/test/data/alert04.json&quot; hx-trigger=&quot;click&quot;
     class=&quot;bny-btn&quot;&gt;点击我-蓝色&lt;/button&gt;
                 </pre>
-            </div>
-            <div>
-                <pre hx-ext="bny-code">
+                        </div>
+                        <div>
+                            <pre hx-ext="bny-code">
 // alert.json
 {
     "code": 0,
@@ -126,95 +129,107 @@
     "time": 3
 }
                 </pre>
+                        </div>
+                    </div>
+                </div>
             </div>
+            <h2 id="n03">API</h2>
+            <h3>JSON属性</h3>
+
+            <table hx-ext="bny-table">
+                <thead>
+                    <tr>
+                        <th>属性</th>
+                        <th>默认值</th>
+                        <th>必须</th>
+                        <th>描述</th>
+                        <th>版本</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>code</td>
+                        <td>0</td>
+                        <td>是</td>
+                        <td>提示类型:0-默认,1-绿色,2-黄色,3-红色,4-蓝色</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>msg</td>
+                        <td>''</td>
+                        <td>是</td>
+                        <td>提示消息</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>time</td>
+                        <td>3</td>
+                        <td>否</td>
+                        <td>提示显示时间,单位秒</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>anim</td>
+                        <td>'scale'</td>
+                        <td>否</td>
+                        <td>提示动画:scale-缩放,left-左移,right-右移,up-上移,down-下移</td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Js用法</h3>
+            <h4>bny.alert(msg, code, anim, time)</h4>
+            <table hx-ext="bny-table">
+                <thead>
+                    <tr>
+                        <th>属性</th>
+                        <th>默认值</th>
+                        <th>必须</th>
+                        <th>描述</th>
+                        <th>版本</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>msg</td>
+                        <td>''</td>
+                        <td>是</td>
+                        <td>提示消息</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>code</td>
+                        <td>0</td>
+                        <td>是</td>
+                        <td>提示类型:0-默认,1-绿色,2-黄色,3-红色,4-蓝色</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>anim</td>
+                        <td>'scale'</td>
+                        <td>否</td>
+                        <td>提示动画:scale-缩放,left-左移,right-右移,up-上移,down-下移</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>time</td>
+                        <td>3</td>
+                        <td>否</td>
+                        <td>提示显示时间,单位秒</td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="right-anchor-box hidden-xs col-sm3">
+        <div class="right-anchor">
+            <ul hx-ext="bny-anchor" rail>
+                <li class="link" anchor="#n01">样式使用</li>
+                <li class="link" anchor="#n02">Htmx用法</li>
+                <li class="link" anchor="#n03">API</li>
+            </ul>
         </div>
     </div>
 </div>
-<h2>API</h2>
-<h3>JSON属性</h3>
-
-<table hx-ext="bny-table">
-    <thead>
-        <tr>
-            <th>属性</th>
-            <th>默认值</th>
-            <th>必须</th>
-            <th>描述</th>
-            <th>版本</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>code</td>
-            <td>0</td>
-            <td>是</td>
-            <td>提示类型:0-默认,1-绿色,2-黄色,3-红色,4-蓝色</td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>msg</td>
-            <td>''</td>
-            <td>是</td>
-            <td>提示消息</td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>time</td>
-            <td>3</td>
-            <td>否</td>
-            <td>提示显示时间,单位秒</td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>anim</td>
-            <td>'scale'</td>
-            <td>否</td>
-            <td>提示动画:scale-缩放,left-左移,right-右移,up-上移,down-下移</td>
-            <td></td>
-        </tr>
-    </tbody>
-</table>
-
-<h3>Js用法</h3>
-<h4>bny.alert(msg, code, anim, time)</h4>
-<table hx-ext="bny-table">
-    <thead>
-        <tr>
-            <th>属性</th>
-            <th>默认值</th>
-            <th>必须</th>
-            <th>描述</th>
-            <th>版本</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>msg</td>
-            <td>''</td>
-            <td>是</td>
-            <td>提示消息</td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>code</td>
-            <td>0</td>
-            <td>是</td>
-            <td>提示类型:0-默认,1-绿色,2-黄色,3-红色,4-蓝色</td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>anim</td>
-            <td>'scale'</td>
-            <td>否</td>
-            <td>提示动画:scale-缩放,left-左移,right-右移,up-上移,down-下移</td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>time</td>
-            <td>3</td>
-            <td>否</td>
-            <td>提示显示时间,单位秒</td>
-            <td></td>
-        </tr>
-    </tbody>
-</table>

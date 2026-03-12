@@ -1,52 +1,55 @@
-<h1>表单</h1>
-<hr>
-<blockquote class="bny-blockquote">
-    表单组件
-</blockquote>
-<h2>输入框</h2>
-<div hx-ext="bny-tab">
-    <ul class="head">
-        <li>Preview</li>
-        <li>Code</li>
-    </ul>
-    <div class="body">
-        <div>
-            <div class="p-12">
-                <input type="text" name="" placeholder="文本框" class="bny-input">
-                </input>
-                <br>
-                <textarea name="" placeholder="多行文本框" class="bny-textarea"></textarea>
-            </div>
-        </div>
-        <div>
-            <pre hx-ext="bny-code">
+<div class="bny-row">
+    <div class="text-content-box col-xs12 col-sm9">
+        <div class="text-content">
+            <h1>表单</h1>
+            <hr>
+            <blockquote class="bny-blockquote">
+                表单组件
+            </blockquote>
+            <h2 id="n01">输入框</h2>
+            <div hx-ext="bny-tab">
+                <ul class="head">
+                    <li>Preview</li>
+                    <li>Code</li>
+                </ul>
+                <div class="body">
+                    <div>
+                        <div class="p-12">
+                            <input type="text" name="" placeholder="文本框" class="bny-input">
+                            </input>
+                            <br>
+                            <textarea name="" placeholder="多行文本框" class="bny-textarea"></textarea>
+                        </div>
+                    </div>
+                    <div>
+                        <pre hx-ext="bny-code">
 &lt;input type=&quot;text&quot; name=&quot;&quot; placeholder=&quot;文本框&quot; class=&quot;bny-input&quot;&gt;
 &lt;br&gt;
 &lt;textarea name=&quot;&quot; placeholder=&quot;多行文本框&quot; class=&quot;bny-textarea&quot;&gt;&lt;/textarea&gt;
             </pre>
-        </div>
-    </div>
-</div>
-<h2>选择框</h2>
-<div hx-ext="bny-tab">
-    <ul class="head">
-        <li>Preview</li>
-        <li>Code</li>
-    </ul>
-    <div class="body">
-        <div>
-            <div class="p-12">
-                <select name="" class="bny-select">
-                    <option>请选择</option>
-                    <option value="1">选项1</option>
-                    <option value="2" disabled>选项2</option>
-                    <option value="3" selected>选项3</option>
-                    <option value="4">选项4</option>
-                </select>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div>
-            <pre hx-ext="bny-code">
+            <h2 id="n02">选择框</h2>
+            <div hx-ext="bny-tab">
+                <ul class="head">
+                    <li>Preview</li>
+                    <li>Code</li>
+                </ul>
+                <div class="body">
+                    <div>
+                        <div class="p-12">
+                            <select name="" class="bny-select">
+                                <option>请选择</option>
+                                <option value="1">选项1</option>
+                                <option value="2" disabled>选项2</option>
+                                <option value="3" selected>选项3</option>
+                                <option value="4">选项4</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div>
+                        <pre hx-ext="bny-code">
 &lt;select name=&quot;&quot; class=&quot;bny-select&quot;&gt;
 &lt;option &gt;请选择&lt;/option&gt;
 &lt;option value=&quot;1&quot;&gt;选项1&lt;/option&gt;
@@ -54,229 +57,18 @@
 &lt;option value=&quot;3&quot;&gt;选项3&lt;/option&gt;
 &lt;/select&gt; 
             </pre>
-        </div>
-    </div>
-</div>
-<h2>单选框</h2>
-<div hx-ext="bny-tab">
-    <ul class="head">
-        <li>Preview</li>
-        <li>Code</li>
-    </ul>
-    <div class="body">
-        <div>
-            <div class="p-12">
-                <label>
-                    <input type="radio" name="radio" class="bny-radio">
-                    选项1
-                </label>
-                <label>
-                    <input type="radio" name="radio" class="bny-radio">
-                    选项2
-                </label>
-                <label>
-                    <input type="radio" disabled name="radio" class="bny-radio">
-                    选项3
-                </label>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div>
-            <pre hx-ext="bny-code">
-&lt;label&gt;
-    &lt;input type=&quot;radio&quot; name=&quot;radio&quot; class=&quot;bny-radio&quot;&gt;
-    选项1
-&lt;/label&gt;
-&lt;label&gt;
-    &lt;input type=&quot;radio&quot; name=&quot;radio&quot; class=&quot;bny-radio&quot;&gt;
-    选项2
-&lt;/label&gt;
-&lt;label&gt;
-    &lt;input type=&quot;radio&quot; disabled name=&quot;radio&quot; class=&quot;bny-radio&quot;&gt;
-    选项3
-&lt;/label&gt;
-            </pre>
-        </div>
-    </div>
-</div>
-<h2>复选框</h2>
-<div hx-ext="bny-tab">
-    <ul class="head">
-        <li>Preview</li>
-        <li>Code</li>
-    </ul>
-    <div class="body">
-        <div>
-            <div class="p-12">
-                <label>
-                    <input type="checkbox" name="checkbox" class="bny-checkbox">
-                    选项1
-                </label>
-                <label>
-                    <input type="checkbox" name="checkbox" class="bny-checkbox">
-                    选项2
-                </label>
-                <label>
-                    <input type="checkbox" disabled name="checkbox" class="bny-checkbox">
-                    选项3
-                </label>
-            </div>
-        </div>
-        <div>
-            <pre hx-ext="bny-code">
-&lt;label&gt;
-    &lt;input type=&quot;checkbox&quot; name=&quot;checkbox&quot; class=&quot;bny-checkbox&quot;&gt;
-    选项1
-&lt;/label&gt;
-&lt;label&gt;
-    &lt;input type=&quot;checkbox&quot; name=&quot;checkbox&quot; class=&quot;bny-checkbox&quot;&gt;
-    选项2
-&lt;/label&gt;
-&lt;label&gt;
-    &lt;input type=&quot;checkbox&quot; disabled name=&quot;checkbox&quot; class=&quot;bny-checkbox&quot;&gt;
-    选项3
-&lt;/label&gt;
-            </pre>
-        </div>
-    </div>
-</div>
-<h2>开关框</h2>
-<div hx-ext="bny-tab">
-    <ul class="head">
-        <li>Preview</li>
-        <li>Code</li>
-    </ul>
-    <div class="body">
-        <div>
-            <div class="p-12">
-                <label>
-                    <input type="checkbox" name="switch" class="bny-switch">
-                </label>
-                <label>
-                    <input type="checkbox" disabled name="switch" class="bny-switch">
-                </label>
-            </div>
-        </div>
-        <div>
-            <pre hx-ext="bny-code">
-&lt;label&gt;
-    &lt;input type=&quot;checkbox&quot; name=&quot;switch&quot; class=&quot;bny-switch&quot;&gt;
-&lt;/label&gt;
-&lt;label&gt;
-    &lt;input type=&quot;checkbox&quot; disabled name=&quot;switch&quot; class=&quot;bny-switch&quot;&gt;
-&lt;/label&gt;
-            </pre>
-        </div>
-    </div>
-</div>
-<h2>滑块</h2>
-<div hx-ext="bny-tab">
-    <ul class="head">
-        <li>Preview</li>
-        <li>Code</li>
-    </ul>
-    <div class="body">
-        <div>
-            <div class="p-12">
-                <label>
-                    <input type="range" name="slider" class="bny-slider">
-                </label>
-                <label>
-                    <input type="range" disabled name="slider" class="bny-slider">
-                </label>
-            </div>
-        </div>
-        <div>
-            <pre hx-ext="bny-code">
-&lt;label&gt;
-    &lt;input type=&quot;range&quot; name=&quot;slider&quot; class=&quot;bny-slider&quot;&gt;
-&lt;/label&gt;
-&lt;label&gt;
-    &lt;input type=&quot;range&quot; disabled name=&quot;slider&quot; class=&quot;bny-slider&quot;&gt;
-&lt;/label&gt;
-            </pre>
-        </div>
-    </div>
-</div>
-<h2>表单集合</h2>
-<div hx-ext="bny-tab">
-    <ul class="head">
-        <li>Preview</li>
-        <li>Code</li>
-    </ul>
-    <div class="body">
-        <div>
-            <div class="p-12">
-                <form hx-ext="bny-form">
-                    <div class="form-item">
-                        <label>文本框</label>
-                        <div class="input-group">
-                            <input type="text" name="text" class="bny-input">
-                        </div>
-                    </div>
-                    <div class="form-item">
-                        <label>验证手机</label>
-                        <div class="input-group">
-                            <input type="text" name="text" class="bny-input">
-                            <button class="bny-btn">获取验证码</button>
-                        </div>
-                    </div>
-                    <div class="form-item">
-                        <label>自定义验证</label>
-                        <div class="input-group">
-                            <input type="password" name="password" class="bny-input">
-                            <span>6 到 12 位字符</span>
-                        </div>
-                    </div>
-                    <div class="form-item">
-                        <label>单行选择框</label>
-                        <div class="input-group">
-                            <select name="select" class="bny-select">
-                                <option value="1">选项1</option>
-                                <option value="2">选项2</option>
-                                <option value="3">选项3</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="form-item">
-                        <label>假设联动选择</label>
-                        <div class="input-group">
-                            <select name="select" class="bny-select">
-                                <option value="1">选项1</option>
-                                <option value="2">选项2</option>
-                                <option value="3">选项3</option>
-                            </select>
-                            <select name="select" class="bny-select">
-                                <option value="1">选项1</option>
-                                <option value="2">选项2</option>
-                                <option value="3">选项3</option>
-                            </select>
-                            <select name="select" class="bny-select">
-                                <option value="1">选项1</option>
-                                <option value="2">选项2</option>
-                                <option value="3">选项3</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="form-item">
-                        <label>复选框</label>
-                        <div class="input-group">
-                            <label>
-                                <input type="checkbox" name="checkbox" class="bny-checkbox">
-                                选项1
-                            </label>
-                            <label>
-                                <input type="checkbox" name="checkbox" class="bny-checkbox">
-                                选项2
-                            </label>
-                            <label>
-                                <input type="checkbox" disabled name="checkbox" class="bny-checkbox">
-                                选项3
-                            </label>
-                        </div>
-                    </div>
-                    <div class="form-item">
-                        <label>单选框</label>
-                        <div class="input-group">
+            <h2 id="n03">单选框</h2>
+            <div hx-ext="bny-tab">
+                <ul class="head">
+                    <li>Preview</li>
+                    <li>Code</li>
+                </ul>
+                <div class="body">
+                    <div>
+                        <div class="p-12">
                             <label>
                                 <input type="radio" name="radio" class="bny-radio">
                                 选项1
@@ -291,29 +83,240 @@
                             </label>
                         </div>
                     </div>
-                    <div class="form-item">
-                        <label>开关框</label>
-                        <div class="input-group">
-                            <input type="checkbox" name="switch" class="bny-switch">
-                        </div>
+                    <div>
+                        <pre hx-ext="bny-code">
+&lt;label&gt;
+    &lt;input type=&quot;radio&quot; name=&quot;radio&quot; class=&quot;bny-radio&quot;&gt;
+    选项1
+&lt;/label&gt;
+&lt;label&gt;
+    &lt;input type=&quot;radio&quot; name=&quot;radio&quot; class=&quot;bny-radio&quot;&gt;
+    选项2
+&lt;/label&gt;
+&lt;label&gt;
+    &lt;input type=&quot;radio&quot; disabled name=&quot;radio&quot; class=&quot;bny-radio&quot;&gt;
+    选项3
+&lt;/label&gt;
+            </pre>
                     </div>
-                    <div class="form-item">
-                        <label>滑块</label>
-                        <div class="input-group">
-                            <input type="range" name="slider" class="bny-slider">
-                        </div>
-                    </div>
-                    <div class="form-item">
-                        <label>普通文本域</label>
-                        <div class="input-group">
-                            <textarea name="textarea" class="bny-textarea"></textarea>
-                        </div>
-                    </div>
-                </form>
+                </div>
             </div>
-        </div>
-        <div>
-            <pre hx-ext="bny-code">
+            <h2 id="n04">复选框</h2>
+            <div hx-ext="bny-tab">
+                <ul class="head">
+                    <li>Preview</li>
+                    <li>Code</li>
+                </ul>
+                <div class="body">
+                    <div>
+                        <div class="p-12">
+                            <label>
+                                <input type="checkbox" name="checkbox" class="bny-checkbox">
+                                选项1
+                            </label>
+                            <label>
+                                <input type="checkbox" name="checkbox" class="bny-checkbox">
+                                选项2
+                            </label>
+                            <label>
+                                <input type="checkbox" disabled name="checkbox" class="bny-checkbox">
+                                选项3
+                            </label>
+                        </div>
+                    </div>
+                    <div>
+                        <pre hx-ext="bny-code">
+&lt;label&gt;
+    &lt;input type=&quot;checkbox&quot; name=&quot;checkbox&quot; class=&quot;bny-checkbox&quot;&gt;
+    选项1
+&lt;/label&gt;
+&lt;label&gt;
+    &lt;input type=&quot;checkbox&quot; name=&quot;checkbox&quot; class=&quot;bny-checkbox&quot;&gt;
+    选项2
+&lt;/label&gt;
+&lt;label&gt;
+    &lt;input type=&quot;checkbox&quot; disabled name=&quot;checkbox&quot; class=&quot;bny-checkbox&quot;&gt;
+    选项3
+&lt;/label&gt;
+            </pre>
+                    </div>
+                </div>
+            </div>
+            <h2 id="n05">开关框</h2>
+            <div hx-ext="bny-tab">
+                <ul class="head">
+                    <li>Preview</li>
+                    <li>Code</li>
+                </ul>
+                <div class="body">
+                    <div>
+                        <div class="p-12">
+                            <label>
+                                <input type="checkbox" name="switch" class="bny-switch">
+                            </label>
+                            <label>
+                                <input type="checkbox" disabled name="switch" class="bny-switch">
+                            </label>
+                        </div>
+                    </div>
+                    <div>
+                        <pre hx-ext="bny-code">
+&lt;label&gt;
+    &lt;input type=&quot;checkbox&quot; name=&quot;switch&quot; class=&quot;bny-switch&quot;&gt;
+&lt;/label&gt;
+&lt;label&gt;
+    &lt;input type=&quot;checkbox&quot; disabled name=&quot;switch&quot; class=&quot;bny-switch&quot;&gt;
+&lt;/label&gt;
+            </pre>
+                    </div>
+                </div>
+            </div>
+            <h2 id="n06">滑块</h2>
+            <div hx-ext="bny-tab">
+                <ul class="head">
+                    <li>Preview</li>
+                    <li>Code</li>
+                </ul>
+                <div class="body">
+                    <div>
+                        <div class="p-12">
+                            <label>
+                                <input type="range" name="slider" class="bny-slider">
+                            </label>
+                            <label>
+                                <input type="range" disabled name="slider" class="bny-slider">
+                            </label>
+                        </div>
+                    </div>
+                    <div>
+                        <pre hx-ext="bny-code">
+&lt;label&gt;
+    &lt;input type=&quot;range&quot; name=&quot;slider&quot; class=&quot;bny-slider&quot;&gt;
+&lt;/label&gt;
+&lt;label&gt;
+    &lt;input type=&quot;range&quot; disabled name=&quot;slider&quot; class=&quot;bny-slider&quot;&gt;
+&lt;/label&gt;
+            </pre>
+                    </div>
+                </div>
+            </div>
+            <h2>表单集合</h2>
+            <div hx-ext="bny-tab">
+                <ul class="head">
+                    <li>Preview</li>
+                    <li>Code</li>
+                </ul>
+                <div class="body">
+                    <div>
+                        <div class="p-12">
+                            <form hx-ext="bny-form">
+                                <div class="form-item">
+                                    <label>文本框</label>
+                                    <div class="input-group">
+                                        <input type="text" name="text" class="bny-input">
+                                    </div>
+                                </div>
+                                <div class="form-item">
+                                    <label>验证手机</label>
+                                    <div class="input-group">
+                                        <input type="text" name="text" class="bny-input">
+                                        <button class="bny-btn">获取验证码</button>
+                                    </div>
+                                </div>
+                                <div class="form-item">
+                                    <label>自定义验证</label>
+                                    <div class="input-group">
+                                        <input type="password" name="password" class="bny-input">
+                                        <span>6 到 12 位字符</span>
+                                    </div>
+                                </div>
+                                <div class="form-item">
+                                    <label>单行选择框</label>
+                                    <div class="input-group">
+                                        <select name="select" class="bny-select">
+                                            <option value="1">选项1</option>
+                                            <option value="2">选项2</option>
+                                            <option value="3">选项3</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-item">
+                                    <label>假设联动选择</label>
+                                    <div class="input-group">
+                                        <select name="select" class="bny-select">
+                                            <option value="1">选项1</option>
+                                            <option value="2">选项2</option>
+                                            <option value="3">选项3</option>
+                                        </select>
+                                        <select name="select" class="bny-select">
+                                            <option value="1">选项1</option>
+                                            <option value="2">选项2</option>
+                                            <option value="3">选项3</option>
+                                        </select>
+                                        <select name="select" class="bny-select">
+                                            <option value="1">选项1</option>
+                                            <option value="2">选项2</option>
+                                            <option value="3">选项3</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-item">
+                                    <label>复选框</label>
+                                    <div class="input-group">
+                                        <label>
+                                            <input type="checkbox" name="checkbox" class="bny-checkbox">
+                                            选项1
+                                        </label>
+                                        <label>
+                                            <input type="checkbox" name="checkbox" class="bny-checkbox">
+                                            选项2
+                                        </label>
+                                        <label>
+                                            <input type="checkbox" disabled name="checkbox" class="bny-checkbox">
+                                            选项3
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="form-item">
+                                    <label>单选框</label>
+                                    <div class="input-group">
+                                        <label>
+                                            <input type="radio" name="radio" class="bny-radio">
+                                            选项1
+                                        </label>
+                                        <label>
+                                            <input type="radio" name="radio" class="bny-radio">
+                                            选项2
+                                        </label>
+                                        <label>
+                                            <input type="radio" disabled name="radio" class="bny-radio">
+                                            选项3
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="form-item">
+                                    <label>开关框</label>
+                                    <div class="input-group">
+                                        <input type="checkbox" name="switch" class="bny-switch">
+                                    </div>
+                                </div>
+                                <div class="form-item">
+                                    <label>滑块</label>
+                                    <div class="input-group">
+                                        <input type="range" name="slider" class="bny-slider">
+                                    </div>
+                                </div>
+                                <div class="form-item">
+                                    <label>普通文本域</label>
+                                    <div class="input-group">
+                                        <textarea name="textarea" class="bny-textarea"></textarea>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div>
+                        <pre hx-ext="bny-code">
 &lt;form hx-ext=&quot;bny-form&quot;&gt;
     &lt;div class=&quot;form-item&quot;&gt;
         &lt;label&gt;文本框&lt;/label&gt;
@@ -419,6 +422,22 @@
     &lt;/div&gt;
 &lt;/form&gt;
             </pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="right-anchor-box hidden-xs col-sm3">
+        <div class="right-anchor">
+            <ul hx-ext="bny-anchor" rail>
+                <li class="link" anchor="#n01">输入框</li>
+                <li class="link" anchor="#n02">选择框</li>
+                <li class="link" anchor="#n03">单选框</li>
+                <li class="link" anchor="#n04">复选框</li>
+                <li class="link" anchor="#n05">开关框</li>
+                <li class="link" anchor="#n06">滑块</li>
+                <li class="link" anchor="#n07">表单集合</li>
+            </ul>
         </div>
     </div>
 </div>

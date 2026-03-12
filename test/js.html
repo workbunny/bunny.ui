@@ -1,116 +1,119 @@
-<h1>JavaScript API</h1>
-<hr>
-<blockquote class="bny-blockquote">
-    bunny ui 提供了一系列基础 API，以更好地辅助组件的使用，主要用于扩展开发或处理事件。
-</blockquote>
+<div class="bny-row">
+    <div class="text-content-box col-xs12 col-sm9">
+        <div class="text-content">
+            <h1>JavaScript API</h1>
+            <hr>
+            <blockquote class="bny-blockquote">
+                bunny ui 提供了一系列基础 API，以更好地辅助组件的使用，主要用于扩展开发或处理事件。
+            </blockquote>
 
-<h2>获取元素在数组中的索引</h2>
-<code>bny.indexOf(elt)</code>
-<p>参数：</p>
-<p><code>elt</code> <code>HTMLElement</code> :要查找的元素。</p>
-<p>返回：</p>
-<p><code>number|null</code> :元素在数组中的索引，如果元素不存在，则返回 null。</p>
-<pre hx-ext="bny-code">
+            <h2 id="indexOf">获取元素在数组中的索引</h2>
+            <code>bny.indexOf(elt)</code>
+            <p>参数：</p>
+            <p><code>elt</code> <code>HTMLElement</code> :要查找的元素。</p>
+            <p>返回：</p>
+            <p><code>number|null</code> :元素在数组中的索引，如果元素不存在，则返回 null。</p>
+            <pre hx-ext="bny-code">
 const index = bny.indexOf(htmx.find("#myElement"));
 </pre>
 
-<h2>动画播放器</h2>
-<code>bny.animPlayer(elt, anim, status, fn)</code>
-<p>参数：</p>
-<p><code>elt</code> <code>HTMLElement</code> :要播放动画的元素。</p>
-<p><code>anim</code> <code>String</code> :动画名称。</p>
-<p><code>status</code> <code>Boolean</code> :状态，默认 true 开始播放，false 结束播放。</p>
-<p><code>fn</code> <code>Function</code> :动画结束回调函数，默认空函数。</p>
-<p>返回：</p>
-<p><code>void</code> :无返回值。</p>
-<pre hx-ext="bny-code">
+            <h2 id="animPlayer">动画播放器</h2>
+            <code>bny.animPlayer(elt, anim, status, fn)</code>
+            <p>参数：</p>
+            <p><code>elt</code> <code>HTMLElement</code> :要播放动画的元素。</p>
+            <p><code>anim</code> <code>String</code> :动画名称。</p>
+            <p><code>status</code> <code>Boolean</code> :状态，默认 true 开始播放，false 结束播放。</p>
+            <p><code>fn</code> <code>Function</code> :动画结束回调函数，默认空函数。</p>
+            <p>返回：</p>
+            <p><code>void</code> :无返回值。</p>
+            <pre hx-ext="bny-code">
 bny.animPlayer(htmx.find("#myElement"), "fade", false, ()=>{
     console.log("动画结束");
 });
 </pre>
 
-<h2>转义HTML特殊字符</h2>
-<code>bny.escapeChars(str)</code>
-<p>参数：</p>
-<p><code>str</code> <code>String</code> :要转义的字符串。</p>
-<p>返回：</p>
-<p><code>String</code> :转义后的字符串。</p>
-<pre hx-ext="bny-code">
+            <h2 id="escapeChars">转义HTML特殊字符</h2>
+            <code>bny.escapeChars(str)</code>
+            <p>参数：</p>
+            <p><code>str</code> <code>String</code> :要转义的字符串。</p>``
+            <p>返回：</p>
+            <p><code>String</code> :转义后的字符串。</p>
+            <pre hx-ext="bny-code">
 const escapedStr = bny.escapeChars("<div>Hello & World!</div>");
 console.log(escapedStr); // 输出：&lt;div&gt;Hello &amp; World!&lt;/div&gt;
 </pre>
 
-<h2>检查元素是否有指定的htmx扩展名</h2>
-<code>bny.hasExtName(elt, ext)</code>
-<p>参数：</p>
-<p><code>elt</code> <code>HTMLElement</code> :要检查的元素。</p>
-<p><code>ext</code> <code>String</code> :扩展名。</p>
-<p>返回：</p>
-<p><code>Boolean</code> :是否有扩展名。</p>
-<pre hx-ext="bny-code">
+            <h2 id="hasExtName">检查元素是否有指定的htmx扩展名</h2>
+            <code>bny.hasExtName(elt, ext)</code>
+            <p>参数：</p>
+            <p><code>elt</code> <code>HTMLElement</code> :要检查的元素。</p>
+            <p><code>ext</code> <code>String</code> :扩展名。</p>
+            <p>返回：</p>
+            <p><code>Boolean</code> :是否有扩展名。</p>
+            <pre hx-ext="bny-code">
 const hasExt = bny.hasExtName(htmx.find("#myElement"), "my-ext");
 console.log(hasExt); // 输出：true
 </pre>
 
-<h2>解析属性字符串</h2>
-<code>bny.parseAttrs(str)</code>
-<p>参数：</p>
-<p><code>obj</code> <code>Object</code> :要解析的属性对象。</p>
-<p>返回：</p>
-<p><code>String</code> :属性字符串。</p>
-<pre hx-ext="bny-code">
+            <h2 id="parseAttr">解析属性字符串</h2>
+            <code>bny.parseAttrs(str)</code>
+            <p>参数：</p>
+            <p><code>obj</code> <code>Object</code> :要解析的属性对象。</p>
+            <p>返回：</p>
+            <p><code>String</code> :属性字符串。</p>
+            <pre hx-ext="bny-code">
 const attrs = bny.parseAttrs({ foo: 'bar', baz: 'qux' });
 console.log(attrs); // 输出："data-foo='bar' data-baz='qux'"
 </pre>
 
-<h2>移除元素的类名</h2>
-<code>bny.removeClassName(elt, className)</code>
-<p>参数：</p>
-<p><code>elt</code> <code>HTMLElement|Array|HTMLElement</code> :元素或元素数组或者元素对象。</p>
-<p><code>cls</code> <code>String</code> :要移除的类名。</p>
-<p>返回：</p>
-<p><code>void</code> :无返回值。</p>
-<pre hx-ext="bny-code">
+            <h2 id="removeClassName">移除元素的类名</h2>
+            <code>bny.removeClassName(elt, className)</code>
+            <p>参数：</p>
+            <p><code>elt</code> <code>HTMLElement|Array|HTMLElement</code> :元素或元素数组或者元素对象。</p>
+            <p><code>cls</code> <code>String</code> :要移除的类名。</p>
+            <p>返回：</p>
+            <p><code>void</code> :无返回值。</p>
+            <pre hx-ext="bny-code">
     bny.removeClassName(htmx.find("#myElement"), "my-class");
 </pre>
 
-<h2>检查元素是否有指定的类名</h2>
-<code>bny.hasClassName(elt, cls)</code>
-<p>参数：</p>
-<p><code>elt</code> <code>HTMLElement</code> :元素对象。</p>
-<p><code>cls</code> <code>String</code> :要检查的类名。</p>
-<p>返回：</p>
-<p><code>Boolean</code> :是否有类名。</p>
-<pre hx-ext="bny-code">
+            <h2 id="hasClassName">检查元素是否有指定的类名</h2>
+            <code>bny.hasClassName(elt, cls)</code>
+            <p>参数：</p>
+            <p><code>elt</code> <code>HTMLElement</code> :元素对象。</p>
+            <p><code>cls</code> <code>String</code> :要检查的类名。</p>
+            <p>返回：</p>
+            <p><code>Boolean</code> :是否有类名。</p>
+            <pre hx-ext="bny-code">
 const hasClass = bny.hasClassName(htmx.find("#myElement"), "my-class");
 console.log(hasClass); // 输出：true
 </pre>
 
-<h2>显示警示弹窗</h2>
-<code>bny.alert(msg,code,anim,time)</code>
-<p>参数：</p>
-<p><code>msg</code> <code>String</code> :弹窗消息。</p>
-<p><code>code</code> <code>Number</code> :状态码 默认0, 1:绿色, 2:黄色, 3:红色, 4:蓝色</p>
-<p><code>anim</code> <code>String</code> :动画 默认scale, 可选值：scale, left, right, up, down</p>
-<p><code>time</code> <code>Number</code> :时间 默认3秒</p>
-<p>返回：</p>
-<p><code>void</code> :无返回值。</p>
-<pre hx-ext="bny-code">
+            <h2 id="alert">显示警示弹窗</h2>
+            <code>bny.alert(msg,code,anim,time)</code>
+            <p>参数：</p>
+            <p><code>msg</code> <code>String</code> :弹窗消息。</p>
+            <p><code>code</code> <code>Number</code> :状态码 默认0, 1:绿色, 2:黄色, 3:红色, 4:蓝色</p>
+            <p><code>anim</code> <code>String</code> :动画 默认scale, 可选值：scale, left, right, up, down</p>
+            <p><code>time</code> <code>Number</code> :时间 默认3秒</p>
+            <p>返回：</p>
+            <p><code>void</code> :无返回值。</p>
+            <pre hx-ext="bny-code">
 bny.alert("这是一个警示弹窗",1,"up",2);
 </pre>
 
-<h2>显示确认弹窗</h2>
-<code>bny.confirm(msg,options)</code>
-<p>参数：</p>
-<p><code>msg</code> <code>String</code> :弹窗消息。</p>
-<p><code>options</code> <code>Object</code> :选项对象，默认空对象。</p>
-<p><code>options.title</code> <code>String</code> :弹窗标题 默认:提示</p>
-<p><code>options.anim</code> <code>String</code> :动画 默认scale, 可选值：scale, left, right, up, down</p>
-<p><code>options.yes_cb</code> <code>Function</code> :确认回调函数，默认空函数。</p>
-<p><code>options.no_cb</code> <code>Function</code> :取消回调函数，默认空函数。</p>
-<p>返回：</p>
-<p><code>void</code> :无返回值。</p>
-<pre hx-ext="bny-code">
+            <h2 id="confirm">显示确认弹窗</h2>
+            <code>bny.confirm(msg,options)</code>
+            <p>参数：</p>
+            <p><code>msg</code> <code>String</code> :弹窗消息。</p>
+            <p><code>options</code> <code>Object</code> :选项对象，默认空对象。</p>
+            <p><code>options.title</code> <code>String</code> :弹窗标题 默认:提示</p>
+            <p><code>options.anim</code> <code>String</code> :动画 默认scale, 可选值：scale, left, right, up, down</p>
+            <p><code>options.yes_cb</code> <code>Function</code> :确认回调函数，默认空函数。</p>
+            <p><code>options.no_cb</code> <code>Function</code> :取消回调函数，默认空函数。</p>
+            <p>返回：</p>
+            <p><code>void</code> :无返回值。</p>
+            <pre hx-ext="bny-code">
 bny.confirm("确定删除吗？",{
     fn:()=>{
         console.log("用户点击了确认");
@@ -121,21 +124,21 @@ bny.confirm("确定删除吗？",{
 });
 </pre>
 
-<h2>显示页面弹窗</h2>
-<code>bny.page(msg,options)</code>
-<p>参数：</p>
-<p><code>msg</code> <code>String</code> :弹窗消息。可以是HTML字符串。</p>
-<p><code>options</code> <code>Object</code> :选项对象，默认空对象。</p>
-<p><code>options.title</code> <code>String</code> :弹窗标题 默认:页面</p>
-<p><code>options.anim</code> <code>String</code> :动画 默认scale, 可选值：scale, left, right, up, down</p>
-<p><code>options.width</code> <code>String</code> :弹窗宽度 默认680px</p>
-<p><code>options.height</code> <code>String</code> :弹窗高度 默认520px</p>
-<p><code>options.offset</code> <code>String|Array</code> :弹窗偏移量 默认 auto ,'top' 、'bottom' 、'left'
-    、'right'或者数组["10px","10px"]</p>
-<p><code>options.shade</code> <code>Boolean</code> :弹窗阴影 默认false,点击阴影关闭弹窗</p>
-<p>返回：</p>
-<p><code>HTMLElement</code> :弹窗元素对象。</p>
-<pre hx-ext="bny-code">
+            <h2 id="page">显示页面弹窗</h2>
+            <code>bny.page(msg,options)</code>
+            <p>参数：</p>
+            <p><code>msg</code> <code>String</code> :弹窗消息。可以是HTML字符串。</p>
+            <p><code>options</code> <code>Object</code> :选项对象，默认空对象。</p>
+            <p><code>options.title</code> <code>String</code> :弹窗标题 默认:页面</p>
+            <p><code>options.anim</code> <code>String</code> :动画 默认scale, 可选值：scale, left, right, up, down</p>
+            <p><code>options.width</code> <code>String</code> :弹窗宽度 默认680px</p>
+            <p><code>options.height</code> <code>String</code> :弹窗高度 默认520px</p>
+            <p><code>options.offset</code> <code>String|Array</code> :弹窗偏移量 默认 auto ,'top' 、'bottom' 、'left'
+                、'right'或者数组["10px","10px"]</p>
+            <p><code>options.shade</code> <code>Boolean</code> :弹窗阴影 默认false,点击阴影关闭弹窗</p>
+            <p>返回：</p>
+            <p><code>HTMLElement</code> :弹窗元素对象。</p>
+            <pre hx-ext="bny-code">
 const page = bny.page("这是一个页面弹窗",{
     title:"提示",
     anim:"up",
@@ -146,18 +149,38 @@ const page = bny.page("这是一个页面弹窗",{
 });
 </pre>
 
-<h2>加载页面弹窗</h2>
-<code>bny.load(style,options)</code>
-<p>参数：</p>
-<p><code>style</code> <code>String</code> :弹窗样式 默认0:旋转 1:线性 2:球型</p>
-<p><code>options</code> <code>Object</code> :选项对象，默认空对象。</p>
-<p><code>options.color</code> <code>String</code> :加载的颜色 默认'','green','yellow','red','blue'</p>
-<p><code>options.size</code> <code>Number</code> :加载的大小 默认'','small','large'</p>
-<p>返回：</p>
-<p><code>HTMLElement</code> :弹窗元素对象。</p>
-<pre hx-ext="bny-code">
+            <h2 id="load">加载页面弹窗</h2>
+            <code>bny.load(style,options)</code>
+            <p>参数：</p>
+            <p><code>style</code> <code>String</code> :弹窗样式 默认0:旋转 1:线性 2:球型</p>
+            <p><code>options</code> <code>Object</code> :选项对象，默认空对象。</p>
+            <p><code>options.color</code> <code>String</code> :加载的颜色 默认'','green','yellow','red','blue'</p>
+            <p><code>options.size</code> <code>Number</code> :加载的大小 默认'','small','large'</p>
+            <p>返回：</p>
+            <p><code>HTMLElement</code> :弹窗元素对象。</p>
+            <pre hx-ext="bny-code">
 const load = bny.load();
 setTimeout(() => {
     load.remove()
 }, 3000) // 3秒后移除加载弹窗
 </pre>
+        </div>
+    </div>
+    <div class="right-anchor-box hidden-xs col-sm3">
+        <div class="right-anchor">
+            <ul hx-ext="bny-anchor" rail>
+                <li class="link" anchor="#indexOf">获取元素在数组中的索引</li>
+                <li class="link" anchor="#animPlayer">动画播放器</li>
+                <li class="link" anchor="#escapeChars">转义HTML特殊字符</li>
+                <li class="link" anchor="#hasExtName">检查元素是否有指定的htmx扩展名</li>
+                <li class="link" anchor="#parseAttr">解析属性字符串</li>
+                <li class="link" anchor="#removeClassName">移除元素的类名</li>
+                <li class="link" anchor="#hasClassName">检查元素是否有指定的类名</li>
+                <li class="link" anchor="#alert">显示警示弹窗</li>
+                <li class="link" anchor="#confirm">显示确认弹窗</li>
+                <li class="link" anchor="#page">显示页面弹窗</li>
+                <li class="link" anchor="#load">显示加载弹窗</li>
+            </ul>
+        </div>
+    </div>
+</div>

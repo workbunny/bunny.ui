@@ -1,77 +1,80 @@
-<h1>组件-菜单</h1>
-<hr>
-<blockquote class="bny-blockquote">
-    菜单组件是一个用于展示导航菜单的组件。它可以水平或垂直显示，支持多级子菜单。
-</blockquote>
-<h2>水平-菜单</h2>
-<div class="bny-card">
-    <div hx-ext="bny-tab">
-        <ul class="head">
-            <li>Preview</li>
-            <li>Code</li>
-        </ul>
-        <div class="body">
-            <div>
-                <div class="p-12">
-                    <div hx-ext="bny-menu">
-                        <div class="item">
-                            <div class="trigger">
-                                <span>菜单1</span>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="trigger">
-                                <span>菜单2</span>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="trigger">
-                                <span>菜单3</span>
-                                <i class="bny-icon icon-right"></i>
-                            </div>
-                            <div class="sub-menu">
-                                <div class="item">
-                                    <div class="trigger">
-                                        <span>子菜单1</span>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="trigger">
-                                        <span>子菜单2</span>
-                                        <i class="bny-icon icon-right"></i>
-                                    </div>
-                                    <div class="sub-menu">
-                                        <div class="item">
-                                            <div class="trigger">
-                                                <span>子子菜单1</span>
-                                            </div>
-                                        </div>
-                                        <div class="item">
-                                            <div class="trigger">
-                                                <span>子子菜单2</span>
-                                            </div>
+<div class="bny-row">
+    <div class="text-content-box col-xs12 col-sm9">
+        <div class="text-content">
+            <h1>组件-菜单</h1>
+            <hr>
+            <blockquote class="bny-blockquote">
+                菜单组件是一个用于展示导航菜单的组件。它可以水平或垂直显示，支持多级子菜单。
+            </blockquote>
+            <h2 id="n01">水平-菜单</h2>
+            <div class="bny-card">
+                <div hx-ext="bny-tab">
+                    <ul class="head">
+                        <li>Preview</li>
+                        <li>Code</li>
+                    </ul>
+                    <div class="body">
+                        <div>
+                            <div class="p-12">
+                                <div hx-ext="bny-menu">
+                                    <div class="item">
+                                        <div class="trigger">
+                                            <span>菜单1</span>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="item">
-                                    <div class="trigger">
-                                        <span>子菜单3</span>
+                                    <div class="item">
+                                        <div class="trigger">
+                                            <span>菜单2</span>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="trigger">
+                                            <span>菜单3</span>
+                                            <i class="bny-icon icon-right"></i>
+                                        </div>
+                                        <div class="sub-menu">
+                                            <div class="item">
+                                                <div class="trigger">
+                                                    <span>子菜单1</span>
+                                                </div>
+                                            </div>
+                                            <div class="item">
+                                                <div class="trigger">
+                                                    <span>子菜单2</span>
+                                                    <i class="bny-icon icon-right"></i>
+                                                </div>
+                                                <div class="sub-menu">
+                                                    <div class="item">
+                                                        <div class="trigger">
+                                                            <span>子子菜单1</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="item">
+                                                        <div class="trigger">
+                                                            <span>子子菜单2</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="item">
+                                                <div class="trigger">
+                                                    <span>子菜单3</span>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
                             </div>
                         </div>
-                    </div>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                </div>
-            </div>
-            <div>
-                <pre hx-ext="bny-code">
+                        <div>
+                            <pre hx-ext="bny-code">
 &lt;div hx-ext=&quot;bny-menu&quot;&gt;
     &lt;div class=&quot;item&quot;&gt;
         &lt;div class=&quot;trigger&quot;&gt;
@@ -121,39 +124,39 @@
     &lt;/div&gt;
 &lt;/div&gt;
                 </pre>
-            </div>
-        </div>
-    </div>
-</div>
-<h2>菜单-htmx</h2>
-<div class="bny-card">
-    <div hx-ext="bny-tab">
-        <ul class="head">
-            <li>Preview</li>
-            <li>Code</li>
-            <li>Json</li>
-        </ul>
-        <div class="body">
-            <div>
-                <div class="p-12">
-                    <div hx-ext="bny-menu" hx-get="/test/data/menu.json" hx-trigger="load"
-                        hx-headers='{"Accept": "application/json"}'>
+                        </div>
                     </div>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
                 </div>
             </div>
-            <div>
-                <pre hx-ext="bny-code">
+            <h2 id="n02">菜单-htmx</h2>
+            <div class="bny-card">
+                <div hx-ext="bny-tab">
+                    <ul class="head">
+                        <li>Preview</li>
+                        <li>Code</li>
+                        <li>Json</li>
+                    </ul>
+                    <div class="body">
+                        <div>
+                            <div class="p-12">
+                                <div hx-ext="bny-menu" hx-get="/test/data/menu.json" hx-trigger="load"
+                                    hx-headers='{"Accept": "application/json"}'>
+                                </div>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                            </div>
+                        </div>
+                        <div>
+                            <pre hx-ext="bny-code">
 &lt;div hx-ext=&quot;bny-menu&quot; hx-get=&quot;/test/data/menu.json&quot; hx-trigger=&quot;load&quot;
     hx-headers=&#39;{&quot;Accept&quot;: &quot;application/json&quot;}&#39;&gt;
 &lt;/div&gt;
                 </pre>
-            </div>
-            <div>
-                <pre hx-ext="bny-code">
+                        </div>
+                        <div>
+                            <pre hx-ext="bny-code">
 {
     "data": [
         {
@@ -185,74 +188,74 @@
     ]
 }
                 </pre>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
-</div>
-<h2>垂直-菜单</h2>
-<div class="bny-card">
-    <div hx-ext="bny-tab">
-        <ul class="head">
-            <li>Preview</li>
-            <li>Code</li>
-        </ul>
-        <div class="body">
-            <div>
-                <div class="p-12">
-                    <div style="width: 220px;">
-                        <div hx-ext="bny-menu" mode="vertical">
-                            <div class="item">
-                                <div class="trigger">
-                                    <span>菜单1</span>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="trigger">
-                                    <span>菜单2</span>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="trigger">
-                                    <span>菜单3</span>
-                                    <i class="bny-icon icon-right"></i>
-                                </div>
-                                <div class="sub-menu">
-                                    <div class="item">
-                                        <div class="trigger">
-                                            <span>子菜单1</span>
-                                        </div>
-                                    </div>
-                                    <div class="item">
-                                        <div class="trigger">
-                                            <span>子菜单2</span>
-                                            <i class="bny-icon icon-right"></i>
-                                        </div>
-                                        <div class="sub-menu">
-                                            <div class="item">
-                                                <div class="trigger">
-                                                    <span>子子菜单1</span>
-                                                </div>
-                                            </div>
-                                            <div class="item">
-                                                <div class="trigger">
-                                                    <span>子子菜单2</span>
-                                                </div>
+            <h2 id="n03">垂直-菜单</h2>
+            <div class="bny-card">
+                <div hx-ext="bny-tab">
+                    <ul class="head">
+                        <li>Preview</li>
+                        <li>Code</li>
+                    </ul>
+                    <div class="body">
+                        <div>
+                            <div class="p-12">
+                                <div style="width: 220px;">
+                                    <div hx-ext="bny-menu" mode="vertical">
+                                        <div class="item">
+                                            <div class="trigger">
+                                                <span>菜单1</span>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="item">
-                                        <div class="trigger">
-                                            <span>子菜单3</span>
+                                        <div class="item">
+                                            <div class="trigger">
+                                                <span>菜单2</span>
+                                            </div>
+                                        </div>
+                                        <div class="item">
+                                            <div class="trigger">
+                                                <span>菜单3</span>
+                                                <i class="bny-icon icon-right"></i>
+                                            </div>
+                                            <div class="sub-menu">
+                                                <div class="item">
+                                                    <div class="trigger">
+                                                        <span>子菜单1</span>
+                                                    </div>
+                                                </div>
+                                                <div class="item">
+                                                    <div class="trigger">
+                                                        <span>子菜单2</span>
+                                                        <i class="bny-icon icon-right"></i>
+                                                    </div>
+                                                    <div class="sub-menu">
+                                                        <div class="item">
+                                                            <div class="trigger">
+                                                                <span>子子菜单1</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="item">
+                                                            <div class="trigger">
+                                                                <span>子子菜单2</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="item">
+                                                    <div class="trigger">
+                                                        <span>子菜单3</span>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-            <div>
-                <pre hx-ext="bny-code">
+                        <div>
+                            <pre hx-ext="bny-code">
 &lt;div style=&quot;width: 220px;&quot;&gt;
     &lt;div hx-ext=&quot;bny-menu&quot; mode=&quot;vertical&quot;&gt;
         &lt;div class=&quot;item&quot;&gt;
@@ -304,150 +307,164 @@
     &lt;/div&gt;
 &lt;/div&gt;
                 </pre>
-            </div>
-        </div>
-    </div>
-</div>
-<h2>菜单颜色</h2>
-<div class="bny-card">
-    <div hx-ext="bny-tab">
-        <ul class="head">
-            <li>Preview</li>
-            <li>Code</li>
-        </ul>
-        <div class="body">
-            <div>
-                <div class="p-12">
-                    <div hx-ext="bny-menu" color="white">
-                        <div class="item">
-                            <div class="trigger">
-                                <span>菜单1</span>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="trigger">
-                                <span>菜单2</span>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="trigger">
-                                <span>菜单3</span>
-                            </div>
-                        </div>
-                    </div>
-                    <br>
-                    <div hx-ext="bny-menu" color="green">
-                        <div class="item">
-                            <div class="trigger">
-                                <span>菜单1</span>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="trigger">
-                                <span>菜单2</span>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="trigger">
-                                <span>菜单3</span>
-                            </div>
-                        </div>
-                    </div>
-                    <br>
-                    <div hx-ext="bny-menu" color="red">
-                        <div class="item">
-                            <div class="trigger">
-                                <span>菜单1</span>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="trigger">
-                                <span>菜单2</span>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="trigger">
-                                <span>菜单3</span>
-                            </div>
-                        </div>
-                    </div>
-                    <br>
-                    <div hx-ext="bny-menu" color="yellow">
-                        <div class="item">
-                            <div class="trigger">
-                                <span>菜单1</span>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="trigger">
-                                <span>菜单2</span>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="trigger">
-                                <span>菜单3</span>
-                            </div>
-                        </div>
-                    </div>
-                    <br>
-                    <div hx-ext="bny-menu" color="blue">
-                        <div class="item">
-                            <div class="trigger">
-                                <span>菜单1</span>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="trigger">
-                                <span>菜单2</span>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="trigger">
-                                <span>菜单3</span>
-                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div>
-                <pre hx-ext="bny-code">
+            <h2 id="n04">菜单颜色</h2>
+            <div class="bny-card">
+                <div hx-ext="bny-tab">
+                    <ul class="head">
+                        <li>Preview</li>
+                        <li>Code</li>
+                    </ul>
+                    <div class="body">
+                        <div>
+                            <div class="p-12">
+                                <div hx-ext="bny-menu" color="white">
+                                    <div class="item">
+                                        <div class="trigger">
+                                            <span>菜单1</span>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="trigger">
+                                            <span>菜单2</span>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="trigger">
+                                            <span>菜单3</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br>
+                                <div hx-ext="bny-menu" color="green">
+                                    <div class="item">
+                                        <div class="trigger">
+                                            <span>菜单1</span>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="trigger">
+                                            <span>菜单2</span>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="trigger">
+                                            <span>菜单3</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br>
+                                <div hx-ext="bny-menu" color="red">
+                                    <div class="item">
+                                        <div class="trigger">
+                                            <span>菜单1</span>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="trigger">
+                                            <span>菜单2</span>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="trigger">
+                                            <span>菜单3</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br>
+                                <div hx-ext="bny-menu" color="yellow">
+                                    <div class="item">
+                                        <div class="trigger">
+                                            <span>菜单1</span>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="trigger">
+                                            <span>菜单2</span>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="trigger">
+                                            <span>菜单3</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br>
+                                <div hx-ext="bny-menu" color="blue">
+                                    <div class="item">
+                                        <div class="trigger">
+                                            <span>菜单1</span>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="trigger">
+                                            <span>菜单2</span>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="trigger">
+                                            <span>菜单3</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <pre hx-ext="bny-code">
 &lt;div hx-ext=&quot;bny-menu&quot; color=&quot;white&quot;&gt;...&lt;/div&gt;
 &lt;div hx-ext=&quot;bny-menu&quot; color=&quot;green&quot;&gt;...&lt;/div&gt;
 &lt;div hx-ext=&quot;bny-menu&quot; color=&quot;red&quot;&gt;...&lt;/div&gt;
 &lt;div hx-ext=&quot;bny-menu&quot; color=&quot;yellow&quot;&gt;...&lt;/div&gt;
 &lt;div hx-ext=&quot;bny-menu&quot; color=&quot;blue&quot;&gt;...&lt;/div&gt;
                 </pre>
+                        </div>
+                    </div>
+                </div>
             </div>
+            <h2 id="n05">API</h2>
+            <h3>标签属性</h3>
+
+            <table hx-ext="bny-table">
+                <thead>
+                    <tr>
+                        <th>属性</th>
+                        <th>默认值</th>
+                        <th>必须</th>
+                        <th>描述</th>
+                        <th>版本</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>hx-ext</td>
+                        <td>bny-menu</td>
+                        <td>是</td>
+                        <td>标签扩展名</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>model</td>
+                        <td></td>
+                        <td>否</td>
+                        <td>菜单模型:'vertical'</td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="right-anchor-box hidden-xs col-sm3">
+        <div class="right-anchor">
+            <ul hx-ext="bny-anchor" rail>
+                <li class="link" anchor="#n01">水平-菜单</li>
+                <li class="link" anchor="#n02">菜单-htmx</li>
+                <li class="link" anchor="#n03">垂直-菜单</li>
+                <li class="link" anchor="#n04">菜单颜色</li>
+                <li class="link" anchor="#n05">API</li>
+            </ul>
         </div>
     </div>
 </div>
-<h2>API</h2>
-<h3>标签属性</h3>
-
-<table hx-ext="bny-table">
-    <thead>
-        <tr>
-            <th>属性</th>
-            <th>默认值</th>
-            <th>必须</th>
-            <th>描述</th>
-            <th>版本</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>hx-ext</td>
-            <td>bny-menu</td>
-            <td>是</td>
-            <td>标签扩展名</td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>model</td>
-            <td></td>
-            <td>否</td>
-            <td>菜单模型:'vertical'</td>
-            <td></td>
-        </tr>
-    </tbody>
-</table>

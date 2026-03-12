@@ -1,0 +1,60 @@
+<div class="bny-row">
+    <div class="text-content-box col-xs12 col-sm9">
+        <div class="text-content">
+            <h1>开始使用</h1>
+            <hr>
+            <blockquote class="bny-blockquote">
+                轻量级 HTMX 拓展 Web UI 组件库，通过属性构建现代用户界面，结合简单性和超文本的强大功能。
+            </blockquote>
+            <center>
+                <img src="/bunny.png" alt="bunny" width="200">
+                <h1>Bunny-ui</h1>
+            </center>
+            <h2 id="n01">快速上手</h2>
+            <div class="bny-card">
+                <div hx-ext="bny-tab">
+                    <ul class="head">
+                        <li>Code</li>
+                    </ul>
+                    <div class="body">
+                        <div>
+                            <pre hx-ext="bny-code">
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;zh-cn&quot;&gt;
+
+    &lt;head&gt;
+        &lt;meta charset=&quot;UTF-8&quot;&gt;
+        &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+        &lt;title&gt;Quick Start - Bunny-ui&lt;/title&gt;
+        &lt;!-- bunny-ui 核心文件 --&gt;
+        &lt;link href=&quot;./bunny.css&quot; rel=&quot;stylesheet&quot; /&gt;
+        &lt;script src=&quot;./bunny.js&quot;&gt;&lt;/script&gt;
+    &lt;/head&gt;
+
+    &lt;body&gt;
+        &lt;!-- 示例：显示警告框 --&gt;
+        &lt;button class=&quot;bny-btn&quot; onclick=&quot;bny.alert(&#39;Hello World&#39;)&quot;&gt;点击我&lt;/button&gt;
+
+        &lt;!-- 示例：显示确认框 --&gt;
+        &lt;button class=&quot;bny-btn&quot; onclick=&quot;bny.confirm(&#39;确定要执行此操作吗？&#39;)&quot;&gt;确认操作&lt;/button&gt;
+
+        &lt;!-- 示例：显示页面弹窗 --&gt;
+        &lt;button class=&quot;bny-btn&quot; onclick=&quot;bny.page(&#39;&lt;h1&gt;Hello&lt;/h1&gt;&lt;p&gt;这是一个弹窗&lt;/p&gt;&#39;)&quot;&gt;打开弹窗&lt;/button&gt;
+    &lt;/body&gt;
+
+&lt;/html&gt;
+                            </pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="right-anchor-box hidden-xs col-sm3">
+        <div class="right-anchor">
+            <ul hx-ext="bny-anchor" rail>
+                <li class="link" anchor="#n01">快速上手</li>
+            </ul>
+        </div>
+    </div>
+</div>

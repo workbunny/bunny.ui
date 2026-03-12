@@ -1,29 +1,33 @@
-<h1>确认信息</h1>
-<hr>
-<blockquote class="bny-blockquote">
-    确认信息组件，用于确认用户操作，例如删除、提交等。
-</blockquote>
-<h2>样式</h2>
-<div class="bny-card">
-    <div hx-ext="bny-tab">
-        <ul class="head">
-            <li>Preview</li>
-            <li>Code</li>
-        </ul>
-        <div class="body">
-            <div>
-                <div class="p-12">
-                    <div class="bny-confirm">
-                        <h3 class="title">提示</h3>
-                        <p class="content">确认删除吗？</p>
-                        <div class="btn">
-                            <button class="bny-btn" color="blue">确认</button><button class="bny-btn">取消</button>
+<div class="bny-row">
+    <div class="text-content-box col-xs12 col-sm9">
+        <div class="text-content">
+            <h1>确认信息</h1>
+            <hr>
+            <blockquote class="bny-blockquote">
+                确认信息组件，用于确认用户操作，例如删除、提交等。
+            </blockquote>
+            <h2 id="n01">样式</h2>
+            <div class="bny-card">
+                <div hx-ext="bny-tab">
+                    <ul class="head">
+                        <li>Preview</li>
+                        <li>Code</li>
+                    </ul>
+                    <div class="body">
+                        <div>
+                            <div class="p-12">
+                                <div class="bny-confirm">
+                                    <h3 class="title">提示</h3>
+                                    <p class="content">确认删除吗？</p>
+                                    <div class="btn">
+                                        <button class="bny-btn" color="blue">确认</button><button
+                                            class="bny-btn">取消</button>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-            <div>
-                <pre hx-ext="bny-code">
+                        <div>
+                            <pre hx-ext="bny-code">
 &lt;div class="bny-confirm"&gt;
     &lt;h3 class="title"&gt;提示&lt;/h3&gt;
     &lt;p class="content"&gt;确认删除吗？&lt;/p&gt;
@@ -32,166 +36,178 @@
     &lt;/div&gt;
 &lt;/div&gt;
                 </pre>
-            </div>
-        </div>
-    </div>
-</div>
-<h2>Htmx-组件</h2>
-<div class="bny-card">
-    <div hx-ext="bny-tab">
-        <ul class="head">
-            <li>Preview</li>
-            <li>Code</li>
-        </ul>
-        <div class="body">
-            <div>
-                <div class="p-12">
-                    <button hx-ext="bny-confirm" class="bny-btn" hx-get="/test/data/confirm.json"
-                        hx-confirm="你确定要点击这个组件吗？">确认</button>
-                    <button hx-ext="bny-confirm" class="bny-btn" hx-get="/test/data/confirm.json"
-                        hx-confirm="你确定要删除这个组件吗？" title="删除" anim="up">其他</button>
-                    <button hx-ext="bny-confirm" class="bny-btn" hx-get="/test/data/confirm.html"
-                        hx-confirm="你确定要点击吗？">确认-html</button>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div>
-                <pre hx-ext="bny-code">
+            <h2 id="n02">Htmx-组件</h2>
+            <div class="bny-card">
+                <div hx-ext="bny-tab">
+                    <ul class="head">
+                        <li>Preview</li>
+                        <li>Code</li>
+                    </ul>
+                    <div class="body">
+                        <div>
+                            <div class="p-12">
+                                <button hx-ext="bny-confirm" class="bny-btn" hx-get="/test/data/confirm.json"
+                                    hx-confirm="你确定要点击这个组件吗？">确认</button>
+                                <button hx-ext="bny-confirm" class="bny-btn" hx-get="/test/data/confirm.json"
+                                    hx-confirm="你确定要删除这个组件吗？" title="删除" anim="up">其他</button>
+                                <button hx-ext="bny-confirm" class="bny-btn" hx-get="/test/data/confirm.html"
+                                    hx-confirm="你确定要点击吗？">确认-html</button>
+                            </div>
+                        </div>
+                        <div>
+                            <pre hx-ext="bny-code">
 &lt;button hx-ext="bny-confirm" class="bny-btn" hx-get="/test/data/confirm.json"
 hx-confirm="你确定要点击这个组件吗？"&gt;确认&lt;/button&gt;
 &lt;button hx-ext="bny-confirm" class="bny-btn" hx-get="/test/data/confirm.json" hx-confirm="你确定要删除这个组件吗？"
 title="删除" anim="up"&gt;其他&lt;/button&gt;
 &lt;button hx-ext="bny-confirm" class="bny-btn" hx-get="/test/data/confirm.html" hx-confirm="你确定要点击吗？"&gt;确认-html&lt;/button&gt;
                 </pre>
+                        </div>
+                    </div>
+                </div>
             </div>
+            <h2>API</h2>
+            <h3>标签属性</h3>
+
+            <table hx-ext="bny-table">
+                <thead>
+                    <tr>
+                        <th>属性</th>
+                        <th>默认值</th>
+                        <th>必须</th>
+                        <th>描述</th>
+                        <th>版本</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>hx-ext</td>
+                        <td>bny-confirm</td>
+                        <td>是</td>
+                        <td>拓展属性名</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>anim</td>
+                        <td>'scale'</td>
+                        <td>否</td>
+                        <td>提示动画:scale-缩放,left-左移,right-右移,up-上移,down-下移</td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+            <h3>JSON属性</h3>
+            <table hx-ext="bny-table">
+                <thead>
+                    <tr>
+                        <th>属性</th>
+                        <th>默认值</th>
+                        <th>必须</th>
+                        <th>描述</th>
+                        <th>版本</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>code</td>
+                        <td>0</td>
+                        <td>是</td>
+                        <td>提示类型:0-默认,1-绿色,2-黄色,3-红色,4-蓝色</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>msg</td>
+                        <td>''</td>
+                        <td>是</td>
+                        <td>提示消息</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>time</td>
+                        <td>3</td>
+                        <td>否</td>
+                        <td>提示显示时间,单位秒</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>anim</td>
+                        <td>'scale'</td>
+                        <td>否</td>
+                        <td>提示动画:scale-缩放,left-左移,right-右移,up-上移,down-下移</td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+            <h3>Js用法</h3>
+            <h4>bny.confirm(msg, options)</h4>
+            <table hx-ext="bny-table">
+                <thead>
+                    <tr>
+                        <th>属性</th>
+                        <th>默认值</th>
+                        <th>必须</th>
+                        <th>描述</th>
+                        <th>版本</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>msg</td>
+                        <td>''</td>
+                        <td>是</td>
+                        <td>提示消息</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>options</td>
+                        <td>{}</td>
+                        <td>否</td>
+                        <td>配置对象</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>options.title</td>
+                        <td>'提示'</td>
+                        <td>否</td>
+                        <td>提示标题</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>options.anim</td>
+                        <td>'scale'</td>
+                        <td>否</td>
+                        <td>提示动画:scale-缩放,left-左移,right-右移,up-上移,down-下移</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>options.yes_cb</td>
+                        <td>() => { }</td>
+                        <td>否</td>
+                        <td>确认回调函数</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>options.no_cb</td>
+                        <td>() => { }</td>
+                        <td>否</td>
+                        <td>取消回调函数</td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="right-anchor-box hidden-xs col-sm3">
+        <div class="right-anchor">
+            <ul hx-ext="bny-anchor" rail>
+                <li class="link" anchor="#n01">样式</li>
+                <li class="link" anchor="#n02">Htmx-组件</li>
+                <li class="link" anchor="#n03">API</li>
+            </ul>
         </div>
     </div>
 </div>
-<h2>API</h2>
-<h3>标签属性</h3>
-
-<table hx-ext="bny-table">
-    <thead>
-        <tr>
-            <th>属性</th>
-            <th>默认值</th>
-            <th>必须</th>
-            <th>描述</th>
-            <th>版本</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>hx-ext</td>
-            <td>bny-confirm</td>
-            <td>是</td>
-            <td>拓展属性名</td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>anim</td>
-            <td>'scale'</td>
-            <td>否</td>
-            <td>提示动画:scale-缩放,left-左移,right-右移,up-上移,down-下移</td>
-            <td></td>
-        </tr>
-    </tbody>
-</table>
-<h3>JSON属性</h3>
-<table hx-ext="bny-table">
-    <thead>
-        <tr>
-            <th>属性</th>
-            <th>默认值</th>
-            <th>必须</th>
-            <th>描述</th>
-            <th>版本</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>code</td>
-            <td>0</td>
-            <td>是</td>
-            <td>提示类型:0-默认,1-绿色,2-黄色,3-红色,4-蓝色</td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>msg</td>
-            <td>''</td>
-            <td>是</td>
-            <td>提示消息</td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>time</td>
-            <td>3</td>
-            <td>否</td>
-            <td>提示显示时间,单位秒</td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>anim</td>
-            <td>'scale'</td>
-            <td>否</td>
-            <td>提示动画:scale-缩放,left-左移,right-右移,up-上移,down-下移</td>
-            <td></td>
-        </tr>
-    </tbody>
-</table>
-<h3>Js用法</h3>
-<h4>bny.confirm(msg, options)</h4>
-<table hx-ext="bny-table">
-    <thead>
-        <tr>
-            <th>属性</th>
-            <th>默认值</th>
-            <th>必须</th>
-            <th>描述</th>
-            <th>版本</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>msg</td>
-            <td>''</td>
-            <td>是</td>
-            <td>提示消息</td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>options</td>
-            <td>{}</td>
-            <td>否</td>
-            <td>配置对象</td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>options.title</td>
-            <td>'提示'</td>
-            <td>否</td>
-            <td>提示标题</td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>options.anim</td>
-            <td>'scale'</td>
-            <td>否</td>
-            <td>提示动画:scale-缩放,left-左移,right-右移,up-上移,down-下移</td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>options.yes_cb</td>
-            <td>() => { }</td>
-            <td>否</td>
-            <td>确认回调函数</td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>options.no_cb</td>
-            <td>() => { }</td>
-            <td>否</td>
-            <td>取消回调函数</td>
-            <td></td>
-        </tr>
-    </tbody>
-</table>
