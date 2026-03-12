@@ -53,6 +53,11 @@
         box-sizing: border-box;
         width: 100%;
         height: calc(100% - 50px);
+        overflow: auto;
+
+        &.not-title {
+            height: 100%;
+        }
 
         &>iframe {
             width: 100%;

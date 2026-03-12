@@ -4110,7 +4110,7 @@
                 </div>
             </div>
         </div>
-        <div class="content">${content}</div>`;
+        <div class="content ${title === false ? "not-title" : ""}">${content}</div>`;
       const header = page.querySelector(".header");
       if (title === false) header.style.display = "none";
       close(page, shade, anim, this.animPlayer);

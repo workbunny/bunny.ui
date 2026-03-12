@@ -518,6 +518,7 @@ window.bny = {
                     top: `${offset[1]}`
                 })
         }
+
         page.innerHTML = `
         <div class="header">
             <div class="title">${title}</div>
@@ -528,7 +529,7 @@ window.bny = {
                 </div>
             </div>
         </div>
-        <div class="content">${content}</div>`
+        <div class="content ${title === false ? 'not-title' : ''}">${content}</div>`
         const header = page.querySelector('.header')
         if (title === false) header.style.display = 'none'
         // 关闭页面
