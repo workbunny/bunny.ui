@@ -8,7 +8,7 @@
 
     &>code {
         line-height: 1.5;
-        white-space: pre;
+        white-space: pre-wrap;
         overflow: auto;
         padding: 0;
         margin: 0;

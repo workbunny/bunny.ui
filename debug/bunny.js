@@ -4374,12 +4374,25 @@
   htmx.defineExtension("bny-code", {
     // 事件
     onEvent: function(name, evt) {
+      function getCode(target, str2) {
+        const mode = target.getAttribute("mode");
+        const lang = target.getAttribute("lang");
+        switch (mode) {
+          case "highlight":
+            str2 = hljs.highlight(str2, { language: lang }).value;
+            break;
+          case "prismjs":
+            str2 = Prism.highlight(str2, Prism.languages[lang], lang);
+            break;
+        }
+        return str2;
+      }
       if (name === "htmx:afterProcessNode") {
         if (bny.hasExtName(evt.target, "bny-code")) {
           const content = evt.target.innerHTML;
           evt.target.innerHTML = "";
           const code = document.createElement("code");
-          code.innerHTML = content.trim();
+          code.innerHTML = getCode(evt.target, content.trim());
           evt.target.appendChild(code);
           const copyBtn = document.createElement("a");
           copyBtn.setAttribute("title", "复制代码");
@@ -4400,9 +4413,13 @@
             const json = JSON.parse(content);
             content = json.data;
           }
-          htmx.swap(code, bny.escapeChars(content), { swapStyle: "innerHTML" });
-          return false;
+          const mode = evt.target.getAttribute("mode");
+          if (!mode) {
+            content = bny.escapeChars(content);
+          }
+          htmx.swap(code, getCode(evt.target, content), { swapStyle: "innerHTML" });
         }
+        return false;
       }
       return true;
     }
