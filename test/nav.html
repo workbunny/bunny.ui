@@ -1,0 +1,1953 @@
+<div class="bny-row">
+    <div class="text-content-box col-xs12 col-sm9">
+        <div class="text-content">
+            <h1>组件-导航栏</h1>
+            <hr>
+            <blockquote class="bny-blockquote">
+                导航栏组件是一个用于展示导航菜单的组件。它可以水平或垂直显示，支持多级子菜单。
+            </blockquote>
+            <h2 id="n01">自适应导航栏</h2>
+            <h3 id="n011">默认</h3>
+            <div class="bny-card">
+                <div hx-ext="bny-tab">
+                    <ul class="head">
+                        <li>Preview</li>
+                        <li>Code</li>
+                    </ul>
+                    <div class="body">
+                        <div>
+                            <div class="p-12">
+                                <div hx-ext="bny-nav">
+                                    <div class="head">
+                                        <div class="logo-box">
+                                            <div class="logo">
+                                                <img src="/bunny.png" alt="logo">
+                                            </div>
+                                            <span>Bunny</span>
+                                        </div>
+                                    </div>
+                                    <ul class="menu">
+                                        <li>
+                                            <div class="trigger">
+                                                <i class="bny-icon icon-home"></i>
+                                                <span>首页</span>
+                                            </div>
+                                        </li>
+
+                                        <li>
+                                            <div class="trigger">
+                                                <i class="bny-icon icon-setting"></i>
+                                                <span>系统管理</span>
+                                                <i class="bny-icon icon-right"></i>
+                                            </div>
+                                            <ul class="sub-menu">
+                                                <li>
+                                                    <div class="trigger">
+                                                        <i class="bny-icon icon-user"></i>
+                                                        <span>用户管理</span>
+                                                        <i class="bny-icon icon-right"></i>
+                                                    </div>
+                                                    <ul class="sub-menu">
+                                                        <li>
+                                                            <div class="trigger">
+                                                                <i class="bny-icon icon-user"></i>
+                                                                <span>用户列表</span>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="trigger">
+                                                                <i class="bny-icon icon-adduser"></i>
+                                                                <span>添加用户</span>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <div class="trigger">
+                                                        <i class="bny-icon icon-robot"></i>
+                                                        <span>角色权限</span>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </li>
+
+                                        <li>
+                                            <div class="trigger" class="trigger">
+                                                <i class="bny-icon icon-calendar"></i>
+                                                <span>内容管理</span>
+                                                <i class="bny-icon icon-right"></i>
+                                            </div>
+                                            <ul class="sub-menu">
+                                                <li>
+                                                    <div class="trigger">
+                                                        <i class="bny-icon icon-article"></i>
+                                                        <span>文章管理</span>
+                                                        <i class="bny-icon icon-right"></i>
+                                                    </div>
+                                                    <ul class="sub-menu">
+                                                        <li>
+                                                            <div class="trigger">
+                                                                <i class="bny-icon icon-select"></i>
+                                                                <span>已发布</span>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="trigger">
+                                                                <i class="bny-icon icon-calendar-check"></i>
+                                                                <span>草稿箱</span>
+                                                                <i class="bny-icon icon-right"></i>
+                                                            </div>
+                                                            <ul class="sub-menu">
+                                                                <li>
+                                                                    <div class="trigger">
+                                                                        <i class="bny-icon icon-select"></i>
+                                                                        <span>草稿箱列表</span>
+                                                                    </div>
+                                                                </li>
+                                                                <li>
+                                                                    <div class="trigger">
+                                                                        <i class="bny-icon icon-add"></i>
+                                                                        <span>添加草稿</span>
+                                                                    </div>
+                                                                </li>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+
+                                        <li>
+                                            <div class="trigger" class="trigger">
+                                                <i class="bny-icon icon-barchart"></i>
+                                                <span>数据统计</span>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                            </div>
+                        </div>
+                        <div>
+                            <pre hx-ext="bny-code">
+&lt;div hx-ext=&quot;bny-nav&quot;&gt;
+    &lt;div class=&quot;head&quot;&gt;
+        &lt;div class=&quot;logo-box&quot;&gt;
+            &lt;div class=&quot;logo&quot;&gt;
+                &lt;img src=&quot;/bunny.png&quot; alt=&quot;logo&quot;&gt;
+            &lt;/div&gt;
+            &lt;span&gt;Bunny&lt;/span&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;ul class=&quot;menu&quot;&gt;
+        &lt;li&gt;
+            &lt;div class=&quot;trigger&quot;&gt;
+                &lt;i class=&quot;bny-icon icon-home&quot;&gt;&lt;/i&gt;
+                &lt;span&gt;首页&lt;/span&gt;
+            &lt;/div&gt;
+        &lt;/li&gt;
+
+        &lt;li&gt;
+            &lt;div class=&quot;trigger&quot;&gt;
+                &lt;i class=&quot;bny-icon icon-setting&quot;&gt;&lt;/i&gt;
+                &lt;span&gt;系统管理&lt;/span&gt;
+                &lt;i class=&quot;bny-icon icon-right&quot;&gt;&lt;/i&gt;
+            &lt;/div&gt;
+            &lt;ul class=&quot;sub-menu&quot;&gt;
+                &lt;li&gt;
+                    &lt;div class=&quot;trigger&quot;&gt;
+                        &lt;i class=&quot;bny-icon icon-user&quot;&gt;&lt;/i&gt;
+                        &lt;span&gt;用户管理&lt;/span&gt;
+                        &lt;i class=&quot;bny-icon icon-right&quot;&gt;&lt;/i&gt;
+                    &lt;/div&gt;
+                    &lt;ul class=&quot;sub-menu&quot;&gt;
+                        &lt;li&gt;
+                            &lt;div class=&quot;trigger&quot;&gt;
+                                &lt;i class=&quot;bny-icon icon-user&quot;&gt;&lt;/i&gt;
+                                &lt;span&gt;用户列表&lt;/span&gt;
+                            &lt;/div&gt;
+                        &lt;/li&gt;
+                        &lt;li&gt;
+                            &lt;div class=&quot;trigger&quot;&gt;
+                                &lt;i class=&quot;bny-icon icon-adduser&quot;&gt;&lt;/i&gt;
+                                &lt;span&gt;添加用户&lt;/span&gt;
+                            &lt;/div&gt;
+                        &lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/li&gt;
+                &lt;li&gt;
+                    &lt;div class=&quot;trigger&quot;&gt;
+                        &lt;i class=&quot;bny-icon icon-robot&quot;&gt;&lt;/i&gt;
+                        &lt;span&gt;角色权限&lt;/span&gt;
+                    &lt;/div&gt;
+                &lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/li&gt;
+
+        &lt;li&gt;
+            &lt;div class=&quot;trigger&quot; class=&quot;trigger&quot;&gt;
+                &lt;i class=&quot;bny-icon icon-calendar&quot;&gt;&lt;/i&gt;
+                &lt;span&gt;内容管理&lt;/span&gt;
+                &lt;i class=&quot;bny-icon icon-right&quot;&gt;&lt;/i&gt;
+            &lt;/div&gt;
+            &lt;ul class=&quot;sub-menu&quot;&gt;
+                &lt;li&gt;
+                    &lt;div class=&quot;trigger&quot;&gt;
+                        &lt;i class=&quot;bny-icon icon-article&quot;&gt;&lt;/i&gt;
+                        &lt;span&gt;文章管理&lt;/span&gt;
+                        &lt;i class=&quot;bny-icon icon-right&quot;&gt;&lt;/i&gt;
+                    &lt;/div&gt;
+                    &lt;ul class=&quot;sub-menu&quot;&gt;
+                        &lt;li&gt;
+                            &lt;div class=&quot;trigger&quot;&gt;
+                                &lt;i class=&quot;bny-icon icon-select&quot;&gt;&lt;/i&gt;
+                                &lt;span&gt;已发布&lt;/span&gt;
+                            &lt;/div&gt;
+                        &lt;/li&gt;
+                        &lt;li&gt;
+                            &lt;div class=&quot;trigger&quot;&gt;
+                                &lt;i class=&quot;bny-icon icon-calendar-check&quot;&gt;&lt;/i&gt;
+                                &lt;span&gt;草稿箱&lt;/span&gt;
+                                &lt;i class=&quot;bny-icon icon-right&quot;&gt;&lt;/i&gt;
+                            &lt;/div&gt;
+                            &lt;ul class=&quot;sub-menu&quot;&gt;
+                                &lt;li&gt;
+                                    &lt;div class=&quot;trigger&quot;&gt;
+                                        &lt;i class=&quot;bny-icon icon-select&quot;&gt;&lt;/i&gt;
+                                        &lt;span&gt;草稿箱列表&lt;/span&gt;
+                                    &lt;/div&gt;
+                                &lt;/li&gt;
+                                &lt;li&gt;
+                                    &lt;div class=&quot;trigger&quot;&gt;
+                                        &lt;i class=&quot;bny-icon icon-add&quot;&gt;&lt;/i&gt;
+                                        &lt;span&gt;添加草稿&lt;/span&gt;
+                                    &lt;/div&gt;
+                                &lt;/li&gt;
+                            &lt;/ul&gt;
+                        &lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/li&gt;
+
+        &lt;li&gt;
+            &lt;div class=&quot;trigger&quot; class=&quot;trigger&quot;&gt;
+                &lt;i class=&quot;bny-icon icon-barchart&quot;&gt;&lt;/i&gt;
+                &lt;span&gt;数据统计&lt;/span&gt;
+            &lt;/div&gt;
+        &lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;
+                </pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h3 id="n012">颜色</h3>
+            <div class="bny-card">
+                <div hx-ext="bny-tab">
+                    <ul class="head">
+                        <li>Preview</li>
+                        <li>Code</li>
+                    </ul>
+                    <div class="body">
+                        <div>
+                            <div class="p-12">
+                                <div hx-ext="bny-nav" color="white">
+                                    <div class="head">
+                                        <div class="logo-box">
+                                            <div class="logo">
+                                                <img src="/bunny.png" alt="logo">
+                                            </div>
+                                            <span>Bunny</span>
+                                        </div>
+                                    </div>
+                                    <ul class="menu">
+                                        <li>
+                                            <div class="trigger">
+                                                <i class="bny-icon icon-home"></i>
+                                                <span>首页</span>
+                                            </div>
+                                        </li>
+
+                                        <li>
+                                            <div class="trigger">
+                                                <i class="bny-icon icon-setting"></i>
+                                                <span>系统管理</span>
+                                                <i class="bny-icon icon-right"></i>
+                                            </div>
+                                            <ul class="sub-menu">
+                                                <li>
+                                                    <div class="trigger">
+                                                        <i class="bny-icon icon-user"></i>
+                                                        <span>用户管理</span>
+                                                        <i class="bny-icon icon-right"></i>
+                                                    </div>
+                                                    <ul class="sub-menu">
+                                                        <li>
+                                                            <div class="trigger">
+                                                                <i class="bny-icon icon-user"></i>
+                                                                <span>用户列表</span>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="trigger">
+                                                                <i class="bny-icon icon-adduser"></i>
+                                                                <span>添加用户</span>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <div class="trigger">
+                                                        <i class="bny-icon icon-robot"></i>
+                                                        <span>角色权限</span>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </li>
+
+                                        <li>
+                                            <div class="trigger" class="trigger">
+                                                <i class="bny-icon icon-calendar"></i>
+                                                <span>内容管理</span>
+                                                <i class="bny-icon icon-right"></i>
+                                            </div>
+                                            <ul class="sub-menu">
+                                                <li>
+                                                    <div class="trigger">
+                                                        <i class="bny-icon icon-article"></i>
+                                                        <span>文章管理</span>
+                                                        <i class="bny-icon icon-right"></i>
+                                                    </div>
+                                                    <ul class="sub-menu">
+                                                        <li>
+                                                            <div class="trigger">
+                                                                <i class="bny-icon icon-select"></i>
+                                                                <span>已发布</span>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="trigger">
+                                                                <i class="bny-icon icon-calendar-check"></i>
+                                                                <span>草稿箱</span>
+                                                                <i class="bny-icon icon-right"></i>
+                                                            </div>
+                                                            <ul class="sub-menu">
+                                                                <li>
+                                                                    <div class="trigger">
+                                                                        <i class="bny-icon icon-select"></i>
+                                                                        <span>草稿箱列表</span>
+                                                                    </div>
+                                                                </li>
+                                                                <li>
+                                                                    <div class="trigger">
+                                                                        <i class="bny-icon icon-add"></i>
+                                                                        <span>添加草稿</span>
+                                                                    </div>
+                                                                </li>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+
+                                        <li>
+                                            <div class="trigger" class="trigger">
+                                                <i class="bny-icon icon-barchart"></i>
+                                                <span>数据统计</span>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                                <div hx-ext="bny-nav" color="green">
+                                    <div class="head">
+                                        <div class="logo-box">
+                                            <div class="logo">
+                                                <img src="/bunny.png" alt="logo">
+                                            </div>
+                                            <span>Bunny</span>
+                                        </div>
+                                    </div>
+                                    <ul class="menu">
+                                        <li>
+                                            <div class="trigger">
+                                                <i class="bny-icon icon-home"></i>
+                                                <span>首页</span>
+                                            </div>
+                                        </li>
+
+                                        <li>
+                                            <div class="trigger">
+                                                <i class="bny-icon icon-setting"></i>
+                                                <span>系统管理</span>
+                                                <i class="bny-icon icon-right"></i>
+                                            </div>
+                                            <ul class="sub-menu">
+                                                <li>
+                                                    <div class="trigger">
+                                                        <i class="bny-icon icon-user"></i>
+                                                        <span>用户管理</span>
+                                                        <i class="bny-icon icon-right"></i>
+                                                    </div>
+                                                    <ul class="sub-menu">
+                                                        <li>
+                                                            <div class="trigger">
+                                                                <i class="bny-icon icon-user"></i>
+                                                                <span>用户列表</span>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="trigger">
+                                                                <i class="bny-icon icon-adduser"></i>
+                                                                <span>添加用户</span>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <div class="trigger">
+                                                        <i class="bny-icon icon-robot"></i>
+                                                        <span>角色权限</span>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </li>
+
+                                        <li>
+                                            <div class="trigger" class="trigger">
+                                                <i class="bny-icon icon-calendar"></i>
+                                                <span>内容管理</span>
+                                                <i class="bny-icon icon-right"></i>
+                                            </div>
+                                            <ul class="sub-menu">
+                                                <li>
+                                                    <div class="trigger">
+                                                        <i class="bny-icon icon-article"></i>
+                                                        <span>文章管理</span>
+                                                        <i class="bny-icon icon-right"></i>
+                                                    </div>
+                                                    <ul class="sub-menu">
+                                                        <li>
+                                                            <div class="trigger">
+                                                                <i class="bny-icon icon-select"></i>
+                                                                <span>已发布</span>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="trigger">
+                                                                <i class="bny-icon icon-calendar-check"></i>
+                                                                <span>草稿箱</span>
+                                                                <i class="bny-icon icon-right"></i>
+                                                            </div>
+                                                            <ul class="sub-menu">
+                                                                <li>
+                                                                    <div class="trigger">
+                                                                        <i class="bny-icon icon-select"></i>
+                                                                        <span>草稿箱列表</span>
+                                                                    </div>
+                                                                </li>
+                                                                <li>
+                                                                    <div class="trigger">
+                                                                        <i class="bny-icon icon-add"></i>
+                                                                        <span>添加草稿</span>
+                                                                    </div>
+                                                                </li>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+
+                                        <li>
+                                            <div class="trigger" class="trigger">
+                                                <i class="bny-icon icon-barchart"></i>
+                                                <span>数据统计</span>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                                <div hx-ext="bny-nav" color="yellow">
+                                    <div class="head">
+                                        <div class="logo-box">
+                                            <div class="logo">
+                                                <img src="/bunny.png" alt="logo">
+                                            </div>
+                                            <span>Bunny</span>
+                                        </div>
+                                    </div>
+                                    <ul class="menu">
+                                        <li>
+                                            <div class="trigger">
+                                                <i class="bny-icon icon-home"></i>
+                                                <span>首页</span>
+                                            </div>
+                                        </li>
+
+                                        <li>
+                                            <div class="trigger">
+                                                <i class="bny-icon icon-setting"></i>
+                                                <span>系统管理</span>
+                                                <i class="bny-icon icon-right"></i>
+                                            </div>
+                                            <ul class="sub-menu">
+                                                <li>
+                                                    <div class="trigger">
+                                                        <i class="bny-icon icon-user"></i>
+                                                        <span>用户管理</span>
+                                                        <i class="bny-icon icon-right"></i>
+                                                    </div>
+                                                    <ul class="sub-menu">
+                                                        <li>
+                                                            <div class="trigger">
+                                                                <i class="bny-icon icon-user"></i>
+                                                                <span>用户列表</span>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="trigger">
+                                                                <i class="bny-icon icon-adduser"></i>
+                                                                <span>添加用户</span>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <div class="trigger">
+                                                        <i class="bny-icon icon-robot"></i>
+                                                        <span>角色权限</span>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </li>
+
+                                        <li>
+                                            <div class="trigger" class="trigger">
+                                                <i class="bny-icon icon-calendar"></i>
+                                                <span>内容管理</span>
+                                                <i class="bny-icon icon-right"></i>
+                                            </div>
+                                            <ul class="sub-menu">
+                                                <li>
+                                                    <div class="trigger">
+                                                        <i class="bny-icon icon-article"></i>
+                                                        <span>文章管理</span>
+                                                        <i class="bny-icon icon-right"></i>
+                                                    </div>
+                                                    <ul class="sub-menu">
+                                                        <li>
+                                                            <div class="trigger">
+                                                                <i class="bny-icon icon-select"></i>
+                                                                <span>已发布</span>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="trigger">
+                                                                <i class="bny-icon icon-calendar-check"></i>
+                                                                <span>草稿箱</span>
+                                                                <i class="bny-icon icon-right"></i>
+                                                            </div>
+                                                            <ul class="sub-menu">
+                                                                <li>
+                                                                    <div class="trigger">
+                                                                        <i class="bny-icon icon-select"></i>
+                                                                        <span>草稿箱列表</span>
+                                                                    </div>
+                                                                </li>
+                                                                <li>
+                                                                    <div class="trigger">
+                                                                        <i class="bny-icon icon-add"></i>
+                                                                        <span>添加草稿</span>
+                                                                    </div>
+                                                                </li>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+
+                                        <li>
+                                            <div class="trigger" class="trigger">
+                                                <i class="bny-icon icon-barchart"></i>
+                                                <span>数据统计</span>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                                <div hx-ext="bny-nav" color="red">
+                                    <div class="head">
+                                        <div class="logo-box">
+                                            <div class="logo">
+                                                <img src="/bunny.png" alt="logo">
+                                            </div>
+                                            <span>Bunny</span>
+                                        </div>
+                                    </div>
+                                    <ul class="menu">
+                                        <li>
+                                            <div class="trigger">
+                                                <i class="bny-icon icon-home"></i>
+                                                <span>首页</span>
+                                            </div>
+                                        </li>
+
+                                        <li>
+                                            <div class="trigger">
+                                                <i class="bny-icon icon-setting"></i>
+                                                <span>系统管理</span>
+                                                <i class="bny-icon icon-right"></i>
+                                            </div>
+                                            <ul class="sub-menu">
+                                                <li>
+                                                    <div class="trigger">
+                                                        <i class="bny-icon icon-user"></i>
+                                                        <span>用户管理</span>
+                                                        <i class="bny-icon icon-right"></i>
+                                                    </div>
+                                                    <ul class="sub-menu">
+                                                        <li>
+                                                            <div class="trigger">
+                                                                <i class="bny-icon icon-user"></i>
+                                                                <span>用户列表</span>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="trigger">
+                                                                <i class="bny-icon icon-adduser"></i>
+                                                                <span>添加用户</span>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <div class="trigger">
+                                                        <i class="bny-icon icon-robot"></i>
+                                                        <span>角色权限</span>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </li>
+
+                                        <li>
+                                            <div class="trigger" class="trigger">
+                                                <i class="bny-icon icon-calendar"></i>
+                                                <span>内容管理</span>
+                                                <i class="bny-icon icon-right"></i>
+                                            </div>
+                                            <ul class="sub-menu">
+                                                <li>
+                                                    <div class="trigger">
+                                                        <i class="bny-icon icon-article"></i>
+                                                        <span>文章管理</span>
+                                                        <i class="bny-icon icon-right"></i>
+                                                    </div>
+                                                    <ul class="sub-menu">
+                                                        <li>
+                                                            <div class="trigger">
+                                                                <i class="bny-icon icon-select"></i>
+                                                                <span>已发布</span>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="trigger">
+                                                                <i class="bny-icon icon-calendar-check"></i>
+                                                                <span>草稿箱</span>
+                                                                <i class="bny-icon icon-right"></i>
+                                                            </div>
+                                                            <ul class="sub-menu">
+                                                                <li>
+                                                                    <div class="trigger">
+                                                                        <i class="bny-icon icon-select"></i>
+                                                                        <span>草稿箱列表</span>
+                                                                    </div>
+                                                                </li>
+                                                                <li>
+                                                                    <div class="trigger">
+                                                                        <i class="bny-icon icon-add"></i>
+                                                                        <span>添加草稿</span>
+                                                                    </div>
+                                                                </li>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+
+                                        <li>
+                                            <div class="trigger" class="trigger">
+                                                <i class="bny-icon icon-barchart"></i>
+                                                <span>数据统计</span>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                                <div hx-ext="bny-nav" color="blue">
+                                    <div class="head">
+                                        <div class="logo-box">
+                                            <div class="logo">
+                                                <img src="/bunny.png" alt="logo">
+                                            </div>
+                                            <span>Bunny</span>
+                                        </div>
+                                    </div>
+                                    <ul class="menu">
+                                        <li>
+                                            <div class="trigger">
+                                                <i class="bny-icon icon-home"></i>
+                                                <span>首页</span>
+                                            </div>
+                                        </li>
+
+                                        <li>
+                                            <div class="trigger">
+                                                <i class="bny-icon icon-setting"></i>
+                                                <span>系统管理</span>
+                                                <i class="bny-icon icon-right"></i>
+                                            </div>
+                                            <ul class="sub-menu">
+                                                <li>
+                                                    <div class="trigger">
+                                                        <i class="bny-icon icon-user"></i>
+                                                        <span>用户管理</span>
+                                                        <i class="bny-icon icon-right"></i>
+                                                    </div>
+                                                    <ul class="sub-menu">
+                                                        <li>
+                                                            <div class="trigger">
+                                                                <i class="bny-icon icon-user"></i>
+                                                                <span>用户列表</span>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="trigger">
+                                                                <i class="bny-icon icon-adduser"></i>
+                                                                <span>添加用户</span>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <div class="trigger">
+                                                        <i class="bny-icon icon-robot"></i>
+                                                        <span>角色权限</span>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </li>
+
+                                        <li>
+                                            <div class="trigger" class="trigger">
+                                                <i class="bny-icon icon-calendar"></i>
+                                                <span>内容管理</span>
+                                                <i class="bny-icon icon-right"></i>
+                                            </div>
+                                            <ul class="sub-menu">
+                                                <li>
+                                                    <div class="trigger">
+                                                        <i class="bny-icon icon-article"></i>
+                                                        <span>文章管理</span>
+                                                        <i class="bny-icon icon-right"></i>
+                                                    </div>
+                                                    <ul class="sub-menu">
+                                                        <li>
+                                                            <div class="trigger">
+                                                                <i class="bny-icon icon-select"></i>
+                                                                <span>已发布</span>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="trigger">
+                                                                <i class="bny-icon icon-calendar-check"></i>
+                                                                <span>草稿箱</span>
+                                                                <i class="bny-icon icon-right"></i>
+                                                            </div>
+                                                            <ul class="sub-menu">
+                                                                <li>
+                                                                    <div class="trigger">
+                                                                        <i class="bny-icon icon-select"></i>
+                                                                        <span>草稿箱列表</span>
+                                                                    </div>
+                                                                </li>
+                                                                <li>
+                                                                    <div class="trigger">
+                                                                        <i class="bny-icon icon-add"></i>
+                                                                        <span>添加草稿</span>
+                                                                    </div>
+                                                                </li>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+
+                                        <li>
+                                            <div class="trigger" class="trigger">
+                                                <i class="bny-icon icon-barchart"></i>
+                                                <span>数据统计</span>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                            </div>
+                        </div>
+                        <div>
+                            <pre hx-ext="bny-code">
+&lt;div hx-ext=&quot;bny-nav&quot; color=&quot;white&quot;&gt;...&lt;/div&gt;
+&lt;div hx-ext=&quot;bny-nav&quot; color=&quot;green&quot;&gt;...&lt;/div&gt;
+&lt;div hx-ext=&quot;bny-nav&quot; color=&quot;yellow&quot;&gt;...&lt;/div&gt;
+&lt;div hx-ext=&quot;bny-nav&quot; color=&quot;red&quot;&gt;...&lt;/div&gt;
+&lt;div hx-ext=&quot;bny-nav&quot; color=&quot;blue&quot;&gt;...&lt;/div&gt;
+                </pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h2 id="n02">侧边导航</h2>
+            <h3 id="n021">默认</h3>
+            <div class="bny-card">
+                <div hx-ext="bny-tab">
+                    <ul class="head">
+                        <li>Preview</li>
+                        <li>Code</li>
+                    </ul>
+                    <div class="body">
+                        <div>
+                            <div class="p-12">
+                                <div hx-ext="bny-nav" side>
+                                    <div class="head">
+                                        <div class="logo-box">
+                                            <div class="logo">
+                                                <img src="/bunny.png" alt="logo">
+                                            </div>
+                                            <span>Bunny</span>
+                                        </div>
+                                    </div>
+                                    <ul class="menu">
+                                        <li>
+                                            <div class="trigger">
+                                                <i class="bny-icon icon-home"></i>
+                                                <span>首页</span>
+                                            </div>
+                                        </li>
+
+                                        <li>
+                                            <div class="trigger">
+                                                <i class="bny-icon icon-setting"></i>
+                                                <span>系统管理</span>
+                                                <i class="bny-icon icon-right"></i>
+                                            </div>
+                                            <ul class="sub-menu">
+                                                <li>
+                                                    <div class="trigger">
+                                                        <i class="bny-icon icon-user"></i>
+                                                        <span>用户管理</span>
+                                                        <i class="bny-icon icon-right"></i>
+                                                    </div>
+                                                    <ul class="sub-menu">
+                                                        <li>
+                                                            <div class="trigger">
+                                                                <i class="bny-icon icon-user"></i>
+                                                                <span>用户列表</span>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="trigger">
+                                                                <i class="bny-icon icon-adduser"></i>
+                                                                <span>添加用户</span>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <div class="trigger">
+                                                        <i class="bny-icon icon-robot"></i>
+                                                        <span>角色权限</span>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </li>
+
+                                        <li>
+                                            <div class="trigger" class="trigger">
+                                                <i class="bny-icon icon-calendar"></i>
+                                                <span>内容管理</span>
+                                                <i class="bny-icon icon-right"></i>
+                                            </div>
+                                            <ul class="sub-menu">
+                                                <li>
+                                                    <div class="trigger">
+                                                        <i class="bny-icon icon-article"></i>
+                                                        <span>文章管理</span>
+                                                        <i class="bny-icon icon-right"></i>
+                                                    </div>
+                                                    <ul class="sub-menu">
+                                                        <li>
+                                                            <div class="trigger">
+                                                                <i class="bny-icon icon-select"></i>
+                                                                <span>已发布</span>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="trigger">
+                                                                <i class="bny-icon icon-calendar-check"></i>
+                                                                <span>草稿箱</span>
+                                                                <i class="bny-icon icon-right"></i>
+                                                            </div>
+                                                            <ul class="sub-menu">
+                                                                <li>
+                                                                    <div class="trigger">
+                                                                        <i class="bny-icon icon-select"></i>
+                                                                        <span>草稿箱列表</span>
+                                                                    </div>
+                                                                </li>
+                                                                <li>
+                                                                    <div class="trigger">
+                                                                        <i class="bny-icon icon-add"></i>
+                                                                        <span>添加草稿</span>
+                                                                    </div>
+                                                                </li>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+
+                                        <li>
+                                            <div class="trigger" class="trigger">
+                                                <i class="bny-icon icon-barchart"></i>
+                                                <span>数据统计</span>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <pre hx-ext="bny-code">
+&lt;div hx-ext=&quot;bny-nav&quot; side&gt;
+    &lt;div class=&quot;head&quot;&gt;
+        &lt;div class=&quot;logo-box&quot;&gt;
+            &lt;div class=&quot;logo&quot;&gt;
+                &lt;img src=&quot;/bunny.png&quot; alt=&quot;logo&quot;&gt;
+            &lt;/div&gt;
+            &lt;span&gt;Bunny&lt;/span&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;ul class=&quot;menu&quot;&gt;
+        &lt;li&gt;
+            &lt;div class=&quot;trigger&quot;&gt;
+                &lt;i class=&quot;bny-icon icon-home&quot;&gt;&lt;/i&gt;
+                &lt;span&gt;首页&lt;/span&gt;
+            &lt;/div&gt;
+        &lt;/li&gt;
+
+        &lt;li&gt;
+            &lt;div class=&quot;trigger&quot;&gt;
+                &lt;i class=&quot;bny-icon icon-setting&quot;&gt;&lt;/i&gt;
+                &lt;span&gt;系统管理&lt;/span&gt;
+                &lt;i class=&quot;bny-icon icon-right&quot;&gt;&lt;/i&gt;
+            &lt;/div&gt;
+            &lt;ul class=&quot;sub-menu&quot;&gt;
+                &lt;li&gt;
+                    &lt;div class=&quot;trigger&quot;&gt;
+                        &lt;i class=&quot;bny-icon icon-user&quot;&gt;&lt;/i&gt;
+                        &lt;span&gt;用户管理&lt;/span&gt;
+                        &lt;i class=&quot;bny-icon icon-right&quot;&gt;&lt;/i&gt;
+                    &lt;/div&gt;
+                    &lt;ul class=&quot;sub-menu&quot;&gt;
+                        &lt;li&gt;
+                            &lt;div class=&quot;trigger&quot;&gt;
+                                &lt;i class=&quot;bny-icon icon-user&quot;&gt;&lt;/i&gt;
+                                &lt;span&gt;用户列表&lt;/span&gt;
+                            &lt;/div&gt;
+                        &lt;/li&gt;
+                        &lt;li&gt;
+                            &lt;div class=&quot;trigger&quot;&gt;
+                                &lt;i class=&quot;bny-icon icon-adduser&quot;&gt;&lt;/i&gt;
+                                &lt;span&gt;添加用户&lt;/span&gt;
+                            &lt;/div&gt;
+                        &lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/li&gt;
+                &lt;li&gt;
+                    &lt;div class=&quot;trigger&quot;&gt;
+                        &lt;i class=&quot;bny-icon icon-robot&quot;&gt;&lt;/i&gt;
+                        &lt;span&gt;角色权限&lt;/span&gt;
+                    &lt;/div&gt;
+                &lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/li&gt;
+
+        &lt;li&gt;
+            &lt;div class=&quot;trigger&quot; class=&quot;trigger&quot;&gt;
+                &lt;i class=&quot;bny-icon icon-calendar&quot;&gt;&lt;/i&gt;
+                &lt;span&gt;内容管理&lt;/span&gt;
+                &lt;i class=&quot;bny-icon icon-right&quot;&gt;&lt;/i&gt;
+            &lt;/div&gt;
+            &lt;ul class=&quot;sub-menu&quot;&gt;
+                &lt;li&gt;
+                    &lt;div class=&quot;trigger&quot;&gt;
+                        &lt;i class=&quot;bny-icon icon-article&quot;&gt;&lt;/i&gt;
+                        &lt;span&gt;文章管理&lt;/span&gt;
+                        &lt;i class=&quot;bny-icon icon-right&quot;&gt;&lt;/i&gt;
+                    &lt;/div&gt;
+                    &lt;ul class=&quot;sub-menu&quot;&gt;
+                        &lt;li&gt;
+                            &lt;div class=&quot;trigger&quot;&gt;
+                                &lt;i class=&quot;bny-icon icon-select&quot;&gt;&lt;/i&gt;
+                                &lt;span&gt;已发布&lt;/span&gt;
+                            &lt;/div&gt;
+                        &lt;/li&gt;
+                        &lt;li&gt;
+                            &lt;div class=&quot;trigger&quot;&gt;
+                                &lt;i class=&quot;bny-icon icon-calendar-check&quot;&gt;&lt;/i&gt;
+                                &lt;span&gt;草稿箱&lt;/span&gt;
+                                &lt;i class=&quot;bny-icon icon-right&quot;&gt;&lt;/i&gt;
+                            &lt;/div&gt;
+                            &lt;ul class=&quot;sub-menu&quot;&gt;
+                                &lt;li&gt;
+                                    &lt;div class=&quot;trigger&quot;&gt;
+                                        &lt;i class=&quot;bny-icon icon-select&quot;&gt;&lt;/i&gt;
+                                        &lt;span&gt;草稿箱列表&lt;/span&gt;
+                                    &lt;/div&gt;
+                                &lt;/li&gt;
+                                &lt;li&gt;
+                                    &lt;div class=&quot;trigger&quot;&gt;
+                                        &lt;i class=&quot;bny-icon icon-add&quot;&gt;&lt;/i&gt;
+                                        &lt;span&gt;添加草稿&lt;/span&gt;
+                                    &lt;/div&gt;
+                                &lt;/li&gt;
+                            &lt;/ul&gt;
+                        &lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/li&gt;
+
+        &lt;li&gt;
+            &lt;div class=&quot;trigger&quot; class=&quot;trigger&quot;&gt;
+                &lt;i class=&quot;bny-icon icon-barchart&quot;&gt;&lt;/i&gt;
+                &lt;span&gt;数据统计&lt;/span&gt;
+            &lt;/div&gt;
+        &lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;
+                </pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h3 id="n022">收缩</h3>
+            <div class="bny-card">
+                <div hx-ext="bny-tab">
+                    <ul class="head">
+                        <li>Preview</li>
+                        <li>Code</li>
+                    </ul>
+                    <div class="body">
+                        <div>
+                            <div class="p-12">
+                                <div hx-ext="bny-nav" side collapsed>
+                                    <div class="head">
+                                        <div class="logo-box">
+                                            <div class="logo">
+                                                <img src="/bunny.png" alt="logo">
+                                            </div>
+                                            <span>Bunny</span>
+                                        </div>
+                                    </div>
+                                    <ul class="menu">
+                                        <li>
+                                            <div class="trigger">
+                                                <i class="bny-icon icon-home"></i>
+                                                <span>首页</span>
+                                            </div>
+                                        </li>
+
+                                        <li>
+                                            <div class="trigger">
+                                                <i class="bny-icon icon-setting"></i>
+                                                <span>系统管理</span>
+                                                <i class="bny-icon icon-right"></i>
+                                            </div>
+                                            <ul class="sub-menu">
+                                                <li>
+                                                    <div class="trigger">
+                                                        <i class="bny-icon icon-user"></i>
+                                                        <span>用户管理</span>
+                                                        <i class="bny-icon icon-right"></i>
+                                                    </div>
+                                                    <ul class="sub-menu">
+                                                        <li>
+                                                            <div class="trigger">
+                                                                <i class="bny-icon icon-user"></i>
+                                                                <span>用户列表</span>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="trigger">
+                                                                <i class="bny-icon icon-adduser"></i>
+                                                                <span>添加用户</span>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <div class="trigger">
+                                                        <i class="bny-icon icon-robot"></i>
+                                                        <span>角色权限</span>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </li>
+
+                                        <li>
+                                            <div class="trigger" class="trigger">
+                                                <i class="bny-icon icon-calendar"></i>
+                                                <span>内容管理</span>
+                                                <i class="bny-icon icon-right"></i>
+                                            </div>
+                                            <ul class="sub-menu">
+                                                <li>
+                                                    <div class="trigger">
+                                                        <i class="bny-icon icon-article"></i>
+                                                        <span>文章管理</span>
+                                                        <i class="bny-icon icon-right"></i>
+                                                    </div>
+                                                    <ul class="sub-menu">
+                                                        <li>
+                                                            <div class="trigger">
+                                                                <i class="bny-icon icon-select"></i>
+                                                                <span>已发布</span>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="trigger">
+                                                                <i class="bny-icon icon-calendar-check"></i>
+                                                                <span>草稿箱</span>
+                                                                <i class="bny-icon icon-right"></i>
+                                                            </div>
+                                                            <ul class="sub-menu">
+                                                                <li>
+                                                                    <div class="trigger">
+                                                                        <i class="bny-icon icon-select"></i>
+                                                                        <span>草稿箱列表</span>
+                                                                    </div>
+                                                                </li>
+                                                                <li>
+                                                                    <div class="trigger">
+                                                                        <i class="bny-icon icon-add"></i>
+                                                                        <span>添加草稿</span>
+                                                                    </div>
+                                                                </li>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+
+                                        <li>
+                                            <div class="trigger" class="trigger">
+                                                <i class="bny-icon icon-barchart"></i>
+                                                <span>数据统计</span>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                            </div>
+                        </div>
+                        <div>
+                            <pre hx-ext="bny-code">
+&lt;div hx-ext=&quot;bny-nav&quot; side collapsed&gt;...&lt;/div&gt;
+                </pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h3 id="n023">展开/收缩 按钮</h3>
+            <div class="bny-card">
+                <div hx-ext="bny-tab">
+                    <ul class="head">
+                        <li>Preview</li>
+                        <li>Code</li>
+                    </ul>
+                    <div class="body">
+                        <div>
+                            <div class="p-12">
+                                <div hx-ext="bny-nav" side toggle>
+                                    <div class="head">
+                                        <div class="logo-box">
+                                            <div class="logo">
+                                                <img src="/bunny.png" alt="logo">
+                                            </div>
+                                            <span>Bunny</span>
+                                        </div>
+                                    </div>
+                                    <ul class="menu">
+                                        <li>
+                                            <div class="trigger">
+                                                <i class="bny-icon icon-home"></i>
+                                                <span>首页</span>
+                                            </div>
+                                        </li>
+
+                                        <li>
+                                            <div class="trigger">
+                                                <i class="bny-icon icon-setting"></i>
+                                                <span>系统管理</span>
+                                                <i class="bny-icon icon-right"></i>
+                                            </div>
+                                            <ul class="sub-menu">
+                                                <li>
+                                                    <div class="trigger">
+                                                        <i class="bny-icon icon-user"></i>
+                                                        <span>用户管理</span>
+                                                        <i class="bny-icon icon-right"></i>
+                                                    </div>
+                                                    <ul class="sub-menu">
+                                                        <li>
+                                                            <div class="trigger">
+                                                                <i class="bny-icon icon-user"></i>
+                                                                <span>用户列表</span>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="trigger">
+                                                                <i class="bny-icon icon-adduser"></i>
+                                                                <span>添加用户</span>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <div class="trigger">
+                                                        <i class="bny-icon icon-robot"></i>
+                                                        <span>角色权限</span>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </li>
+
+                                        <li>
+                                            <div class="trigger" class="trigger">
+                                                <i class="bny-icon icon-calendar"></i>
+                                                <span>内容管理</span>
+                                                <i class="bny-icon icon-right"></i>
+                                            </div>
+                                            <ul class="sub-menu">
+                                                <li>
+                                                    <div class="trigger">
+                                                        <i class="bny-icon icon-article"></i>
+                                                        <span>文章管理</span>
+                                                        <i class="bny-icon icon-right"></i>
+                                                    </div>
+                                                    <ul class="sub-menu">
+                                                        <li>
+                                                            <div class="trigger">
+                                                                <i class="bny-icon icon-select"></i>
+                                                                <span>已发布</span>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="trigger">
+                                                                <i class="bny-icon icon-calendar-check"></i>
+                                                                <span>草稿箱</span>
+                                                                <i class="bny-icon icon-right"></i>
+                                                            </div>
+                                                            <ul class="sub-menu">
+                                                                <li>
+                                                                    <div class="trigger">
+                                                                        <i class="bny-icon icon-select"></i>
+                                                                        <span>草稿箱列表</span>
+                                                                    </div>
+                                                                </li>
+                                                                <li>
+                                                                    <div class="trigger">
+                                                                        <i class="bny-icon icon-add"></i>
+                                                                        <span>添加草稿</span>
+                                                                    </div>
+                                                                </li>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+
+                                        <li>
+                                            <div class="trigger" class="trigger">
+                                                <i class="bny-icon icon-barchart"></i>
+                                                <span>数据统计</span>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                            </div>
+                        </div>
+                        <div>
+                            <pre hx-ext="bny-code">
+&lt;div hx-ext=&quot;bny-nav&quot; side toggle&gt;...&lt;/div&gt;
+                </pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h3 id="n024">颜色</h3>
+            <div class="bny-card">
+                <div hx-ext="bny-tab">
+                    <ul class="head">
+                        <li>Preview</li>
+                        <li>Code</li>
+                    </ul>
+                    <div class="body">
+                        <div>
+                            <div class="p-12">
+                                <div hx-ext="bny-nav" side toggle color="white">
+                                    <div class="head">
+                                        <div class="logo-box">
+                                            <div class="logo">
+                                                <img src="/bunny.png" alt="logo">
+                                            </div>
+                                            <span>Bunny</span>
+                                        </div>
+                                    </div>
+                                    <ul class="menu">
+                                        <li>
+                                            <div class="trigger">
+                                                <i class="bny-icon icon-home"></i>
+                                                <span>首页</span>
+                                            </div>
+                                        </li>
+
+                                        <li>
+                                            <div class="trigger">
+                                                <i class="bny-icon icon-setting"></i>
+                                                <span>系统管理</span>
+                                                <i class="bny-icon icon-right"></i>
+                                            </div>
+                                            <ul class="sub-menu">
+                                                <li>
+                                                    <div class="trigger">
+                                                        <i class="bny-icon icon-user"></i>
+                                                        <span>用户管理</span>
+                                                        <i class="bny-icon icon-right"></i>
+                                                    </div>
+                                                    <ul class="sub-menu">
+                                                        <li>
+                                                            <div class="trigger">
+                                                                <i class="bny-icon icon-user"></i>
+                                                                <span>用户列表</span>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="trigger">
+                                                                <i class="bny-icon icon-adduser"></i>
+                                                                <span>添加用户</span>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <div class="trigger">
+                                                        <i class="bny-icon icon-robot"></i>
+                                                        <span>角色权限</span>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </li>
+
+                                        <li>
+                                            <div class="trigger" class="trigger">
+                                                <i class="bny-icon icon-calendar"></i>
+                                                <span>内容管理</span>
+                                                <i class="bny-icon icon-right"></i>
+                                            </div>
+                                            <ul class="sub-menu">
+                                                <li>
+                                                    <div class="trigger">
+                                                        <i class="bny-icon icon-article"></i>
+                                                        <span>文章管理</span>
+                                                        <i class="bny-icon icon-right"></i>
+                                                    </div>
+                                                    <ul class="sub-menu">
+                                                        <li>
+                                                            <div class="trigger">
+                                                                <i class="bny-icon icon-select"></i>
+                                                                <span>已发布</span>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="trigger">
+                                                                <i class="bny-icon icon-calendar-check"></i>
+                                                                <span>草稿箱</span>
+                                                                <i class="bny-icon icon-right"></i>
+                                                            </div>
+                                                            <ul class="sub-menu">
+                                                                <li>
+                                                                    <div class="trigger">
+                                                                        <i class="bny-icon icon-select"></i>
+                                                                        <span>草稿箱列表</span>
+                                                                    </div>
+                                                                </li>
+                                                                <li>
+                                                                    <div class="trigger">
+                                                                        <i class="bny-icon icon-add"></i>
+                                                                        <span>添加草稿</span>
+                                                                    </div>
+                                                                </li>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+
+                                        <li>
+                                            <div class="trigger" class="trigger">
+                                                <i class="bny-icon icon-barchart"></i>
+                                                <span>数据统计</span>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                                <div hx-ext="bny-nav" side toggle color="green">
+                                    <div class="head">
+                                        <div class="logo-box">
+                                            <div class="logo">
+                                                <img src="/bunny.png" alt="logo">
+                                            </div>
+                                            <span>Bunny</span>
+                                        </div>
+                                    </div>
+                                    <ul class="menu">
+                                        <li>
+                                            <div class="trigger">
+                                                <i class="bny-icon icon-home"></i>
+                                                <span>首页</span>
+                                            </div>
+                                        </li>
+
+                                        <li>
+                                            <div class="trigger">
+                                                <i class="bny-icon icon-setting"></i>
+                                                <span>系统管理</span>
+                                                <i class="bny-icon icon-right"></i>
+                                            </div>
+                                            <ul class="sub-menu">
+                                                <li>
+                                                    <div class="trigger">
+                                                        <i class="bny-icon icon-user"></i>
+                                                        <span>用户管理</span>
+                                                        <i class="bny-icon icon-right"></i>
+                                                    </div>
+                                                    <ul class="sub-menu">
+                                                        <li>
+                                                            <div class="trigger">
+                                                                <i class="bny-icon icon-user"></i>
+                                                                <span>用户列表</span>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="trigger">
+                                                                <i class="bny-icon icon-adduser"></i>
+                                                                <span>添加用户</span>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <div class="trigger">
+                                                        <i class="bny-icon icon-robot"></i>
+                                                        <span>角色权限</span>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </li>
+
+                                        <li>
+                                            <div class="trigger" class="trigger">
+                                                <i class="bny-icon icon-calendar"></i>
+                                                <span>内容管理</span>
+                                                <i class="bny-icon icon-right"></i>
+                                            </div>
+                                            <ul class="sub-menu">
+                                                <li>
+                                                    <div class="trigger">
+                                                        <i class="bny-icon icon-article"></i>
+                                                        <span>文章管理</span>
+                                                        <i class="bny-icon icon-right"></i>
+                                                    </div>
+                                                    <ul class="sub-menu">
+                                                        <li>
+                                                            <div class="trigger">
+                                                                <i class="bny-icon icon-select"></i>
+                                                                <span>已发布</span>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="trigger">
+                                                                <i class="bny-icon icon-calendar-check"></i>
+                                                                <span>草稿箱</span>
+                                                                <i class="bny-icon icon-right"></i>
+                                                            </div>
+                                                            <ul class="sub-menu">
+                                                                <li>
+                                                                    <div class="trigger">
+                                                                        <i class="bny-icon icon-select"></i>
+                                                                        <span>草稿箱列表</span>
+                                                                    </div>
+                                                                </li>
+                                                                <li>
+                                                                    <div class="trigger">
+                                                                        <i class="bny-icon icon-add"></i>
+                                                                        <span>添加草稿</span>
+                                                                    </div>
+                                                                </li>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+
+                                        <li>
+                                            <div class="trigger" class="trigger">
+                                                <i class="bny-icon icon-barchart"></i>
+                                                <span>数据统计</span>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                                <div hx-ext="bny-nav" side toggle color="yellow">
+                                    <div class="head">
+                                        <div class="logo-box">
+                                            <div class="logo">
+                                                <img src="/bunny.png" alt="logo">
+                                            </div>
+                                            <span>Bunny</span>
+                                        </div>
+                                    </div>
+                                    <ul class="menu">
+                                        <li>
+                                            <div class="trigger">
+                                                <i class="bny-icon icon-home"></i>
+                                                <span>首页</span>
+                                            </div>
+                                        </li>
+
+                                        <li>
+                                            <div class="trigger">
+                                                <i class="bny-icon icon-setting"></i>
+                                                <span>系统管理</span>
+                                                <i class="bny-icon icon-right"></i>
+                                            </div>
+                                            <ul class="sub-menu">
+                                                <li>
+                                                    <div class="trigger">
+                                                        <i class="bny-icon icon-user"></i>
+                                                        <span>用户管理</span>
+                                                        <i class="bny-icon icon-right"></i>
+                                                    </div>
+                                                    <ul class="sub-menu">
+                                                        <li>
+                                                            <div class="trigger">
+                                                                <i class="bny-icon icon-user"></i>
+                                                                <span>用户列表</span>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="trigger">
+                                                                <i class="bny-icon icon-adduser"></i>
+                                                                <span>添加用户</span>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <div class="trigger">
+                                                        <i class="bny-icon icon-robot"></i>
+                                                        <span>角色权限</span>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </li>
+
+                                        <li>
+                                            <div class="trigger" class="trigger">
+                                                <i class="bny-icon icon-calendar"></i>
+                                                <span>内容管理</span>
+                                                <i class="bny-icon icon-right"></i>
+                                            </div>
+                                            <ul class="sub-menu">
+                                                <li>
+                                                    <div class="trigger">
+                                                        <i class="bny-icon icon-article"></i>
+                                                        <span>文章管理</span>
+                                                        <i class="bny-icon icon-right"></i>
+                                                    </div>
+                                                    <ul class="sub-menu">
+                                                        <li>
+                                                            <div class="trigger">
+                                                                <i class="bny-icon icon-select"></i>
+                                                                <span>已发布</span>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="trigger">
+                                                                <i class="bny-icon icon-calendar-check"></i>
+                                                                <span>草稿箱</span>
+                                                                <i class="bny-icon icon-right"></i>
+                                                            </div>
+                                                            <ul class="sub-menu">
+                                                                <li>
+                                                                    <div class="trigger">
+                                                                        <i class="bny-icon icon-select"></i>
+                                                                        <span>草稿箱列表</span>
+                                                                    </div>
+                                                                </li>
+                                                                <li>
+                                                                    <div class="trigger">
+                                                                        <i class="bny-icon icon-add"></i>
+                                                                        <span>添加草稿</span>
+                                                                    </div>
+                                                                </li>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+
+                                        <li>
+                                            <div class="trigger" class="trigger">
+                                                <i class="bny-icon icon-barchart"></i>
+                                                <span>数据统计</span>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                                <div hx-ext="bny-nav" side toggle color="red">
+                                    <div class="head">
+                                        <div class="logo-box">
+                                            <div class="logo">
+                                                <img src="/bunny.png" alt="logo">
+                                            </div>
+                                            <span>Bunny</span>
+                                        </div>
+                                    </div>
+                                    <ul class="menu">
+                                        <li>
+                                            <div class="trigger">
+                                                <i class="bny-icon icon-home"></i>
+                                                <span>首页</span>
+                                            </div>
+                                        </li>
+
+                                        <li>
+                                            <div class="trigger">
+                                                <i class="bny-icon icon-setting"></i>
+                                                <span>系统管理</span>
+                                                <i class="bny-icon icon-right"></i>
+                                            </div>
+                                            <ul class="sub-menu">
+                                                <li>
+                                                    <div class="trigger">
+                                                        <i class="bny-icon icon-user"></i>
+                                                        <span>用户管理</span>
+                                                        <i class="bny-icon icon-right"></i>
+                                                    </div>
+                                                    <ul class="sub-menu">
+                                                        <li>
+                                                            <div class="trigger">
+                                                                <i class="bny-icon icon-user"></i>
+                                                                <span>用户列表</span>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="trigger">
+                                                                <i class="bny-icon icon-adduser"></i>
+                                                                <span>添加用户</span>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <div class="trigger">
+                                                        <i class="bny-icon icon-robot"></i>
+                                                        <span>角色权限</span>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </li>
+
+                                        <li>
+                                            <div class="trigger" class="trigger">
+                                                <i class="bny-icon icon-calendar"></i>
+                                                <span>内容管理</span>
+                                                <i class="bny-icon icon-right"></i>
+                                            </div>
+                                            <ul class="sub-menu">
+                                                <li>
+                                                    <div class="trigger">
+                                                        <i class="bny-icon icon-article"></i>
+                                                        <span>文章管理</span>
+                                                        <i class="bny-icon icon-right"></i>
+                                                    </div>
+                                                    <ul class="sub-menu">
+                                                        <li>
+                                                            <div class="trigger">
+                                                                <i class="bny-icon icon-select"></i>
+                                                                <span>已发布</span>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="trigger">
+                                                                <i class="bny-icon icon-calendar-check"></i>
+                                                                <span>草稿箱</span>
+                                                                <i class="bny-icon icon-right"></i>
+                                                            </div>
+                                                            <ul class="sub-menu">
+                                                                <li>
+                                                                    <div class="trigger">
+                                                                        <i class="bny-icon icon-select"></i>
+                                                                        <span>草稿箱列表</span>
+                                                                    </div>
+                                                                </li>
+                                                                <li>
+                                                                    <div class="trigger">
+                                                                        <i class="bny-icon icon-add"></i>
+                                                                        <span>添加草稿</span>
+                                                                    </div>
+                                                                </li>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+
+                                        <li>
+                                            <div class="trigger" class="trigger">
+                                                <i class="bny-icon icon-barchart"></i>
+                                                <span>数据统计</span>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                                <div hx-ext="bny-nav" side toggle color="blue">
+                                    <div class="head">
+                                        <div class="logo-box">
+                                            <div class="logo">
+                                                <img src="/bunny.png" alt="logo">
+                                            </div>
+                                            <span>Bunny</span>
+                                        </div>
+                                    </div>
+                                    <ul class="menu">
+                                        <li>
+                                            <div class="trigger">
+                                                <i class="bny-icon icon-home"></i>
+                                                <span>首页</span>
+                                            </div>
+                                        </li>
+
+                                        <li>
+                                            <div class="trigger">
+                                                <i class="bny-icon icon-setting"></i>
+                                                <span>系统管理</span>
+                                                <i class="bny-icon icon-right"></i>
+                                            </div>
+                                            <ul class="sub-menu">
+                                                <li>
+                                                    <div class="trigger">
+                                                        <i class="bny-icon icon-user"></i>
+                                                        <span>用户管理</span>
+                                                        <i class="bny-icon icon-right"></i>
+                                                    </div>
+                                                    <ul class="sub-menu">
+                                                        <li>
+                                                            <div class="trigger">
+                                                                <i class="bny-icon icon-user"></i>
+                                                                <span>用户列表</span>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="trigger">
+                                                                <i class="bny-icon icon-adduser"></i>
+                                                                <span>添加用户</span>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <div class="trigger">
+                                                        <i class="bny-icon icon-robot"></i>
+                                                        <span>角色权限</span>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </li>
+
+                                        <li>
+                                            <div class="trigger" class="trigger">
+                                                <i class="bny-icon icon-calendar"></i>
+                                                <span>内容管理</span>
+                                                <i class="bny-icon icon-right"></i>
+                                            </div>
+                                            <ul class="sub-menu">
+                                                <li>
+                                                    <div class="trigger">
+                                                        <i class="bny-icon icon-article"></i>
+                                                        <span>文章管理</span>
+                                                        <i class="bny-icon icon-right"></i>
+                                                    </div>
+                                                    <ul class="sub-menu">
+                                                        <li>
+                                                            <div class="trigger">
+                                                                <i class="bny-icon icon-select"></i>
+                                                                <span>已发布</span>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="trigger">
+                                                                <i class="bny-icon icon-calendar-check"></i>
+                                                                <span>草稿箱</span>
+                                                                <i class="bny-icon icon-right"></i>
+                                                            </div>
+                                                            <ul class="sub-menu">
+                                                                <li>
+                                                                    <div class="trigger">
+                                                                        <i class="bny-icon icon-select"></i>
+                                                                        <span>草稿箱列表</span>
+                                                                    </div>
+                                                                </li>
+                                                                <li>
+                                                                    <div class="trigger">
+                                                                        <i class="bny-icon icon-add"></i>
+                                                                        <span>添加草稿</span>
+                                                                    </div>
+                                                                </li>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+
+                                        <li>
+                                            <div class="trigger" class="trigger">
+                                                <i class="bny-icon icon-barchart"></i>
+                                                <span>数据统计</span>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                            </div>
+                        </div>
+                        <div>
+                            <pre hx-ext="bny-code">
+&lt;div hx-ext=&quot;bny-nav&quot; side toggle color=&quot;white&quot;&gt;...&lt;/div&gt;
+&lt;div hx-ext=&quot;bny-nav&quot; side toggle color=&quot;green&quot;&gt;...&lt;/div&gt;
+&lt;div hx-ext=&quot;bny-nav&quot; side toggle color=&quot;yellow&quot;&gt;...&lt;/div&gt;
+&lt;div hx-ext=&quot;bny-nav&quot; side toggle color=&quot;red&quot;&gt;...&lt;/div&gt;
+&lt;div hx-ext=&quot;bny-nav&quot; side toggle color=&quot;blue&quot;&gt;...&lt;/div&gt;
+                </pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="right-anchor-box hidden-xs col-sm3">
+        <div class="right-anchor">
+            <ul hx-ext="bny-anchor" rail>
+                <li class="link" anchor="#n01">自适应导航栏</li>
+                <ul>
+                    <li class="link" anchor="#n011">默认</li>
+                    <li class="link" anchor="#n012">颜色</li>
+                </ul>
+                <li class="link" anchor="#n02">侧边导航</li>
+                <ul>
+                    <li class="link" anchor="#n021">默认</li>
+                    <li class="link" anchor="#n022">收缩</li>
+                    <li class="link" anchor="#n023">展开/收缩 按钮</li>
+                    <li class="link" anchor="#n024">颜色</li>
+                </ul>
+            </ul>
+        </div>
+    </div>
+</div>

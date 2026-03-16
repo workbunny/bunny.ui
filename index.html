@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BunnyUI</title>
+    <link rel="shortcut icon" href="bunny.png" type="image/x-icon">
+    <!-- highlight -->
+    <link rel="stylesheet" href="/highlight/styles/atom-one-dark.min.css">
+    <script src="/highlight/highlight.min.js"></script>
+    <script src="/highlight/languages/javascript.min.js"></script>
+    <script src="/highlight/languages/php.min.js"></script>
+    <script src="/highlight/languages/css.min.js"></script>
+    <!-- prismjs -->
+    <link rel="stylesheet" href="/prismjs/prism.css">
+    <script src="/prismjs/prism.js"></script>
+
+
+    <link rel="stylesheet" href="/debug/bunny.css">
+    <script src="/debug/bunny.js"></script>
+    <meta name="keywords" content="BunnyUI, HTMX, Web UI, javascript,组件库">
+    <meta name="description" content="BunnyUI 是一个基于 HTMX 拓展的 Web UI 组件库.">
+</head>
+<style>
+    header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 9999;
+        width: 100%;
+        background: var(--white-middle);
+        box-shadow: var(--box-shadow-005);
+
+        & [hx-ext~="bny-nav"] {
+            box-shadow: none;
+        }
+    }
+
+    #bny-content {
+        padding-top: 70px;
+        overflow: auto;
+        padding-bottom: 80px;
+    }
+
+    footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        background: var(--white-middle);
+        height: 80px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        & * {
+            color: var(--black-middle);
+        }
+    }
+
+    #tab-load {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 99999;
+    }
+
+    .htmx-indicator {
+        display: none;
+        transition: all 0.3s ease-in-out;
+        visibility: hidden;
+        opacity: 0;
+    }
+
+    .htmx-request .htmx-indicator {
+        display: inline;
+        visibility: visible;
+    }
+
+    .htmx-request.htmx-indicator {
+        display: inline;
+        visibility: visible;
+    }
+</style>
+
+<body hx-indicator="#tab-load">
+    <!-- 头部 -->
+    <header>
+        <div class="bny-container">
+            <div hx-ext="bny-nav" color="white">
+                <div class="head">
+                    <div class="logo-box">
+                        <div class="logo">
+                            <img src="/bunny.png" alt="logo">
+                        </div>
+                        <span>BunnyUI</span>
+                    </div>
+                </div>
+                <ul class="menu">
+                    <li hx-get="/doc/home.html" hx-target="#bny-content">
+                        <div class="trigger">
+                            <span>首页</span>
+                        </div>
+                    </li>
+                    <li hx-get="/doc/iframe.html" hx-target="#bny-content">
+                        <div class="trigger">
+                            <span>组件</span>
+                        </div>
+                    </li>
+                    <li id="mode-btn">
+                        <div class="trigger">
+                            <span>模式</span>
+                        </div>
+                    </li>
+                    <li>
+                        <a class="trigger" href="https://github.com/workbunny/bunny.ui" target="_blank">
+                            <i class="bny-icon icon-github-fill"></i>
+                            <span>GitHub</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <div id="bny-content" hx-get="/doc/home.html" hx-trigger="load"></div>
+    <footer>
+        <div class="bny-container">
+            <div class="info tc">
+                <span>Copyright © 2026 <a href="https://github.com/workbunny/bunny.ui" target="_blank"
+                        rel="noopener noreferrer">BunnyUI</a> MIT Licensed</span>
+            </div>
+        </div>
+    </footer>
+</body>
+<!-- 加载指示器 -->
+<div id="tab-load">
+    <div class="htmx-indicator">
+        <div class="bny-load-health" color="green">
+            <div></div>
+        </div>
+    </div>
+</div>
+<script>
+    document.getElementById('mode-btn').addEventListener('click', function () {
+        document.documentElement.classList.toggle('dark');
+    });
+</script>

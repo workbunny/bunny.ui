@@ -1,0 +1,201 @@
+.bny-btn {
+    padding: 4px 11px;
+    border-radius: var(--border-radius);
+    text-align: center;
+    text-decoration: none;
+    transition: var(--transition);
+    color: var(--white-common);
+    background-color: var(--default);
+    border: 2px solid var(--default);
+    box-shadow: var(--box-shadow-005);
+    transition: var(--transition);
+    display: inline-block;
+    align-items: center;
+    white-space: nowrap;
+
+    &:hover {
+        cursor: pointer;
+        background-color: var(--default-middle);
+        border-color: var(--default-middle);
+    }
+
+    &:active {
+        transform: var(--transform3d-020);
+        background-color: var(--default-shallow);
+        border-color: var(--default-shallow);
+    }
+
+    /* 绿色 */
+    &[color="green"] {
+        background-color: var(--green);
+        border-color: var(--green);
+    }
+
+    &[color="green"]:hover {
+        background-color: var(--green-middle);
+        border-color: var(--green-middle);
+    }
+
+    &[color="green"]:active {
+        background-color: var(--green-shallow);
+        border-color: var(--green-shallow);
+    }
+
+    /* 蓝色 */
+    &[color="blue"] {
+        background-color: var(--blue);
+        border-color: var(--blue);
+    }
+
+    &[color="blue"]:hover {
+        background-color: var(--blue-middle);
+        border-color: var(--blue-middle);
+    }
+
+    &[color="blue"]:active {
+        background-color: var(--blue-shallow);
+        border-color: var(--blue-shallow);
+    }
+
+    /* 黄色 */
+    &[color="yellow"] {
+        background-color: var(--yellow);
+        border-color: var(--yellow);
+    }
+
+    &[color="yellow"]:hover {
+        background-color: var(--yellow-middle);
+        border-color: var(--yellow-middle);
+    }
+
+    &[color="yellow"]:active {
+        background-color: var(--yellow-shallow);
+        border-color: var(--yellow-shallow);
+    }
+
+    /* 红色 */
+    &[color="red"] {
+        background-color: var(--red);
+        border-color: var(--red);
+    }
+
+    &[color="red"]:hover {
+        background-color: var(--red-middle);
+        border-color: var(--red-middle);
+    }
+
+    &[color="red"]:active {
+        background-color: var(--red-shallow);
+        border-color: var(--red-shallow);
+    }
+
+    /* 边框 */
+    &[model~="border"] {
+        background-color: transparent;
+        color: var(--black);
+    }
+
+    &[model~="border"]:hover {
+        background-color: transparent;
+        color: var(--black-middle);
+    }
+
+    &[model~="border"]:active {
+        background-color: transparent;
+        color: var(--black-shallow);
+    }
+
+    /* 圆形 */
+    &[model~="circle"] {
+        border-radius: 50%;
+        padding: 4px;
+        width: 32px;
+        height: 32px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* 禁用 */
+    &[disabled] {
+        cursor: not-allowed;
+        opacity: 0.5;
+    }
+}
+
+.bny-btn-group {
+    display: inline-flex;
+    vertical-align: middle;
+    font-size: 0;
+    transition: var(--transition);
+    box-shadow: var(--box-shadow-005);
+    border-radius: var(--border-radius);
+
+    &:active {
+        transform: var(--transform3d-020);
+    }
+
+    & .bny-btn {
+        box-shadow: none;
+        transform: none;
+        position: relative;
+    }
+
+    & .bny-btn:first-child {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        border-right-width: 0;
+
+        &::after {
+            content: "";
+            position: absolute;
+            width: 1px;
+            height: 100%;
+            top: 0;
+            right: 0;
+            background-color: var(--gray-middle);
+        }
+    }
+
+    & .bny-btn:not(:first-child):not(:last-child) {
+        border-radius: 0;
+        border-left-width: 0px;
+        border-right-width: 0px;
+
+        &::before {
+            content: "";
+            position: absolute;
+            width: 1px;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background-color: var(--gray-middle);
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            width: 1px;
+            height: 100%;
+            top: 0;
+            right: 0;
+            background-color: var(--gray-middle);
+        }
+    }
+
+    & .bny-btn:last-child {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        border-left-width: 0px;
+
+        &::before {
+            content: "";
+            position: absolute;
+            width: 1px;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background-color: var(--gray-middle);
+        }
+    }
+}

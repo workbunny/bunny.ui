@@ -1,0 +1,293 @@
+<div class="bny-row">
+    <div class="text-content-box col-xs12 col-sm9">
+        <div class="text-content">
+            <h1>按钮</h1>
+            <hr>
+            <blockquote class="bny-blockquote">
+                像任意标签设定 <code>class="bny-btn"</code> 即可渲染为按钮; 此外, 还可以通过 color 属性指定按钮颜色;
+                同时, 还可以通过 disabled 属性禁用按钮;
+            </blockquote>
+            <h2 id="n01">普通按钮</h2>
+            <div class="bny-card">
+                <div hx-ext="bny-tab">
+                    <ul class="head">
+                        <li>Preview</li>
+                        <li>Code</li>
+                    </ul>
+                    <div class="body">
+                        <div>
+                            <div class="p-12">
+                                <button class="bny-btn">按钮</button>
+                                <button class="bny-btn" color="green">按钮</button>
+                                <button class="bny-btn" color="blue">按钮</button>
+                                <button class="bny-btn" color="yellow">按钮</button>
+                                <button class="bny-btn" color="red">按钮</button>
+                                <br>
+                                <br>
+                                <button class="bny-btn" disabled>按钮</button>
+                                <button class="bny-btn" disabled color="green">按钮</button>
+                                <button class="bny-btn" disabled color="blue">按钮</button>
+                                <button class="bny-btn" disabled color="yellow">按钮</button>
+                                <button class="bny-btn" disabled color="red">按钮</button>
+                            </div>
+                        </div>
+                        <div>
+                            <pre hx-ext="bny-code">
+&lt;button class="bny-btn"&gt;按钮&lt;/button&gt;
+&lt;button class="bny-btn" color="green"&gt;按钮&lt;/button&gt;
+&lt;button class="bny-btn" color="blue"&gt;按钮&lt;/button&gt;
+&lt;button class="bny-btn" color="yellow"&gt;按钮&lt;/button&gt;
+&lt;button class="bny-btn" color="red"&gt;按钮&lt;/button&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;button class="bny-btn" disabled&gt;按钮&lt;/button&gt;
+&lt;button class="bny-btn" disabled color="green"&gt;按钮&lt;/button&gt;
+&lt;button class="bny-btn" disabled color="blue"&gt;按钮&lt;/button&gt;
+&lt;button class="bny-btn" disabled color="yellow"&gt;按钮&lt;/button&gt;
+&lt;button class="bny-btn" disabled color="red"&gt;按钮&lt;/button&gt;
+                </pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h2 id="n02">边框按钮</h2>
+            <div class="bny-card">
+                <div hx-ext="bny-tab">
+                    <ul class="head">
+                        <li>Preview</li>
+                        <li>Code</li>
+                    </ul>
+                    <div class="body">
+                        <div>
+                            <div class="p-12">
+                                <button class="bny-btn" model="border">按钮</button>
+                                <button class="bny-btn" model="border" color="green">按钮</button>
+                                <button class="bny-btn" model="border" color="blue">按钮</button>
+                                <button class="bny-btn" model="border" color="yellow">按钮</button>
+                                <button class="bny-btn" model="border" color="red">按钮</button>
+                                <br>
+                                <br>
+                                <button class="bny-btn" model="border" disabled>按钮</button>
+                                <button class="bny-btn" model="border" disabled color="green">按钮</button>
+                                <button class="bny-btn" model="border" disabled color="blue">按钮</button>
+                                <button class="bny-btn" model="border" disabled color="yellow">按钮</button>
+                                <button class="bny-btn" model="border" disabled color="red">按钮</button>
+                            </div>
+                        </div>
+                        <div>
+                            <pre hx-ext="bny-code">
+&lt;button class="bny-btn" model="border"&gt;按钮&lt;/button&gt;
+&lt;button class="bny-btn" model="border" color="green"&gt;按钮&lt;/button&gt;
+&lt;button class="bny-btn" model="border" color="blue"&gt;按钮&lt;/button&gt;
+&lt;button class="bny-btn" model="border" color="yellow"&gt;按钮&lt;/button&gt;
+&lt;button class="bny-btn" model="border" color="red"&gt;按钮&lt;/button&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;button class="bny-btn" model="border" disabled&gt;按钮&lt;/button&gt;
+&lt;button class="bny-btn" model="border" disabled color="green"&gt;按钮&lt;/button&gt;
+&lt;button class="bny-btn" model="border" disabled color="blue"&gt;按钮&lt;/button&gt;
+&lt;button class="bny-btn" model="border" disabled color="yellow"&gt;按钮&lt;/button&gt;
+&lt;button class="bny-btn" model="border" disabled color="red"&gt;按钮&lt;/button&gt;
+                </pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h2 id="n03">组合按钮</h2>
+            <div class="bny-card">
+                <div hx-ext="bny-tab">
+                    <ul class="head">
+                        <li>Preview</li>
+                        <li>Code</li>
+                    </ul>
+                    <div class="body">
+                        <div>
+                            <div class="p-12">
+                                <div class="bny-btn-group">
+                                    <button class="bny-btn" model="border">按钮</button>
+                                    <button class="bny-btn" model="border">按钮</button>
+                                </div>
+                                <div class="bny-btn-group">
+                                    <button class="bny-btn" model="border" color="blue">按钮</button>
+                                    <button class="bny-btn" model="border" color="blue">
+                                        <i class="bny-icon">&#xe859;</i>
+                                    </button>
+                                </div>
+                                <div class="bny-btn-group">
+                                    <button class="bny-btn" model="border" color="yellow">按钮</button>
+                                    <button class="bny-btn" model="border" color="yellow">按钮</button>
+                                    <button class="bny-btn" model="border" color="yellow">按钮</button>
+                                </div>
+                                <div class="bny-btn-group">
+                                    <button class="bny-btn" color="green">按钮</button>
+                                    <button class="bny-btn" color="green">按钮</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <pre hx-ext="bny-code">
+&lt;div class=&quot;bny-btn-group&quot;&gt;
+    &lt;button class=&quot;bny-btn&quot; model=&quot;border&quot;&gt;按钮&lt;/button&gt;
+    &lt;button class=&quot;bny-btn&quot; model=&quot;border&quot;&gt;按钮&lt;/button&gt;
+&lt;/div&gt;
+&lt;div class=&quot;bny-btn-group&quot;&gt;
+    &lt;button class=&quot;bny-btn&quot; model=&quot;border&quot; color=&quot;blue&quot;&gt;按钮&lt;/button&gt;
+    &lt;button class=&quot;bny-btn&quot; model=&quot;border&quot; color=&quot;blue&quot;&gt;
+        &lt;i class=&quot;bny-icon&quot;&gt;&amp;#xe859;&lt;/i&gt;
+    &lt;/button&gt;
+&lt;/div&gt;
+&lt;div class=&quot;bny-btn-group&quot;&gt;
+    &lt;button class=&quot;bny-btn&quot; model=&quot;border&quot; color=&quot;yellow&quot;&gt;按钮&lt;/button&gt;
+    &lt;button class=&quot;bny-btn&quot; model=&quot;border&quot; color=&quot;yellow&quot;&gt;按钮&lt;/button&gt;
+    &lt;button class=&quot;bny-btn&quot; model=&quot;border&quot; color=&quot;yellow&quot;&gt;按钮&lt;/button&gt;
+&lt;/div&gt;
+&lt;div class=&quot;bny-btn-group&quot;&gt;
+    &lt;button class=&quot;bny-btn&quot; color=&quot;green&quot;&gt;按钮&lt;/button&gt;
+    &lt;button class=&quot;bny-btn&quot; color=&quot;green&quot;&gt;按钮&lt;/button&gt;
+&lt;/div&gt;
+                </pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h2 id="n04">圆形按钮</h2>
+            <div class="bny-card">
+                <div hx-ext="bny-tab">
+                    <ul class="head">
+                        <li>Preview</li>
+                        <li>Code</li>
+                    </ul>
+                    <div class="body">
+                        <div>
+                            <div class="p-12">
+                                <button class="bny-btn" model="circle">
+                                    <i class="bny-icon icon-github-fill"></i>
+                                </button>
+                                <button class="bny-btn" model="circle" color="green">
+                                    <i class="bny-icon icon-github-fill"></i>
+                                </button>
+                                <button class="bny-btn" model="circle" color="blue">
+                                    <i class="bny-icon icon-github-fill"></i>
+                                </button>
+                                <button class="bny-btn" model="circle" color="yellow">
+                                    <i class="bny-icon icon-github-fill"></i>
+                                </button>
+                                <button class="bny-btn" model="circle" color="red">
+                                    <i class="bny-icon icon-github-fill"></i>
+                                </button>
+                                <br>
+                                <br>
+                                <button class="bny-btn" model="border circle">
+                                    <i class="bny-icon icon-github-fill"></i>
+                                </button>
+                                <button class="bny-btn" model="border circle" color="green">
+                                    <i class="bny-icon icon-github-fill"></i>
+                                </button>
+                                <button class="bny-btn" model="border circle" color="blue">
+                                    <i class="bny-icon icon-github-fill"></i>
+                                </button>
+                                <button class="bny-btn" model="border circle" color="yellow">
+                                    <i class="bny-icon icon-github-fill"></i>
+                                </button>
+                                <button class="bny-btn" model="border circle" color="red">
+                                    <i class="bny-icon icon-github-fill"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div>
+                            <pre hx-ext="bny-code">
+&lt;button class=&quot;bny-btn&quot; model=&quot;circle&quot;&gt;
+    &lt;i class=&quot;bny-icon icon-github-fill&quot;&gt;&lt;/i&gt;
+&lt;/button&gt;
+&lt;button class=&quot;bny-btn&quot; model=&quot;circle&quot; color=&quot;green&quot;&gt;
+    &lt;i class=&quot;bny-icon icon-github-fill&quot;&gt;&lt;/i&gt;
+&lt;/button&gt;
+&lt;button class=&quot;bny-btn&quot; model=&quot;circle&quot; color=&quot;blue&quot;&gt;
+    &lt;i class=&quot;bny-icon icon-github-fill&quot;&gt;&lt;/i&gt;
+&lt;/button&gt;
+&lt;button class=&quot;bny-btn&quot; model=&quot;circle&quot; color=&quot;yellow&quot;&gt;
+    &lt;i class=&quot;bny-icon icon-github-fill&quot;&gt;&lt;/i&gt;
+&lt;/button&gt;
+&lt;button class=&quot;bny-btn&quot; model=&quot;circle&quot; color=&quot;red&quot;&gt;
+    &lt;i class=&quot;bny-icon icon-github-fill&quot;&gt;&lt;/i&gt;
+&lt;/button&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;button class=&quot;bny-btn&quot; model=&quot;border circle&quot;&gt;
+    &lt;i class=&quot;bny-icon icon-github-fill&quot;&gt;&lt;/i&gt;
+&lt;/button&gt;
+&lt;button class=&quot;bny-btn&quot; model=&quot;border circle&quot; color=&quot;green&quot;&gt;
+    &lt;i class=&quot;bny-icon icon-github-fill&quot;&gt;&lt;/i&gt;
+&lt;/button&gt;
+&lt;button class=&quot;bny-btn&quot; model=&quot;border circle&quot; color=&quot;blue&quot;&gt;
+    &lt;i class=&quot;bny-icon icon-github-fill&quot;&gt;&lt;/i&gt;
+&lt;/button&gt;
+&lt;button class=&quot;bny-btn&quot; model=&quot;border circle&quot; color=&quot;yellow&quot;&gt;
+    &lt;i class=&quot;bny-icon icon-github-fill&quot;&gt;&lt;/i&gt;
+&lt;/button&gt;
+&lt;button class=&quot;bny-btn&quot; model=&quot;border circle&quot; color=&quot;red&quot;&gt;
+    &lt;i class=&quot;bny-icon icon-github-fill&quot;&gt;&lt;/i&gt;
+&lt;/button&gt;
+                </pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h2 id="n05">API</h2>
+            <h3>标签属性</h3>
+            <table hx-ext="bny-table">
+                <thead>
+                    <tr>
+                        <th>属性</th>
+                        <th>默认值</th>
+                        <th>必须</th>
+                        <th>描述</th>
+                        <th>版本</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>class</td>
+                        <td>bny-btn</td>
+                        <td>是</td>
+                        <td>按钮类名</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>color</td>
+                        <td></td>
+                        <td>否</td>
+                        <td>标签颜色:'green','blue','yellow','red'</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>disabled</td>
+                        <td>false</td>
+                        <td>否</td>
+                        <td>是否禁用按钮</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>model</td>
+                        <td>无</td>
+                        <td>否</td>
+                        <td>按钮模型:'border','circle'</td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="right-anchor-box hidden-xs col-sm3">
+        <div class="right-anchor">
+            <ul hx-ext="bny-anchor" rail>
+                <li class="link" anchor="#n01">普通按钮</li>
+                <li class="link" anchor="#n02">边框按钮</li>
+                <li class="link" anchor="#n03">组合按钮</li>
+                <li class="link" anchor="#n04">圆形按钮</li>
+                <li class="link" anchor="#n05">API</li>
+            </ul>
+        </div>
+    </div>
+</div>

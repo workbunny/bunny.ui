@@ -1,0 +1,109 @@
+<div class="bny-row">
+    <div class="text-content-box col-xs12 col-sm9">
+        <div class="text-content">
+            <h1>标签</h1>
+            <hr>
+            <blockquote class="bny-blockquote">
+                像任意标签设定 <code>class="bny-tag"</code> 即可渲染为标签; 此外, 还可以通过 color 属性指定标签颜色;
+            </blockquote>
+            <h2 id="n01">标签颜色</h2>
+            <div class="bny-card">
+                <div hx-ext="bny-tab">
+                    <ul class="head">
+                        <li>Preview</li>
+                        <li>Code</li>
+                    </ul>
+                    <div class="body">
+                        <div>
+                            <div class="p-12">
+                                <div class="bny-tag">标签</div>
+                                <div class="bny-tag" color="green">标签</div>
+                                <div class="bny-tag" color="blue">标签</div>
+                                <div class="bny-tag" color="yellow">标签</div>
+                                <div class="bny-tag" color="red">标签</div>
+                            </div>
+                        </div>
+                        <div>
+                            <pre hx-ext="bny-code">
+&lt;div class="bny-tag"&gt;标签&lt;/div&gt;
+&lt;div class="bny-tag" color="green"&gt;标签&lt;/div&gt;
+&lt;div class="bny-tag" color="blue"&gt;标签&lt;/div&gt;
+&lt;div class="bny-tag" color="yellow"&gt;标签&lt;/div&gt;
+&lt;div class="bny-tag" color="red"&gt;标签&lt;/div&gt;
+                </pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h2 id="n02">标签禁用</h2>
+            <div class="bny-card">
+                <div hx-ext="bny-tab">
+                    <ul class="head">
+                        <li>Preview</li>
+                        <li>Code</li>
+                    </ul>
+                    <div class="body">
+                        <div>
+                            <div class="p-12">
+                                <div class="bny-tag" disabled>标签</div>
+                                <div class="bny-tag" disabled color="green">标签</div>
+                                <div class="bny-tag" disabled color="blue">标签</div>
+                                <div class="bny-tag" disabled color="yellow">标签</div>
+                                <div class="bny-tag" disabled color="red">标签</div>
+                            </div>
+                        </div>
+                        <div>
+                            <pre hx-ext="bny-code">
+&lt;div class="bny-tag" disabled&gt;标签&lt;/div&gt;
+&lt;div class="bny-tag" disabled color="green"&gt;标签&lt;/div&gt;
+&lt;div class="bny-tag" disabled color="blue"&gt;标签&lt;/div&gt;
+&lt;div class="bny-tag" disabled color="yellow"&gt;标签&lt;/div&gt;
+&lt;div class="bny-tag" disabled color="red"&gt;标签&lt;/div&gt;
+            </pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h2 id="n03">API</h2>
+            <h3>标签属性</h3>
+
+            <table hx-ext="bny-table">
+                <thead>
+                    <tr>
+                        <th>属性</th>
+                        <th>默认值</th>
+                        <th>必须</th>
+                        <th>描述</th>
+                        <th>版本</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>class</td>
+                        <td>bny-tag</td>
+                        <td>是</td>
+                        <td>标签类名</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>color</td>
+                        <td></td>
+                        <td>否</td>
+                        <td>标签颜色:'green','blue','yellow','red'</td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="right-anchor-box hidden-xs col-sm3">
+        <div class="right-anchor">
+            <ul hx-ext="bny-anchor" rail>
+                <li class="link" anchor="#n01">标签颜色</li>
+                <li class="link" anchor="#n02">标签禁用</li>
+                <li class="link" anchor="#n03">API</li>
+            </ul>
+        </div>
+    </div>
+</div>

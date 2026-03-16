@@ -1,0 +1,62 @@
+.bny-card {
+    transition: var(--transition);
+    box-shadow: var(--box-shadow);
+    color: var(--black);
+    box-shadow: var(--box-shadow-005);
+    overflow: hidden;
+    border-radius: var(--border-radius);
+    margin: 8px 0;
+
+    &[model="transition"] {
+        transition: var(--transition);
+        box-shadow: var(--box-shadow-005);
+    }
+
+    &[model="transition"]:hover {
+        box-shadow: var(--box-shadow-hover-005);
+        transform: var(--transform3d-020);
+    }
+
+    &>img {
+        width: 100%;
+        height: auto;
+    }
+
+    &>.head {
+        padding: 8px 14px;
+        border-bottom: 1px solid var(--black-middle);
+    }
+
+    &>.foot {
+        padding: 8px 14px;
+        border-top: 1px solid var(--black-middle);
+    }
+
+    &>.body {
+        flex: 1 1 auto;
+        padding: 14px;
+
+        &>.title {
+            font-size: var(--font-size-18);
+            font-weight: 600;
+            margin-top: 0;
+            margin-bottom: 8px;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+
+        &>.subtitle {
+            font-size: var(--font-size-16);
+            margin-bottom: 4px;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            color: var(--blue-middle);
+        }
+
+        &>.content {
+            margin-bottom: 4px;
+        }
+    }
+}

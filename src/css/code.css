@@ -1,0 +1,50 @@
+[hx-ext~="bny-code"] {
+    border-radius: var(--border-radius);
+    overflow: auto;
+    padding: var(--font-size);
+    position: relative;
+    white-space: unset;
+    background-color: var(--white-shallow);
+
+    &>code {
+        line-height: 1.5;
+        white-space: pre-wrap;
+        overflow: auto;
+        padding: 0;
+        margin: 0;
+        background: none;
+    }
+
+    &>.copy-btn {
+        position: absolute;
+        right: 4px;
+        top: 4px;
+        line-height: normal;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--gray-shallow);
+
+        &:hover {
+            cursor: pointer;
+        }
+
+        &>i {
+            font-size: var(--font-size-20);
+            color: var(--black-common);
+        }
+    }
+
+    &:hover>.copy-btn {
+        display: flex;
+    }
+}
+
+code {
+    font-family: "Courier New", Consolas, "Lucida Console";
+    margin: 0px 2px;
+    padding: 2px 4px;
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+    background-color: var(--white-middle);
+}
