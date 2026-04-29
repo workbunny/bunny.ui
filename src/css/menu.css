@@ -84,6 +84,7 @@
 
         & .sub-menu {
             background-color: var(--white-shallow);
+            color: var(--black);
         }
     }
 

@@ -6,9 +6,9 @@ htmx.defineExtension('bny-collapse', {
         if (name === "htmx:afterProcessNode") {
             if (bny.hasExtName(evt.target, 'bny-collapse')) {
                 evt.target.addEventListener('click', function (e) {
-                    const item = e.target.closest('.item')
-                    const title = bny.queryChild(item, '.title')
+                    const title = e.target.closest('.title')
                     if (title) {
+                        const item = title.parentElement
                         const accordion = e.target
                             .parentElement
                             .parentElement

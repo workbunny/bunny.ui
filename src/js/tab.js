@@ -1,6 +1,6 @@
 htmx.defineExtension('bny-tab', {
     onEvent: function (name, evt) {
-
+        
         /**
          * 添加移动按钮
          * @param {HTMLElement} target 头元素
@@ -30,7 +30,7 @@ htmx.defineExtension('bny-tab', {
          */
         function addCloseBtn(target) {
             const closeBtn = document.createElement("i")
-            closeBtn.className = "bny-icon icon-cuo"
+            closeBtn.className = "bny-icon icon-close"
             target.appendChild(closeBtn)
         }
 
@@ -70,7 +70,7 @@ htmx.defineExtension('bny-tab', {
         function onClicks(target) {
             target.addEventListener("click", (e) => {
                 // 点击删除标签
-                const closeBtn = e.target.closest("li>i.icon-cuo")
+                const closeBtn = e.target.closest("li>i.icon-close")
                 if (closeBtn) {
                     const index = bny.indexOf(closeBtn.parentElement)
                     if (index === null) return
@@ -130,7 +130,7 @@ htmx.defineExtension('bny-tab', {
             for (let i = 0; i < heads.length; i++) {
                 heads[i].setAttribute("hx-trigger", trigger)
                 if (heads[i].getAttribute("closable") !== null &&
-                    !heads[i].querySelector(":scope>i.icon-cuo")) {
+                    !heads[i].querySelector(":scope>i.icon-close")) {
                     addCloseBtn(heads[i])
                 }
                 // 处理给定元素及其子元素，连接任何htmx行为
@@ -150,6 +150,29 @@ htmx.defineExtension('bny-tab', {
             }
         }
 
+        /**
+         * 判断是否重复
+         * 
+         * @param {HTMLElement} target 
+         * @param {HTMLElement} head 
+         * @returns {null|HTMLElement}
+         */
+        function isRepetition(target, head) {
+            const lis = bny.queryChildAll(head, "li")
+            const hxAttrs = ["hx-get", "hx-post", "hx-put", "hx-patch", "hx-delete"]
+            for (const attr of hxAttrs) {
+                const targetUrl = target.getAttribute(attr)
+                if (targetUrl && targetUrl !== "") {
+                    for (const li of lis) {
+                        if (li !== target && li.getAttribute(attr) === targetUrl) {
+                            return li
+                        }
+                    }
+                }
+            }
+            return null
+        }
+
         // 在htmx初始化节点后触发
         if (name === "htmx:afterProcessNode") {
             if (bny.hasExtName(evt.target, "bny-tab")) {
@@ -159,11 +182,20 @@ htmx.defineExtension('bny-tab', {
             if (evt.target.tagName === "LI") {
                 if (evt.target.parentElement.classList.contains("head")) {
                     const tab = evt.target.parentElement.parentElement
+                    const head = bny.queryChild(tab, ".head")
+                    const thisLs = isRepetition(evt.target, head)
+                    if (thisLs != null) {
+                        if (thisLs.getAttribute("hx-trigger") === "click") {
+                            thisLs.click()
+                        }
+                        evt.target.remove()
+                        return false
+                    }
                     // 事件
                     const trigger = tab.getAttribute("hx-trigger") ?? "click";
                     evt.target.setAttribute("hx-trigger", trigger)
                     if (evt.target.getAttribute("closable") !== null &&
-                        !bny.queryChild(evt.target, "i.icon-cuo")) {
+                        !bny.queryChild(evt.target, "i.icon-close")) {
                         addCloseBtn(evt.target)
                     }
                     const body = document.createElement("div")
@@ -175,6 +207,12 @@ htmx.defineExtension('bny-tab', {
                     }
                     // 处理给定元素及其子元素，连接任何htmx行为
                     htmx.process(evt.target)
+                    // 点击行为
+                    if (trigger === "click" && evt.target.getAttribute("this") !== null) {
+                        evt.target.click()
+                        // 滚动到最右边
+                        head.scrollBy({ left: head.scrollWidth, behavior: "smooth" })
+                    }
                     return false
                 }
             }
