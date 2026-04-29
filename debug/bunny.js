@@ -4468,7 +4468,7 @@
       }
       function addCloseBtn(target) {
         const closeBtn = document.createElement("i");
-        closeBtn.className = "bny-icon icon-cuo";
+        closeBtn.className = "bny-icon icon-close";
         target.appendChild(closeBtn);
       }
       function onTrigger(target, trigger) {
@@ -4491,7 +4491,7 @@
       }
       function onClicks(target) {
         target.addEventListener("click", (e) => {
-          const closeBtn = e.target.closest("li>i.icon-cuo");
+          const closeBtn = e.target.closest("li>i.icon-close");
           if (closeBtn) {
             const index = bny.indexOf(closeBtn.parentElement);
             if (index === null) return;
@@ -4535,7 +4535,7 @@
         }
         for (let i = 0; i < heads.length; i++) {
           heads[i].setAttribute("hx-trigger", trigger);
-          if (heads[i].getAttribute("closable") !== null && !heads[i].querySelector(":scope>i.icon-cuo")) {
+          if (heads[i].getAttribute("closable") !== null && !heads[i].querySelector(":scope>i.icon-close")) {
             addCloseBtn(heads[i]);
           }
           htmx.process(heads[i]);
@@ -4549,6 +4549,21 @@
           htmx.trigger(bny.queryChild(target, ".head>li:nth-child(" + (index + 1) + ")"), trigger);
         }
       }
+      function isRepetition(target, head) {
+        const lis = bny.queryChildAll(head, "li");
+        const hxAttrs = ["hx-get", "hx-post", "hx-put", "hx-patch", "hx-delete"];
+        for (const attr of hxAttrs) {
+          const targetUrl = target.getAttribute(attr);
+          if (targetUrl && targetUrl !== "") {
+            for (const li of lis) {
+              if (li !== target && li.getAttribute(attr) === targetUrl) {
+                return li;
+              }
+            }
+          }
+        }
+        return null;
+      }
       if (name === "htmx:afterProcessNode") {
         if (bny.hasExtName(evt.target, "bny-tab")) {
           tabInit(evt.target);
@@ -4557,9 +4572,18 @@
         if (evt.target.tagName === "LI") {
           if (evt.target.parentElement.classList.contains("head")) {
             const tab = evt.target.parentElement.parentElement;
+            const head = bny.queryChild(tab, ".head");
+            const thisLs = isRepetition(evt.target, head);
+            if (thisLs != null) {
+              if (thisLs.getAttribute("hx-trigger") === "click") {
+                thisLs.click();
+              }
+              evt.target.remove();
+              return false;
+            }
             const trigger = tab.getAttribute("hx-trigger") ?? "click";
             evt.target.setAttribute("hx-trigger", trigger);
-            if (evt.target.getAttribute("closable") !== null && !bny.queryChild(evt.target, "i.icon-cuo")) {
+            if (evt.target.getAttribute("closable") !== null && !bny.queryChild(evt.target, "i.icon-close")) {
               addCloseBtn(evt.target);
             }
             const body = document.createElement("div");
@@ -4569,6 +4593,10 @@
               htmx.process(body);
             }
             htmx.process(evt.target);
+            if (trigger === "click" && evt.target.getAttribute("this") !== null) {
+              evt.target.click();
+              head.scrollBy({ left: head.scrollWidth, behavior: "smooth" });
+            }
             return false;
           }
         }

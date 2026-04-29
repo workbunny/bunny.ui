@@ -65,7 +65,9 @@
                     <div class="body">
                         <div>
                             <div class="p-12">
-                                <div hx-ext="bny-tab" mode="scroll" style="width: 400px;">
+                                <button class="bny-btn" hx-get="/test/data/tab01.html" hx-target="#tab02>.head"
+                                    hx-swap="beforeend">添加选项卡</button>
+                                <div hx-ext="bny-tab" mode="scroll" style="width: 400px;" id="tab02">
                                     <ul class="head">
                                         <li closable>选项卡11</li>
                                         <li>选项卡22</li>
