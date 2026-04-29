@@ -7,8 +7,8 @@ htmx.defineExtension('bny-collapse', {
             if (bny.hasExtName(evt.target, 'bny-collapse')) {
                 evt.target.addEventListener('click', function (e) {
                     const title = e.target.closest('.title')
-                    const item = title.parentElement
                     if (title) {
+                        const item = title.parentElement
                         const accordion = e.target
                             .parentElement
                             .parentElement
