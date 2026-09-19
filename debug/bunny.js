@@ -5535,14 +5535,20 @@
   }
   function tplInterpolate(tpl, row) {
     return String(tpl === void 0 || tpl === null ? "" : tpl).replace(
-      /\{\{([\s\S]*?)\}\}/g,
-      function(m, expr) {
-        expr = expr.trim();
-        var fm = expr.match(/^data\.([a-zA-Z0-9_$]+(?:\.[a-zA-Z0-9_$]+)*)$/);
-        if (fm) return bny.escapeChars(String(getVal(row, fm[1])));
-        var v = tplEvalExpr(tplExprDecode(expr), row);
+      /\{\{#([\s\S]*?)\}\}|\{\{([\s\S]*?)\}\}/g,
+      function(m, rawSrc, src) {
+        var isRaw = rawSrc !== void 0;
+        src = (isRaw ? rawSrc : src).trim();
+        if (!src) return m;
+        var fm = src.match(/^data\.([a-zA-Z0-9_$]+(?:\.[a-zA-Z0-9_$]+)*)$/);
+        if (fm) {
+          var fv = String(getVal(row, fm[1]));
+          return isRaw ? fv : bny.escapeChars(fv);
+        }
+        var v = tplEvalExpr(tplExprDecode(src), row);
         if (v === _TPL_ERR) return m;
-        return bny.escapeChars(String(v === void 0 || v === null ? "" : v));
+        var out = String(v === void 0 || v === null ? "" : v);
+        return isRaw ? out : bny.escapeChars(out);
       }
     );
   }
@@ -5565,8 +5571,18 @@
     }
     return _cellTplCache[src];
   }
+  function tplRunScripts(tpl, row) {
+    if (tpl.toLowerCase().indexOf("<script") === -1) return tpl;
+    return tpl.replace(/<script(\s[^>]*)?>([\s\S]*?)<\/script\s*>/gi, function(m, attrs, code) {
+      if (attrs && (/(^|\s)type\s*=/i.test(attrs) || /(^|\s)src\s*=/i.test(attrs))) return m;
+      if (!code.trim()) return m;
+      var v = tplEvalExpr(code.trim(), row);
+      if (v === _TPL_ERR) return m;
+      return String(v === void 0 || v === null ? "" : v);
+    });
+  }
   function renderTemplateCell(row, col) {
-    return tplInterpolate(cellTemplateSource(col), row);
+    return tplInterpolate(tplRunScripts(cellTemplateSource(col), row), row);
   }
   function flattenTreeRows(list, level, out) {
     (list || []).forEach(function(row) {

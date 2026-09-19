@@ -12,6 +12,7 @@
             "status": "1",
             "email": "zhangwei@test.com",
             "reg_time": "2024-03-12",
+            "photo": "/bunny.png?v=11,/bunny.png?v=12,/bunny.png?v=13",
             "remark": "初始管理员账号，负责系统配置与权限分配。"
         },
         {
@@ -21,6 +22,7 @@
             "status": "1",
             "email": "wangfang@test.com",
             "reg_time": "2024-06-28",
+            "photo": "/bunny.png?v=21,,/bunny.png?v=22",
             "remark": "内容组负责人，管理全部栏目的审稿与发布流程。"
         },
         {
@@ -30,6 +32,7 @@
             "status": "0",
             "email": "lina@test.com",
             "reg_time": "2024-09-03",
+            "photo": "/bunny.png?v=31,/bunny.png?v=32,/bunny.png?v=33",
             "remark": "已办理离职，账号保留至月底用于工作交接。"
         },
         {
@@ -39,6 +42,7 @@
             "status": "1",
             "email": "liuqiang@test.com",
             "reg_time": "2025-01-15",
+            "photo": "x\" onerror=\"alert(1)",
             "remark": "内容审核组，敏感内容需升级至安全委员会复核。"
         },
         {
@@ -48,6 +52,7 @@
             "status": "1",
             "email": "chenjing@test.com",
             "reg_time": "2025-04-22",
+            "photo": "",
             "remark": "新入职用户，当前处于试用期。"
         }
     ]

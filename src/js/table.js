@@ -487,7 +487,9 @@ htmx.defineExtension('bny-table', {
  * 元素属性 pg-* / table-list* 控制样式与行为。
  *
  * 安全模型：数据（cell/行值）一律转义或 URL 编码；配置（表头声明来自开发者）中的模板可含 HTML，
- * 与 htmx 直接 swap 服务端 HTML 同级信任；模板占位符 {{表达式}} 的求值结果始终转义，不构成注入面。
+ * 与 htmx 直接 swap 服务端 HTML 同级信任；模板占位符 {{表达式}} 的求值结果始终转义，不构成注入面；
+ * {{#表达式}} / <script> 表达式槽 原样输出是页面作者逃生门（配置信任级别，与 htmx swap 同级），
+ * 数据转义由作者用 bny.escapeChars 处理；两者同一求值内核，script 槽是 raw text 载体、直写标签更舒服。
  * ============================================================ */
 
 /**
@@ -539,7 +541,7 @@ var _tplExprCache = {};
 var _tplDecodeEl = null;
 
 /**
- * HTML 实体还原（仅用于 {{表达式}} 求值前的表达式文本）：
+ * HTML 实体还原（仅用于 {{表达式}} / {{#表达式}} 求值前的表达式文本）：
  * template.innerHTML 读出时 &gt; / &lt; / &amp; 是序列化产物（作者写 >= / && 亦是），
  * 求值前须还原，否则比较/逻辑运算符失效。模板其余部分不经过此处理
  * @param {String} s 表达式文本
@@ -553,10 +555,11 @@ function tplExprDecode(s) {
 }
 
 /**
- * 求值 {{表达式}}：三元/比较/逻辑/拼接等任意 JS 表达式，data 为行对象上下文。
- * 模板来自页面作者（与页面脚本同信任级别）；结果经 escapeChars 转义输出，
- * 行数据携带的 HTML 不会注入。编译结果按表达式文本缓存；
- * 语法错误只告警一次（缓存 null），运行期错误逐行告警并保留原文
+ * 求值 {{表达式}} / {{#表达式}}：三元/比较/逻辑/拼接等任意 JS 表达式，data 为行对象上下文，
+ * bny 全局可达（需要转义数据时可调 bny.escapeChars）。
+ * 模板来自页面作者（与页面脚本同信任级别）；{{...}} 结果经 escapeChars 转义输出，
+ * 行数据携带的 HTML 不会注入；{{#...}} 原样输出，数据转义由作者负责。
+ * 编译结果按表达式文本缓存；语法错误只告警一次（缓存 null），运行期错误逐行告警并保留原文
  * @param {String} expr 表达式文本（已 trim、已实体还原）
  * @param {Object} row 行数据
  * @returns {*} 正常返回求值结果；失败返回哨兵 _TPL_ERR
@@ -582,31 +585,44 @@ function tplEvalExpr(expr, row) {
 }
 
 /**
- * 模板插值：{{表达式}} 求值替换为行数据，结果一律 HTML 转义后嵌入
- * - 快路径：{{data.path}} 纯字段直取（点路径，绝大多数场景零求值开销）
- * - 表达式：如 {{data.status == 1 ? '正常' : '禁用'}}、{{data.age >= 18 && data.vip ? '会员' : ''}}，
- *   data 即行对象；求值失败保留原文并告警（编译错误只告警一次）
+ * 模板插值：两种占位符，一套表达式语法（data 即行对象，bny 全局可达）
+ * - {{表达式}}：结果一律 HTML 转义后嵌入——值的输出口，行数据携带 HTML 不构成注入
+ * - {{#表达式}}：结果原样嵌入——页面作者生成 HTML 结构的逃生门（循环/条件/映射等结构组织
+ *   在表达式内用 JS 完成，模板引擎不造块语法；数据不可信时作者用 bny.escapeChars 转义）
+ * - 快路径：{{data.path}} / {{#data.path}} 纯字段直取（点路径，绝大多数场景零求值开销）
+ * - 表达式：如 {{data.status == 1 ? '正常' : '禁用'}}、{{data.age >= 18 && data.vip ? '会员' : ''}}；
+ *   求值失败保留原文并告警（编译错误只告警一次）
+ * - 载体规则：<template> 载体的内容按 HTML 解析，表达式内字面量 < 须写 &lt;（求值前自动还原，
+ *   与页面上写 HTML 的规则一致）；要直写 <img 等字面量时，模板改用 <script type="text/template">
+ *   承载（raw text 不按 HTML 解析），选择器引用对两者同样成立
  * @param {String} tpl 模板
  * @param {Object} row 行数据
  * @returns {string}
  */
 function tplInterpolate(tpl, row) {
     return String(tpl === undefined || tpl === null ? '' : tpl).replace(
-        /\{\{([\s\S]*?)\}\}/g,
-        function (m, expr) {
-            expr = expr.trim();
-            var fm = expr.match(/^data\.([a-zA-Z0-9_$]+(?:\.[a-zA-Z0-9_$]+)*)$/);
-            if (fm) return bny.escapeChars(String(getVal(row, fm[1])));
-            var v = tplEvalExpr(tplExprDecode(expr), row);
+        /\{\{#([\s\S]*?)\}\}|\{\{([\s\S]*?)\}\}/g,
+        function (m, rawSrc, src) {
+            var isRaw = rawSrc !== undefined;
+            src = (isRaw ? rawSrc : src).trim();
+            if (!src) return m;
+            // 快路径：data 字段直取（两种占位符同享）
+            var fm = src.match(/^data\.([a-zA-Z0-9_$]+(?:\.[a-zA-Z0-9_$]+)*)$/);
+            if (fm) {
+                var fv = String(getVal(row, fm[1]));
+                return isRaw ? fv : bny.escapeChars(fv);
+            }
+            var v = tplEvalExpr(tplExprDecode(src), row);
             if (v === _TPL_ERR) return m;
-            return bny.escapeChars(String(v === undefined || v === null ? '' : v));
+            var out = String(v === undefined || v === null ? '' : v);
+            return isRaw ? out : bny.escapeChars(out);
         }
     );
 }
 
 /**
  * 渲染对象行单元格（list 对象行 + 列模型）
- * 富内容统一走 cell-template 表达（模板本身可含 HTML，{{表达式}} 求值结果转义）；
+ * 富内容统一走 cell-template 表达（模板本身可含 HTML，{{表达式}} 结果转义，{{#表达式}} 原样输出）；
  * 无模板的列按纯文本渲染（值转义）。
  * @param {Object} row 行数据
  * @param {Object} col 列定义
@@ -620,7 +636,10 @@ function renderTypedCell(row, col) {
 var _cellTplCache = {};
 
 /**
- * 解析 cell-template 模板源："#id" / ".class" 等选择器引用页面 <template> 元素
+ * 解析 cell-template 模板源："#id" / ".class" 等选择器引用页面模板元素
+ * （推荐写法，模板是独立 HTML 块，免属性转义、同页可复用）；其余值按内联模板串兜底。
+ * 载体两种均可（同一选择器规则）：<template>（内容按 HTML 解析）或
+ * <script type="text/template">（raw text 不按 HTML 解析，表达式内可直写 <img 等字面量）。
  * （推荐写法，模板是独立 HTML 块，免属性转义、同页可复用）；其余值按内联模板串兜底。
  * 引用元素只在首次渲染时取 innerHTML 并缓存；未命中不缓存（元素后到仍可拾取），
  * 回退为内联模板串渲染并告警。
@@ -643,14 +662,39 @@ function cellTemplateSource(col) {
 }
 
 /**
- * template 单元格：cell-template 声明模板（"#id"/".class" 选择器引用 <template> 元素或内联串），
- * {{表达式}} 求值替换（data 即行对象），结果转义后嵌入
+ * 模板内 <script> 表达式槽：脚本文本视作一个 JS 表达式，以 data 为行对象求值，
+ * 返回值原样替换脚本节点——脚本是 raw text，可直写 '<img src="..."' 等标签，
+ * 无需像 {{#表达式}} 那样把字面量 < 写成 &lt;（引擎克隆内容求值，非浏览器执行）。
+ * 脚本在 <template> 载体内天然惰性、经 innerHTML 注入也是死节点（HTML 规范 innerHTML
+ * 不执行脚本），唯一执行入口是本函数的受控求值；带 type / src 属性的脚本原样保留
+ * （text/template 等载体、外链脚本不是表达式槽）。求值失败保留原脚本并告警
+ * （编译错误只告警一次，复用表达式编译缓存）
+ * @param {String} tpl 模板
+ * @param {Object} row 行数据
+ * @returns {string}
+ */
+function tplRunScripts(tpl, row) {
+    if (tpl.toLowerCase().indexOf('<script') === -1) return tpl;
+    return tpl.replace(/<script(\s[^>]*)?>([\s\S]*?)<\/script\s*>/gi, function (m, attrs, code) {
+        // 带 type（text/template 等载体）或 src（外链）的脚本不是表达式槽，原样保留
+        if (attrs && (/(^|\s)type\s*=/i.test(attrs) || /(^|\s)src\s*=/i.test(attrs))) return m;
+        if (!code.trim()) return m;
+        var v = tplEvalExpr(code.trim(), row);
+        if (v === _TPL_ERR) return m;
+        return String(v === undefined || v === null ? '' : v);
+    });
+}
+
+/**
+ * template 单元格：cell-template 声明模板（"#id"/".class" 选择器引用 <template> 元素或内联串）。
+ * 三种输出口：{{表达式}} 求值转义（值）、{{#表达式}} / <script> 表达式槽 求值原样（结构，
+ * script 槽是 raw text 可直写标签），先展开脚本槽再做占位符插值
  * @param {Object} row 行数据
  * @param {Object} col 列定义
  * @returns {string}
  */
 function renderTemplateCell(row, col) {
-    return tplInterpolate(cellTemplateSource(col), row);
+    return tplInterpolate(tplRunScripts(cellTemplateSource(col), row), row);
 }
 
 /**
@@ -1232,8 +1276,13 @@ function reloadTableWithParams(container, table, params) {
  * 边界说明：静态表头只支持三个核心富内容声明，其余一律由 cell-template 拖底：
  *   - cell-field：行对象取值字段（缺省空串，模板列可仅声明 cell-template 不取值）
  *   - cell-sort：列排序（服务端模式发 sort/order）
- *   - cell-template：富内容模板，值为 "#id" / ".class" 等选择器（引用页面 <template> 元素，推荐）或内联模板串，
- *     {{表达式}} 求值替换行数据（data 即行对象：字段直取 data.field、三元/比较等表达式，值转义），模板本身可含 HTML（按钮/标签/链接等）
+ *   - cell-template：富内容模板，值为 "#id" / ".class" 等选择器（引用页面模板元素，推荐）或内联模板串，
+ *     {{表达式}} 求值替换行数据（data 即行对象：字段直取 data.field、三元/比较等表达式，值转义）；
+ *     {{#表达式}} / <script> 表达式槽 原样输出生成 HTML 结构（循环/拼接在表达式内完成，如 data.photo.split(",").map(...).join("")，
+ *     数据不可信时用 bny.escapeChars 转义；<template> 载体内字面量 < 写 &lt;，求值前自动还原，
+ *     script 槽是 raw text 可直写 <img 等标签——脚本内容视作表达式由引擎以 data 克隆求值，
+ *     浏览器侧惰性（template 内不执行、innerHTML 注入也不执行），带 type/src 的脚本原样保留），
+ *     模板本身可含 HTML（按钮/标签/链接等）
  * 已废弃不再解析：cell-type / cell-map / cell-actions / cell-href / cell-text / cell-src /
  * cell-round / cell-group —— 富内容统一走 cell-template，无其他入口。
  * @param {HTMLElement} th
