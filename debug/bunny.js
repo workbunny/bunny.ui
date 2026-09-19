@@ -5507,6 +5507,7 @@
   }
   var _TPL_ERR = {};
   var _tplExprCache = {};
+  var _tplBodyWarned = {};
   var _tplDecodeEl = null;
   function tplExprDecode(s) {
     if (s.indexOf("&") === -1) return s;
@@ -5514,20 +5515,36 @@
     _tplDecodeEl.innerHTML = s;
     return _tplDecodeEl.value;
   }
-  function tplEvalExpr(expr, row) {
-    var fn = _tplExprCache[expr];
+  function tplEvalExpr(expr, row, allowBody) {
+    var key = allowBody ? "#" + expr : expr;
+    var fn = _tplExprCache[key];
     if (fn === void 0) {
       try {
         fn = new Function("data", "return (" + expr + ");");
-      } catch (e) {
-        console.warn("[bny.table] cell-template 表达式无效（保留原文）: {{" + expr + "}}");
-        fn = null;
+      } catch (e1) {
+        if (allowBody) {
+          try {
+            fn = new Function("data", expr);
+            fn._bnyTplBody = true;
+          } catch (e2) {
+          }
+        }
+        if (!fn) {
+          console.warn("[bny.table] cell-template 表达式无效（保留原文）: {{" + expr + "}}");
+          fn = null;
+        }
       }
-      _tplExprCache[expr] = fn;
+      _tplExprCache[key] = fn;
     }
     if (!fn) return _TPL_ERR;
     try {
-      return fn(row);
+      var v = fn(row);
+      if (fn._bnyTplBody && (v === void 0 || v === null) && !_tplBodyWarned[key]) {
+        _tplBodyWarned[key] = true;
+        var hint = String(expr).replace(/\s+/g, " ").slice(0, 60);
+        console.warn("[bny.table] cell-template 语句块未 return 输出内容（结果为空）: {{#" + hint + "…}}");
+      }
+      return v;
     } catch (e) {
       console.warn("[bny.table] cell-template 表达式求值失败（保留原文）: {{" + expr + "}}");
       return _TPL_ERR;
@@ -5545,7 +5562,7 @@
           var fv = String(getVal(row, fm[1]));
           return isRaw ? fv : bny.escapeChars(fv);
         }
-        var v = tplEvalExpr(tplExprDecode(src), row);
+        var v = tplEvalExpr(tplExprDecode(src), row, isRaw);
         if (v === _TPL_ERR) return m;
         var out = String(v === void 0 || v === null ? "" : v);
         return isRaw ? out : bny.escapeChars(out);
@@ -5571,18 +5588,8 @@
     }
     return _cellTplCache[src];
   }
-  function tplRunScripts(tpl, row) {
-    if (tpl.toLowerCase().indexOf("<script") === -1) return tpl;
-    return tpl.replace(/<script(\s[^>]*)?>([\s\S]*?)<\/script\s*>/gi, function(m, attrs, code) {
-      if (attrs && (/(^|\s)type\s*=/i.test(attrs) || /(^|\s)src\s*=/i.test(attrs))) return m;
-      if (!code.trim()) return m;
-      var v = tplEvalExpr(code.trim(), row);
-      if (v === _TPL_ERR) return m;
-      return String(v === void 0 || v === null ? "" : v);
-    });
-  }
   function renderTemplateCell(row, col) {
-    return tplInterpolate(tplRunScripts(cellTemplateSource(col), row), row);
+    return tplInterpolate(cellTemplateSource(col), row);
   }
   function flattenTreeRows(list, level, out) {
     (list || []).forEach(function(row) {

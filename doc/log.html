@@ -94,6 +94,7 @@
                     <p class="cl"><span class="bny-tag" tag-color="green">新增</span> 多功能选择框组件（bny-select）：单选 / 多选 / 树形单选 / 树形多选（父子联动 + 半选），支持禁用、分组、远程选项，推荐 ul 直接承载写法。</p>
                     <p class="cl"><span class="bny-tag" tag-color="green">新增</span> 上传组件（bny-upload）：声明式上传，文件逐个独立上传。</p>
                     <p class="cl"><span class="bny-tag" tag-color="green">新增</span> 表格 cell-template 模板表达式：{{...}} 占位符支持三元 / 比较 / 拼接等 JS 表达式（data 即行对象），结果自动转义。</p>
+                    <p class="cl"><span class="bny-tag" tag-color="green">新增</span> 表格 cell-template 原样输出口：{{#...}} 占位符生成 HTML 结构（单个表达式或多行语句块，语句块须显式 return，缺 return 输出为空并告警），数据转义由作者用 bny.escapeChars 处理。</p>
                     <p class="cl"><span class="bny-tag" tag-color="blue">优化</span> 表单清错改 form 级事件委托：动态生成的字段（如选择框值域）同样生效；各拓展样式选择器微调；新增本地片段预览服务（test/post-server.js）。</p>
                     <p class="cl"><span class="bny-tag" tag-color="red">修复</span> 属性组件操作表单控件"触发了但视觉没反应"：手动交互过的复选框/输入框受浏览器 dirty 标志影响，attribute 变化不再同步视觉——写 checked/value/selected 后同步 DOM property，attr 全部操作与 attr-json 响应统一生效。</p>
                     <p class="cl"><span class="bny-tag" tag-color="red">修复</span> 下拉菜单/日期选择器点击其他按钮面板不关闭：全局关闭委托改捕获阶段，规避 tab/menu 等组件 stopPropagation 截断冒泡。</p>

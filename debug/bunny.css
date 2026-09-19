@@ -8580,7 +8580,7 @@ html.dark .bny-backtop {
 
 /* ====== 图片组（卡牌式堆叠） ======
  * 用 <div class="bny-image-group"> 包裹若干 <img img-preview>，
- * 缩略图像一叠扑克牌层叠排列：背后的卡片依次上移、微旋转，露出层叠边角；
+ * 缩略图像一叠扑克牌层叠排列：第一张在最前，背后的卡片依次上移、微旋转，露出层叠边角；
  * 悬停时展开成扇形便于辨认，点击任一张在灯箱内翻页浏览整组。
  * 尺寸可用容器属性 img-preview-size="72" 或 CSS 变量 --bny-image-group-size 调整。
  * 扫描时每张图会被 .bny-image-item 包裹，用于承载左上角标签浮层（见下方 .bny-image-tags）。
@@ -8629,20 +8629,22 @@ html.dark .bny-backtop {
         background: var(--light);
     }
 
-    /* 背后的卡片（DOM 中越靠前越靠后）依次上移、错位、微旋转，形成卡牌堆叠 */
-    & .bny-image-item:nth-last-child(2) { transform: translate(-7px, -7px) rotate(-6deg); }
-    & .bny-image-item:nth-last-child(3) { transform: translate(7px, -13px) rotate(6deg); }
-    & .bny-image-item:nth-last-child(4) { transform: translate(-7px, -19px) rotate(-9deg); }
-    & .bny-image-item:nth-last-child(5) { transform: translate(7px, -25px) rotate(9deg); }
-    & .bny-image-item:nth-last-child(n+6) { transform: translate(-7px, -31px) rotate(-11deg); }
+    /* 卡牌堆叠：第一张即最前（nth-child 计数 + 显式递减 z-index 压住后面的卡片），
+       后面的卡片依次上移、错位、微旋转 */
+    & .bny-image-item:nth-child(1) { z-index: 6; }
+    & .bny-image-item:nth-child(2) { transform: translate(-7px, -7px) rotate(-6deg); z-index: 5; }
+    & .bny-image-item:nth-child(3) { transform: translate(7px, -13px) rotate(6deg); z-index: 4; }
+    & .bny-image-item:nth-child(4) { transform: translate(-7px, -19px) rotate(-9deg); z-index: 3; }
+    & .bny-image-item:nth-child(5) { transform: translate(7px, -25px) rotate(9deg); z-index: 2; }
+    & .bny-image-item:nth-child(n+6) { transform: translate(-7px, -31px) rotate(-11deg); z-index: 1; }
 
     /* 悬停展开成扇形：背后的卡片向两侧散开，最前一张轻微上浮 */
-    &:hover .bny-image-item:nth-last-child(2) { transform: translate(-12px, -4px) rotate(-5deg); }
-    &:hover .bny-image-item:nth-last-child(3) { transform: translate(12px, -4px) rotate(5deg); }
-    &:hover .bny-image-item:nth-last-child(4) { transform: translate(-24px, -2px) rotate(-9deg); }
-    &:hover .bny-image-item:nth-last-child(5) { transform: translate(24px, -2px) rotate(9deg); }
-    &:hover .bny-image-item:nth-last-child(n+6) { transform: translate(-34px, 0) rotate(-12deg); }
-    &:hover .bny-image-item:last-child .bny-image-thumb { transform: translateY(-6px); box-shadow: 0 6px 16px rgba(15, 23, 42, 0.28); }
+    &:hover .bny-image-item:nth-child(2) { transform: translate(-12px, -4px) rotate(-5deg); }
+    &:hover .bny-image-item:nth-child(3) { transform: translate(12px, -4px) rotate(5deg); }
+    &:hover .bny-image-item:nth-child(4) { transform: translate(-24px, -2px) rotate(-9deg); }
+    &:hover .bny-image-item:nth-child(5) { transform: translate(24px, -2px) rotate(9deg); }
+    &:hover .bny-image-item:nth-child(n+6) { transform: translate(-34px, 0) rotate(-12deg); }
+    &:hover .bny-image-item:nth-child(1) .bny-image-thumb { transform: translateY(-6px); box-shadow: 0 6px 16px rgba(15, 23, 42, 0.28); }
 
     /* 暗黑模式下投影用浅色描边增强层次 */
     html.dark & .bny-image-item .bny-image-thumb {
